@@ -8,10 +8,6 @@ class DUIMCardControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
-
-    this
-      .classes(["alert-link"])
-      .attributes(["href":"#"]);
   }
 }
 auto UIMCardControl() { return new DUIMCardControl; }

@@ -26,7 +26,7 @@ class DUIMAlertControl : DUIMControl {
     if (dismissible || "alertDismissible" in options) { bufClasses ~= "alert-dismissible"; }
 
     
-    results ~= H5Div(bufId, bufClasses, bufAttributes, (status ? H5Span(["badge", "bg-"~status]) : null)~content);
+    // results ~= H5Div(bufId, bufClasses, bufAttributes, (status ? H5Span(["badge", "bg-"~status]) : null)~content);
 
     return results;
   }
