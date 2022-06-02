@@ -4,3 +4,4 @@ module uim.controls.tabs;
 import uim.controls;
 
 public import uim.controls.tabs.tab;
+public import uim.controls.tabs.pane;

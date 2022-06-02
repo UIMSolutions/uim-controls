@@ -7,15 +7,10 @@ interface IControl {
   DH5Obj[] toH5(STRINGAA options = null);
 }
 
-class DUIMControl : IControl {
+class DUIMControl : DH5Obj, IControl {
   this() { initialize; }
 
   void initialize() {}
-
-  mixin(OProperty!("string", "id"));
-  mixin(OProperty!("string[]", "classes"));
-  mixin(OProperty!("STRINGAA", "attributes"));
-  mixin(OProperty!("DH5Obj[]", "content"));
 
   // Used before toH5 
   protected string bufId;
@@ -23,7 +18,7 @@ class DUIMControl : IControl {
   protected STRINGAA bufAttributes;
   protected DH5Obj[] bufContent;
 
-  O content(this O)(DH5Obj[] newContent...) {
+  /* O  content(this O)(DH5Obj[] newContent...) {
     this.content(newContent);
     return cast(O)this;
   }
@@ -39,7 +34,7 @@ class DUIMControl : IControl {
   O addContent(this O)(DH5Obj[] newContent) {
     this.content(this.content~newContent);
     return cast(O)this;
-  }
+  } */
 
   void beforeH5(STRINGAA options = null) {
     // Copy initial settings to buffer values
@@ -56,7 +51,7 @@ class DUIMControl : IControl {
   override string toString() {
     return toString(null);
   }
-  string toString(STRINGAA options) {
+  override string toString(STRINGAA options) {
     if (auto h5 = toH5(options)) {
       return h5.toString;
     }

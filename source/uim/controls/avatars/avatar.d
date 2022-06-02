@@ -34,7 +34,7 @@ class DUIMAvatarControl : DUIMControl {
     if (bgImage || "avatarBackgroundImage" in options) {
       bufAttributes["style"] = "background-image:url("~options.get("avatarBackgroundImage", bgImage)~")";
       results ~= H5Span(bufId, bufClasses, bufAttributes, 
-        (status ? H5Span(["badge", "bg-"~status]) : null)~content);
+        (status ? H5Span(["badge", "bg-"~status]) : null)~this.content);
     } else {
       results ~= H5Span(bufId, bufClasses, bufAttributes, (status ? H5Span(["badge", "bg-"~status]) : null)~content);
     }

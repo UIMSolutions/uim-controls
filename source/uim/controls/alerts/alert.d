@@ -17,18 +17,17 @@ class DUIMAlertControl : DUIMControl {
   mixin(OProperty!("string", "type"));
   mixin(OProperty!("string", "title"));
   mixin(OProperty!("bool", "dismissible"));
+  mixin(OProperty!("bool", "important"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
     auto bufClasses = this.classes.dup;
-    if (type || "alertType" in options) { bufClasses ~= "alerts "~options.get("alertType", this.type); }
-    if (dismissible || "alertDismissible" in options) { bufClasses ~= "alert-dismissible"; }
+    if (type || "alertType" in options) { bufClasses ~= "alert-"~options.get("alertType", this.type); }
+    if (dismissible) { bufClasses ~= "alert-dismissible"; }
+    if (important) { bufClasses ~= "alert-important"; }
 
-    
-    // results ~= H5Div(bufId, bufClasses, bufAttributes, (status ? H5Span(["badge", "bg-"~status]) : null)~content);
-
-    return results;
+    return [BS5Alert(id, bufClasses, attributes, content)].toH5;
   }
 }
 auto UIMAlertControl() { return new DUIMAlertControl; }
