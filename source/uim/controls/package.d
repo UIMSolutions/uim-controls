@@ -32,6 +32,7 @@ public import uim.jsonbase;
 public import uim.entitybase;
 
 public import uim.controls.control;
+public import layouts.tabler;
 
 // PACKAGES
 public import uim.controls.alerts;
@@ -45,6 +46,7 @@ public import uim.controls.dividers;
 public import uim.controls.dropdowns;
 public import uim.controls.empties;
 public import uim.controls.modals;
+public import uim.controls.navigations;
 public import uim.controls.pageheaders;
 public import uim.controls.placeholders;
 public import uim.controls.progresses;
