@@ -9,13 +9,16 @@ class DUIMNavigationControl : DUIMControl {
   mixin(OProperty!("string", "printMode"));
   mixin(OProperty!("string", "collapseMode"));
   mixin(OProperty!("string", "colorScheme"));
+  mixin(OProperty!("string", "style"));
 
   // Navbar brand
   mixin(OProperty!("bool", "hasBrand"));
   mixin(OProperty!("string", "brandColorScheme"));
   mixin(OProperty!("string[]", "brandClasses"));
   mixin(OProperty!("string", "brandLink"));
+  mixin(OProperty!("string", "brandText"));
   mixin(OProperty!("DH5Img", "brandImage"));
+  mixin(OProperty!("bool", "brandImageText"));
 
   // Navbar toggler
   mixin(OProperty!("bool", "hasToggler"));
@@ -26,6 +29,7 @@ class DUIMNavigationControl : DUIMControl {
     super.initialize;
 
     this  
+      .brandImageText(true)
       .classes(["navbar"])
       .printMode("none")
       .hasToggler(true)
@@ -36,6 +40,7 @@ class DUIMNavigationControl : DUIMControl {
     DH5Obj[] results = super.toH5(options);
 
     auto bufClasses = this.classes.dup;
+    auto bufAttributes = this.attributes.dup;
     if (printMode) { bufClasses ~= "d-print-"~printMode; }
     if (collapseMode) {
       if (collapseMode == "never") { bufClasses ~= "navbar-expand"; }
@@ -52,12 +57,13 @@ class DUIMNavigationControl : DUIMControl {
     }
     if (hasBrand) {
       bufContent ~= H5H1(["navbar-brand navbar-brand-"~brandColorScheme]~brandClasses, 
-        H5A(["href":brandLink], brandImage));
+        brandImageText ? H5A(["href":brandLink], brandImage.toString~brandText) : H5A(["href":brandLink], brandText~brandImage.toString));
     }
     bufContent ~= content;
 
+    if ("style" in bufAttributes) { bufAttributes["style"] ~= ";"~style; } else { bufAttributes["style"] = style; }
     return [
-      H5Header(id, bufClasses, attributes)
+      H5Header(id, bufClasses, bufAttributes)
         .content(
           H5Div(["container-xl"], 
             bufContent))].toH5;
