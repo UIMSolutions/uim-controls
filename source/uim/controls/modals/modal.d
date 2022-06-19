@@ -6,42 +6,39 @@ import uim.controls;
 class DUIMModalControl : DUIMControl {
   this() { super(); }
 
-  mixin(OProperty!("string", "size"))
+  mixin(OProperty!("string", "size"));
+  mixin(OProperty!("bool", "fade"));
+  mixin(OProperty!("bool", "visible"));
+  
+  mixin(OProperty!("DH5Obj[]", "header"));
+  mixin(OProperty!("string[]", "headerClasses"));
+  mixin(OProperty!("STRINGAA", "headerAttributes"));
+
+  mixin(OProperty!("DH5Obj[]", "body_"));
+  mixin(OProperty!("string[]", "bodyClasses"));
+  mixin(OProperty!("STRINGAA", "bodyAttributes"));
+  
+  mixin(OProperty!("DH5Obj[]", "footer"));
+
   override void initialize() {
     super.initialize;
   }
 
-  DH5Obj[] toH5(STRINGAA options) {
-    auto dialog = H5Div(["modal-dialog"], ["role":"document"]);
-    if (size) { dialog.addClasses("modal-"~size); }
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    auto myModal = BS5Modal;
+    if (id) { myModal.id(this.id); }
+    if (fade) { myModal.addClasses("fade"); }
 
-    return [
-      dialog.content(
-        H5Div(["modal-content"], 
-          H5Button(["btn-close"], ["type":"button", "data-bs-dismiss":"modal", "aria-label":"Close"]),
-          H5Div(["modal-status bg-danger"]),
-          H5Div(["modal-body text-center py-4"], 
-            tablerIcon("alert-triangle")~
-            H5H3("Are you sure?").toString~
-            H5Div(["text-muted"], "Do you really want to remove 84 files? What you've done cannot be undone.").toString
-          ),
-          H5Div(["modal-footer"], 
-            H5Div(["w-100"], 
-              H5Div(["row"], 
-                H5Div(["col"], 
-                  H5A(["btn w-100"], ["href":"javascript:void(0)", "data-bs-dismiss":"modal"], 
-                    "Cancel"
-                  )),
-                H5Div(["col"], H5A(["btn btn-danger w-100"], ["href":"javascript:void(0)", "data-bs-dismiss":"modal"], 
-                    "Delete 84 items"
-                  )
-                )
-              )
-            )
-          )
-        )
-      )
-    ].toH5
+    auto myDialog = BS5ModalDialog;
+    if (size) { myDialog.addClasses("modal-"~size); }
+
+    auto myContent = BS5ModalContent;
+    if (header) { myContent.header(this.header); }
+    if (body_) { myContent.body_(bodyClasses, bodyAttributes, this.body_); }
+    if (footer) { myContent.footer(this.footer); }
+
+    if (visible) return [myDialog(myContent)].toH5;
+    return [myModal(myDialog(myContent))].toH5;
   }
 }
 auto UIMModalControl() { return new DUIMModalControl; }

@@ -30,7 +30,9 @@ class DUIMTabPaneControl : DUIMControl {
 
     this
       .classes(["tab-pane"])
-      .attributes(["role":"tabpanel"]);
+      .attributes(["role":"tabpanel"])
+      .showHeader(true)
+      .showFooter(true);
   }
 
   DH5Obj tabHeader(STRINGAA options = null) {
@@ -68,9 +70,9 @@ class DUIMTabPaneControl : DUIMControl {
       if (active) bufClasses ~= ["active", "show"];
 
       return [H5Div(id, bufClasses, bufAttributes,
-        (showHeader ? header : null)
+        (showHeader && header ? header : null)
         ~content~
-        (showFooter ? footer : null)
+        (showFooter && footer ? footer : null)
       )].toH5;
   }
 }

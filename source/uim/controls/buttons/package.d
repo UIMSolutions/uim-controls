@@ -4,3 +4,4 @@ module uim.controls.buttons;
 import uim.controls;
 
 public import uim.controls.buttons.button;
+public import uim.controls.buttons.list;
