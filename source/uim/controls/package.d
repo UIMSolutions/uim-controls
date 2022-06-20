@@ -19,7 +19,6 @@ public import std.uuid;
 /// External libraries
 // public import colored;
 public import vibe.d;
-public import colored;
 
 // uim libraries
 public import uim.core;

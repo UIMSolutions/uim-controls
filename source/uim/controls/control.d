@@ -10,7 +10,7 @@ interface IControl {
 class DUIMControl : DH5Obj, IControl {
   this() { initialize; }
 
-  void initialize() {}
+  override void initialize() {}
 
   // Used before toH5 
   protected string bufId;
