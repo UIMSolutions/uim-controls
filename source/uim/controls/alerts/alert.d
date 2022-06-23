@@ -19,15 +19,26 @@ class DUIMAlertControl : DUIMControl {
   mixin(OProperty!("bool", "dismissible"));
   mixin(OProperty!("bool", "important"));
 
+  O addLink(this O)(string link, string text){
+    this.addContent(H5A(["alert-link"], ["href":link], text));
+    return cast(O)this;
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
-    auto bufClasses = this.classes.dup;
-    if (type || "alertType" in options) { bufClasses ~= "alert-"~options.get("alertType", this.type); }
-    if (dismissible) { bufClasses ~= "alert-dismissible"; }
-    if (important) { bufClasses ~= "alert-important"; }
+    auto myClasses = this.classes.dup;
+    auto myAttributes = this.attributes.dup;
+    auto myContent = this.content.dup;
 
-    return [BS5Alert(id, bufClasses, attributes, content)].toH5;
+    if (type || "alertType" in options) { myClasses ~= "alert-"~options.get("alertType", this.type); }
+    if (dismissible) { 
+      myClasses ~= "alert-dismissible"; 
+      myContent ~= H5A(["btn-close"], ["data-bs-dismiss":"alert", "aria-label":"close"]); 
+    }
+    if (important) { myClasses ~= "alert-important"; }
+
+    return [BS5Alert(id, myClasses, myAttributes, myContent)].toH5;
   }
 }
 auto UIMAlertControl() { return new DUIMAlertControl; }
