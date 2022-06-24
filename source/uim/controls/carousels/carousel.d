@@ -12,12 +12,17 @@ class DUIMCarouselControl : DUIMControl {
   mixin(OProperty!("bool", "showDots"));
   mixin(OProperty!("bool", "showThumbs"));
 
+  mixin(OProperty!("string", "previousTitle"));
+  mixin(OProperty!("string", "nextTitle"));
+
   override void initialize() {
     super.initialize;
 
     this
       .classes(["carousel", "slide"])
-      .attributes(["data-bs-ride":"carousel"]);
+      .attributes(["data-bs-ride":"carousel"])
+      .previousTitle("Previous")
+      .nextTitle("Next");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -46,10 +51,14 @@ class DUIMCarouselControl : DUIMControl {
         (items  ? BS5CarouselInner(items.map!(item => item.toH5).join) 
                 : null),
         ( showIndicators ? myIndicators : null),
-        ( showControls  ? H5A(["carousel-control-next"], ["href":"#"~myId, "role":"button", "data-bs-slide":"next"],
-                            H5Span(["carousel-control-next-icon"], ["aria-hidden":"true"]),
-                            H5Span(["visually-hidden"], "Next")) 
-                          : null)                  
+        ( showControls  ? H5A(["carousel-control-prev"], ["href":"#"~myId, "role":"button", "data-bs-slide":"prev"],
+            H5Span(["carousel-control-prev-icon"], ["aria-hidden":"true"]),
+            H5Span(["visually-hidden"], previousTitle)) 
+          : null),
+          ( showControls  ? H5A(["carousel-control-next"], ["href":"#"~myId, "role":"button", "data-bs-slide":"next"],
+            H5Span(["carousel-control-next-icon"], ["aria-hidden":"true"]),
+            H5Span(["visually-hidden"], nextTitle)) 
+          : null)                  
       )
     ].toH5;
   }
