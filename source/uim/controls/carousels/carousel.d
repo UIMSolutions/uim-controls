@@ -7,10 +7,16 @@ class DUIMCarouselControl : DUIMControl {
   this() { super(); }
 
   mixin(OProperty!("DUIMCarouselItemControl[]", "items"));
+  O items(this O)(DUIMCarouselItemControl[] items...) {
+    this.items(items);
+    return cast(O)this;
+  }
+
   mixin(OProperty!("bool", "showControls"));
   mixin(OProperty!("bool", "showIndicators"));
   mixin(OProperty!("bool", "showDots"));
   mixin(OProperty!("bool", "showThumbs"));
+  mixin(OProperty!("bool", "vertical"));
 
   mixin(OProperty!("string", "previousTitle"));
   mixin(OProperty!("string", "nextTitle"));
