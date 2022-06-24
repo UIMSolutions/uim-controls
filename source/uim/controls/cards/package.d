@@ -4,3 +4,7 @@ module uim.controls.cards;
 import uim.controls;
 
 public import uim.controls.cards.card;
+
+public import uim.controls.cards.body_;
+public import uim.controls.cards.header;
+public import uim.controls.cards.footer;

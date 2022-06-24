@@ -6,8 +6,78 @@ import uim.controls;
 class DUIMCardControl : DUIMControl {
   this() { super(); }
 
+  mixin(OProperty!("string", "size"));
+  mixin(OProperty!("bool", "stacked"));
+
+  mixin(OProperty!("string", "statusColor"));
+  mixin(OProperty!("string", "statusPosition"));
+
+  mixin(OProperty!("DH5Obj", "imageContent"));
+  mixin(OProperty!("string", "imagePosition"));
+
+  mixin(OProperty!("DH5Obj[]", "header"));
+  mixin(OProperty!("string[]", "headerClasses"));
+  mixin(OProperty!("STRINGAA", "headerAttributes"));
+
+  mixin(OProperty!("DH5Obj[]", "body_"));
+  mixin(OProperty!("string[]", "bodyClasses"));
+  mixin(OProperty!("STRINGAA", "bodyAttributes"));
+
+  mixin(OProperty!("DH5Obj[]", "footer"));
+  mixin(OProperty!("string[]", "footerClasses"));
+  mixin(OProperty!("STRINGAA", "footerAttributes"));
+
   override void initialize() {
     super.initialize;
+
+    this
+      .classes(["card"]);
+  }
+  
+  O image(this O)(DH5Obj newContent, string newPosition = "top") {
+    this
+      .imageContent(newContent)
+      .imagePosition(newPosition);
+
+    return cast(O)this;
+  }
+
+  O status(this O)(string newColor, string newPosition = "top") {
+    this
+      .statusColor(newColor)
+      .statusPosition(newPosition);
+
+    return cast(O)this;
+  }
+
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    string myId = this.id.dup;
+    auto myClasses = this.classes.dup;
+    auto myAttributes = this.attributes.dup;
+
+    if (size) myClasses ~= ["card-"~size];
+    if (stacked) myClasses ~= ["card-stacked"];
+
+    auto myCard = BS5Card(myId, myClasses, myAttributes);
+    if (statusColor) {
+      myCard.addContent(H5Div(["card-status-"~statusPosition, "bg-"~statusColor]));
+    }
+
+    if (imageContent && imagePosition == "top") {
+      imageContent.addClasses("card-img-top");
+      myCard.addContent(imageContent);
+    }
+
+    if (header) myCard.header(headerClasses, headerAttributes, this.header);
+    if (body_) myCard.body_(bodyClasses, bodyAttributes, this.body_);
+    if (footer) myCard.footer(footerClasses, footerAttributes, this.footer);
+    if (imageContent && imagePosition == "bottom") {
+      imageContent.addClasses("card-img-bottom");
+      myCard.addContent(imageContent);
+    }
+    return [
+      myCard
+    ].toH5;
   }
 }
 auto UIMCardControl() { return new DUIMCardControl; }
