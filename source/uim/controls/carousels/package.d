@@ -1,6 +1,4 @@
 module uim.controls.carousels;
 
-@safe: 
-import uim.controls;
-
 public import uim.controls.carousels.carousel;
+public import uim.controls.carousels.item;
