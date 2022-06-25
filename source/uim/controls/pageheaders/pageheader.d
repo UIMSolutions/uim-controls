@@ -12,7 +12,7 @@ class DUIMPageHeaderControl : DUIMControl {
   
   override DH5Obj[] toH5(STRINGAA options = null) {
 
-    return [myModal(myDialog(myContent))].toH5;
+    return [H5Div].toH5;
   }
 }
 auto UIMPageHeaderControl() { return new DUIMPageHeaderControl; }

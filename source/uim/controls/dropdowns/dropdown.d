@@ -22,7 +22,7 @@ class DUIMDropdownControl : DUIMControl {
     auto myContent = this.content.dup;
 
     return [
-      DBS5Dropdown(myId, myClasses, myAttributes,
+      BS5Dropdown(myId, myClasses, myAttributes,
         BS5DropdownMenu(
           items.map!(item => item.toH5).join
         ) 
@@ -30,4 +30,4 @@ class DUIMDropdownControl : DUIMControl {
     ].toH5;
   }
 }
-auto UIMDropdownControl() { return new DUIMDropDownControl; }
+auto UIMDropdownControl() { return new DUIMDropdownControl; }
