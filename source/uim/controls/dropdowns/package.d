@@ -4,3 +4,4 @@ module uim.controls.dropdowns;
 import uim.controls;
 
 public import uim.controls.dropdowns.dropdown;
+public import uim.controls.dropdowns.item;

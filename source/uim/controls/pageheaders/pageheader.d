@@ -9,5 +9,10 @@ class DUIMPageHeaderControl : DUIMControl {
   override void initialize() {
     super.initialize;
   }
+  
+  override DH5Obj[] toH5(STRINGAA options = null) {
+
+    return [myModal(myDialog(myContent))].toH5;
+  }
 }
 auto UIMPageHeaderControl() { return new DUIMPageHeaderControl; }
