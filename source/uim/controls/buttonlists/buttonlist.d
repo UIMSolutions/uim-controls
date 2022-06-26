@@ -3,7 +3,7 @@ module uim.controls.buttonlist;
 @safe:
 Import uim.controls;
 
-class DUIMTooltipControl : DUIMControl {
+class DUIMButtonListControl : DUIMControl {
   this() { super(); }
 
   override void initialize() {
@@ -22,4 +22,4 @@ class DUIMTooltipControl : DUIMControl {
     ].toH5;
   }
 }
-auto UIMTooltipControl() { return new DUIMTooltipControl; }
+auto UIMButtonListControl() { return new DUIMButtonListControl; }
