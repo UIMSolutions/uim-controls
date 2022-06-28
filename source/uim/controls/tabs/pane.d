@@ -8,8 +8,6 @@ class DUIMTabPaneControl : DUIMControl {
 
   mixin(OProperty!("string[]", "tabClasses"));
   mixin(OProperty!("string[]", "tabLinkClasses"));
-  mixin(OProperty!("bool", "disabled"));
-  mixin(OProperty!("bool", "active"));
   mixin(OProperty!("string", "title"));
   mixin(OProperty!("string", "tooltip"));
   mixin(OProperty!("string", "icon"));

@@ -10,6 +10,10 @@ interface IControl {
 class DUIMControl : DH5Obj, IControl {
   this() { initialize; }
 
+  mixin(OProperty!("DUIMControl", "parent"));
+  mixin(OProperty!("bool", "active"));
+  mixin(OProperty!("bool", "disabled"));
+
   override void initialize() {}
 
   // Used before toH5 

@@ -1,14 +1,18 @@
-module uim.controls.tooltips.tooltip;
+module uim.controls.dropdowns.header;
 
 @safe: 
 import uim.controls;
 
-class DUIMTooltipControl : DUIMControl {
+class DUIMDropdownDividerControl : DUIMDropdownItemControl {
   this() { super(); }
 
   override void initialize() {
     super.initialize;
-
+ 
+    this
+      .classes(["dropdown-header"])
+      .isDivider(false)
+      .isHeader(true); 
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -18,8 +22,8 @@ class DUIMTooltipControl : DUIMControl {
     auto myContent = this.content.dup;
 
     return [
-      H5Div(myId, myClasses, myAttributes, myContent)
+      H5Span(myId, myClasses, myAttributes, myContent)
     ].toH5;
   }
 }
-auto UIMTooltipControl() { return new DUIMTooltipControl; }
+auto UIMDropdownItemControl() { return new DUIMDropdownDividerControl; }

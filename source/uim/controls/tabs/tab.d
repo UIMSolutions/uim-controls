@@ -14,16 +14,6 @@ class DUIMTabControl : DUIMControl {
   mixin(OProperty!("bool", "reverse"));
   mixin(OProperty!("bool", "alternative"));
 
-  O active(this O)(string id) {
-    panes.each!(pane => pane.id == id ? pane.active(true) : pane.active(false));
-    return cast(O)this;
-  }
-  string active() {
-    foreach(pane; panes) {
-      if (pane.active) return id;
-    }
-    return null;
-  }
   auto activePane() {
     foreach(pane; panes) {
       if (pane.active) return pane;
@@ -38,7 +28,7 @@ class DUIMTabControl : DUIMControl {
     auto myClasses = this.classes.dup;
     auto myAttributes = this.attributes.dup;
 
-    if ((panes.length > 0) && (active() is null)) {
+    if ((panes.length > 0) && (activePane is null)) {
       panes.each!(pane => pane.active(false));
       panes[0].active(true);
     }

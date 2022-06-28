@@ -6,7 +6,19 @@ import uim.controls;
 class DUIMDropdownControl : DUIMControl {
   this() { super(); }
 
-  mixin(OProperty!("DUIMDropdownItemControl[]", "items"));
+  protected DUIMControl[] _items;  
+  DUIMControl[] items(this O)() {
+    return _items;
+  }
+  O items(this O)(DUIMControl[] newItems) {
+    _items = newItems;
+    items.each!(item => item.parent(this));
+    return cast(O)this;
+  }
+  O items(this O)(DUIMControl[] newItems...) { 
+    this.items(newItems); 
+    return cast(O)this;
+  }
 
   override void initialize() {
     super.initialize;

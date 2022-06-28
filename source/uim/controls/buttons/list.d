@@ -6,9 +6,17 @@ import uim.controls;
 class DUIMButtonListControl : DUIMControl {
   this() { super(); }
 
-  mixin(OProperty!("DUIMButtonControl[]", "buttons"));
-  O buttons(this O)(DUIMButtonControl[] newButtons...) { 
-    this.buttons(newButtons); 
+  protected DUIMControl[] _items;  
+  DUIMControl[] items(this O)() {
+    return _items;
+  }
+  O items(this O)(DUIMControl[] newItems) {
+    _items = newItems;
+    _items.each!(item => item.parent(this));
+    return cast(O)this;
+  }
+  O items(this O)(DUIMControl[] newItems...) { 
+    this.items(newItems); 
     return cast(O)this;
   }
 
@@ -20,7 +28,14 @@ class DUIMButtonListControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    return [H5Div(["btn-list"], buttons.map!(button => button.toH5(options)).join)].toH5;  
+    string myId = this.id.dup;
+    auto myClasses = this.classes.dup;
+    auto myAttributes = this.attributes.dup;
+    auto myContent = this.content.dup;
+
+    return [
+      H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join)
+    ].toH5;  
   }
 }
 auto UIMButtonListControl() { return new DUIMButtonListControl; }

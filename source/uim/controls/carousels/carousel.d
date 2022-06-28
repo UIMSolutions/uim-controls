@@ -6,9 +6,17 @@ import uim.controls;
 class DUIMCarouselControl : DUIMControl {
   this() { super(); }
 
-  mixin(OProperty!("DUIMCarouselItemControl[]", "items"));
-  O items(this O)(DUIMCarouselItemControl[] items...) {
-    this.items(items);
+  protected DUIMControl[] _items;  
+  DUIMControl[] items(this O)() {
+    return _items;
+  }
+  O items(this O)(DUIMControl[] newItems) {
+    _items = newItems;
+    _items.each!(item => item.parent(this));
+    return cast(O)this;
+  }
+  O items(this O)(DUIMControl[] newItems...) { 
+    this.items(newItems); 
     return cast(O)this;
   }
 

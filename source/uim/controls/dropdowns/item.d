@@ -7,6 +7,7 @@ class DUIMDropdownItemControl : DUIMControl {
   this() { super(); }
 
   mixin(OProperty!("bool", "isDivider"));
+  mixin(OProperty!("bool", "isHeader"));
   mixin(OProperty!("string", "link"));
 
   override void initialize() {

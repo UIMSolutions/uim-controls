@@ -7,7 +7,6 @@ class DUIMButtonControl : DUIMControl {
   this() { super(); }
 
   mixin(OProperty!("string", "color"));
-  mixin(OProperty!("bool", "disabled"));
   mixin(OProperty!("bool", "ghost"));
   mixin(OProperty!("bool", "outline"));
   mixin(OProperty!("bool", "square"));

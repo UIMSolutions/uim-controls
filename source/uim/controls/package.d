@@ -34,12 +34,12 @@ public import uim.controls.control;
 public import layouts.tabler;
 
 // PACKAGES
+public import uim.controls.accordions;
 public import uim.controls.alerts;
 public import uim.controls.avatars;
 public import uim.controls.badges;
 public import uim.controls.breadcrumbs;
 public import uim.controls.buttons;
-public import uim.controls.buttopnlists;
 public import uim.controls.cards;
 public import uim.controls.carousels;
 public import uim.controls.dividers;

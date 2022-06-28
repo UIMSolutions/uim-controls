@@ -4,3 +4,4 @@ module uim.controls.breadcrumbs;
 import uim.controls;
 
 public import uim.controls.breadcrumbs.breadcrumb;
+public import uim.controls.breadcrumbs.item;

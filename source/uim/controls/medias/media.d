@@ -1,7 +1,7 @@
-module uim.controls.media;
+module uim.controls.medias.media;
 
 @safe:
-Import uim.controls;
+import uim.controls;
 
 class DUIMMediaControl : DUIMControl {
   this() { super(); }
