@@ -26,7 +26,7 @@ class DUIMSpinnerControl : DUIMControl {
     auto myAttributes = this.attributes.dup;
     auto myContent = this.content.dup;
 
-    if (color) { myClasses ~= "text-color"; }
+    if (color) { myClasses ~= "text-"~color; }
     switch (this.style) {
       case "grow": myClasses ~= "spinner-grow"; break;
       default: myClasses ~= "spinner-border"; break;
