@@ -38,3 +38,4 @@ class DUIMAlertControl : DUIMControl {
   }
 }
 auto UIMAlertControl() { return new DUIMAlertControl; }
+auto UIMAlert() { return new DUIMAlertControl; }

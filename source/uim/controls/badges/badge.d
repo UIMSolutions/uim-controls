@@ -7,7 +7,9 @@ class DUIMBadgeControl : DUIMControl {
   this() { super(); }
 
   mixin(OProperty!("string", "color"));
+  mixin(OProperty!("string", "link"));
   mixin(OProperty!("bool", "outline"));
+  mixin(OProperty!("string", "style"));
   
   O toggleOutline(this O)() {
     this.outline(!outline);
@@ -25,10 +27,13 @@ class DUIMBadgeControl : DUIMControl {
     DH5Obj[] results = super.toH5(options);
 
     if (color && !outline) { myClasses ~= "bg-"~this.color; }
-    if (color && outline) { myClasses ~= "text-"~this.color; }
+    if (color && outline) { myClasses ~= ["text-"~this.color, "badge-outline"]; }
+    if (style) { myClasses ~= "badge-"~style; }
     
+    if (link) { myAttributes["href"] = link; }
     return results~
-      H5Span(myId, myClasses, myAttributes, myContent);
+      (link  ? H5A(myId, myClasses, myAttributes, myContent)
+             : H5Span(myId, myClasses, myAttributes, myContent));
   }
 }
 auto UIMBadgeControl() { return new DUIMBadgeControl; }

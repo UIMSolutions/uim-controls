@@ -36,3 +36,4 @@ class DUIMBreadcrumbControl : DUIMControl {
   }
 }
 auto UIMBreadcrumbControl() { return new DUIMBreadcrumbControl; }
+auto UIMBreadcrumb() { return new DUIMBreadcrumbControl; }

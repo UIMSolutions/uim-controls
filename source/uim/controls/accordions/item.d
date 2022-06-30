@@ -14,7 +14,7 @@ class DUIMAccordionItemControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = toH5(options);
+    auto results = super.toH5(options);
 
     this.parentId(parent ? parent.id : null);
 
@@ -32,3 +32,4 @@ class DUIMAccordionItemControl : DUIMControl {
   }
 }
 auto UIMAccordionItemControl() { return new DUIMAccordionItemControl; }
+auto UIMAccordionItem() { return new DUIMAccordionItemControl; }
