@@ -3,11 +3,14 @@ module uim.controls.empties.header;
 @safe: 
 import uim.controls;
 
-class DUIMEmptyHeaderControl : DUIMControl {
+class DUIMEmptyHeaderControl : DUIMEmptyItemControl {
   this() { super(); }
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes(["empty-header"]);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

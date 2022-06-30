@@ -1,17 +1,13 @@
-module uim.controls.empties.title;
+module uim.controls.empties.item;
 
 @safe: 
 import uim.controls;
 
-class DUIMEmptyTitleControl : DUIMEmptyItemControl {
+class DUIMEmptyItemControl : DUIMControl {
   this() { super(); }
 
   override void initialize() {
     super.initialize;
-
-
-    this
-      .classes(["empty-title"]);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -21,8 +17,8 @@ class DUIMEmptyTitleControl : DUIMEmptyItemControl {
     auto myContent = this.content.dup;
 
     return [
-      H5P(myId, myClasses, myAttributes, myContent)
+      H5Div(myId, myClasses, myAttributes, myContent)
     ].toH5;
   }
 }
-auto UIMEmptyTitleControl() { return new DUIMEmptyTitleControl; }
+auto UIMEmptyItemControl() { return new DUIMEmptyItemControl; }

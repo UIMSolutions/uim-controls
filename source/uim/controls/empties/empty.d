@@ -6,9 +6,21 @@ import uim.controls;
 class DUIMEmptyControl : DUIMControl {
   this() { super(); }
 
+  mixin(OProperty!("DUIMControl[]", "items"));
+
   override void initialize() {
     super.initialize;
+
+    this
+      .classes(["empty"]);
   }
+
+  mixin(AddContent!("Icon", "UIMEmptyIconControl"));
+  mixin(AddContent!("Title", "UIMEmptyTitleControl"));
+  mixin(AddContent!("Header", "UIMEmptyHeaderControl"));
+  mixin(AddContent!("Subtitle", "UIMEmptySubtitleControl"));
+  mixin(AddContent!("Action", "UIMEmptyActionControl"));
+  mixin(AddContent!("Image", "UIMEmptyImageControl"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     string myId = this.id.dup;
@@ -17,7 +29,7 @@ class DUIMEmptyControl : DUIMControl {
     auto myContent = this.content.dup;
 
     return [
-      H5Div(myId, myClasses, myAttributes, myContent)
+      H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join)
     ].toH5;
   }
 }
