@@ -25,7 +25,7 @@ class DUIMRibbonControl : DUIMControl {
     positions.each!(position => myClasses ~= "ribbon-"~position);
     if (color) { myClasses ~= "bg-"~color; }
     if (style) { myClasses ~= "ribbon-"~style; }
-    myClasses = myClasses.sort.uniq;
+    myClasses = myClasses.sort.array.uniq.array;
 
     return [
       H5Div(myId, myClasses, myAttributes, myContent)

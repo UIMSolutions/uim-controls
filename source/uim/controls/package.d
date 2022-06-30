@@ -64,3 +64,44 @@ public import uim.controls.tabs;
 public import uim.controls.timelines;
 public import uim.controls.toasts;
 public import uim.controls.tooltips;
+
+template AddContent(string name, string type) {
+  const char[] AddContent = `
+  O add`~name~`(this O)(string newContent){
+    this.add`~name~`(H5String(newContent));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string[] classes, string newContent){
+    this.add`~name~`(classes, H5String(newContent));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, string newContent){
+    this.add`~name~`(classes, attributes, H5String(newContent));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(DH5Obj[] newContent...){
+    this.add`~name~`(newContent);
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string[] classes, DH5Obj[] newContent...){
+    this.add`~name~`(classes, newContent);
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] newContent...){
+    this.add`~name~`(classes, attributes, newContent);
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(DH5Obj[] newContent){
+    _items ~= `~type~`.content(newContent);
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string[] classes, DH5Obj[] newContent){
+    _items ~= `~type~`.addClasses(classes).content(newContent);
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] newContent){
+    _items ~= `~type~`.addClasses(classes).addAttributes(attributes).content(newContent);
+    return cast(O)this;
+  }
+  `;
+}
