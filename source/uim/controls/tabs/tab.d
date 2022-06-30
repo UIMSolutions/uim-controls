@@ -41,3 +41,4 @@ class DUIMTabControl : DUIMControl {
   }
 }
 auto UIMTabControl() { return new DUIMTabControl; }
+auto UIMTab() { return new DUIMTabControl; }

@@ -1,11 +1,11 @@
-module uim.controls.breadcrumbs.breadcrumb;
+module uim.controls.datagrids.datagrid;
 
 @safe: 
 import uim.controls;
 
-class DUIMBreadcrumbControl : DUIMControl {
+class DUIMDatagridControl : DUIMControl {
   this() { super(); }
-  
+
   protected DUIMControl[] _items;  
   DUIMControl[] items(this O)() {
     return _items;
@@ -20,24 +20,25 @@ class DUIMBreadcrumbControl : DUIMControl {
     return cast(O)this;
   }
 
-  mixin(OProperty!("string", "style"));
-
   override void initialize() {
     super.initialize;
 
     this
-      .classes(["breadcrumb"])
-      .attributes(["aria-label":"breadcrumbs"]);
+      .classes(["datagrid"]);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    if (style) {myClasses ~= "breadcrumb-"~style; }
-    
     return results~
-      H5Ol(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);
+      H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);  
   }
 }
-auto UIMBreadcrumbControl() { return new DUIMBreadcrumbControl; }
-auto UIMBreadcrumb() { return new DUIMBreadcrumbControl; }
+auto UIMDatagridControl() { return new DUIMDatagridControl; }
+auto UIMDatagrid() { return new DUIMDatagridControl; }
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMDatagrid);
+  }
+}

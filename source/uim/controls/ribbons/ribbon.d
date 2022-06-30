@@ -29,3 +29,4 @@ class DUIMRibbonControl : DUIMControl {
   }
 }
 auto UIMRibbonControl() { return new DUIMRibbonControl; }
+auto UIMRibbon() { return new DUIMRibbonControl; }

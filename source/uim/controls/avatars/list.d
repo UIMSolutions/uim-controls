@@ -3,7 +3,7 @@ module uim.controls.avatars.list;
 @safe: 
 import uim.controls;
 
-class DUIMAvatarListControl : DUIMControl {
+class DUIMAvatarListControl : DUIMContainerControl {
   this() { super(); }
 
   override void initialize() {
@@ -12,7 +12,6 @@ class DUIMAvatarListControl : DUIMControl {
     this.classes(["avatar-list"]);
   }
 
-  mixin(OProperty!("DUIMControl[]", "items"));
   mixin(OProperty!("bool", "stacked"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {

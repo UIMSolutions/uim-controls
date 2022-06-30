@@ -43,6 +43,7 @@ public import uim.controls.breadcrumbs;
 public import uim.controls.buttons;
 public import uim.controls.cards;
 public import uim.controls.carousels;
+public import uim.controls.datagrids;
 public import uim.controls.dividers;
 public import uim.controls.dropdowns;
 public import uim.controls.empties;

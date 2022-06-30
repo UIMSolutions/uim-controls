@@ -19,3 +19,4 @@ class DUIMTableControl : DUIMControl {
   }
 }
 auto UIMTableControl() { return new DUIMTableControl; }
+auto UIMTable() { return new DUIMTableControl; }

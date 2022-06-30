@@ -11,3 +11,4 @@ class DUIMSwitchIconControl : DUIMControl {
   }
 }
 auto UIMSwitchIconControl() { return new DUIMSwitchIconControl; }
+auto UIMSwitchIcon() { return new DUIMSwitchIconControl; }

@@ -26,4 +26,4 @@ class DUIMBreadcrumbItemControl : DUIMControl {
   }
 }
 auto UIMBreadcrumbItemControl() { return new DUIMBreadcrumbItemControl; }
-auto UIMBreadcrumbItems() { return new DUIMBreadcrumbItemControl; }
+auto UIMBreadcrumbItem() { return new DUIMBreadcrumbItemControl; }

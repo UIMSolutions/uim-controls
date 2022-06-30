@@ -33,9 +33,9 @@ class DUIMSpinnerControl : DUIMControl {
       default: break;
     }
 
-    return results~(embedded ? 
-      H5Span(myId, myClasses, myAttributes, myContent)
-      : H5Div(myId, myClasses, myAttributes, myContent));  
+    return results~
+      (embedded ? H5Span(myId, myClasses, myAttributes, myContent)
+                : H5Div(myId, myClasses, myAttributes, myContent));  
   }
 
 }
