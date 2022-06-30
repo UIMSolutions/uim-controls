@@ -39,34 +39,31 @@ class DUIMNavigationControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
-    auto bufClasses = this.classes.dup;
-    auto bufAttributes = this.attributes.dup;
-    if (printMode) { bufClasses ~= "d-print-"~printMode; }
+    if (printMode) { myClasses ~= "d-print-"~printMode; }
     if (collapseMode) {
-      if (collapseMode == "never") { bufClasses ~= "navbar-expand"; }
+      if (collapseMode == "never") { myClasses ~= "navbar-expand"; }
       else if (collapseMode == "always") { }
-      else { bufClasses ~= "navbar-expand-"~collapseMode; }
+      else { myClasses ~= "navbar-expand-"~collapseMode; }
     }
-    if (colorScheme) { bufClasses ~= "navbar-"~colorScheme; }
+    if (colorScheme) { myClasses ~= "navbar-"~colorScheme; }
 
-    DH5Obj[] bufContent;
     if (hasToggler) {
-      bufContent ~= H5Button(["navbar-toggler"], ["type":"button", "data-bs-toggle":togglerState, "data-bs-target":togglerTarget],
+      myContent ~= H5Button(["navbar-toggler"], ["type":"button", "data-bs-toggle":togglerState, "data-bs-target":togglerTarget],
               BS5NavbarTogglerIcon);
 
     }
     if (hasBrand) {
-      bufContent ~= H5H1(["navbar-brand navbar-brand-"~brandColorScheme]~brandClasses, 
+      myContent ~= H5H1(["navbar-brand navbar-brand-"~brandColorScheme]~brandClasses, 
         brandImageText ? H5A(["href":brandLink], brandImage.toString~brandText) : H5A(["href":brandLink], brandText~brandImage.toString));
     }
-    bufContent ~= content;
+    myContent ~= content;
 
-    if ("style" in bufAttributes) { bufAttributes["style"] ~= ";"~style; } else { bufAttributes["style"] = style; }
+    if ("style" in myAttributes) { myAttributes["style"] ~= ";"~style; } else { myAttributes["style"] = style; }
     return [
-      H5Header(id, bufClasses, bufAttributes)
+      H5Header(id, myClasses, myAttributes)
         .content(
           H5Div(["container-xl"], 
-            bufContent))].toH5;
+            myContent))].toH5;
   }
 }
 auto UIMNavigationControl() { return new DUIMNavigationControl; }

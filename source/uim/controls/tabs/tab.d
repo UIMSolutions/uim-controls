@@ -22,18 +22,14 @@ class DUIMTabControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    DH5Obj[] results = super.toH5(options);
-
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
+    auto results = super.toH5(options);
 
     if ((panes.length > 0) && (activePane is null)) {
       panes.each!(pane => pane.active(false));
       panes[0].active(true);
     }
 
-    return [
+    return results~
       BS5Card(myId, myClasses, myAttributes, 
         H5Ul(["nav nav-tabs"]~tabClasses~(reverse ? ["flex-row-reverse"] : null)~(alternative ? ["nav-tabs-alt"] : null), ["data-bs-toggle":"tabs", "role":"tablist"], 
           panes.map!(pane => pane.tabHeader).array
@@ -41,7 +37,7 @@ class DUIMTabControl : DUIMControl {
         H5Div(["card-body"],
           H5Div(["tab-content"],
             panes.map!(pane => !pane.isDropdown ? pane.toH5 : null).join
-        )))].toH5;
+        )));
   }
 }
 auto UIMTabControl() { return new DUIMTabControl; }

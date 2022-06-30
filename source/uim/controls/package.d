@@ -31,6 +31,7 @@ public import uim.jsonbase;
 public import uim.entitybase;
 
 public import uim.controls.control;
+public import uim.controls.container;
 public import layouts.tabler;
 
 // PACKAGES

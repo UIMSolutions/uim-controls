@@ -21,10 +21,7 @@ class DUIMSpinnerControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    auto results = super.toH5(options);
 
     if (color) { myClasses ~= "text-"~color; }
     switch (this.style) {
@@ -36,12 +33,9 @@ class DUIMSpinnerControl : DUIMControl {
       default: break;
     }
 
-    if (embedded) {
-      return [H5Span(myId, myClasses, myAttributes, myContent)].toH5;  
-    }
-    return [
-      H5Div(myId, myClasses, myAttributes, myContent)
-    ].toH5;  
+    return results~(embedded ? 
+      H5Span(myId, myClasses, myAttributes, myContent)
+      : H5Div(myId, myClasses, myAttributes, myContent));  
   }
 
 }

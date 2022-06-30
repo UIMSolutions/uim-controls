@@ -51,9 +51,7 @@ class DUIMCardControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
+    auto results = super.toH5(options);
 
     if (size) myClasses ~= ["card-"~size];
     if (stacked) myClasses ~= ["card-stacked"];
@@ -75,9 +73,8 @@ class DUIMCardControl : DUIMControl {
       imageContent.addClasses("card-img-bottom");
       myCard.addContent(imageContent);
     }
-    return [
-      myCard
-    ].toH5;
+    return results~
+      myCard;
   }
 }
 auto UIMCardControl() { return new DUIMCardControl; }

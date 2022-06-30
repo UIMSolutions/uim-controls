@@ -21,6 +21,8 @@ class DUIMMessagesControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
+    DH5Obj[] results = super.toH5(options);
+        
     if (visibility) {
       return [
         H5Div(visibility, 

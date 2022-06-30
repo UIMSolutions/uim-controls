@@ -14,10 +14,7 @@ class DUIMCarouselItemControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    DH5Obj[] results = super.toH5(options);
 
     if (active) { myClasses ~= "active"; }
     return [

@@ -14,19 +14,15 @@ class DUIMBreadcrumbItemControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    auto results = super.toH5(options);
 
     if (active) {
       myClasses ~= ["active"];
       myAttributes["aria-current"] = "page"; 
     }
 
-    return [
-      H5Li(myId, myClasses, myAttributes, myContent)  
-    ].toH5;
+    return results~
+      H5Li(myId, myClasses, myAttributes, myContent);
   }
 }
 auto UIMBreadcrumbItemControl() { return new DUIMBreadcrumbItemControl; }

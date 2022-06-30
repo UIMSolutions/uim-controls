@@ -12,21 +12,17 @@ class DUIMAvatarListControl : DUIMControl {
     this.classes(["avatar-list"]);
   }
 
-  mixin(OProperty!("DUIMAvatarControl[]", "avatars"));
+  mixin(OProperty!("DUIMControl[]", "items"));
   mixin(OProperty!("bool", "stacked"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
-    auto bufClasses = this.classes.dup;
-    if (stacked) bufClasses ~= "avatar-list-stacked"; 
+    if (stacked) myClasses ~= "avatar-list-stacked"; 
 
-    results ~= H5Div(
-      bufId, 
-      bufClasses, 
-      bufAttributes, 
-      avatars.map!(avatar => avatar.toH5(options)).array.join); 
-
-    return results;
+    return results~
+      H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);  
   }
 }
+auto UIMAvatarListControl() { return new DUIMAvatarListControl; }
+auto UIMAvatarList() { return new DUIMAvatarListControl; }

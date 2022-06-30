@@ -17,34 +17,17 @@ class DUIMControl : DH5Obj, IControl {
   override void initialize() {}
 
   // Used before toH5 
-  protected string bufId;
-  protected string[] bufClasses;
-  protected STRINGAA bufAttributes;
-  protected DH5Obj[] bufContent;
-
-  /* O  content(this O)(DH5Obj[] newContent...) {
-    this.content(newContent);
-    return cast(O)this;
-  }
-  O content(this O)(string[] newContent...) {
-    this.content(newContent);
-    return cast(O)this;
-  }
-  O content(this O)(string[] newContent) {
-    this.content(newContent.map!(c => cast(DH5Obj)H5String(c)).array);
-    return cast(O)this;
-  }
-
-  O addContent(this O)(DH5Obj[] newContent) {
-    this.content(this.content~newContent);
-    return cast(O)this;
-  } */
+  protected string myId;
+  protected string[] myClasses;
+  protected STRINGAA myAttributes;
+  protected DH5Obj[] myContent;
 
   void beforeH5(STRINGAA options = null) {
     // Copy initial settings to buffer values
-    bufId = this.id.dup;
-    bufClasses = this.classes.dup;
-    bufAttributes = this.attributes.dup;
+    myId = this.id.dup;
+    myClasses = this.classes.dup;
+    myAttributes = this.attributes.dup;
+    myContent = this.content.dup;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -58,7 +41,6 @@ class DUIMControl : DH5Obj, IControl {
   override string toString(STRINGAA options) {
     if (auto h5 = toH5(options)) {
       return h5.toString;
-    }
-    return "";
+    } return "";
   }
 }

@@ -27,10 +27,6 @@ class DUIMAlertControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
-
     if (type || "alertType" in options) { myClasses ~= "alert-"~options.get("alertType", this.type); }
     if (dismissible) { 
       myClasses ~= "alert-dismissible"; 
@@ -38,7 +34,7 @@ class DUIMAlertControl : DUIMControl {
     }
     if (important) { myClasses ~= "alert-important"; }
 
-    return [BS5Alert(id, myClasses, myAttributes, myContent)].toH5;
+    return results~BS5Alert(myId, myClasses, myAttributes, myContent);
   }
 }
 auto UIMAlertControl() { return new DUIMAlertControl; }

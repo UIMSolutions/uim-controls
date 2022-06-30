@@ -6,8 +6,9 @@ import uim.controls;
 class DUIMBadgeControl : DUIMControl {
   this() { super(); }
 
-  mixin(OProperty!("string", "bgColor"));
+  mixin(OProperty!("string", "color"));
   mixin(OProperty!("bool", "outline"));
+  
   O toggleOutline(this O)() {
     this.outline(!outline);
     return cast(O)this;
@@ -23,10 +24,12 @@ class DUIMBadgeControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
-    if (bgColor || "badgeBackgroundColor" in options) { bufClasses ~= "bg-"~options.get("badgeBackgroundColor", this.bgColor); }
+    if (color && !outline) { myClasses ~= "bg-"~this.color; }
+    if (color && outline) { myClasses ~= "text-"~this.color; }
     
-    results ~= H5Span(bufId, bufClasses, bufAttributes, content);    
-    return results;
+    return results~
+      H5Span(myId, myClasses, myAttributes, myContent);
   }
 }
 auto UIMBadgeControl() { return new DUIMBadgeControl; }
+auto UIMBadge() { return new DUIMBadgeControl; }

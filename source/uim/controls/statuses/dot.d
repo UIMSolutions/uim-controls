@@ -18,19 +18,15 @@ class DUIMStatusDotControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    auto results = super.toH5(options);
 
     if (animated) { myClasses ~= ["status-dot-animated"]; }
     if (color) { myClasses ~= ["status-"~color]; }
 
     if (tooltip) { myAttributes["title"] = tooltip; }
 
-    return [
-      BS5StatusDot(myId, myClasses, myAttributes, myContent)
-    ].toH5;
+    return results~
+      BS5StatusDot(myId, myClasses, myAttributes, myContent);
   }
 }
 auto UIMStatusDotControl() { return new DUIMStatusDotControl; }

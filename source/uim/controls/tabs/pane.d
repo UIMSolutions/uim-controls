@@ -61,17 +61,15 @@ class DUIMTabPaneControl : DUIMControl {
 
   override DH5Obj[] toH5(STRINGAA options = null) { 
       DH5Obj[] results = super.toH5(options);
-  
-      auto bufClasses = this.classes.dup;
-      auto bufAttributes = this.attributes.dup;
 
-      if (active) bufClasses ~= ["active", "show"];
+      if (active) myClasses ~= ["active", "show"];
 
-      return [H5Div(id, bufClasses, bufAttributes,
+      return results~
+        H5Div(id, myClasses, myAttributes,
         (showHeader && header ? header : null)
         ~content~
         (showFooter && footer ? footer : null)
-      )].toH5;
+      );
   }
 }
 auto UIMTabPaneControl() { return new DUIMTabPaneControl; }

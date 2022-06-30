@@ -17,19 +17,15 @@ class DUIMRibbonControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    auto results = super.toH5(options);
 
     positions.each!(position => myClasses ~= "ribbon-"~position);
     if (color) { myClasses ~= "bg-"~color; }
     if (style) { myClasses ~= "ribbon-"~style; }
     myClasses = myClasses.sort.array.uniq.array;
 
-    return [
-      H5Div(myId, myClasses, myAttributes, myContent)
-    ].toH5;
+    return results~
+      H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
 auto UIMRibbonControl() { return new DUIMRibbonControl; }

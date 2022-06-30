@@ -12,14 +12,10 @@ class DUIMTableControl : DUIMControl {
 
   // Rendering
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    auto results = super.toH5(options);
 
-    return [
-      H5Div(myId, myClasses, myAttributes, myContent)
-    ].toH5;
+    return results~
+      H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
 auto UIMTableControl() { return new DUIMTableControl; }

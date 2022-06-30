@@ -23,10 +23,7 @@ class DUIMStatusControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    auto results = super.toH5(options);
 
     if (color) { myClasses ~= ["status-"~color]; }
     if (lite) { myClasses ~= ["status-lite"]; }
@@ -41,9 +38,8 @@ class DUIMStatusControl : DUIMControl {
         default: myContent = myDot~myContent; break;
       }
     }
-    return [
-      BS5Status(myId, myClasses, myAttributes, myContent)
-    ].toH5;
+    return results~
+      BS5Status(myId, myClasses, myAttributes, myContent);
   }
 }
 auto UIMStatusControl() { return new DUIMStatusControl; }

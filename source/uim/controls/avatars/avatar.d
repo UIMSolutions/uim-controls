@@ -12,11 +12,18 @@ class DUIMAvatarControl : DUIMControl {
     this.classes(["avatar"]);
   }
 
-  mixin(OProperty!("string", "bgImage"));
-  mixin(OProperty!("string", "bgColor"));
+  mixin(OProperty!("string", "image"));
+  mixin(OProperty!("string", "icon"));
+  mixin(OProperty!("string", "text"));
+  mixin(OProperty!("string", "color"));
   mixin(OProperty!("string", "size")); // valid values are xl, lg, md, sm, xs
   mixin(OProperty!("string", "shape")); // rounded, rounded-circle, rounded-0, rounded-3, ...
-  mixin(OProperty!("string ", "status")); 
+  mixin(OProperty!("string", "status")); 
+  mixin(OProperty!("string", "statusValue")); 
+  O status(this O)(string color, string text) {
+    this.status(color).statusValue(text);
+    return cast(O)this;
+  } 
 
   O icon(this O)(string iconName, string[] iconClasses = null, STRINGAA iconAttributes = null) {
     this.content(this.content~tablerIcon(iconName, iconClasses, iconAttributes));
@@ -26,23 +33,21 @@ class DUIMAvatarControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
-    if (bgColor || "avatarBackgroundColor" in options) { bufClasses ~= "bg-"~options.get("avatarBackgroundColor", this.shape); }
-    if (shape || "avatarShape" in options) { bufClasses ~= options.get("avatarShape", this.shape); }
-    if (size || "avatarSize" in options) { bufClasses ~= "avatar-"~options.get("avatarSize", this.size); }
+    if (color) { myClasses ~= "bg-"~color; }
+    if (shape) { myClasses ~= this.shape; }
+    if (size)  { myClasses ~= "avatar-"~this.size; }
 
-    auto bufAttributes = this.attributes.dup;
-    if (bgImage || "avatarBackgroundImage" in options) {
-      bufAttributes["style"] = "background-image:url("~options.get("avatarBackgroundImage", bgImage)~")";
-      results ~= H5Span(bufId, bufClasses, bufAttributes, 
-        (status ? H5Span(["badge", "bg-"~status]) : null)~this.content);
-    } else {
-      results ~= H5Span(bufId, bufClasses, bufAttributes, (status ? H5Span(["badge", "bg-"~status]) : null)~content);
-    }
+    if (image) { myAttributes["style"] = "background-image: url("~image~")"; }
+    if (icon)  { myContent ~= H5String(tablerIcon(icon)); }
+    if (text)  { myContent ~= H5String(text); }
+    if (status)  { myContent ~= BS5Badge(["bg-"~status], statusValue); }
 
-    return results;
+    return results~
+      H5Span(myId, myClasses, myAttributes, myContent);
   }
 } 
 auto UIMAvatarControl() { return new DUIMAvatarControl; }
+auto UIMAvatar() { return new DUIMAvatarControl; }
 
 version(test_uim_controls) {
   unittest {

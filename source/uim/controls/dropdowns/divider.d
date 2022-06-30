@@ -17,14 +17,10 @@ class DUIMDropdownDividerControl : DUIMDropdownItemControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    auto results = super.toH5(options);
 
-    return [
-      BS5DropdownDivider(myId, myClasses, myAttributes, myContent)
-    ].toH5;
+    return results~
+      BS5DropdownDivider(myId, myClasses, myAttributes, myContent);
   }
 }
 auto UIMDropdownItemControl() { return new DUIMDropdownDividerControl; }

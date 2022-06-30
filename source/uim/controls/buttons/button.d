@@ -28,9 +28,8 @@ class DUIMButtonControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
+    DH5Obj[] results = super.toH5(options);
 
-    auto myClasses = this.classes.dup;
     if (color) { myClasses ~= ["btn-"~(ghost ? "ghost-" : "")~(outline ? "outline-" : "")~color]; }
     if (disabled) { myClasses ~= ["disabled"]; }
     if (size) { myClasses ~= ["btn-"~size]; }
@@ -39,7 +38,6 @@ class DUIMButtonControl : DUIMControl {
     if (square) { myClasses ~= ["btn-square"]; }
     if (icon && !text) { myClasses ~= ["btn-icon"]; }
 
-    auto myAttributes = this.attributes.dup;
     string myText = this.text.dup;
     myText = (this.icon ? tablerIcon(this.icon)~" ": "")~myText;
 
@@ -82,3 +80,9 @@ class DUIMButtonControl : DUIMControl {
   }
 }
 auto UIMButtonControl() { return new DUIMButtonControl; }
+auto UIMButton() { return new DUIMButtonControl; }
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMButtonControl);
+}}
