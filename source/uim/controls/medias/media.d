@@ -19,3 +19,4 @@ class DUIMMediaControl : DUIMControl {
   }
 }
 auto UIMMediaControl() { return new DUIMMediaControl; }
+auto UIMMedia() { return new DUIMMediaControl; }
