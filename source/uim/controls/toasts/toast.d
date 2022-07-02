@@ -18,3 +18,9 @@ class DUIMToastControl : DUIMControl {
   }
 }
 auto UIMToastControl() { return new DUIMToastControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
