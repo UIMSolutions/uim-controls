@@ -39,3 +39,9 @@ class DUIMContainerControl : DUIMControl, IContainer {
     }
   }
 }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
