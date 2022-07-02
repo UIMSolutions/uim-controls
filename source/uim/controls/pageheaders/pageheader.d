@@ -18,3 +18,10 @@ class DUIMPageHeaderControl : DUIMControl {
   }
 }
 auto UIMPageHeaderControl() { return new DUIMPageHeaderControl; }
+auto UIMPageHeader() { return new DUIMPageHeaderControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
