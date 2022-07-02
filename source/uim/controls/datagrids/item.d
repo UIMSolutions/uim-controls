@@ -39,3 +39,8 @@ class DUIMDatagridItemControl : DUIMControl {
 }
 auto UIMDatagridItemControl() { return new DUIMDatagridItemControl; }
 auto UIMDatagridItem() { return new DUIMDatagridItemControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
