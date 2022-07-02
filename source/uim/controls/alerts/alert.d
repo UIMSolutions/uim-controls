@@ -39,3 +39,8 @@ class DUIMAlertControl : DUIMControl {
 }
 auto UIMAlertControl() { return new DUIMAlertControl; }
 auto UIMAlert() { return new DUIMAlertControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
