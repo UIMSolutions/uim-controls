@@ -11,3 +11,9 @@ class DUIMPlaceHolderControl : DUIMControl {
   }
 }
 auto UIMPlaceHolderControl() { return new DUIMPlaceHolderControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
