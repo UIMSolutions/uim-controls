@@ -29,3 +29,10 @@ class DUIMDropdownItemControl : DUIMControl {
   }
 }
 auto UIMDropdownItemControl() { return new DUIMDropdownItemControl; }
+auto UIMDropdownItem() { return new DUIMDropdownItemControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
