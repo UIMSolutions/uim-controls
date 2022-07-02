@@ -1,4 +1,4 @@
-module uim.controls.empties.action;
+Zmodule uim.controls.empties.action;
 
 @safe: 
 import uim.controls;
@@ -21,6 +21,7 @@ class DUIMEmptyActionControl : DUIMEmptyItemControl {
   }
 }
 auto UIMEmptyActionControl() { return new DUIMEmptyActionControl; }
+auto UIMEmptyAction() { return new DUIMEmptyActionControl; }
 
 version(test_uim_controls) {
   unittest {
