@@ -27,3 +27,8 @@ class DUIMBreadcrumbItemControl : DUIMControl {
 }
 auto UIMBreadcrumbItemControl() { return new DUIMBreadcrumbItemControl; }
 auto UIMBreadcrumbItem() { return new DUIMBreadcrumbItemControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
