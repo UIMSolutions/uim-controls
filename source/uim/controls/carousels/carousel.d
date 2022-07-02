@@ -77,3 +77,8 @@ class DUIMCarouselControl : DUIMControl {
 }
 auto UIMCarouselControl() { return new DUIMCarouselControl; }
 auto UIMCarousel() { return new DUIMCarouselControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
