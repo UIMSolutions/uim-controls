@@ -24,3 +24,8 @@ class DUIMCarouselItemControl : DUIMControl {
 }
 auto UIMCarouselItemControl() { return new DUIMCarouselItemControl; }
 auto UIMCarouselItem() { return new DUIMCarouselItemControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
