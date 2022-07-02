@@ -11,3 +11,8 @@ class DUIMDividerControl : DUIMControl {
   }
 }
 auto UIMDividerControl() { return new DUIMDividerControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
