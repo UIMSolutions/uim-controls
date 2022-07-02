@@ -42,3 +42,4 @@ class DUIMModalControl : DUIMControl {
   }
 }
 auto UIMModalControl() { return new DUIMModalControl; }
+auto UIMModal() { return new DUIMModalControl; }
