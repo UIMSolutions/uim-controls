@@ -21,3 +21,8 @@ class DUIMEmptyActionControl : DUIMEmptyItemControl {
   }
 }
 auto UIMEmptyActionControl() { return new DUIMEmptyActionControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
