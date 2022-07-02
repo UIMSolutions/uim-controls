@@ -38,3 +38,8 @@ class DUIMBadgeControl : DUIMControl {
 }
 auto UIMBadgeControl() { return new DUIMBadgeControl; }
 auto UIMBadge() { return new DUIMBadgeControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
