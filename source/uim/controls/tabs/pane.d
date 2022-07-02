@@ -73,3 +73,4 @@ class DUIMTabPaneControl : DUIMControl {
   }
 }
 auto UIMTabPaneControl() { return new DUIMTabPaneControl; }
+auto UIMTabPane() { return new DUIMTabPaneControl; }
