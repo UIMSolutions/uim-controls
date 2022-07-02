@@ -6,6 +6,8 @@ import uim.controls;
 class DUIMTableRowControl : DUIMControl {
   this() { super(); }
 
+  mixin(OProperty!("DUIMControl[]", "cells"));
+
   override void initialize() {
     super.initialize;
   }
@@ -15,7 +17,13 @@ class DUIMTableRowControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+      H5Thead(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMTableRowControl() { return new DUIMTableRowControl; }
+auto UIMTableRowControl() { return new DUIMTableRowControl; } 
+auto UIMTableRow() { return new DUIMTableRowControl; } 
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
