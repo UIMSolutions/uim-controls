@@ -12,3 +12,9 @@ class DUIMSwitchIconControl : DUIMControl {
 }
 auto UIMSwitchIconControl() { return new DUIMSwitchIconControl; }
 auto UIMSwitchIcon() { return new DUIMSwitchIconControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
