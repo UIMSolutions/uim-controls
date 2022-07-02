@@ -18,4 +18,10 @@ class DUIMTimelineControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMTimelineControl() { return new DUIMTimelineControl; }
+auto UIMTimelineControl() { return new DUIMTimelineControl; } 
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
