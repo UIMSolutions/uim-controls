@@ -107,3 +107,15 @@ template AddContent(string name, string type) {
   }
   `;
 }
+
+template ControlThis() {
+  const char[] ControlThis = ``;
+}
+
+template ControlCalls(string callName, string className) {
+  const char[] ControlCalls = `
+auto `~callName~`() { return new `~className~`(); }
+auto `~callName~`(string id) { return `~callName~`().; }
+
+`;
+}
