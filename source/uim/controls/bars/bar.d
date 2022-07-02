@@ -23,3 +23,8 @@ class DUIMBarControl : DUIMControl {
   }
 }
 auto UIMBarControl() { return new DUIMBarControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
