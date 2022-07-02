@@ -30,3 +30,8 @@ class DUIMEmptyControl : DUIMControl {
   }
 }
 auto UIMEmptyControl() { return new DUIMEmptyControl; }
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
