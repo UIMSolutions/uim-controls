@@ -40,3 +40,9 @@ class DUIMSpinnerControl : DUIMControl {
 
 }
 auto UIMSpinnerControl() { return new DUIMSpinnerControl; }
+auto UIMSpinner() { return new DUIMSpinnerControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
