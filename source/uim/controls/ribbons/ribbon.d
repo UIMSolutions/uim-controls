@@ -30,3 +30,9 @@ class DUIMRibbonControl : DUIMControl {
 }
 auto UIMRibbonControl() { return new DUIMRibbonControl; }
 auto UIMRibbon() { return new DUIMRibbonControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
