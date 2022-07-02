@@ -44,3 +44,9 @@ class DUIMControl : DH5Obj, IControl {
     } return "";
   }
 }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO 
+  }
+}
