@@ -25,3 +25,8 @@ class DUIMAvatarListControl : DUIMContainerControl {
 }
 auto UIMAvatarListControl() { return new DUIMAvatarListControl; }
 auto UIMAvatarList() { return new DUIMAvatarListControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
