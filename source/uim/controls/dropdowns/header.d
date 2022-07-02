@@ -3,7 +3,7 @@ module uim.controls.dropdowns.header;
 @safe: 
 import uim.controls;
 
-class DUIMDropdownDividerControl : DUIMDropdownItemControl {
+class DUIMDropdownHeaderControl : DUIMDropdownItemControl {
   this() { super(); }
 
   override void initialize() {
@@ -26,4 +26,10 @@ class DUIMDropdownDividerControl : DUIMDropdownItemControl {
     ].toH5;
   }
 }
-auto UIMDropdownItemControl() { return new DUIMDropdownDividerControl; }
+auto UIMDropdownHeaderControl() { return new DUIMDropdownHeaderControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
