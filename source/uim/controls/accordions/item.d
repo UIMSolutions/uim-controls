@@ -33,3 +33,8 @@ class DUIMAccordionItemControl : DUIMControl {
 }
 auto UIMAccordionItemControl() { return new DUIMAccordionItemControl; }
 auto UIMAccordionItem() { return new DUIMAccordionItemControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
