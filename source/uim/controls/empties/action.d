@@ -1,4 +1,4 @@
-Zmodule uim.controls.empties.action;
+module uim.controls.empties.action;
 
 @safe: 
 import uim.controls;
