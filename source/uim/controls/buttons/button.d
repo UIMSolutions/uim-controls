@@ -84,5 +84,5 @@ auto UIMButton() { return new DUIMButtonControl; }
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMButtonControl);
-}}
+  }
+}
