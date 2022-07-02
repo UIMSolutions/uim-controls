@@ -15,3 +15,8 @@ class DUIMAlertLinkControl : DUIMControl {
   }
 }
 auto UIMAlertLinkControl() { return new DUIMAlertLinkControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
