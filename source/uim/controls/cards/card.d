@@ -79,3 +79,8 @@ class DUIMCardControl : DUIMControl {
 }
 auto UIMCardControl() { return new DUIMCardControl; }
 // auto UIMCard() { return new DUIMCardControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
