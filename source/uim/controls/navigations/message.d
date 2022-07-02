@@ -57,3 +57,9 @@ class DUIMMessagesControl : DUIMControl {
   }
 }
 auto UIMMessagesControl() { return new DUIMMessagesControl; }
+auto UIMMessages() { return new DUIMMessagesControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
