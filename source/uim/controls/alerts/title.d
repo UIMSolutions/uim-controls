@@ -12,3 +12,9 @@ class DUIMAlertTitleControl : DUIMControl {
   }
 }
 auto UIMAlertTitleControl() { return new DUIMAlertTitleControl; }
+auto UIMAlertTitle() { return new DUIMAlertTitleControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
