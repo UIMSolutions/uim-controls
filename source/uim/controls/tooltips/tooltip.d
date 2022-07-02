@@ -19,3 +19,9 @@ class DUIMTooltipControl : DUIMControl {
   }
 }
 auto UIMTooltipControl() { return new DUIMTooltipControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
