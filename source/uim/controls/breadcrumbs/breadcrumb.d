@@ -41,3 +41,8 @@ class DUIMBreadcrumbControl : DUIMControl {
 }
 auto UIMBreadcrumbControl() { return new DUIMBreadcrumbControl; }
 auto UIMBreadcrumb() { return new DUIMBreadcrumbControl; }
+
+version(test_uim_controls) {
+  unittest {
+  }
+}
