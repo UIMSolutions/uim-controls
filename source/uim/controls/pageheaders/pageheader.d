@@ -4,7 +4,7 @@ module uim.controls.pageheaders.pageheader;
 import uim.controls;
 
 class DUIMPageHeaderControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMPageHeaderControl"));
 
   override void initialize() {
     super.initialize;
