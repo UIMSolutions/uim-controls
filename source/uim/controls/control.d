@@ -21,6 +21,7 @@ class DUIMControl : DH5Obj, IControl {
   protected string[] myClasses;
   protected STRINGAA myAttributes;
   protected DH5Obj[] myContent;
+  protected DH5Obj myResult;
 
   void beforeH5(STRINGAA options = null) {
     // Copy initial settings to buffer values
