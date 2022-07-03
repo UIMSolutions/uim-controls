@@ -119,5 +119,7 @@ template ControlCalls(string callName, string className) {
 auto `~callName~`() { return new `~className~`(); }
 auto `~callName~`(string anId) { return `~callName~`().id(anId); }
 auto `~callName~`(string[] newClasses) { return `~callName~`().addClasses(newClasses); }
+auto `~callName~`(string[string] newAttributes) { return `~callName~`().addAttributes(newAttributes); }
+
 `;
 }
