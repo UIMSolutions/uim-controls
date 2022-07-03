@@ -1,4 +1,4 @@
-module uim.controls.statuses.status;
+Imodule uim.controls.statuses.status;
 
 @safe: 
 import uim.controls;
@@ -43,3 +43,10 @@ class DUIMStatusControl : DUIMControl {
   }
 }
 auto UIMStatusControl() { return new DUIMStatusControl; }
+auto UIMStatus() { return new DUIMStatusControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
