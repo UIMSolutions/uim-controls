@@ -115,7 +115,7 @@ template ControlThis() {
 template ControlCalls(string callName, string className) {
   const char[] ControlCalls = `
 auto `~callName~`() { return new `~className~`(); }
-auto `~callName~`(string id) { return `~callName~`().; }
+auto `~callName~`(string anId) { return `~callName~`().id(anId); }
 
 `;
 }
