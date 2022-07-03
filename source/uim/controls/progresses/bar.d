@@ -53,6 +53,7 @@ auto UIMProgressBar() { return new DUIMProgressBarControl; }
 
 version(test_uim_controls) {
   unittest {
-    // TODO 
+    auto control = UIMProgressBar;
+    assert(control.classes == ["progress-bar"]);
   }
 }
