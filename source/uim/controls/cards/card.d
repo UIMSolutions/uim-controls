@@ -1,9 +1,14 @@
 module uim.controls.cards.card;
 
+/*
+Cards provide a flexible and extensible 
+content container with multiple variants and 
+options.
+*/
 @safe: 
 import uim.controls;
 
-class DUIMCardControl : DUIMControl {
+class DUIMCardControl : DUIMContainerControl {
   this() { super(); }
 
   mixin(OProperty!("string", "size"));
@@ -47,6 +52,21 @@ class DUIMCardControl : DUIMControl {
       .statusColor(newColor)
       .statusPosition(newPosition);
 
+    return cast(O)this;
+  }
+
+  O addHeader(this O)(DH5Obj newItem) {
+    // TODO
+    return cast(O)this;
+  }
+
+  O addBody(this O)(DH5Obj newItem) {
+    // TODO
+    return cast(O)this;
+  }
+
+  O addFooter(this O)(DH5Obj newItem) {
+    // TODO
     return cast(O)this;
   }
 
