@@ -18,3 +18,10 @@ class DUIMRangeSliderControl : DUIMControl {
   }
 }
 auto UIMRangeSliderControl() { return new DUIMRangeSliderControl; }
+auto UIMRangeSlider() { return new DUIMRangeSliderControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO 
+  }
+}
