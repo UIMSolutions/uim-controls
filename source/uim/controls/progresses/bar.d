@@ -43,3 +43,9 @@ class DUIMProgressBarControl : DUIMControl {
 }
 auto UIMProgressBarControl() { return new DUIMProgressBarControl; }
 auto UIMProgressBar() { return new DUIMProgressBarControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO 
+  }
+}
