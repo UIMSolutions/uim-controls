@@ -109,7 +109,9 @@ template AddContent(string name, string type) {
 }
 
 template ControlThis() {
-  const char[] ControlThis = ``;
+  const char[] ControlThis = `
+    this() { super; }
+`;
 }
 
 template ControlCalls(string callName, string className) {
