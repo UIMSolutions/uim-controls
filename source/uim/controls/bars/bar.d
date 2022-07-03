@@ -8,7 +8,10 @@ class DUIMBarControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+  }
 
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -23,8 +26,10 @@ class DUIMBarControl : DUIMControl {
   }
 }
 auto UIMBarControl() { return new DUIMBarControl; }
+auto UIMBar() { return UIMBarControl; }
 
 version(test_uim_controls) {
   unittest {
+    // TODO
   }
 }
