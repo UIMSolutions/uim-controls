@@ -118,6 +118,6 @@ template ControlCalls(string callName, string className) {
   const char[] ControlCalls = `
 auto `~callName~`() { return new `~className~`(); }
 auto `~callName~`(string anId) { return `~callName~`().id(anId); }
-
+auto `~callName~`(string[] newClasses) { return `~callName~`().addClasses(newClasses); }
 `;
 }
