@@ -4,7 +4,7 @@ module uim.controls.empties.action;
 import uim.controls;
 
 class DUIMEmptyActionControl : DUIMEmptyItemControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMEmptyActionControl"));
 
   override void initialize() {
     super.initialize;
