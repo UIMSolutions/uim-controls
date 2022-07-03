@@ -3,22 +3,8 @@ module uim.controls.accordions.accordion;
 @safe:
 import uim.controls;
 
-class DUIMAccordionControl : DUIMControl {
+class DUIMAccordionControl : DUIMContainerControl {
   this() { super(); }
-
-  protected DUIMControl[] _items;  
-  DUIMControl[] items(this O)() {
-    return _items;
-  }
-  O items(this O)(DUIMControl[] newItems) {
-    _items = newItems;
-    _items.each!(item => item.parent(this));
-    return cast(O)this;
-  }
-  O items(this O)(DUIMControl[] newItems...) { 
-    this.items(newItems); 
-    return cast(O)this;
-  }
 
   override void initialize() {
     super.initialize;
