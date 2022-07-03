@@ -9,7 +9,8 @@ class DUIMAvatarControl : DUIMControl {
   override void initialize() {
     super.initialize;
 
-    this.classes(["avatar"]);
+    this
+      .classes(["avatar"]);
   }
 
   mixin(OProperty!("string", "image"));
