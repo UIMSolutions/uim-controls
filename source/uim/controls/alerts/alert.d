@@ -4,7 +4,7 @@ module uim.controls.alerts.alert;
 import uim.controls;
 
 class DUIMAlertControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMAlertControl"));
 
   override void initialize() {
     super.initialize;
