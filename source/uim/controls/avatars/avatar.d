@@ -52,5 +52,6 @@ auto UIMAvatar() { return new DUIMAvatarControl; }
 
 version(test_uim_controls) {
   unittest {
+    // TODO
   }
 }
