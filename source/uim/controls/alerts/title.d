@@ -4,11 +4,10 @@ module uim.controls.alerts.title;
 import uim.controls;
 
 class DUIMAlertTitleControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMAlertTitleControl"));
 
   override void initialize() {
     super.initialize;
-
   }
 }
 auto UIMAlertTitleControl() { return new DUIMAlertTitleControl; }
