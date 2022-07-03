@@ -17,6 +17,10 @@ class DUIMDropdownItemControl : DUIMControl {
       .classes(["carousel-item"]); */
   }
 
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
     string myId = this.id.dup;
     auto myClasses = this.classes.dup;
