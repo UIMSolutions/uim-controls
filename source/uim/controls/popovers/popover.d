@@ -11,6 +11,7 @@ class DUIMPopoverControl : DUIMControl {
   }
 }
 auto UIMPopoverControl() { return new DUIMPopoverControl; }
+auto UIMPopover() { return new DUIMPopoverControl; }
 
 version(test_uim_controls) {
   unittest {
