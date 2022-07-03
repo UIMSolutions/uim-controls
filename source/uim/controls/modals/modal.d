@@ -4,7 +4,7 @@ module uim.controls.modals.modal;
 import uim.controls;
 
 class DUIMModalControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMModalControl"));
 
   mixin(OProperty!("string", "size"));
   mixin(OProperty!("bool", "fade"));
