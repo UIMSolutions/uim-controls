@@ -4,7 +4,7 @@ module uim.controls.empties.image;
 import uim.controls;
 
 class DUIMEmptyImageControl : DUIMEmptyItemControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMEmptyImageControl"));
 
   override void initialize() {
     super.initialize;
@@ -22,3 +22,4 @@ class DUIMEmptyImageControl : DUIMEmptyItemControl {
   }
 }
 auto UIMEmptyImageControl() { return new DUIMEmptyImageControl; }
+auto UIMEmptyImage() { return new DUIMEmptyImageControl; }
