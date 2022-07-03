@@ -4,7 +4,7 @@ module uim.controls.empties.empty;
 import uim.controls;
 
 class DUIMEmptyControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMEmptyControl"));
 
   mixin(OProperty!("DUIMControl[]", "items"));
 
