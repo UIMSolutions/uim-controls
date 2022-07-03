@@ -4,7 +4,7 @@ module uim.controls.alerts.link;
 import uim.controls;
 
 class DUIMAlertLinkControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMAlertLinkControl"));
 
   override void initialize() {
     super.initialize;
@@ -19,5 +19,6 @@ auto UIMAlertLink() { return new DUIMAlertLinkControl; }
 
 version(test_uim_controls) {
   unittest {
+    // TODO
   }
 }
