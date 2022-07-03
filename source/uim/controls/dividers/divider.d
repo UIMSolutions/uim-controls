@@ -9,10 +9,16 @@ class DUIMDividerControl : DUIMControl {
   override void initialize() {
     super.initialize;
   }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+  }
 }
 auto UIMDividerControl() { return new DUIMDividerControl; }
+auto UIMDivider() { return new DUIMDividerControl; }
 
 version(test_uim_controls) {
   unittest {
+    // TODO
   }
 }
