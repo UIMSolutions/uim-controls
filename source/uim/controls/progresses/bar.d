@@ -4,7 +4,7 @@ module uim.controls.progresses.bar;
 import uim.controls;
 
 class DUIMProgressBarControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMProgressBarControl"));
 
   mixin(OProperty!("bool", "indeterminate"));
   mixin(OProperty!("bool", "hideLabel"));
@@ -21,6 +21,13 @@ class DUIMProgressBarControl : DUIMControl {
     this
       .classes(["progress-bar"])
       .attributes(["role":"progressbar"]);
+  }
+
+  O value(this O)(string current, string min, string max) {
+    this
+      .valueNow(current)
+      .valueMin(min)
+      .valueMax(max);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
