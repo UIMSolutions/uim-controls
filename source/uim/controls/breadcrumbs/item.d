@@ -4,7 +4,7 @@ module uim.controls.breadcrumbs.item;
 import uim.controls;
 
 class DUIMBreadcrumbItemControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMBreadcrumbItemControl"));
 
   override void initialize() {
     super.initialize;
