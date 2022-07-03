@@ -18,3 +18,6 @@ class DUIMStepControl : DUIMControl {
   }
 }
 auto UIMStepControl() { return new DUIMStepControl; }
+auto UIMStep() { return new DUIMStepControl; }
+
+
