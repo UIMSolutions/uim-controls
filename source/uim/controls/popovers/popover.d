@@ -4,7 +4,7 @@ module uim.controls.popovers.popover;
 import uim.controls;
 
 class DUIMPopoverControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMPopoverControl"));
 
   override void initialize() {
     super.initialize;
