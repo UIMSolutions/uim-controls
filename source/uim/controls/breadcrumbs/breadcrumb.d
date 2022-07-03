@@ -3,22 +3,8 @@ module uim.controls.breadcrumbs.breadcrumb;
 @safe: 
 import uim.controls;
 
-class DUIMBreadcrumbControl : DUIMControl {
-  this() { super(); }
-  
-  protected DUIMControl[] _items;  
-  DUIMControl[] items(this O)() {
-    return _items;
-  }
-  O items(this O)(DUIMControl[] newItems) {
-    _items = newItems;
-    _items.each!(item => item.parent(this));
-    return cast(O)this;
-  }
-  O items(this O)(DUIMControl[] newItems...) { 
-    this.items(newItems); 
-    return cast(O)this;
-  }
+class DUIMBreadcrumbControl : DUIMContainerControl {
+  mixin(ControlThis!("UIMBreadcrumbControl"));
 
   mixin(OProperty!("string", "style"));
 
