@@ -4,7 +4,7 @@ module uim.controls.buttons.button;
 import uim.controls;
 
 class DUIMButtonControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMButtonControl"));
 
   mixin(OProperty!("string", "color"));
   mixin(OProperty!("bool", "ghost"));
@@ -88,5 +88,6 @@ auto UIMButton() { return new DUIMButtonControl; }
 
 version(test_uim_controls) {
   unittest {
+    // TODO
   }
 }
