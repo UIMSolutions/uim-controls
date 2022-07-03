@@ -25,3 +25,9 @@ class DUIMProgressControl : DUIMControl {
 }
 auto UIMProgressControl() { return new DUIMProgressControl; }
 auto UIMProgress() { return new DUIMProgressControl; }
+
+version(test_uim_controls) {
+  unittest {
+    // TODO 
+  }
+}
