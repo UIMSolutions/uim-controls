@@ -4,7 +4,7 @@ module uim.controls.switchicons.switchicon;
 import uim.controls;
 
 class DUIMSwitchIconControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMSwitchIconControl"));
 
   override void initialize() {
     super.initialize;
