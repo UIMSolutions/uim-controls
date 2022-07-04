@@ -4,7 +4,7 @@ module uim.controls.avatars.list;
 import uim.controls;
 
 class DUIMAvatarListControl : DUIMContainerControl {
-  mixin(ControlThis!("UIMAvatarListControl");
+  mixin(ControlThis!("UIMAvatarListControl"));
 
   override void initialize() {
     super.initialize;

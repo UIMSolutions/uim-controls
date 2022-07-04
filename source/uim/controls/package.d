@@ -114,7 +114,7 @@ template AddContent(string name, string type) {
 
 template ControlThis(string name) {
   const char[] ControlThis = `
-    this() { super; }
+    this() { super(); }
 `;
 }
 
