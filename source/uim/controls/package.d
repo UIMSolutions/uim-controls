@@ -67,6 +67,8 @@ public import uim.controls.timelines;
 public import uim.controls.toasts;
 public import uim.controls.tooltips;
 
+public import uim.controls.tests;
+
 template AddContent(string name, string type) {
   const char[] AddContent = `
   O add`~name~`(this O)(string newContent){
