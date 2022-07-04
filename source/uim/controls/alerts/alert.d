@@ -42,6 +42,6 @@ mixin(ControlCalls!("UIMAlert", "DUIMAlertControl"));
 
 version(test_uim_controls) {
   unittest {
-    auto control = UIMAllert;
+    auto control = UIMAlert;
   }
 }
