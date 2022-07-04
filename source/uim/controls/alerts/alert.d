@@ -37,10 +37,11 @@ class DUIMAlertControl : DUIMControl {
     return results~BS5Alert(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMAlertControl() { return new DUIMAlertControl; }
-auto UIMAlert() { return new DUIMAlertControl; }
+mixin(ControlCalls!("UIMAlertControl", "DUIMAlertControl"));
+mixin(ControlCalls!("UIMAlert", "DUIMAlertControl"));
 
 version(test_uim_controls) {
   unittest {
+    auto control = UIMAllert;
   }
 }
