@@ -4,7 +4,7 @@ module uim.controls.dividers.divider;
 import uim.controls;
 
 class DUIMDividerControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDividerControl"));
 
   override void initialize() {
     super.initialize;

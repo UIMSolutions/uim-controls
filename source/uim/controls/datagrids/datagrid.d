@@ -4,7 +4,7 @@ module uim.controls.datagrids.datagrid;
 import uim.controls;
 
 class DUIMDatagridControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDatagridControl"));
 
   protected DUIMControl[] _items;  
   DUIMControl[] items(this O)() {

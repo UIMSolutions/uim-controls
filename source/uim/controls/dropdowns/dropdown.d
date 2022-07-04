@@ -4,7 +4,7 @@ module uim.controls.dropdowns.dropdown;
 import uim.controls;
 
 class DUIMDropdownControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDropdownControl"));
 
   protected DUIMControl[] _items;  
   DUIMControl[] items(this O)() {

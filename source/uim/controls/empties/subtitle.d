@@ -4,7 +4,7 @@ module uim.controls.empties.subtitle;
 import uim.controls;
 
 class DUIMEmptySubtitleControl : DUIMEmptyItemControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMEmptySubtitleControl"));
 
   override void initialize() {
     super.initialize;
@@ -20,4 +20,4 @@ class DUIMEmptySubtitleControl : DUIMEmptyItemControl {
       H5P(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMEmptySubtitleControl() { return new DUIMEmptySubtitleControl; }
+mixin(ControlCalls!("UIMEmptySubtitleControl", "DUIMEmptySubtitleControl"));

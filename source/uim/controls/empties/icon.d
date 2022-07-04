@@ -4,7 +4,7 @@ module uim.controls.empties.icon;
 import uim.controls;
 
 class DUIMEmptyIconControl : DUIMEmptyItemControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMEmptyIconControl"));
 
   override void initialize() {
     super.initialize;
@@ -20,4 +20,5 @@ class DUIMEmptyIconControl : DUIMEmptyItemControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMEmptyIconControl() { return new DUIMEmptyIconControl; }
+mixin(ControlCalls!("UIMEmptyIconControl", "DUIMEmptyIconControl"));
+mixin(ControlCalls!("UIMEmptyIcon", "DUIMEmptyIconControl"));

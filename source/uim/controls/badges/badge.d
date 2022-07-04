@@ -4,7 +4,7 @@ module uim.controls.badges.badge;
 import uim.controls;
 
 class DUIMBadgeControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMBadgeControl"));
 
   mixin(OProperty!("string", "color"));
   mixin(OProperty!("string", "link"));
@@ -40,11 +40,12 @@ class DUIMBadgeControl : DUIMControl {
              : H5Span(myId, myClasses, myAttributes, myContent));
   }
 }
-auto UIMBadgeControl() { return new DUIMBadgeControl; }
-auto UIMBadge() { return new DUIMBadgeControl; }
+mixin(ControlCalls!("UIMBadgeControl", "DUIMBadgeControl"));
+mixin(ControlCalls!("UIMBadge", "DUIMBadgeControl"));
 
 version(test_uim_controls) {
   unittest {
+    auto control = UIMBadge;
    // TODO
   }
 }

@@ -4,7 +4,7 @@ module uim.controls.empties.header;
 import uim.controls;
 
 class DUIMEmptyHeaderControl : DUIMEmptyItemControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMEmptyHeaderControl"));
 
   override void initialize() {
     super.initialize;
@@ -20,4 +20,5 @@ class DUIMEmptyHeaderControl : DUIMEmptyItemControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMEmptyHeaderControl() { return new DUIMEmptyHeaderControl; }
+mixin(ControlCalls!("UIMEmptyHeaderControl", "DUIMEmptyHeaderControl"));
+mixin(ControlCalls!("UIMEmptyHeader", "DUIMEmptyHeaderControl"));

@@ -17,8 +17,8 @@ class DUIMPageHeaderControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMPageHeaderControl() { return new DUIMPageHeaderControl; }
-auto UIMPageHeader() { return new DUIMPageHeaderControl; }
+mixin(ControlCalls!("UIMPageHeaderControl", "DUIMPageHeaderControl"));
+mixin(ControlCalls!("UIMPageHeader", "DUIMPageHeaderControl"));
 
 version(test_uim_controls) {
   unittest {

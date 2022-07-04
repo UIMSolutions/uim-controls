@@ -4,8 +4,8 @@ module uim.controls.bars.bar;
 import uim.controls;
 
 class DUIMBarControl : DUIMControl {
-  this() { super(); }
-
+  mixin(ControlThis!("UIMBarControl"));
+  
   override void initialize() {
     super.initialize;
   }

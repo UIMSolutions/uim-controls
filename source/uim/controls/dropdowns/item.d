@@ -4,7 +4,7 @@ module uim.controls.dropdowns.item;
 import uim.controls;
 
 class DUIMDropdownItemControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDropdownItemControl"));
 
   mixin(OProperty!("bool", "isDivider"));
   mixin(OProperty!("bool", "isHeader"));
@@ -12,9 +12,6 @@ class DUIMDropdownItemControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
-/* 
-    this
-      .classes(["carousel-item"]); */
   }
 
   override void beforeH5(STRINGAA options = null) {

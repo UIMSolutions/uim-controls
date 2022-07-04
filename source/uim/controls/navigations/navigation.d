@@ -4,7 +4,7 @@ module uim.controls.navigations.navigation;
 import uim.controls;
 
 class DUIMNavigationControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMNavigationControl"));
 
   mixin(OProperty!("string", "printMode"));
   mixin(OProperty!("string", "collapseMode"));
@@ -66,4 +66,10 @@ class DUIMNavigationControl : DUIMControl {
             myContent))].toH5;
   }
 }
-auto UIMNavigationControl() { return new DUIMNavigationControl; }
+mixin(ControlCalls!("UIMNavigationControl", "DUIMNavigationControl"));
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}

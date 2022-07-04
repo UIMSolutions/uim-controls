@@ -4,7 +4,7 @@ module uim.controls.buttons.list;
 import uim.controls;
 
 class DUIMButtonListControl : DUIMContainerControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMButtonListControl"));
 
   override void initialize() {
     super.initialize;
@@ -24,10 +24,13 @@ class DUIMButtonListControl : DUIMContainerControl {
       H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);  
   }
 }
-auto UIMButtonListControl() { return new DUIMButtonListControl; }
-auto UIMButtonList() { return new DUIMButtonListControl; }
+mixin(ControlCalls!("UIMButtonListControl", "DUIMButtonListControl"));
+mixin(ControlCalls!("UIMButtonList", "DUIMButtonListControl"));
 
 version(test_uim_controls) {
   unittest {
     assert(UIMButtonList);
-}}
+
+    auto control = UIMButtonList;
+  }
+}

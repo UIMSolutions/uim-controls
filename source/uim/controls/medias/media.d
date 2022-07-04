@@ -4,11 +4,10 @@ module uim.controls.medias.media;
 import uim.controls;
 
 class DUIMMediaControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMMediaControl")); 
 
   override void initialize() {
     super.initialize;
-
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -18,5 +17,11 @@ class DUIMMediaControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMMediaControl() { return new DUIMMediaControl; }
-auto UIMMedia() { return new DUIMMediaControl; }
+mixin(ControlCalls!("UIMMediaControl", "DUIMMediaControl"));
+mixin(ControlCalls!("UIMMedia", "DUIMMediaControl"));
+
+version(test_uim_controls) {
+  unittest {
+    // TODO
+  }
+}
