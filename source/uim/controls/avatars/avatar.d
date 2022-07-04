@@ -41,17 +41,18 @@ class DUIMAvatarControl : DUIMControl {
     if (image) { myAttributes["style"] = "background-image: url("~image~")"; }
     if (icon)  { myContent ~= H5String(tablerIcon(icon)); }
     if (text)  { myContent ~= H5String(text); }
-    if (status)  { myContent ~= BS5Badge(["bg-"~status], statusValue); }
+    if (status){ myContent ~= BS5Badge(["bg-"~status], statusValue); }
 
     return results~
       H5Span(myId, myClasses, myAttributes, myContent);
   }
 } 
-auto UIMAvatarControl() { return new DUIMAvatarControl; }
-auto UIMAvatar() { return new DUIMAvatarControl; }
+mixin(ControlCalls!("UIMAvatarControl", "DUIMAvatarControl"));
+mixin(ControlCalls!("UIMAvatar", "DUIMAvatarControl"));
 
 version(test_uim_controls) {
   unittest {
+    auto control = UIMAvatar;
     // TODO
   }
 }
