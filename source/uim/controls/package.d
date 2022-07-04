@@ -30,9 +30,11 @@ public import uim.entities;
 public import uim.jsonbase;
 public import uim.entitybase;
 
+public import layouts.tabler;
+
+// Packages for main classes
 public import uim.controls.control;
 public import uim.controls.container;
-public import layouts.tabler;
 
 // PACKAGES
 public import uim.controls.accordions;
@@ -123,5 +125,10 @@ auto `~callName~`(string anId) { return `~callName~`().id(anId); }
 auto `~callName~`(string[] newClasses) { return `~callName~`().addClasses(newClasses); }
 auto `~callName~`(string[string] newAttributes) { return `~callName~`().addAttributes(newAttributes); }
 
+auto `~callName~`(string anId, string[] newClasses) { return `~callName~`(anId).addClasses(newClasses); }
+auto `~callName~`(string anId, string[string] newAttributes) { return `~callName~`(anId).addAttributes(newAttributes); }
+auto `~callName~`(string anId, string[] newClasses, string[string] newAttributes) { return `~callName~`(anId, newClasses).addAttributes(newAttributes); }
+
+auto `~callName~`(string[] newClasses, string[string] newAttributes) { return `~callName~`().addClasses(newClasses).addAttributes(newAttributes); }
 `;
 }
