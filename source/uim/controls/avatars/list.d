@@ -4,7 +4,7 @@ module uim.controls.avatars.list;
 import uim.controls;
 
 class DUIMAvatarListControl : DUIMContainerControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMAvatarListControl");
 
   override void initialize() {
     super.initialize;
@@ -23,10 +23,11 @@ class DUIMAvatarListControl : DUIMContainerControl {
       H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);  
   }
 }
-auto UIMAvatarListControl() { return new DUIMAvatarListControl; }
-auto UIMAvatarList() { return new DUIMAvatarListControl; }
+mixin(ControlCalls!("UIMAvatarListControl", "DUIMAvatarListControl"));
+mixin(ControlCalls!("UIMAvatarList", "DUIMAvatarListControl"));
 
 version(test_uim_controls) {
   unittest {
+    auto control = UIMAvatarList;
   }
 }
