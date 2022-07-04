@@ -4,7 +4,7 @@ module uim.controls.accordions.accordion;
 import uim.controls;
 
 class DUIMAccordionControl : DUIMContainerControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMAccordionControl"));
 
   override void initialize() {
     super.initialize;
@@ -20,10 +20,11 @@ class DUIMAccordionControl : DUIMContainerControl {
     return results~H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);
   }
 }
-auto UIMAccordionControl() { return new DUIMAccordionControl; }
-auto UIMAccordion() { return new DUIMAccordionControl; }
+mixin(ControlCalls!("UIMAccordionControl", "DUIMAccordionControl"));
+mixin(ControlCalls!("UIMAccordion", "DUIMAccordionControl"));
 
 version(test_uim_controls) {
   unittest {
+    auto contreol = UIMAccordion;
   }
 }
