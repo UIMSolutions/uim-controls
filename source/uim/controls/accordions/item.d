@@ -4,7 +4,7 @@ module uim.controls.accordions.item;
 import uim.controls;
 
 class DUIMAccordionItemControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMAccordionItemControl"));
 
   mixin(OProperty!("string", "parentId"));
   mixin(OProperty!("string", "titel"));
@@ -35,11 +35,12 @@ class DUIMAccordionItemControl : DUIMControl {
       );
   }
 }
-auto UIMAccordionItemControl() { return new DUIMAccordionItemControl; }
-auto UIMAccordionItem() { return new DUIMAccordionItemControl; }
+mixin(ControlCalls!("UIMAccordionItemControl", "DUIMAccordionItemControl"));
+mixin(ControlCalls!("UIMAccordionItem", "DUIMAccordionItemControl"));
 
 version(test_uim_controls) {
   unittest {
-    // TODo
+    auto control = UIMAccordionItem;
+    // TODO
   }
 }
