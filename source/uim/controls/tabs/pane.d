@@ -23,6 +23,9 @@ class DUIMTabPaneControl : DUIMControl {
   mixin(OProperty!("bool", "showFooter"));
   mixin(OProperty!("DH5Obj[]", "footer"));
 
+  mixin(OProperty!("string", "border"));
+  mixin(OProperty!("string", "borderColor"));
+
   override void initialize() {
     super.initialize;
 
@@ -63,6 +66,8 @@ class DUIMTabPaneControl : DUIMControl {
       DH5Obj[] results = super.toH5(options);
 
       if (active) myClasses ~= ["active", "show"];
+      if (border) myClasses ~= ["border-"~border];
+      if (borderColor) myClasses ~= ["border-"~borderColor];
 
       return results~
         H5Div(id, myClasses, myAttributes,
