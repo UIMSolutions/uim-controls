@@ -4,7 +4,7 @@ module uim.controls.placeholders.placeholder;
 import uim.controls;
 
 class DUIMPlaceHolderControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMPlaceHolderControl"));
 
   override void initialize() {
     super.initialize;

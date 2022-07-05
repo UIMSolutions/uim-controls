@@ -4,7 +4,7 @@ module uim.controls.carousels.item;
 import uim.controls;
 
 class DUIMCarouselItemControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMCarouselItemControl"));
 
   override void initialize() {
     super.initialize;
@@ -22,10 +22,11 @@ class DUIMCarouselItemControl : DUIMControl {
     ].toH5;
   }
 }
-auto UIMCarouselItemControl() { return new DUIMCarouselItemControl; }
-auto UIMCarouselItem() { return new DUIMCarouselItemControl; }
+mixin(ControlCalls!("UIMCarouselItemControl", "DUIMCarouselItemControl"));
+mixin(ControlCalls!("UIMCarouselItem", "DUIMCarouselItemControl"));
 
 version(test_uim_controls) {
   unittest {
+    // TODO
   }
 }

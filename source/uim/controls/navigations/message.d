@@ -4,7 +4,7 @@ module uim.controls.navigations.messages;
 import uim.controls;
 
 class DUIMMessagesControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMMessagesControl"));
 
   mixin(OProperty!("DH5Obj[]", "items"));
   mixin(OProperty!("string", "icon"));
@@ -56,10 +56,11 @@ class DUIMMessagesControl : DUIMControl {
     ].toH5;
   }
 }
-auto UIMMessagesControl() { return new DUIMMessagesControl; }
-auto UIMMessages() { return new DUIMMessagesControl; }
+mixin(ControlCalls!("UIMMessagesControl", "DUIMMessagesControl"));
+mixin(ControlCalls!("UIMMessages", "DUIMMessagesControl"));
 
 version(test_uim_controls) {
   unittest {
+    // TODO
   }
 }
