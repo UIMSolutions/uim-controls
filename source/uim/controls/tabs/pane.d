@@ -34,7 +34,7 @@ class DUIMTabPaneControl : DUIMControl {
   }
 
   DH5Obj tabHeader(STRINGAA options = null) {
-    auto navLink = H5A(["nav-link"]~tabLinkClasses, ["href":"#"~id, "data-bs-toggle":"tab", "role":"tab"], (icon ? tablerIcon(icon) : "") ~title);
+    auto navLink = H5A(["nav-link"]~tabLinkClasses, ["href":"#"~id, "data-bs-toggle":"tab", "role":"tab"], (icon ? tablerIcon(icon)~" " : "") ~title);
 
     if (tooltip) { navLink.attribute("title", tooltip); }
     if (active) { 
