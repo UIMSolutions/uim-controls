@@ -19,7 +19,9 @@ class DUIMRibbonControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    positions.each!(position => myClasses ~= "ribbon-"~position);
+    this
+      .positions(positions.replace(["left"], ["start"]).replace(["rechts"], ["end"]))
+      .positions.each!(position => myClasses ~= "ribbon-"~position);
     if (color) { myClasses ~= "bg-"~color; }
     if (style) { myClasses ~= "ribbon-"~style; }
     myClasses = myClasses.sort.array.uniq.array;

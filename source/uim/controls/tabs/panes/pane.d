@@ -1,4 +1,4 @@
-module uim.controls.tabs.pane;
+module uim.controls.tabs.panes.pane;
 
 @safe:
 import uim.controls;
@@ -26,6 +26,9 @@ class DUIMTabPaneControl : DUIMControl {
   mixin(OProperty!("string", "border"));
   mixin(OProperty!("string", "borderColor"));
 
+  mixin(OProperty!("string", "badge"));
+  mixin(OProperty!("string", "badgeColor"));
+
   override void initialize() {
     super.initialize;
 
@@ -34,10 +37,13 @@ class DUIMTabPaneControl : DUIMControl {
       .attributes(["role":"tabpanel"])
       .showHeader(true)
       .showFooter(true);
+      .badgeColor("primary");
   }
 
   DH5Obj tabHeader(STRINGAA options = null) {
-    auto navLink = H5A(["nav-link"]~tabLinkClasses, ["href":"#"~id, "data-bs-toggle":"tab", "role":"tab"], (icon ? tablerIcon(icon)~"&nbsp;" : "") ~title);
+    auto navLink = H5A(["nav-link"]~tabLinkClasses, 
+      ["href":"#"~id, "data-bs-toggle":"tab", "role":"tab"], 
+      (icon ? tablerIcon(icon)~"&nbsp;" : "")~title~(badge ? BS5Badge(["badge-"~badgeColor], badge): null));
 
     if (tooltip) { navLink.attribute("title", tooltip); }
     if (active) { 
@@ -61,18 +67,21 @@ class DUIMTabPaneControl : DUIMControl {
 
     return navItem;
   }
-
-  override DH5Obj[] toH5(STRINGAA options = null) { 
-      DH5Obj[] results = super.toH5(options);
+  override void beforeH5(STRINGAA options = null) { 
+      super.beforeH5(options);
 
       if (active) myClasses ~= ["active", "show"];
       if (border) myClasses ~= ["border-"~border];
       if (borderColor) myClasses ~= ["border-"~borderColor];
+  }
+
+  override DH5Obj[] toH5(STRINGAA options = null) { 
+      DH5Obj[] results = super.toH5(options);
 
       return results~
         H5Div(id, myClasses, myAttributes,
         (showHeader && header ? header : null)
-        ~content~
+        ~myContent~
         (showFooter && footer ? footer : null)
       );
   }

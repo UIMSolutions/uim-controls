@@ -15,16 +15,23 @@ class DUIMContainerControl : DUIMControl, IContainer {
 
   mixin(OProperty!("string", "contentPosition"));
 
-  mixin(OProperty!("DUIMControl[]", "items"));
+  protected DUIMControl[] _items;
+  auto items() { return _items; }
   O items(this O)(DUIMControl[] newItems...) {
     this.items(newItems);
-    return cast(O)this;
-  }
+    return cast(O)this; }
+  O items(this O)(DUIMControl[] newItems) {
+    newItems.each!(item => item.parent(this));
+    _items = newItems;
+    return cast(O)this; }
 
   O addItems(this O)(DUIMControl[] newItems...) {
+    this.addItems(newItems);
+    return cast(O)this; }
+  O addItems(this O)(DUIMControl[] newItems) {
+    newItems.each!(item => item.parent(this));
     _items ~= newItems;
-    return cast(O)this;
-  }
+    return cast(O)this; }
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);

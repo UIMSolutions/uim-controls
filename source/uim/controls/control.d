@@ -5,6 +5,8 @@ import uim.controls;
 
 interface IControl {
   DH5Obj[] toH5(STRINGAA options = null);
+  O active(this O)(bool newValue);
+  O disabled(this O)(bool newValue);
 }
 
 class DUIMControl : DH5Obj, IControl {

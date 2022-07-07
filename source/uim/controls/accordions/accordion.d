@@ -8,6 +8,9 @@ class DUIMAccordionControl : DUIMContainerControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .id("accordion-%s".format(uniform(0, 1000000)));
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -16,8 +19,7 @@ class DUIMAccordionControl : DUIMContainerControl {
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
-
-    return results~H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);
+    return results~H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
 mixin(ControlCalls!("UIMAccordionControl", "DUIMAccordionControl"));
@@ -25,6 +27,7 @@ mixin(ControlCalls!("UIMAccordion", "DUIMAccordionControl"));
 
 version(test_uim_controls) {
   unittest {
-    auto contreol = UIMAccordion;
+
+    auto control = UIMAccordion;
   }
 }
