@@ -36,14 +36,14 @@ class DUIMTabPaneControl : DUIMControl {
       .classes(["tab-pane"])
       .attributes(["role":"tabpanel"])
       .showHeader(true)
-      .showFooter(true);
+      .showFooter(true)
       .badgeColor("primary");
   }
 
   DH5Obj tabHeader(STRINGAA options = null) {
     auto navLink = H5A(["nav-link"]~tabLinkClasses, 
       ["href":"#"~id, "data-bs-toggle":"tab", "role":"tab"], 
-      (icon ? tablerIcon(icon)~"&nbsp;" : "")~title~(badge ? BS5Badge(["badge-"~badgeColor], badge): null));
+      (icon ? tablerIcon(icon)~"&nbsp;" : "")~title~(this.badge ? BS5Badge(["badge-"~this.badgeColor], this.badge).toString : null));
 
     if (tooltip) { navLink.attribute("title", tooltip); }
     if (active) { 

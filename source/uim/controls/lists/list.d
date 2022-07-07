@@ -6,8 +6,13 @@ import uim.controls;
 class DUIMListControl : DUIMContainerControl {
   mixin(ControlThis!("UIMListControl"));
 
+  mixin(OProperty!("DUIMListItemControl", "templateControl"));
+
   override void initialize() {
     super.initialize;
+
+    this  
+      .templateControl(UIMListItemControl);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

@@ -5,3 +5,4 @@ public import uim.controls.lists.items;
 
 // Module
 public import uim.controls.lists.list;
+public import uim.controls.lists.entities;
