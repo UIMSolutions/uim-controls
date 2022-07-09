@@ -21,7 +21,7 @@ class DUIMListControl : DUIMContainerControl {
     super.initialize;
 
     this  
-      .type("list");
+      .type("list-group");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

@@ -6,8 +6,16 @@ import uim.controls;
 class DUIMListItemControl : DUIMContainerControl {
   mixin(ControlThis!("UIMListItemControl"));
 
+  mixin(OProperty!("string", "color"));
+
   override void initialize() {
     super.initialize;
+  }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    if (color) myClasses ~= "list-group-item-"~color;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
