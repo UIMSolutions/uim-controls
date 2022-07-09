@@ -3,8 +3,8 @@ module  uim.controls.lists.items.entity;
 @safe: 
 import uim.controls;
 
-class DUIMListEntityControl : DUIMListItemControl {
-  // mixin(ControlThis!("UIMListEntityControl"));
+class DUIMEntityListItemControl : DUIMListItemControl {
+  mixin(ControlThis!("UIMEntityListItemControl"));
 
   mixin(OProperty!("DOOPEntity", "entity"));
 
@@ -19,5 +19,5 @@ class DUIMListEntityControl : DUIMListItemControl {
       BS5ListItem(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMListEntityControl", "DUIMListEntityControl"));
-mixin(ControlCalls!("UIMListItem", "DUIMListEntityControl"));
+mixin(ControlCalls!("UIMEntityListItemControl", "DUIMEntityListItemControl"));
+mixin(ControlCalls!("UIMEntityListItem", "DUIMEntityListItemControl"));
