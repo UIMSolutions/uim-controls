@@ -23,14 +23,10 @@ class DUIMBadgeListItemControl : DUIMContainerControl {
     
     auto myBadge = BS5Badge.color(badgeColor).content(badgeContent);
     switch(badgePosition) {
-      case "left": myContent = myBadge~this.content; break
-      case "both": myContent = myBadge~this.content~myBadge; break
-      default: myContent = myBadge~this.content; break
+      case "left": myContent = myBadge~this.content; break;
+      case "both": myContent = myBadge~this.content~myBadge; break;
+      default: myContent = myBadge~this.content; break;
     }
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    return super.toH5(options);
   }
 }
 mixin(ControlCalls!("UIMBadgeListItemControl", "DUIMBadgeListItemControl"));
