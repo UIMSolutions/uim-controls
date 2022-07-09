@@ -19,7 +19,7 @@ class DUIMBadgeListItemControl : DUIMContainerControl {
   }
 
   override void beforeH5(STRINGAA options = null) {
-    before.toH5(options);
+    super.beforeH5(options);
     
     auto myBadge = BS5Badge.color(badgeColor).content(badgeContent);
     switch(badgePosition) {

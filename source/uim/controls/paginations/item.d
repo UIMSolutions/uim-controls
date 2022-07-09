@@ -6,6 +6,9 @@ import uim.controls;
 class DUIMPageItemControl : DUIMControl {
   mixin(ControlThis!("UIMPageItemControl"));
 
+/*   mixin(OProperty!("bool", "active"));
+  mixin(OProperty!("bool", "disabled")); */
+
   override void initialize() {
     super.initialize;
   }
@@ -17,7 +20,10 @@ class DUIMPageItemControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results;
+    return results~
+      BS5PageItem(myId, myClasses, myAttributes, myContent)
+      .active(active)
+      .disabled(disabled);
   }
 }
 mixin(ControlCalls!("UIMPageItemControl", "DUIMPageItemControl"));
