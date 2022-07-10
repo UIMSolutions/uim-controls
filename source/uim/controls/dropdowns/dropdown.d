@@ -39,3 +39,4 @@ class DUIMDropdownControl : DUIMControl {
   }
 }
 auto UIMDropdownControl() { return new DUIMDropdownControl; }
+auto UIMDropdown() { return new DUIMDropdownControl; }
