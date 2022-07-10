@@ -8,6 +8,7 @@ class DUIMPageItemControl : DUIMControl {
 
 /*   mixin(OProperty!("bool", "active"));
   mixin(OProperty!("bool", "disabled")); */
+  mixin(OProperty!("string", "link"));
 
   override void initialize() {
     super.initialize;
@@ -21,7 +22,8 @@ class DUIMPageItemControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      BS5PageItem(myId, myClasses, myAttributes, myContent)
+      BS5PageItem(myId, myClasses, myAttributes, 
+        BS5PageLink(["href": link], myContent))
       .active(active)
       .disabled(disabled);
   }
