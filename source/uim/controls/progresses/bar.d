@@ -34,7 +34,7 @@ class DUIMProgressBarControl : DUIMControl {
     auto results = super.toH5(options);
 
     if (indeterminate) { myClasses ~= "progress-bar-indeterminate"; }
-    if (color) { myClasses ~= "bg-"~color; }
+    if (color) { myClasses ~= "bg-"~color.toLower; }
     if (width) { myAttributes["style"] = ("style" in myAttributes ? myAttributes["style"]~";" : "")~"width:"~width~";"; }
     if (valueNow) { myAttributes["aria-valuenow"] = valueNow; }
     if (valueMin) { myAttributes["aria-valuemin"] = valueMin; }

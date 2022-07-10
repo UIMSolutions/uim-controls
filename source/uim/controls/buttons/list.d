@@ -21,7 +21,7 @@ class DUIMButtonListControl : DUIMContainerControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);  
+      H5Div(myId, myClasses, myAttributes, myContent);  
   }
 }
 mixin(ControlCalls!("UIMButtonListControl", "DUIMButtonListControl"));

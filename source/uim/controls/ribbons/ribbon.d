@@ -22,7 +22,7 @@ class DUIMRibbonControl : DUIMControl {
     this
       .positions(positions.replace(["left"], ["start"]).replace(["rechts"], ["end"]))
       .positions.each!(position => myClasses ~= "ribbon-"~position);
-    if (color) { myClasses ~= "bg-"~color; }
+    if (color) { myClasses ~= "bg-"~color.toLower; }
     if (style) { myClasses ~= "ribbon-"~style; }
     myClasses = myClasses.sort.array.uniq.array;
 

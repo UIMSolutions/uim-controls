@@ -13,6 +13,7 @@ class DUIMPaginationControl : DUIMContainerControl {
     super.initialize;
 
     this
+      .id("pagination-%s".format(uniform(0, 1000000)))
       .classes(["pagination"]);
   }
 

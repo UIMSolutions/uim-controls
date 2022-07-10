@@ -20,7 +20,7 @@ class DUIMPageItemControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);    
 
-    if (color) myClasses ~= "bg-"~color;
+    if (color) myClasses ~= "bg-"~color.toLower;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

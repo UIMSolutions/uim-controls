@@ -15,7 +15,7 @@ class DUIMListItemControl : DUIMContainerControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
-    if (color) myClasses ~= "list-group-item-"~color;
+    if (color) myClasses ~= "list-group-item-"~color.toLower;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

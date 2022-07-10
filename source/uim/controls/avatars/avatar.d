@@ -34,7 +34,7 @@ class DUIMAvatarControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
-    if (color) { myClasses ~= "bg-"~color; }
+    if (color) { myClasses ~= "bg-"~color.toLower; }
     if (shape) { myClasses ~= this.shape; }
     if (size)  { myClasses ~= "avatar-"~this.size; }
 

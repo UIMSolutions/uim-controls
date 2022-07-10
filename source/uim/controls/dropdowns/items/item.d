@@ -9,6 +9,7 @@ class DUIMDropdownItemControl : DUIMControl {
   mixin(OProperty!("bool", "isDivider"));
   mixin(OProperty!("bool", "isHeader"));
   mixin(OProperty!("string", "link"));
+  mixin(OProperty!("string", "color"));
 
   override void initialize() {
     super.initialize;
@@ -23,6 +24,8 @@ class DUIMDropdownItemControl : DUIMControl {
     auto myClasses = this.classes.dup;
     auto myAttributes = this.attributes.dup;
     auto myContent = this.content.dup;
+
+    if (color) myClasses ~= "bg-"~color.toLower;
 
     return [
       BS5DropdownLink(myId, myClasses, myAttributes, myContent)

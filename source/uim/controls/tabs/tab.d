@@ -14,6 +14,13 @@ class DUIMTabControl : DUIMControl {
   mixin(OProperty!("bool", "reverse"));
   mixin(OProperty!("bool", "alternative"));
 
+  override void initialize() {
+    super.initialize;
+
+    this
+      .id("tab-%s".format(uniform(0, 1000000)));
+  }
+
   auto activePane() {
     foreach(pane; panes) {
       if (pane.active) return pane;

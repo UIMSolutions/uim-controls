@@ -23,7 +23,7 @@ class DUIMSpinnerControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    if (color) { myClasses ~= "text-"~color; }
+    if (color) { myClasses ~= "text-"~color.toLower; }
     switch (this.style) {
       case "grow": myClasses ~= "spinner-grow"; break;
       default: myClasses ~= "spinner-border"; break;

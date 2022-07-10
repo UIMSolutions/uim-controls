@@ -17,6 +17,7 @@ class DUIMDropdownControl : DUIMContainerControl {
     super.initialize;
 
     this
+      .id("dropdown-%s".format(uniform(0, 1000000)))
       .classes(["dropdown"]);
   }
 
@@ -24,7 +25,7 @@ class DUIMDropdownControl : DUIMContainerControl {
     auto results = super.toH5(options);
 
     auto myButton = UIMButtonControl.id(myId~"-toggle").addClasses("dropdown-toggle").addAttributes(["data-bs-toggle":"dropdown", "aria-expanded":"false"])
-      .color(color).title(title).link(link).value(value).tooltip(tooltip);
+      .color(color).title(title).link(link).value(value).tooltip(tooltip).type(type);
 
     return results~
       BS5Dropdown(myId, myClasses, myAttributes,
