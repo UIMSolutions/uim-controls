@@ -15,7 +15,7 @@ class DUIMButtonControl : DUIMControl {
   mixin(OProperty!("string", "icon"));
   mixin(OProperty!("string", "link"));
   mixin(OProperty!("string", "size"));
-  mixin(OProperty!("string", "text"));
+  mixin(OProperty!("string", "title"));
   mixin(OProperty!("string", "type"));
   mixin(OProperty!("string", "value"));
   mixin(OProperty!("string", "tooltip"));
@@ -40,10 +40,10 @@ class DUIMButtonControl : DUIMControl {
     if (pill) { myClasses ~= ["btn-pill"]; }
     if (loading) { myClasses ~= ["btn-loading"]; }
     if (square) { myClasses ~= ["btn-square"]; }
-    if (icon && !text) { myClasses ~= ["btn-icon"]; }
+    if (icon && !title) { myClasses ~= ["btn-icon"]; }
 
-    string myText = this.text.dup;
-    myText = (this.icon ? tablerIcon(this.icon)~" ": "")~myText;
+    string myTitle = this.title.dup;
+    myTitle = (this.icon ? tablerIcon(this.icon)~" ": "")~myTitle;
 
     if (link) { this.type("link"); }
 
@@ -61,25 +61,25 @@ class DUIMButtonControl : DUIMControl {
       case "link":
         myAttributes["href"] = link;
         myAttributes["role"] = "button";
-        return [H5A(myId, myClasses, myAttributes, myText)].toH5;
+        return [H5A(myId, myClasses, myAttributes, myTitle)].toH5;
       case "input":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, myText)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, myTitle)].toH5;
       case "button":
         myAttributes["type"] = "button";
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, myText)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, myTitle)].toH5;
       case "reset":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, myText)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, myTitle)].toH5;
       case "submit":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, myText)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, myTitle)].toH5;
       default: 
-        return [H5Button(myId, myClasses, myAttributes, myText)].toH5;      
+        return [H5Button(myId, myClasses, myAttributes, myTitle)].toH5;      
       }
   }
 }

@@ -3,22 +3,15 @@ module uim.controls.dropdowns.dropdown;
 @safe: 
 import uim.controls;
 
-class DUIMDropdownControl : DUIMControl {
+class DUIMDropdownControl : DUIMContainerControl {
   mixin(ControlThis!("UIMDropdownControl"));
 
-  protected DUIMControl[] _items;  
-  DUIMControl[] items(this O)() {
-    return _items;
-  }
-  O items(this O)(DUIMControl[] newItems) {
-    _items = newItems;
-    items.each!(item => item.parent(this));
-    return cast(O)this;
-  }
-  O items(this O)(DUIMControl[] newItems...) { 
-    this.items(newItems); 
-    return cast(O)this;
-  }
+  mixin(OProperty!("string", "color"));
+  mixin(OProperty!("string", "title"));
+  mixin(OProperty!("string", "link"));
+  mixin(OProperty!("string", "type"));
+  mixin(OProperty!("string", "value"));
+  mixin(OProperty!("string", "tooltip"));
 
   override void initialize() {
     super.initialize;
@@ -30,12 +23,16 @@ class DUIMDropdownControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
+    auto myButton = UIMButtonControl.id(myId~"-toggle").addClasses("dropdown-toggle").addAttributes(["data-bs-toggle":"dropdown", "aria-expanded":"false"])
+      .color(color).title(title).link(link).value(value).tooltip(tooltip);
+
     return results~
       BS5Dropdown(myId, myClasses, myAttributes,
-        BS5DropdownMenu(
-          items.map!(item => item.toH5).join
+        myButton,
+        BS5DropdownMenu(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"],
+          myContent
         ) 
-      );
+    );
   }
 }
 auto UIMDropdownControl() { return new DUIMDropdownControl; }
