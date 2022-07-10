@@ -11,7 +11,9 @@ class DUIMDropdownControl : DUIMContainerControl {
   mixin(OProperty!("string", "link"));
   mixin(OProperty!("string", "type"));
   mixin(OProperty!("string", "value"));
+  mixin(OProperty!("string", "size"));
   mixin(OProperty!("string", "tooltip"));
+  mixin(OProperty!("bool", "split"));
 
   override void initialize() {
     super.initialize;
@@ -24,8 +26,21 @@ class DUIMDropdownControl : DUIMContainerControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    auto myButton = UIMButtonControl.id(myId~"-toggle").addClasses("dropdown-toggle").addAttributes(["data-bs-toggle":"dropdown", "aria-expanded":"false"])
-      .color(color).title(title).link(link).value(value).tooltip(tooltip).type(type);
+    if (split) {
+      auto myButton = UIMButton.color(color).title(title).link(link).value(value).tooltip(tooltip).type(type).size(size);
+      auto myButtonSplit = UIMButton.id(myId~"-toggle").addClasses(["dropdown-toggle", "dropdown-toggle-split"])
+        .addAttributes(["data-bs-toggle":"dropdown", "aria-expanded":"false"])
+        .color(color).title(`<span class="visually-hidden">Toggle Dropdown</span>`).link(link).value(value).tooltip(tooltip).type(type).size(size);
+
+      return results~
+        H5Div(myId, ["btn-group"], myAttributes, 
+          myButton, myButtonSplit,
+          BS5DropdownMenu(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"],
+            myContent
+          ));
+    }
+    auto myButton = UIMButton.id(myId~"-toggle").addClasses("dropdown-toggle").addAttributes(["data-bs-toggle":"dropdown", "aria-expanded":"false"])
+      .color(color).title(title).link(link).value(value).tooltip(tooltip).type(type).size(size);
 
     return results~
       BS5Dropdown(myId, myClasses, myAttributes,
