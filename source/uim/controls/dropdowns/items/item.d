@@ -1,18 +1,17 @@
-module uim.controls.dropdowns.header;
+module uim.controls.dropdowns.items.item;
 
 @safe: 
 import uim.controls;
 
-class DUIMDropdownHeaderControl : DUIMDropdownItemControl {
-  this() { super(); }
+class DUIMDropdownItemControl : DUIMControl {
+  mixin(ControlThis!("UIMDropdownItemControl"));
+
+  mixin(OProperty!("bool", "isDivider"));
+  mixin(OProperty!("bool", "isHeader"));
+  mixin(OProperty!("string", "link"));
 
   override void initialize() {
     super.initialize;
- 
-    this
-      .classes(["dropdown-header"])
-      .isDivider(false)
-      .isHeader(true); 
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -26,11 +25,12 @@ class DUIMDropdownHeaderControl : DUIMDropdownItemControl {
     auto myContent = this.content.dup;
 
     return [
-      H5Span(myId, myClasses, myAttributes, myContent)
+      BS5DropdownLink(myId, myClasses, myAttributes, myContent)
     ].toH5;
   }
 }
-auto UIMDropdownHeaderControl() { return new DUIMDropdownHeaderControl; }
+auto UIMDropdownItemControl() { return new DUIMDropdownItemControl; }
+auto UIMDropdownItem() { return new DUIMDropdownItemControl; }
 
 version(test_uim_controls) {
   unittest {

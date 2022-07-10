@@ -1,4 +1,4 @@
-module uim.controls.dropdowns.divider;
+module uim.controls.dropdowns.items.divider;
 
 @safe: 
 import uim.controls;
