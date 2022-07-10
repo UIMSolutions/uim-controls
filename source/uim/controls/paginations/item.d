@@ -9,6 +9,9 @@ class DUIMPageItemControl : DUIMControl {
 /*   mixin(OProperty!("bool", "active"));
   mixin(OProperty!("bool", "disabled")); */
   mixin(OProperty!("string", "link"));
+  mixin(OProperty!("string", "icon"));
+  mixin(OProperty!("string", "color"));
+  mixin(OProperty!("string", "textColor"));
 
   override void initialize() {
     super.initialize;
@@ -16,6 +19,8 @@ class DUIMPageItemControl : DUIMControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);    
+
+    if (color) myClasses ~= "bg-"~color;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -23,7 +28,7 @@ class DUIMPageItemControl : DUIMControl {
 
     return results~
       BS5PageItem(myId, myClasses, myAttributes, 
-        BS5PageLink(["href": link], myContent))
+        BS5PageLink((textColor ? ["text-"~textColor] : null), ["href": link], (icon ? H5String(tablerIcon(icon)) : null)~myContent))
       .active(active)
       .disabled(disabled);
   }

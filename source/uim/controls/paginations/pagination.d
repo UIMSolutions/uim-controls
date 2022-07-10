@@ -7,13 +7,19 @@ class DUIMPaginationControl : DUIMContainerControl {
   mixin(ControlThis!("UIMPaginationControl"));
 
   mixin(OProperty!("string", "ariaLabel"));
+  mixin(OProperty!("string", "size"));
   
   override void initialize() {
     super.initialize;
+
+    this
+      .classes(["pagination"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);    
+
+    if (size) myClasses ~= "pagination-"~size;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -21,7 +27,7 @@ class DUIMPaginationControl : DUIMContainerControl {
 
     return results~
       H5Nav(["aria-label":this.ariaLabel], 
-        H5Ul(["pagination"], myContent));
+        H5Ul(myId, myClasses, myAttributes, myContent));
   }
 }
 mixin(ControlCalls!("UIMPaginationControl", "DUIMPaginationControl"));
