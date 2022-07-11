@@ -6,6 +6,8 @@ import uim.controls;
 class DUIMDropdownHeaderControl : DUIMDropdownItemControl {
   this() { super(); }
 
+  mixin(OProperty!("string", "title"));
+
   override void initialize() {
     super.initialize;
  
@@ -24,7 +26,7 @@ class DUIMDropdownHeaderControl : DUIMDropdownItemControl {
 
     return [
       H5Li(myId, myAttributes, 
-        H5H6(myClasses, myContent))
+        H5H6(myClasses, myContent~(title ? H5String(title) : null)))
     ].toH5;
   }
 }
@@ -32,7 +34,7 @@ auto UIMDropdownHeaderControl() { return new DUIMDropdownHeaderControl; }
 auto UIMDropdownHeader() { return new DUIMDropdownHeaderControl; }
 
 version(test_uim_controls) {
-  unittest {
+  unittest {  
     // TODO
   }
 }

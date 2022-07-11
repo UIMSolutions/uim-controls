@@ -32,7 +32,8 @@ class DUIMDropdownItemControl : DUIMControl {
     super.toH5(options);
 
     return [
-      BS5DropdownLink(myId, myClasses, myAttributes, (icon ? H5String(icon) : null)~myContent~(badge || badgeColor ? BS5Badge(badge).color(badgeColor) : null))
+      BS5DropdownLink(myId, myClasses, myAttributes, 
+        (icon ? H5String(tablerIcon(icon)~"&nbsp;") : null)~myContent~(badge || badgeColor ? UIMBadge.addClasses(["ms-auto"]).color(badgeColor).content(badge) : null))
     ].toH5;
   }
 }
