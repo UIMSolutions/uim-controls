@@ -61,6 +61,7 @@ public import uim.controls.popovers;
 public import uim.controls.progresses;
 public import uim.controls.rangesliders;
 public import uim.controls.ribbons;
+public import uim.controls.rows;
 public import uim.controls.spinners;
 public import uim.controls.statuses;
 public import uim.controls.steps;
