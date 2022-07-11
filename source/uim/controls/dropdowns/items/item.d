@@ -9,7 +9,12 @@ class DUIMDropdownItemControl : DUIMControl {
   mixin(OProperty!("bool", "isDivider"));
   mixin(OProperty!("bool", "isHeader"));
   mixin(OProperty!("string", "link"));
+  mixin(OProperty!("string", "icon"));
   mixin(OProperty!("string", "color"));
+/*   mixin(OProperty!("bool", "active"));
+  mixin(OProperty!("bool", "disabled")); */
+  mixin(OProperty!("string", "badge"));
+  mixin(OProperty!("string", "badgeColor"));
 
   override void initialize() {
     super.initialize;
@@ -17,18 +22,17 @@ class DUIMDropdownItemControl : DUIMControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
+
+    if (color) myClasses ~= "bg-"~color.toLower;
+    if (active) myClasses ~= "active";
+    if (disabled) myClasses ~= "disabled";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
-
-    if (color) myClasses ~= "bg-"~color.toLower;
+    super.toH5(options);
 
     return [
-      BS5DropdownLink(myId, myClasses, myAttributes, myContent)
+      BS5DropdownLink(myId, myClasses, myAttributes, (icon ? H5String(icon) : null)~myContent~(badge || badgeColor ? BS5Badge(badge).color(badgeColor) : null))
     ].toH5;
   }
 }

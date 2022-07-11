@@ -23,8 +23,8 @@ class DUIMDropdownDividerControl : DUIMDropdownItemControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      BS5DropdownDivider(myId, myClasses, myAttributes, myContent);
+    return [BS5DropdownDivider].toH5;
   }
 }
-auto UIMDropdownItemControl() { return new DUIMDropdownDividerControl; }
+auto UIMDropdownDividerControl() { return new DUIMDropdownDividerControl; }
+auto UIMDropdownDivider() { return new DUIMDropdownDividerControl; }

@@ -14,6 +14,8 @@ class DUIMDropdownControl : DUIMContainerControl {
   mixin(OProperty!("string", "size"));
   mixin(OProperty!("string", "tooltip"));
   mixin(OProperty!("bool", "split"));
+  mixin(OProperty!("bool", "arrow"));
+  mixin(OProperty!("bool", "dark"));
 
   override void initialize() {
     super.initialize;
@@ -21,6 +23,11 @@ class DUIMDropdownControl : DUIMContainerControl {
     this
       .id("dropdown-%s".format(uniform(0, 1000000)))
       .classes(["dropdown"]);
+  }
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+    if (arrow) myClasses ~= "dropdown-menu-arrow";
+    if (dark) myClasses ~= "dropdown-menu-dark";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

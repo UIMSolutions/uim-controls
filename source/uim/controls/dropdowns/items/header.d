@@ -20,17 +20,16 @@ class DUIMDropdownHeaderControl : DUIMDropdownItemControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    super.toH5(options);
 
     return [
-      H5Span(myId, myClasses, myAttributes, myContent)
+      H5Li(myId, myAttributes, 
+        H5H6(myClasses, myContent))
     ].toH5;
   }
 }
 auto UIMDropdownHeaderControl() { return new DUIMDropdownHeaderControl; }
+auto UIMDropdownHeader() { return new DUIMDropdownHeaderControl; }
 
 version(test_uim_controls) {
   unittest {
