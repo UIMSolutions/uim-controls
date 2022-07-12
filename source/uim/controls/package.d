@@ -73,6 +73,7 @@ public import uim.controls.timelines;
 public import uim.controls.toasts;
 public import uim.controls.toolbars;
 public import uim.controls.tooltips;
+public import uim.controls.trees;
 
 public import uim.controls.tests;
 
