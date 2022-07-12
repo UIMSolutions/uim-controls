@@ -68,8 +68,10 @@ public import uim.controls.steps;
 public import uim.controls.switchicons;
 public import uim.controls.tables;
 public import uim.controls.tabs;
+public import uim.controls.tiles;
 public import uim.controls.timelines;
 public import uim.controls.toasts;
+public import uim.controls.toolbars;
 public import uim.controls.tooltips;
 
 public import uim.controls.tests;
