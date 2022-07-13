@@ -4,7 +4,7 @@ module uim.controls.toasts.toast;
 import uim.controls;
 
 class DUIMToastControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMToast"));
 
   override void initialize() {
     super.initialize;

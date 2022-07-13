@@ -4,7 +4,7 @@ module uim.controls.datagrids.item;
 import uim.controls;
 
 class DUIMDatagridItemControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDatagridItem"));
 
   mixin(OProperty!("string", "title"));
   mixin(OProperty!("string", "titleColor"));

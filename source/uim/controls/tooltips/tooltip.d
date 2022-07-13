@@ -4,11 +4,10 @@ module uim.controls.tooltips.tooltip;
 import uim.controls;
 
 class DUIMTooltipControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTooltip"));
 
   override void initialize() {
     super.initialize;
-
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

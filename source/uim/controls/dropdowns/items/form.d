@@ -4,7 +4,7 @@ module uim.controls.dropdowns.items.form;
 import uim.controls;
 
 class DUIMDropdownFormControl : DUIMDropdownItemControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDropdownForm"));
 
   override void initialize() {
     super.initialize;

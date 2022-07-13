@@ -4,7 +4,7 @@ module uim.controls.rangesliders.rangeslider;
 import uim.controls;
 
 class DUIMRangeSliderControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMRangeSlider"));
 
   override void initialize() {
     super.initialize;

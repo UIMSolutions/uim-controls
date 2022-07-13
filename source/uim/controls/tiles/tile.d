@@ -4,7 +4,7 @@ module uim.controls.tiles.tile;
 import uim.controls;
 
 class DUIMTileControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTile"));
 
   mixin(OProperty!("string", "additionalTooltip")); // Tooltip text which is added at the tooltip
   mixin(OProperty!("string", "appShortcut")); // Link to app

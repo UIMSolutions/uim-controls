@@ -4,7 +4,7 @@ module uim.controls.tiles.content;
 import uim.controls;
 
 class DUIMTileContentControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTileContent"));
 
   override void initialize() {
     super.initialize;

@@ -4,7 +4,7 @@ module uim.controls.tabs.tab;
 import uim.controls;
 
 class DUIMTabControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTab"));
 
   mixin(OProperty!("DH5Obj[]", "cards"));
   mixin(OProperty!("string[]", "tabClasses"));

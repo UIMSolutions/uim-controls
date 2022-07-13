@@ -9,7 +9,7 @@ options.
 import uim.controls;
 
 class DUIMCardControl : DUIMContainerControl {
-  mixin(ControlThis!("UIMCardControl"));
+  mixin(ControlThis!("UIMCard"));
 
   mixin(OProperty!("string", "size"));
   mixin(OProperty!("bool", "stacked"));

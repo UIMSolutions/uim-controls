@@ -4,7 +4,7 @@ module uim.controls.timelines.timeline;
 import uim.controls;
 
 class DUIMTimelineControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTimeline"));
 
   override void initialize() {
     super.initialize;

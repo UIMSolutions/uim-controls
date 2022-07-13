@@ -4,7 +4,7 @@ module uim.controls.ribbons.ribbon;
 import uim.controls;
 
 class DUIMRibbonControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMRibbon"));
 
   mixin(OProperty!("string", "color"));
   mixin(OProperty!("string", "style"));

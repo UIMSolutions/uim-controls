@@ -4,7 +4,7 @@ module uim.controls.statuses.indicator;
 import uim.controls;
 
 class DUIMStatusIndicatorControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMStatusIndicator"));
 
   mixin(OProperty!("string", "color"));
   mixin(OProperty!("bool", "animated"));

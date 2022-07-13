@@ -4,7 +4,7 @@ module uim.controls.trees.tree;
 import uim.controls;
 
 class DUIMTreeControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTreeControl"));
 
   override void initialize() {
     super.initialize;

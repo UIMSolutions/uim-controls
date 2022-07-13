@@ -4,7 +4,7 @@ module uim.controls.tabs.panes.pane;
 import uim.controls;
 
 class DUIMTabPaneControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTabPane"));
 
   mixin(OProperty!("string[]", "tabClasses"));
   mixin(OProperty!("string[]", "tabLinkClasses"));

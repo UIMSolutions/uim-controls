@@ -4,7 +4,7 @@ module uim.controls.carousels.dashboard;
 import uim.controls;
 
 class DUIMDashboardControl : DUIMContainerControl {
-  mixin(ControlThis!("UIMDashboardControl"));
+  mixin(ControlThis!("UIMDashboard"));
 
   override void initialize() {
     super.initialize;

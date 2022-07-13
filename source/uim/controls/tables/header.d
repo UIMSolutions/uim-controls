@@ -4,7 +4,7 @@ module uim.controls.tables.header;
 import uim.controls;
 
 class DUIMTableRowControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTableRow"));
 
   mixin(OProperty!("DUIMControl[]", "cells"));
 

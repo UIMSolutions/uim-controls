@@ -4,7 +4,7 @@ module uim.controls.toolbars.toolbar;
 import uim.controls;
 
 class DUIMToolbarControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMToolbar"));
 
   override void initialize() {
     super.initialize;
