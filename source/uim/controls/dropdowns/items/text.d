@@ -20,11 +20,14 @@ class DUIMDropdownTextControl : DUIMDropdownItemControl {
     return [H5Div(["p-3"], ["style":"max-width: 200px;"], myContent)].toH5;
   }
 }
-auto UIMDropdownTextControl() { return new DUIMDropdownTextControl; }
-auto UIMDropdownText() { return new DUIMDropdownTextControl; }
+mixin(ControlCalls!("UIMDropdownTextControl", "DUIMDropdownTextControl"));
+mixin(ControlCalls!("UIMDropdownText", "DUIMDropdownTextControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMDropdownText);
+
+    auto control = UIMDropdownText;
     // TODO
   }
 }

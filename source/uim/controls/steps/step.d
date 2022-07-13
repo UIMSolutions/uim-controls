@@ -17,7 +17,15 @@ class DUIMStepControl : DUIMControl {
     return results ~= H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMStepControl() { return new DUIMStepControl; }
-auto UIMStep() { return new DUIMStepControl; }
+mixin(ControlCalls!("UIMStepControl", "DUIMStepControl"));
+mixin(ControlCalls!("UIMStep", "DUIMStepControl"));
 
+version(test_uim_controls) {
+  unittest {
+    assert(UIMStep);
+
+    auto control = UIMStep;
+    // TODO 
+  }
+}
 

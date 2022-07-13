@@ -30,11 +30,13 @@ class DUIMDropdownHeaderControl : DUIMDropdownItemControl {
     ].toH5;
   }
 }
-auto UIMDropdownHeaderControl() { return new DUIMDropdownHeaderControl; }
-auto UIMDropdownHeader() { return new DUIMDropdownHeaderControl; }
+mixin(ControlCalls!("UIMDropdownHeaderControl", "DUIMDropdownHeaderControl"));
+mixin(ControlCalls!("UIMDropdownHeader", "DUIMDropdownHeaderControl"));
 
 version(test_uim_controls) {
   unittest {  
-    // TODO
+    assert(UIMDropdownHeader);
+    
+    auto control = UIMDropdownHeader;
   }
 }

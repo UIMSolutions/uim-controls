@@ -30,11 +30,14 @@ class DUIMRibbonControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMRibbonControl() { return new DUIMRibbonControl; }
-auto UIMRibbon() { return new DUIMRibbonControl; }
+mixin(ControlCalls!("UIMRibbonControl", "DUIMRibbonControl"));
+mixin(ControlCalls!("UIMRibbon", "DUIMRibbonControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMRibbon);
+
+    auto control = UIMRibbon;
     // TODO
   }
 }

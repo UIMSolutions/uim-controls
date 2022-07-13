@@ -10,11 +10,14 @@ class DUIMSwitchIconControl : DUIMControl {
     super.initialize;
   }
 }
-auto UIMSwitchIconControl() { return new DUIMSwitchIconControl; }
-auto UIMSwitchIcon() { return new DUIMSwitchIconControl; }
+mixin(ControlCalls!("UIMSwitchIconControl", "DUIMSwitchIconControl"));
+mixin(ControlCalls!("UIMSwitchIcon", "DUIMSwitchIconControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMSwitchIcon);
+
+    auto control = UIMSwitchIcon;
     // TODO
   }
 }

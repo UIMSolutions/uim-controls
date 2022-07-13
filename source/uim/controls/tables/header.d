@@ -20,8 +20,8 @@ class DUIMTableRowControl : DUIMControl {
       H5Thead(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMTableRowControl() { return new DUIMTableRowControl; } 
-auto UIMTableRow() { return new DUIMTableRowControl; } 
+mixin(ControlCalls!("UIMTableRowControl", "DUIMTableRowControl")); 
+mixin(ControlCalls!("UIMTableRow() { return new DUIMTableRowControl; } 
 
 version(test_uim_controls) {
   unittest {

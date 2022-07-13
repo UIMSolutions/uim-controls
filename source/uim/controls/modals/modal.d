@@ -41,5 +41,14 @@ class DUIMModalControl : DUIMControl {
     return [myModal(myDialog(myContent))].toH5;
   }
 }
-auto UIMModalControl() { return new DUIMModalControl; }
-auto UIMModal() { return new DUIMModalControl; }
+mixin(ControlCalls!("UIMModalControl", "DUIMModalControl"));
+mixin(ControlCalls!("UIMModal", "DUIMModalControl"));
+
+version(test_uim_controls) {
+  unittest {  
+    assert(UIMModal);
+    
+    auto control = UIMModal;
+  }
+}
+

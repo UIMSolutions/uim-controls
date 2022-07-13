@@ -37,11 +37,14 @@ class DUIMDropdownItemControl : DUIMControl {
     ].toH5;
   }
 }
-auto UIMDropdownItemControl() { return new DUIMDropdownItemControl; }
-auto UIMDropdownItem() { return new DUIMDropdownItemControl; }
+mixin(ControlCalls!("UIMDropdownItemControl", "DUIMDropdownItemControl"));
+mixin(ControlCalls!("UIMDropdownItem", "DUIMDropdownItemControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMDropdownItem);
+
+    auto control = UIMDropdownItem;
     // TODO
   }
 }

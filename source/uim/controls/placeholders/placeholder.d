@@ -10,10 +10,14 @@ class DUIMPlaceHolderControl : DUIMControl {
     super.initialize;
   }
 }
-auto UIMPlaceHolderControl() { return new DUIMPlaceHolderControl; }
+mixin(ControlCalls!("UIMPlaceHolderControl", "DUIMPlaceHolderControl"));
+mixin(ControlCalls!("UIMPlaceHolder", "DUIMPlaceHolderControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMPlaceHolder);
+
+    auto control = UIMPlaceHolder;
     // TODO
   }
 }

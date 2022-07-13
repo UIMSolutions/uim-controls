@@ -23,11 +23,14 @@ class DUIMProgressControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMProgressControl() { return new DUIMProgressControl; }
-auto UIMProgress() { return new DUIMProgressControl; }
+mixin(ControlCalls!("UIMProgressControl", "DUIMProgressControl"));
+mixin(ControlCalls!("UIMProgress", "DUIMProgressControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMProgress);
+
+    auto control = UIMProgress;
     // TODO 
   }
 }

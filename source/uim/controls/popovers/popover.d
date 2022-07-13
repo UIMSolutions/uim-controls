@@ -20,11 +20,14 @@ class DUIMPopoverControl : DUIMControl {
     return results;
   }
 }
-auto UIMPopoverControl() { return new DUIMPopoverControl; }
-auto UIMPopover() { return new DUIMPopoverControl; }
+mixin(ControlCalls!("UIMPopoverControl", "DUIMPopoverControl"));
+mixin(ControlCalls!("UIMPopover", "DUIMPopoverControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMPopover);
+
+    auto control = UIMPopover;
     // TODO
   }
 }

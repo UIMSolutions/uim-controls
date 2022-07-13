@@ -26,5 +26,13 @@ class DUIMDropdownDividerControl : DUIMDropdownItemControl {
     return [BS5DropdownDivider].toH5;
   }
 }
-auto UIMDropdownDividerControl() { return new DUIMDropdownDividerControl; }
-auto UIMDropdownDivider() { return new DUIMDropdownDividerControl; }
+mixin(ControlCalls!("UIMDropdownDividerControl", "DUIMDropdownDividerControl"));
+mixin(ControlCalls!("UIMDropdownDivider", "DUIMDropdownDividerControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMDropdown);
+
+    auto control = UIMDropdown;
+  }
+}

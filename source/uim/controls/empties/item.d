@@ -21,4 +21,14 @@ class DUIMEmptyItemControl : DUIMControl {
     ].toH5;
   }
 }
-auto UIMEmptyItemControl() { return new DUIMEmptyItemControl; }
+mixin(ControlCalls!("UIMEmptyItemControl", "DUIMEmptyItemControl"));
+mixin(ControlCalls!("UIMEmptyItem", "DUIMEmptyItemControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMEmptyItem);
+
+    auto control = UIMEmptyItem;
+    // TODO
+  }
+}

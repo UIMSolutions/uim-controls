@@ -21,5 +21,14 @@ class DUIMEmptyImageControl : DUIMEmptyItemControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMEmptyImageControl() { return new DUIMEmptyImageControl; }
-auto UIMEmptyImage() { return new DUIMEmptyImageControl; }
+mixin(ControlCalls!("UIMEmptyImageControl", "DUIMEmptyImageControl"));
+mixin(ControlCalls!("UIMEmptyImage", "DUIMEmptyImageControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMEmptyImage);
+
+    auto control = UIMEmptyImage;
+    // TODO 
+  }
+}

@@ -20,10 +20,13 @@ class DUIMEmptyActionControl : DUIMEmptyItemControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMEmptyActionControl() { return new DUIMEmptyActionControl; }
-auto UIMEmptyAction() { return new DUIMEmptyActionControl; }
+mixin(ControlCalls!("UIMEmptyActionControl", "DUIMEmptyActionControl"));
+mixin(ControlCalls!("UIMEmptyAction", "DUIMEmptyActionControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMEmptyAction);
+
+    auto control = UIMEmptyAction;
   }
 }

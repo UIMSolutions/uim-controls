@@ -27,11 +27,14 @@ class DUIMRowControl : DUIMContainerControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMRowControl() { return new DUIMRowControl; }
-auto UIMRow() { return new DUIMRowControl; }
+mixin(ControlCalls!("UIMRowControl", "DUIMRowControl"));
+mixin(ControlCalls!("UIMRow", "DUIMRowControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMRow);
+
+    auto control = UIMRow;
     // TODO
   }
 }

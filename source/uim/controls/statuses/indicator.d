@@ -31,4 +31,14 @@ class DUIMStatusIndicatorControl : DUIMControl {
       myIndicator;
   }
 }
-auto UIMStatusIndicatorControl() { return new DUIMStatusIndicatorControl; }
+mixin(ControlCalls!("UIMStatusIndicatorControl", "DUIMStatusIndicatorControl"));
+mixin(ControlCalls!("UIMStatusIndicator", "DUIMStatusIndicatorControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMStatusIndicator);
+
+    auto control = UIMStatusIndicator;
+    // TODO
+  }
+}

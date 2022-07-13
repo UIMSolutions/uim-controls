@@ -31,4 +31,13 @@ class DUIMUsermenuControl : DUIMControl {
         H5Div(["dropdown-menu dropdown-menu-end dropdown-menu-arrow show"], ["data-bs-popper":"none"], menuItems));
   }
 }
-auto UIMUsermenuControl() { return new DUIMUsermenuControl; }
+mixin(ControlCalls!("UIMUsermenuControl", "DUIMUsermenuControl"));
+mixin(ControlCalls!("UIMUsermenu", "DUIMUsermenuControl"));
+
+version(test_uim_controls) {
+  unittest {  
+    assert(UIMUsermenu);
+    
+    auto control = UIMUsermenu;
+  }
+}

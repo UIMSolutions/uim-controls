@@ -14,11 +14,14 @@ class DUIMDividerControl : DUIMControl {
     super.beforeH5(options);
   }
 }
-auto UIMDividerControl() { return new DUIMDividerControl; }
-auto UIMDivider() { return new DUIMDividerControl; }
+mixin(ControlCalls!("UIMDividerControl", "DUIMDividerControl"));
+mixin(ControlCalls!("UIMDivider", "DUIMDividerControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMDivider);
+
+    auto control = UIMDivider;
     // TODO
   }
 }

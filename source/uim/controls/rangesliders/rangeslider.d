@@ -21,11 +21,14 @@ class DUIMRangeSliderControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMRangeSliderControl() { return new DUIMRangeSliderControl; }
-auto UIMRangeSlider() { return new DUIMRangeSliderControl; }
+mixin(ControlCalls!("UIMRangeSliderControl", "DUIMRangeSliderControl"));
+mixin(ControlCalls!("UIMRangeSlider", "DUIMRangeSliderControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMRangeSlider);
+
+    auto control = UIMRangeSlider;
     // TODO 
   }
 }

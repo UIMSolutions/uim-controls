@@ -38,5 +38,14 @@ class DUIMDropdownToggleControl : DUIMControl {
       );
   }
 }
-auto UIMDropdownToggleControl() { return new DUIMDropdownToggleControl; }
-auto UIMDropdownToggle  () { return new DUIMDropdownToggleControl; }
+mixin(ControlCalls!("UIMDropdownToggleControl", "DUIMDropdownToggleControl"));
+mixin(ControlCalls!("UIMDropdownToggle", "DUIMDropdownToggleControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMDropdownToggle);
+
+    auto control = UIMDropdownToggle;
+    // TODO
+  }
+}

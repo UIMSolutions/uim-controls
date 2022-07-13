@@ -18,4 +18,14 @@ class DUIMTableRowControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMTableRowControl() { return new DUIMTableRowControl; }
+mixin(ControlCalls!("UIMTableRowControl", "DUIMTableRowControl"));
+mixin(ControlCalls!("UIMTableRow", "DUIMTableRowControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMTableRow);
+
+    auto control = UIMTableRow;
+    // TODO
+  }
+}

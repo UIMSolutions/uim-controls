@@ -48,11 +48,13 @@ class DUIMProgressBarControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMProgressBarControl() { return new DUIMProgressBarControl; }
-auto UIMProgressBar() { return new DUIMProgressBarControl; }
+mixin(ControlCalls!("UIMProgressBarControl", "DUIMProgressBarControl"));
+mixin(ControlCalls!("UIMProgressBar", "DUIMProgressBarControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMProgressBar);
+
     auto control = UIMProgressBar;
     assert(control.classes == ["progress-bar"]);
   }
