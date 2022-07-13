@@ -7,6 +7,7 @@ class DChartAnimationElement {
 
   mixin(OProperty!("bool", "enabled")); // Enable or disable all the animations that happen initially or during data update.
   mixin(OProperty!("bool", "easing")); // Available easing options: linear, easein, easeout, easeinout
+  mixin(OProperty!("integer", "speed"));// Speed at which animation runs.
 /*         easing: 'easeinout',
         speed: 800,
         animateGradually: {
