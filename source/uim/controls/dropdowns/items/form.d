@@ -20,5 +20,14 @@ class DUIMDropdownFormControl : DUIMDropdownItemControl {
     return [H5Form(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
-auto UIMDropdownFormControl() { return new DUIMDropdownFormControl; }
-auto UIMDropdownForm() { return new DUIMDropdownFormControl; }
+mixin(ControlCalls!("UIMDropdownFormControl", "DUIMDropdownFormControl"));
+mixin(ControlCalls!("UIMDropdownForm", "DUIMDropdownFormControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMDropdownForm);
+
+    auto control = UIMDropdownForm;
+    // TODO
+  }
+}

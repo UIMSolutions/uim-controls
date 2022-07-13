@@ -47,5 +47,14 @@ class DUIMTabControl : DUIMControl {
         )));
   }
 }
-auto UIMTabControl() { return new DUIMTabControl; }
-auto UIMTab() { return new DUIMTabControl; }
+mixin(ControlCalls!("UIMTabControl", "DUIMTabControl"));
+mixin(ControlCalls!("UIMTab", "DUIMTabControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMTab);
+
+    auto control = UIMTab;
+  }
+}
+

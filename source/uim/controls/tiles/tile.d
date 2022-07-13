@@ -33,12 +33,14 @@ class DUIMTileControl : DUIMControl {
     return results;
   }
 }
-auto UIMTileControl() { return new DUIMTileControl; } 
-auto UIMTile() { return new DUIMTileControl; } 
+mixin(ControlCalls!("UIMTileControl", "DUIMTileControl")); 
+mixin(ControlCalls!("UIMTile", "DUIMTileControl")); 
 
 version(test_uim_controls) {
   unittest {
     assert(UIMTile);
+
     auto control = UIMTile;
+    // TODO
   }
 }

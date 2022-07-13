@@ -88,5 +88,13 @@ class DUIMTabPaneControl : DUIMControl {
       );
   }
 }
-auto UIMTabPaneControl() { return new DUIMTabPaneControl; }
-auto UIMTabPane() { return new DUIMTabPaneControl; }
+mixin(ControlCalls!("UIMTabPaneControl", "DUIMTabPaneControl"));
+mixin(ControlCalls!("UIMTabPane", "DUIMTabPaneControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMTabPane);
+
+    auto control = UIMTabPane;
+  }
+}

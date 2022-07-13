@@ -36,4 +36,13 @@ class DUIMDropdownPaneControl : DUIMTabPaneControl {
     return null;
   }
 }
-auto UIMDropdownPaneControl() { return new DUIMDropdownPaneControl; }
+mixin(ControlCalls!("UIMDropdownPaneControl", "DUIMDropdownPaneControl"));
+mixin(ControlCalls!("UIMDropdownPane", "DUIMDropdownPaneControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMDropdownPane);
+
+    auto control = UIMDropdownPane;
+  }
+}

@@ -29,4 +29,13 @@ class DUIMStatusDotControl : DUIMControl {
       BS5StatusDot(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMStatusDotControl() { return new DUIMStatusDotControl; }
+mixin(ControlCalls!("UIMStatusDotControl", "DUIMStatusDotControl"));
+mixin(ControlCalls!("UIMStatusDot", "DUIMStatusDotControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMStatusDot);
+
+    auto control = UIMStatusDot;
+  }
+}

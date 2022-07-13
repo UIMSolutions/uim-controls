@@ -29,9 +29,14 @@ class DUIMEmptyControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);
   }
 }
-auto UIMEmptyControl() { return new DUIMEmptyControl; }
+mixin(ControlCalls!("UIMEmptyControl", "DUIMEmptyControl"));
+mixin(ControlCalls!("UIMEmpty", "DUIMEmptyControl"));
+
 version(test_uim_controls) {
   unittest {
+    assert(UIMEmpty);
+
+    auto control = UIMEmpty;
     // TODO
   }
 }

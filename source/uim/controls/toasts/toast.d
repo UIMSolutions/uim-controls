@@ -17,10 +17,14 @@ class DUIMToastControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMToastControl() { return new DUIMToastControl; }
+mixin(ControlCalls!("UIMToastControl", "DUIMToastControl"));
+mixin(ControlCalls!("UIMToast", "DUIMToastControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMToast);
+
+    auto control = UIMToast;
     // TODO
   }
 }

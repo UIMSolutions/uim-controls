@@ -18,10 +18,14 @@ class DUIMToolbarControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMToolbarControl() { return new DUIMToolbarControl; }
+mixin(ControlCalls!("UIMToolbarControl", "DUIMToolbarControl"));
+mixin(ControlCalls!("UIMToolbar", "DUIMToolbarControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMToolbar);
+
+    auto control = UIMToolbar;
     // TODO
   }
 }

@@ -17,12 +17,14 @@ class DUIMTileContainerControl : DUIMContainerControl {
     return results;
   }
 }
-auto UIMTileContainerControl() { return new DUIMTileContainerControl; } 
-auto UIMTileContainer() { return new DUIMTileContainerControl; } 
+mixin(ControlCalls!("UIMTileContainerControl", "DUIMTileContainerControl")); 
+mixin(ControlCalls!("UIMTileContainer", "DUIMTileContainerControl")); 
 
 version(test_uim_controls) {
   unittest {
     assert(UIMTileContainer);
+
     auto control = UIMTileContainer;
+    // TODO
   }
 }

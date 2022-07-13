@@ -39,10 +39,13 @@ class DUIMSpinnerControl : DUIMControl {
   }
 
 }
-auto UIMSpinnerControl() { return new DUIMSpinnerControl; }
-auto UIMSpinner() { return new DUIMSpinnerControl; }
+mixin(ControlCalls!("UIMSpinnerControl", "DUIMSpinnerControl"));
+mixin(ControlCalls!("UIMSpinner", "DUIMSpinnerControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMSpinner);
+
+    auto control = UIMSpinner;
   }
 }

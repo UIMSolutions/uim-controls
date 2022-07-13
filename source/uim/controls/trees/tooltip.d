@@ -18,10 +18,14 @@ class DUIMTreeControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMTreeControl() { return new DUIMTreeControl; }
+mixin(ControlCalls!("UIMTreeControl", "DUIMTreeControl"));
+mixin(ControlCalls!("UIMTree", "DUIMTreeControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMTree);
+
+    auto control = UIMTree;
     // TODO
   }
 }

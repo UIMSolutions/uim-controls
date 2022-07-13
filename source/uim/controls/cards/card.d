@@ -97,10 +97,14 @@ class DUIMCardControl : DUIMContainerControl {
       myCard;
   }
 }
-auto UIMCardControl() { return new DUIMCardControl; }
-// auto UIMCard() { return new DUIMCardControl; }
+mixin(ControlCalls!("UIMCardControl", "DUIMCardControl"));
+mixin(ControlCalls!("UIMCard", "DUIMCardControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMCard);
+
+    auto control = UIMCard;
+    // TODO
   }
 }
