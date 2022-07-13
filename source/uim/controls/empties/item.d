@@ -4,17 +4,18 @@ module uim.controls.empties.item;
 import uim.controls;
 
 class DUIMEmptyItemControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMEmptyItemControl"));
 
   override void initialize() {
     super.initialize;
   }
 
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
+    super.toH5(options);
 
     return [
       H5Div(myId, myClasses, myAttributes, myContent)

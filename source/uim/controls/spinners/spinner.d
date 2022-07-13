@@ -4,7 +4,7 @@ module uim.controls.spinners.spinner;
 import uim.controls;
 
 class DUIMSpinnerControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMSpinner"));
 
   mixin(OProperty!("string", "color")); 
   mixin(OProperty!("string", "size")); // normal, small

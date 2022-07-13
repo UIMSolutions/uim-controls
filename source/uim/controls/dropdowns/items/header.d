@@ -4,7 +4,7 @@ module uim.controls.dropdowns.items.header;
 import uim.controls;
 
 class DUIMDropdownHeaderControl : DUIMDropdownItemControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDropdownHeaderControl"));
 
   mixin(OProperty!("string", "title"));
 

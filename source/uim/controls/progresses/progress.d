@@ -4,7 +4,7 @@ module uim.controls.progresses.progress;
 import uim.controls;
 
 class DUIMProgressControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMProgress"));
 
   mixin(OProperty!("string", "size"));
 

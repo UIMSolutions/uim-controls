@@ -4,7 +4,7 @@ module uim.controls.tabs.dropdown;
 import uim.controls;
 
 class DUIMDropdownPaneControl : DUIMTabPaneControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDropdownPane"));
 
   override void initialize() {
     super.initialize;

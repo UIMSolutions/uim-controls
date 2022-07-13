@@ -4,7 +4,7 @@ module uim.controls.tables.row;
 import uim.controls;
 
 class DUIMTableRowControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMTableRow"));
 
   override void initialize() {
     super.initialize;

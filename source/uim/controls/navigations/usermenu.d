@@ -4,7 +4,7 @@ module uim.controls.navigations.usermenu;
 import uim.controls;
 
 class DUIMUsermenuControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMUsermenuControl"));
 
   mixin(OProperty!("DH5Obj[]", "menuItems"));
   mixin(OProperty!("string", "imagePath"));

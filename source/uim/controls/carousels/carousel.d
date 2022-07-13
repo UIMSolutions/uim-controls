@@ -4,7 +4,7 @@ module uim.controls.carousels.carousel;
 import uim.controls;
 
 class DUIMCarouselControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMCarouselControl"));
 
   protected DUIMControl[] _items;  
   DUIMControl[] items(this O)() {

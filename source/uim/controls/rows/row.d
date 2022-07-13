@@ -4,7 +4,7 @@ module uim.controls.rows.row;
 import uim.controls;
 
 class DUIMRowControl : DUIMContainerControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMRow"));
 
   mixin(OProperty!("bool", "deck"));
 

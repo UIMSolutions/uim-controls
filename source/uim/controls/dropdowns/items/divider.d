@@ -4,7 +4,7 @@ module uim.controls.dropdowns.items.divider;
 import uim.controls;
 
 class DUIMDropdownDividerControl : DUIMDropdownItemControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMDropdownDividerControl"));
 
   // mixin(OProperty!("bool", "isDivider"));
 

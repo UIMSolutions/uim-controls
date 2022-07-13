@@ -4,7 +4,7 @@ module uim.controls.steps.step;
 import uim.controls;
 
 class DUIMStepControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMStep"));
 
   override void initialize() {
     super.initialize;

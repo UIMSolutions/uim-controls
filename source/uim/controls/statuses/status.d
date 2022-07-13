@@ -4,7 +4,7 @@ module uim.controls.statuses.status;
 import uim.controls;
 
 class DUIMStatusControl : DUIMControl {
-  this() { super(); }
+  mixin(ControlThis!("UIMStatus"));
 
   mixin(OProperty!("string", "color"));
   mixin(OProperty!("bool", "dot"));
