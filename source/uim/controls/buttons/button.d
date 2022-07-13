@@ -83,11 +83,14 @@ class DUIMButtonControl : DUIMControl {
       }
   }
 }
-auto UIMButtonControl() { return new DUIMButtonControl; }
-auto UIMButton() { return new DUIMButtonControl; }
+mixin(ControlCalls!("UIMButtonControl", "DUIMButtonControl"));
+mixin(ControlCalls!("UIMButton", "DUIMButtonControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMButton);
+
+    auto control = UIMButton;
     // TODO
   }
 }

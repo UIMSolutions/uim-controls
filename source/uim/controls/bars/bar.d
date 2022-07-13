@@ -25,11 +25,14 @@ class DUIMBarControl : DUIMControl {
     ].toH5;
   }
 }
-auto UIMBarControl() { return new DUIMBarControl; }
-auto UIMBar() { return UIMBarControl; }
+mixin(ControlCalls!("UIMBarControl", "DUIMBarControl"));
+mixin(ControlCalls!("UIMBar", "DUIMBarControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMBar);
+
+    auto control = UIMBar;
     // TODO
   }
 }

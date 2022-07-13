@@ -37,10 +37,13 @@ class DUIMDatagridItemControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMDatagridItemControl() { return new DUIMDatagridItemControl; }
-auto UIMDatagridItem() { return new DUIMDatagridItemControl; }
+mixin(ControlCalls!("UIMDatagridItemControl", "DUIMDatagridItemControl"));
+mixin(ControlCalls!("UIMDatagridItem", "DUIMDatagridItemControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMDatagridItem);
+
+    auto control = UIMDatagridItem;
   }
 }

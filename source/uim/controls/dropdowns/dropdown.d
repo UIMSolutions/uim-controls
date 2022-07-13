@@ -58,5 +58,13 @@ class DUIMDropdownControl : DUIMContainerControl {
     );
   }
 }
-auto UIMDropdownControl() { return new DUIMDropdownControl; }
-auto UIMDropdown() { return new DUIMDropdownControl; }
+mixin(ControlCalls!("UIMDropdownControl() { return new DUIMDropdownControl; }
+mixin(ControlCalls!("UIMDropdown() { return new DUIMDropdownControl; }
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMDatagrid);
+
+    auto control = UIMDatagrid;
+  }
+}

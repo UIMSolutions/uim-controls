@@ -75,10 +75,13 @@ class DUIMCarouselControl : DUIMControl {
     ].toH5;
   }
 }
-auto UIMCarouselControl() { return new DUIMCarouselControl; }
-auto UIMCarousel() { return new DUIMCarouselControl; }
+mixin(ControlCalls!("UIMCarouselControl", "DUIMCarouselControl"));
+mixin(ControlCalls!("UIMCarousel", "DUIMCarouselControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMCarousel);
+
+    auto control = UIMCarousel;
   }
 }

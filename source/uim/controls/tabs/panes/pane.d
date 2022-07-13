@@ -27,6 +27,9 @@ class DUIMTabPaneControl : DUIMControl {
   mixin(OProperty!("string", "borderColor"));
 
   mixin(OProperty!("string", "badge"));
+  O badge(this O)(int value) { this.badge(to!string(value)); return cast(O)this; }
+  O badge(this O)(size_t value) { this.badge(to!string(value)); return cast(O)this; }
+
   mixin(OProperty!("string", "badgeColor"));
 
   override void initialize() {
@@ -36,14 +39,13 @@ class DUIMTabPaneControl : DUIMControl {
       .classes(["tab-pane"])
       .attributes(["role":"tabpanel"])
       .showHeader(true)
-      .showFooter(true)
-      .badgeColor("primary");
+      .showFooter(true);
   }
 
   DH5Obj tabHeader(STRINGAA options = null) {
     auto navLink = H5A(["nav-link"]~tabLinkClasses, 
       ["href":"#"~id, "data-bs-toggle":"tab", "role":"tab"], 
-      (icon ? tablerIcon(icon)~"&nbsp;" : "")~title~(this.badge ? BS5Badge(["badge-"~this.badgeColor], this.badge).toString : null));
+      (icon ? tablerIcon(icon)~"&nbsp;" : "")~title~(this.badge ? BS5Badge(["ms-1", (badgeColor ? "badge-"~this.badgeColor : "")], this.badge).toString : null));
 
     if (tooltip) { navLink.attribute("title", tooltip); }
     if (active) { 

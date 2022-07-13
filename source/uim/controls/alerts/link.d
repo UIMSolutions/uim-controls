@@ -14,11 +14,14 @@ class DUIMAlertLinkControl : DUIMControl {
       .attributes(["href":"#"]);
   }
 }
-auto UIMAlertLinkControl() { return new DUIMAlertLinkControl; }
-auto UIMAlertLink() { return new DUIMAlertLinkControl; }
+mixin(ControlCalls!("UIMAlertLinkControl", "DUIMAlertLinkControl"));
+mixin(ControlCalls!("UIMAlertLink", "DUIMAlertLinkControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMAlertLink);
+
+    auto control = UIMAlertLink;
     // TODO
   }
 }

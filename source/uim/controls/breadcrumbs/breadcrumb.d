@@ -22,13 +22,16 @@ class DUIMBreadcrumbControl : DUIMContainerControl {
     if (style) {myClasses ~= "breadcrumb-"~style; }
     
     return results~
-      H5Ol(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);
+      H5Ol(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMBreadcrumbControl() { return new DUIMBreadcrumbControl; }
-auto UIMBreadcrumb() { return new DUIMBreadcrumbControl; }
+mixin(ControlCalls!("UIMBreadcrumbControl", "DUIMBreadcrumbControl"));
+mixin(ControlCalls!("UIMBreadcrumb", "DUIMBreadcrumbControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMBreadcrumb);
+
+    auto control = UIMBreadcrumb;
   }
 }

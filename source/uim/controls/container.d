@@ -33,6 +33,10 @@ class DUIMContainerControl : DUIMControl, IContainer {
     _items ~= newItems;
     return cast(O)this; }
 
+  auto renderItems(STRINGAA options = null) {
+    return items.map!(item => item.toH5(options).toH5).join;
+  }
+
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 

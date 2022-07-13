@@ -25,11 +25,14 @@ class DUIMBreadcrumbItemControl : DUIMControl {
       H5Li(myId, myClasses, myAttributes, myContent);
   }
 }
-auto UIMBreadcrumbItemControl() { return new DUIMBreadcrumbItemControl; }
-auto UIMBreadcrumbItem() { return new DUIMBreadcrumbItemControl; }
+mixin(ControlCalls!("UIMBreadcrumbItemControl", "DUIMBreadcrumbItemControl"));
+mixin(ControlCalls!("UIMBreadcrumbItem", "DUIMBreadcrumbItemControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMBreadcrumbItem);
+
+    auto control = UIMBreadcrumbItem;
     // TODO
   }
 }

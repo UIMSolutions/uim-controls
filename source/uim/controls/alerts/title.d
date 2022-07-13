@@ -10,10 +10,13 @@ class DUIMAlertTitleControl : DUIMControl {
     super.initialize;
   }
 }
-auto UIMAlertTitleControl() { return new DUIMAlertTitleControl; }
-auto UIMAlertTitle() { return new DUIMAlertTitleControl; }
+mixin(ControlCalls!("UIMAlertTitleControl", "DUIMAlertTitleControl"));
+mixin(ControlCalls!("UIMAlertTitle", "DUIMAlertTitleControl"));
 
 version(test_uim_controls) {
   unittest {
+    assert(UIMAlertTitle);
+
+    auto control = UIMAlertTitle;
   }
 }
