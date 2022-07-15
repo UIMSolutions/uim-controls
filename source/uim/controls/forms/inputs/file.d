@@ -3,8 +3,8 @@ module uim.controls.forms.inputs.file;
 @safe: 
 import uim.controls;
 
-class DUIMFormFileInputControl : DUIMInputControl {
-  mixin(ControlThis!("UIMFormFileInputControl"));
+class DUIMFileInputControl : DUIMInputControl {
+  mixin(ControlThis!("UIMFileInputControl"));
 
   mixin(OProperty!("bool", "multiple"));
 
@@ -21,13 +21,13 @@ class DUIMFormFileInputControl : DUIMInputControl {
     if (multiple) myAttributes["multiple"] = "multiple";
   }
 }
-mixin(ControlCalls!("UIMFormFileInputControl", "DUIMFormFileInputControl"));
-mixin(ControlCalls!("UIMFormFileInput", "DUIMFormFileInputControl"));
+mixin(ControlCalls!("UIMFileInputControl", "DUIMFileInputControl"));
+mixin(ControlCalls!("UIMFileInput", "DUIMFileInputControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMFormFileInput);
+    assert(UIMFileInput);
 
-    auto control = UIMFormFileInput;
+    auto control = UIMFileInput;
   }
 }

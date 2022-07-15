@@ -14,6 +14,17 @@ class DUIMWeekInputControl : DUIMInputControl {
       .attributes(["type":"week"]);
   }
 
+  alias value = DUIMInputControl.value;
+  O value(this O)(Date newValue) {
+    this.value("%s-W%s".format(newValue.year, newValue.isoWeek));
+    return cast(O)this;
+  }
+
+  O value(this O)(DateTime newValue) {
+    this.value("%s-W%s".format(newValue.year, newValue.isoWeek));
+    return cast(O)this;
+  }
+
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
   }

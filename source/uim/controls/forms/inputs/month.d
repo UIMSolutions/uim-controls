@@ -14,6 +14,23 @@ class DUIMMonthInputControl : DUIMInputControl {
       .attributes(["type":"month"]);
   }
 
+  alias value = DUIMInputControl.value;
+  O value(this O)(Date newValue) {
+    if (newValue.month < 10)
+      this.value("%s-0%s".format(newValue.year, cast(int)newValue.month));
+    else 
+      this.value("%s-%s".format(newValue.year, cast(int)newValue.month));
+    return cast(O)this;
+  }
+
+  O value(this O)(DateTime newValue) {
+    if (newValue.month < 10)
+      this.value("%s-0%s".format(newValue.year, cast(int)newValue.month));
+    else 
+      this.value("%s-%s".format(newValue.year, cast(int)newValue.month));
+    return cast(O)this;
+  }
+
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
   }
