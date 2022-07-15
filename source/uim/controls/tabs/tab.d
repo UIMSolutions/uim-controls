@@ -11,6 +11,11 @@ class DUIMTabControl : DUIMControl {
   mixin(OProperty!("string[]", "cardClasses"));
   mixin(OProperty!("string", "title"));
   mixin(OProperty!("DUIMTabPaneControl[]", "panes"));
+  O panes(this O)(DUIMTabPaneControl[] newPanes...) {
+    this.panes(newPanes);
+    return cast(O)this;
+  }
+
   mixin(OProperty!("bool", "reverse"));
   mixin(OProperty!("bool", "alternative"));
 

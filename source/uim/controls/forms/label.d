@@ -6,6 +6,8 @@ import uim.controls;
 class DUIMFormLabelControl : DUIMControl {
   mixin(ControlThis!("UIMFormLabelControl"));
 
+  mixin(OProperty!("string", "forElement"));
+
   override void initialize() {
     super.initialize;
 
@@ -13,11 +15,16 @@ class DUIMFormLabelControl : DUIMControl {
       .classes(["form-label"]);
   }
 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
 
-    return results~
-      H5Label(myId, myClasses, myAttributes, myContent);
+    if (forElement) myAttributes["for"] = forElement;
+  }
+
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    super.toH5(options);
+
+    return [H5Label(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMFormLabelControl", "DUIMFormLabelControl"));

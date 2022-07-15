@@ -1,10 +1,10 @@
-public import uim.controls.forms.inputs.text;
+module uim.controls.forms.inputs.password;
 
 @safe: 
 import uim.controls;
 
-class DUIMFormTextInputControl : DUIMFormInputControl {
-  mixin(ControlThis!("UIMFormTextInputControl"));
+class DUIMFormPasswordInputControl : DUIMFormInputControl {
+  mixin(ControlThis!("UIMFormPasswordInputControl"));
 
   mixin(OProperty!("string", "placeholder"));
 
@@ -18,8 +18,7 @@ class DUIMFormTextInputControl : DUIMFormInputControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
-    if (name) myAttributes[name] = name;
-    if (placeholder) myAttributes[placeholder] = placeholder;
+    if (placeholder) myAttributes["placeholder"] = placeholder;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -29,13 +28,13 @@ class DUIMFormTextInputControl : DUIMFormInputControl {
       H5Input(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMFormTextInputControl", "DUIMFormTextInputControl"));
-mixin(ControlCalls!("UIMFormTextInput", "DUIMFormTextInputControl"));
+mixin(ControlCalls!("UIMFormPasswordInputControl", "DUIMFormPasswordInputControl"));
+mixin(ControlCalls!("UIMFormPasswordInput", "DUIMFormPasswordInputControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMFormTextInput);
+    assert(UIMFormPasswordInput);
 
-    auto control = UIMFormTextInput;
+    auto control = UIMFormPasswordInput;
   }
 }

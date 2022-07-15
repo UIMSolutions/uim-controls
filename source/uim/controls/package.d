@@ -51,6 +51,7 @@ public import uim.controls.datagrids;
 public import uim.controls.dividers;
 public import uim.controls.dropdowns;
 public import uim.controls.empties;
+public import uim.controls.footers;
 public import uim.controls.forms;
 public import uim.controls.lists;
 public import uim.controls.medias;

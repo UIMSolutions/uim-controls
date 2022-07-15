@@ -22,16 +22,22 @@ class DUIMTileControl : DUIMControl {
   mixin(OProperty!("bool", "hasNavigation"));
   mixin(OProperty!("bool", "navigationText"));
 
+  mixin(OProperty!("DUIMTileContentControl", "tileContent"));
+
   override void initialize() {
     super.initialize;
+
+    this
+      .classes(["tile"])
+      .tileContent(UIMTileContent);
   }
 
   // Rendering
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results;
-  }
+    return results ~
+      H5Div(myId, myClasses, myAttributes, myContent~tileContent);  }
 }
 mixin(ControlCalls!("UIMTileControl", "DUIMTileControl")); 
 mixin(ControlCalls!("UIMTile", "DUIMTileControl")); 
