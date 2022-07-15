@@ -5,4 +5,5 @@ public import uim.controls.forms.inputs;
 
 // module
 public import uim.controls.forms.form;
+public import uim.controls.forms.floating;
 public import uim.controls.forms.label;

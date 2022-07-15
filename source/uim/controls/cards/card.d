@@ -55,20 +55,9 @@ class DUIMCardControl : DUIMContainerControl {
     return cast(O)this;
   }
 
-  O addHeader(this O)(DH5Obj newItem) {
-    // TODO
-    return cast(O)this;
-  }
-
-  O addBody(this O)(DH5Obj newItem) {
-    // TODO
-    return cast(O)this;
-  }
-
-  O addFooter(this O)(DH5Obj newItem) {
-    // TODO
-    return cast(O)this;
-  }
+  mixin(AddContent!("Header", "UIMCardHeader"));
+  mixin(AddContent!("Body", "UIMCardBody"));
+  mixin(AddContent!("Footer", "UIMCardFooter"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);

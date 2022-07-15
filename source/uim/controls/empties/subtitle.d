@@ -21,3 +21,4 @@ class DUIMEmptySubtitleControl : DUIMEmptyItemControl {
   }
 }
 mixin(ControlCalls!("UIMEmptySubtitleControl", "DUIMEmptySubtitleControl"));
+mixin(ControlCalls!("UIMEmptySubtitle", "DUIMEmptySubtitleControl"));

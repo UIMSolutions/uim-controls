@@ -80,45 +80,110 @@ public import uim.controls.trees;
 
 public import uim.controls.tests;
 
-template AddContent(string name, string type) {
+template AddContent(string name, string content) {
   const char[] AddContent = `
-  O add`~name~`(this O)(string newContent){
-    this.add`~name~`(H5String(newContent));
+  O add`~name~`(this O)(){
+    this.addContent(`~content~`());
     return cast(O)this;
   }
-  O add`~name~`(this O)(string[] classes, string newContent){
-    this.add`~name~`(classes, H5String(newContent));
+
+  O add`~name~`(this O)(string id){
+    this.addContent(`~content~`.id(id));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string[] classes, STRINGAA attributes, string newContent){
-    this.add`~name~`(classes, attributes, H5String(newContent));
+  O add`~name~`(this O)(string[] classes){
+    this.addContent(`~content~`.addClasses(classes));
     return cast(O)this;
   }
-  O add`~name~`(this O)(DH5Obj[] newContent...){
-    this.add`~name~`(newContent);
+  O add`~name~`(this O)(STRINGAA attributes){
+    this.addContent(`~content~`.addAttributes(attributes));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string[] classes, DH5Obj[] newContent...){
-    this.add`~name~`(classes, newContent);
+
+  O add`~name~`(this O)(string id, string[] classes){
+    this.addContent(`~content~`.id(id).addClasses(classes));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] newContent...){
-    this.add`~name~`(classes, attributes, newContent);
+  O add`~name~`(this O)(string id, STRINGAA attributes){
+    this.addContent(`~content~`.id(id).addAttributes(attributes));
     return cast(O)this;
   }
-  O add`~name~`(this O)(DH5Obj[] newContent){
-    _items ~= `~type~`.content(newContent);
+  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes){
+    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string[] classes, DH5Obj[] newContent){
-    _items ~= `~type~`.addClasses(classes).content(newContent);
+
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes){
+    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] newContent){
-    _items ~= `~type~`.addClasses(classes).addAttributes(attributes).content(newContent);
+
+  // -------------------
+
+  O add`~name~`(this O)(string[] classes, string[] content...){
+    this.addContent(`~content~`.addClasses(classes).addContent(content));
     return cast(O)this;
   }
-  `;
+  O add`~name~`(this O)(STRINGAA attributes, string[] content...){
+    this.addContent(`~content~`.addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string id, string[] classes, string[] content...){
+    this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string id, STRINGAA attributes, string[] content...){
+    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, string[] content...){
+    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, string[] content...){
+    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+
+  // ---------------------------------
+
+  O add`~name~`(this O)(DH5Obj[] content...){
+    this.addContent(`~content~`.addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string id, DH5Obj[] content...){
+    this.addContent(`~content~`.id(id).addContent(content));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string[] classes, DH5Obj[] content...){
+    this.addContent(`~content~`.addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(STRINGAA attributes, DH5Obj[] content...){
+    this.addContent(`~content~`.addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string id, string[] classes, DH5Obj[] content...){
+    this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string id, STRINGAA attributes, DH5Obj[] content...){
+    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, DH5Obj[] content...){
+    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] content...){
+    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }`;
 }
 
 template ControlThis(string name) {

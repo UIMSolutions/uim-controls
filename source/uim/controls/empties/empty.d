@@ -3,10 +3,8 @@ module uim.controls.empties.empty;
 @safe: 
 import uim.controls;
 
-class DUIMEmptyControl : DUIMControl {
+class DUIMEmptyControl : DUIMContainerControl {
   mixin(ControlThis!("UIMEmptyControl"));
-
-  mixin(OProperty!("DUIMControl[]", "items"));
 
   override void initialize() {
     super.initialize;
@@ -15,12 +13,12 @@ class DUIMEmptyControl : DUIMControl {
       .classes(["empty"]);
   }
 
-  mixin(AddContent!("Icon", "UIMEmptyIconControl"));
-  mixin(AddContent!("Title", "UIMEmptyTitleControl"));
-  mixin(AddContent!("Header", "UIMEmptyHeaderControl"));
-  mixin(AddContent!("Subtitle", "UIMEmptySubtitleControl"));
-  mixin(AddContent!("Action", "UIMEmptyActionControl"));
-  mixin(AddContent!("Image", "UIMEmptyImageControl"));
+  mixin(AddContent!("Icon", "UIMEmptyIcon"));
+  mixin(AddContent!("Title", "UIMEmptyTitle"));
+  mixin(AddContent!("Header", "UIMEmptyHeader"));
+  mixin(AddContent!("Subtitle", "UIMEmptySubtitle"));
+  mixin(AddContent!("Action", "UIMEmptyAction"));
+  mixin(AddContent!("Image", "UIMEmptyImage"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
