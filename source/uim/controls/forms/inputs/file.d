@@ -3,7 +3,7 @@ module uim.controls.forms.inputs.file;
 @safe: 
 import uim.controls;
 
-class DUIMFormFileInputControl : DUIMFormInputControl {
+class DUIMFormFileInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMFormFileInputControl"));
 
   mixin(OProperty!("bool", "multiple"));

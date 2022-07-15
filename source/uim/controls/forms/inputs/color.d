@@ -3,10 +3,8 @@ module uim.controls.forms.inputs.color;
 @safe: 
 import uim.controls;
 
-class DUIMColorInputControl : DUIMFormInputControl {
+class DUIMColorInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMColorInputControl"));
-
-  mixin(OProperty!("string", "placeholder"));
 
   override void initialize() {
     super.initialize;
