@@ -7,5 +7,6 @@ public import uim.controls.forms.inputs;
 public import uim.controls.forms.form;
 public import uim.controls.forms.floating;
 public import uim.controls.forms.label;
+public import uim.controls.forms.option;
 public import uim.controls.forms.select;
 public import uim.controls.forms.textarea;

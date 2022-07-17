@@ -3,10 +3,11 @@ module uim.controls.forms.select;
 @safe: 
 import uim.controls;
 
-class DUIMFormSelectControl : DUIMControl {
-  mixin(ControlThis!("UIMFormSelectControl"));
+class DUIMSelectControl : DUIMControl {
+  mixin(ControlThis!("UIMSelectControl"));
 
   mixin(OProperty!("string", "size"));
+  mixin(OProperty!("string", "ariaLabel"));
 
   override void initialize() {
     super.initialize;
@@ -19,6 +20,8 @@ class DUIMFormSelectControl : DUIMControl {
     super.beforeH5(options);
 
     if (size) myClasses ~= "form-select-"~size.toLower;
+
+    if (ariaLabel) myAttributes["aria-label"] = ariaLabel;
     if (disabled) myAttributes["disabled"] = "disabled";
   }
 
@@ -29,13 +32,13 @@ class DUIMFormSelectControl : DUIMControl {
       H5Label(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMFormSelectControl", "DUIMFormSelectControl"));
-mixin(ControlCalls!("UIMFormSelect", "DUIMFormSelectControl"));
+mixin(ControlCalls!("UIMSelectControl", "DUIMSelectControl"));
+mixin(ControlCalls!("UIMSelect", "DUIMSelectControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMFormSelect);
+    assert(UIMSelect);
 
-    auto control = UIMFormSelect;
+    auto control = UIMSelect;
   }
 }
