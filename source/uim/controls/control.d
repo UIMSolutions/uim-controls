@@ -62,7 +62,7 @@ class DUIMControl : DH5Obj, IControl {
     if (ariaDisabled) myAttributes["aria-disabled"] = ariaDisabled;
     if (ariaErrormessage) myAttributes["aria-errormessage"] = ariaErrormessage;
     if (ariaExpanded) myAttributes["aria-expanded"] = ariaExpanded;
-    if (ariaHaspopup) myAttributes["aria-haspopup"] = ;
+    if (ariaHaspopup) myAttributes["aria-haspopup"] = ariaHaspopup;
     if (ariaHidden) myAttributes["aria-hidden"] = ariaHidden;
     if (ariaInvalid) myAttributes["aria-invalid"] = ariaInvalid;
     if (ariaLabel) myAttributes["aria-label"] = ariaLabel;

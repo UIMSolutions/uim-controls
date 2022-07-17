@@ -1,9 +1,9 @@
-module uim.controls.forms.textarea;
+module uim.controls.forms.inputs.textarea;
 
 @safe: 
 import uim.controls;
 
-class DUIMTextareaControl : DUIMControl {
+class DUIMTextareaControl : DUIMInputControl {
   mixin(ControlThis!("UIMTextareaControl"));
 
   mixin(OProperty!("bool", "autofocus")); //autofocus	Specifies that a text area should automatically get focus when the page loads

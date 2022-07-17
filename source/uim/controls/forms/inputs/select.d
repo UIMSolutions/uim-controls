@@ -29,7 +29,7 @@ class DUIMSelectControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Label(myId, myClasses, myAttributes, myContent);
+      H5Select(myId, myClasses, myAttributes, myContent);
   }
 }
 mixin(ControlCalls!("UIMSelectControl", "DUIMSelectControl"));
