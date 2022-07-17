@@ -1,4 +1,4 @@
-module uim.controls.forms.label;
+module uim.controls.forms.option;
 
 @safe: 
 import uim.controls;

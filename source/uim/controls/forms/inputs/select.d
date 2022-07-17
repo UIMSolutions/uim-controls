@@ -1,13 +1,10 @@
-module uim.controls.forms.select;
+module uim.controls.forms.inputs.select;
 
 @safe: 
 import uim.controls;
 
-class DUIMSelectControl : DUIMControl {
+class DUIMSelectControl : DUIMInputControl {
   mixin(ControlThis!("UIMSelectControl"));
-
-  mixin(OProperty!("string", "size"));
-  mixin(OProperty!("string", "ariaLabel"));
 
   override void initialize() {
     super.initialize;
@@ -20,8 +17,6 @@ class DUIMSelectControl : DUIMControl {
     super.beforeH5(options);
 
     if (size) myClasses ~= "form-select-"~size.toLower;
-
-    if (ariaLabel) myAttributes["aria-label"] = ariaLabel;
     if (disabled) myAttributes["disabled"] = "disabled";
   }
 

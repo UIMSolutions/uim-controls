@@ -29,3 +29,6 @@ public import uim.controls.forms.inputs.text;
 public import uim.controls.forms.inputs.time;
 public import uim.controls.forms.inputs.url;
 public import uim.controls.forms.inputs.week;
+
+public import uim.controls.forms.inputs.select;
+public import uim.controls.forms.inputs.textarea;

@@ -7,35 +7,16 @@ class DUIMTextareaControl : DUIMInputControl {
   mixin(ControlThis!("UIMTextareaControl"));
 
   mixin(OProperty!("bool", "autofocus")); //autofocus	Specifies that a text area should automatically get focus when the page loads
-  mixin(OProperty!("int", "cols")); //	number	Specifies the visible width of a text area
+  mixin(OProperty!("int", "cols")); //	Specifies the visible width of a text area
   mixin(OProperty!("string", "dirname")); //	textareaname.dir	Specifies that the text direction of the textarea will be submitted
   // mixin(OProperty!("bool", "disabled"));	//	Specifies that a text area should be disabled
   mixin(OProperty!("string", "form")); //	form_id	Specifies which form the text area belongs to
   mixin(OProperty!("int", "maxlength")); 	//	Specifies the maximum number of characters allowed in the text area
-  mixin(OProperty!("string", "name")); //	Specifies a name for a text area
-  mixin(OProperty!("string", "placeholder")); //	Specifies a short hint that describes the expected value of a text area
-  mixin(OProperty!("bool", "readonly")); // Specifies that a text area should be read-only
-  mixin(OProperty!("bool", "required")); 	// Specifies that a text area is required/must be filled out
   mixin(OProperty!("int", "rows")); // Specifies the visible number of lines in a text area
-  mixin(OProperty!("string", "size")); // values: sm (small) or lg (large) for sizeof control
-  mixin(OProperty!("string", "value")); // value of control
   mixin(OProperty!("string", "wrap")); //	values: hard, soft	Specifies how the text in a text area is to be wrapped when submitted in a form
 
   // Additional
-  mixin(OProperty!("string", "description"));
-  mixin(OProperty!("bool", "plaintext"));
   mixin(OProperty!("bool", "rounded"));
-  mixin(OProperty!("bool", "flush"));
-
-  // Binding to entity
-  mixin(OProperty!("DOOPEntity", "entity"));
-  mixin(OProperty!("string", "entityField"));
-
-  // Icons
-  mixin(OProperty!("string", "icon"));
-  mixin(OProperty!("string", "iconColor"));
-  mixin(OProperty!("string", "iconPosition"));
-  mixin(OProperty!("string", "link"));
 
   // Validation
   mixin(OProperty!("string", "invalidText"));
