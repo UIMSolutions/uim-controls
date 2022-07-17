@@ -6,7 +6,6 @@ import uim.controls;
 class DUIMPaginationControl : DUIMContainerControl {
   mixin(ControlThis!("UIMPaginationControl"));
 
-  mixin(OProperty!("string", "ariaLabel"));
   mixin(OProperty!("string", "size"));
   
   override void initialize() {

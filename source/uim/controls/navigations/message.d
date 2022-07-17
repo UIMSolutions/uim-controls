@@ -11,7 +11,6 @@ class DUIMMessagesControl : DUIMControl {
   mixin(OProperty!("string[]", "visibility"));
   mixin(OProperty!("string", "title"));
   mixin(OProperty!("string", "color"));
-  mixin(OProperty!("string", "ariaLabel"));
 
   override void initialize() {
     super.initialize;

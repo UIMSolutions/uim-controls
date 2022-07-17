@@ -8,6 +8,7 @@ class DUIMFormElementControl : DUIMControl {
   mixin(ControlThis!("UIMFormElementControl"));
 
   mixin(OProperty!("string", "name"));
+  mixin(OProperty!("string", "forElement"));
 
   override void initialize() {
     super.initialize;

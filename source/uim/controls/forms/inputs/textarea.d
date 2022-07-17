@@ -15,19 +15,6 @@ class DUIMTextareaControl : DUIMInputControl {
   mixin(OProperty!("int", "rows")); // Specifies the visible number of lines in a text area
   mixin(OProperty!("string", "wrap")); //	values: hard, soft	Specifies how the text in a text area is to be wrapped when submitted in a form
 
-  // Additional
-  mixin(OProperty!("bool", "rounded"));
-
-  // Validation
-  mixin(OProperty!("string", "invalidText"));
-  mixin(OProperty!("string", "validText"));
-  mixin(OProperty!("bool", "valid"));
-  mixin(OProperty!("bool", "invalid"));
-
-  // Help
-  mixin(OProperty!("string", "help"));
-  mixin(OProperty!("string", "helpColor"));
-
   override void initialize() {
     super.initialize;
 

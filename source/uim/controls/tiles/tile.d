@@ -8,10 +8,7 @@ class DUIMTileControl : DUIMControl {
 
   mixin(OProperty!("string", "additionalTooltip")); // Tooltip text which is added at the tooltip
   mixin(OProperty!("string", "appShortcut")); // Link to app
-  mixin(OProperty!("string", "ariaLabel"));
-  mixin(OProperty!("string", "ariaRole"));
   mixin(OProperty!("string", "icon"));
-  mixin(OProperty!("string", "ariaRoleDescription"));
   mixin(OProperty!("string", "bgColor"));
   mixin(OProperty!("string", "bgImage"));
   mixin(OProperty!("string", "errorText"));

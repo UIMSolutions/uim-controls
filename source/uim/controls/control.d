@@ -41,6 +41,31 @@ class DUIMControl : DH5Obj, IControl {
   mixin(OProperty!("string", "ariaValuenow"));
   mixin(OProperty!("string", "ariaValuetext"));
 
+  mixin(OProperty!("string", "ariaRole"));
+  mixin(OProperty!("string", "ariaRoleDescription"));
+
+/*
+aria-dropeffect
+aria-grabbed
+Relationship attributes
+aria-activedescendant
+aria-colcount
+aria-colindex
+aria-colspan
+aria-controls
+aria-describedby
+aria-description
+aria-details
+aria-errormessage
+aria-flowto
+aria-labelledby
+aria-owns
+aria-posinset
+aria-rowcount
+aria-rowindex
+aria-rowspan
+aria-setsize
+*/
   override void initialize() {}
 
   // Used before toH5 
@@ -81,6 +106,9 @@ class DUIMControl : DH5Obj, IControl {
     if (ariaValuemin) myAttributes["aria-valuemin"] = ariaValuemin;
     if (ariaValuenow) myAttributes["aria-valuenow"] = ariaValuenow;
     if (ariaValuetext) myAttributes["aria-valuetext"] = ariaValuetext;
+
+    if (ariaRole) myAttributes["aria-role"] = ariaRole;
+    if (ariaRoleDescription) myAttributes["aria-roledescription"] = ariaRoleDescription;
 
   }
 
