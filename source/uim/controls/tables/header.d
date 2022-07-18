@@ -3,8 +3,8 @@ module uim.controls.tables.header;
 @safe: 
 import uim.controls;
 
-class DUIMTableRowControl : DUIMControl {
-  mixin(ControlThis!("UIMTableRow"));
+class DUIMTableHeaderControl : DUIMControl {
+  mixin(ControlThis!("UIMTableHeader"));
 
   mixin(OProperty!("DUIMControl[]", "cells"));
 
@@ -20,13 +20,13 @@ class DUIMTableRowControl : DUIMControl {
       H5Thead(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMTableRowControl", "DUIMTableRowControl")); 
-mixin(ControlCalls!("UIMTableRow", "DUIMTableRowControl")); 
+mixin(ControlCalls!("UIMTableHeaderControl", "DUIMTableHeaderControl")); 
+mixin(ControlCalls!("UIMTableHeader", "DUIMTableHeaderControl")); 
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMTableRow);
+    assert(UIMTableHeader);
 
-    auto control = UIMTableRow;
+    auto control = UIMTableHeader;
   }
 }

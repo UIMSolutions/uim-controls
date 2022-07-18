@@ -3,8 +3,8 @@ module uim.controls.forms.inputs.groups.text;
 @safe: 
 import uim.controls;
 
-class DUIMInputGroupTextControl : DUIMControl {
-  mixin(ControlThis!("UIMInputGroupTextControl"));
+class DUIMTextInputGroupControl : DUIMControl {
+  mixin(ControlThis!("UIMTextInputGroupControl"));
 
   mixin(OProperty!("string", "forElement"));
 
@@ -27,13 +27,13 @@ class DUIMInputGroupTextControl : DUIMControl {
     return [H5Label(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
-mixin(ControlCalls!("UIMInputGroupTextControl", "DUIMInputGroupTextControl"));
-mixin(ControlCalls!("UIMInputGroupText", "DUIMInputGroupTextControl"));
+mixin(ControlCalls!("UIMTextInputGroupControl", "DUIMTextInputGroupControl"));
+mixin(ControlCalls!("UIMTextInputGroup", "DUIMTextInputGroupControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMInputGroupText);
+    assert(UIMTextInputGroup);
 
-    auto control = UIMInputGroupText;
+    auto control = UIMTextInputGroup;
   }
 }

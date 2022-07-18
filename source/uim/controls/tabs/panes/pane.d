@@ -69,6 +69,7 @@ class DUIMTabPaneControl : DUIMControl {
 
     return navItem;
   }
+  
   override void beforeH5(STRINGAA options = null) { 
       super.beforeH5(options);
 

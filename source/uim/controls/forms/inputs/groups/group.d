@@ -6,7 +6,16 @@ import uim.controls;
 class DUIMInputGroupControl : DUIMControl {
   mixin(ControlThis!("UIMInputGroupControl"));
 
-  mixin(OProperty!("string", "forElement"));
+  mixin(OProperty!("string", "size"));
+
+  mixin(AddContent!("TextAddon", "UIMTextInputGroup"));
+
+  mixin(AddContent!("Email", "UIMEmailControl"));
+  mixin(AddContent!("File", "UIMFileControl"));
+  mixin(AddContent!("Password", "UIMPasswordControl"));
+  mixin(AddContent!("Search", "UIMSearchControl"));
+  mixin(AddContent!("Text", "UIMTextControl"));
+  mixin(AddContent!("Url", "UIMUrlControl"));
 
   override void initialize() {
     super.initialize;
@@ -18,7 +27,7 @@ class DUIMInputGroupControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
-    if (forElement) myAttributes["for"] = forElement;
+    if (size) myClasses ~= "input-group-"~size;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
