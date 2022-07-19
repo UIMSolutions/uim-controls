@@ -3,10 +3,8 @@ module uim.controls.forms.inputs.groups.text;
 @safe: 
 import uim.controls;
 
-class DUIMTextInputGroupControl : DUIMControl {
-  mixin(ControlThis!("UIMTextInputGroupControl"));
-
-  mixin(OProperty!("string", "forElement"));
+class DUIMTextAddonControl : DUIMControl {
+  mixin(ControlThis!("UIMTextAddonControl"));
 
   override void initialize() {
     super.initialize;
@@ -17,23 +15,21 @@ class DUIMTextInputGroupControl : DUIMControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
-
-    if (forElement) myAttributes["for"] = forElement;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
+    auto results = super.toH5(options);
 
-    return [H5Label(myId, myClasses, myAttributes, myContent)].toH5;
+    return results~H5Span(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMTextInputGroupControl", "DUIMTextInputGroupControl"));
-mixin(ControlCalls!("UIMTextInputGroup", "DUIMTextInputGroupControl"));
+mixin(ControlCalls!("UIMTextAddonControl", "DUIMTextAddonControl"));
+mixin(ControlCalls!("UIMTextAddon", "DUIMTextAddonControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMTextInputGroup);
+    assert(UIMTextAddon);
 
-    auto control = UIMTextInputGroup;
+    auto control = UIMTextAddon;
   }
 }

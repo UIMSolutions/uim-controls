@@ -87,10 +87,11 @@ template AddContent(string name, string content) {
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string id){
-    this.addContent(`~content~`.id(id));
+  O add`~name~`(this O)(string content){
+    this.addContent(`~content~`.addContent(content));
     return cast(O)this;
   }
+
   O add`~name~`(this O)(string[] classes){
     this.addContent(`~content~`.addClasses(classes));
     return cast(O)this;
@@ -120,8 +121,17 @@ template AddContent(string name, string content) {
 
   // -------------------
 
+  O add`~name~`(this O)(string[] classes, string[] content){
+    this.addContent(`~content~`.addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string[] classes, string[] content...){
     this.addContent(`~content~`.addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(STRINGAA attributes, string[] content){
+    this.addContent(`~content~`.addAttributes(attributes).addContent(content));
     return cast(O)this;
   }
   O add`~name~`(this O)(STRINGAA attributes, string[] content...){
@@ -129,12 +139,26 @@ template AddContent(string name, string content) {
     return cast(O)this;
   }
 
+  O add`~name~`(this O)(string id, string[] classes, string[] content){
+    this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string id, string[] classes, string[] content...){
     this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
     return cast(O)this;
   }
+
+  O add`~name~`(this O)(string id, STRINGAA attributes, string[] content){
+    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string id, STRINGAA attributes, string[] content...){
     this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, string[] content){
+    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(content));
     return cast(O)this;
   }
   O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, string[] content...){
@@ -142,6 +166,10 @@ template AddContent(string name, string content) {
     return cast(O)this;
   }
 
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, string[] content){
+    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string[] classes, STRINGAA attributes, string[] content...){
     this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
     return cast(O)this;
@@ -149,17 +177,35 @@ template AddContent(string name, string content) {
 
   // ---------------------------------
 
+  O add`~name~`(this O)(DH5Obj[] content){
+    this.addContent(`~content~`.addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(DH5Obj[] content...){
     this.addContent(`~content~`.addContent(content));
     return cast(O)this;
   }
 
+  O add`~name~`(this O)(string id, DH5Obj[] content){
+    this.addContent(`~content~`.id(id).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string id, DH5Obj[] content...){
     this.addContent(`~content~`.id(id).addContent(content));
     return cast(O)this;
   }
+
+  O add`~name~`(this O)(string[] classes, DH5Obj[] content){
+    this.addContent(`~content~`.addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string[] classes, DH5Obj[] content...){
     this.addContent(`~content~`.addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(STRINGAA attributes, DH5Obj[] content){
+    this.addContent(`~content~`.addAttributes(attributes).addContent(content));
     return cast(O)this;
   }
   O add`~name~`(this O)(STRINGAA attributes, DH5Obj[] content...){
@@ -167,12 +213,26 @@ template AddContent(string name, string content) {
     return cast(O)this;
   }
 
+  O add`~name~`(this O)(string id, string[] classes, DH5Obj[] content){
+    this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string id, string[] classes, DH5Obj[] content...){
     this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
     return cast(O)this;
   }
+
+  O add`~name~`(this O)(string id, STRINGAA attributes, DH5Obj[] content){
+    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string id, STRINGAA attributes, DH5Obj[] content...){
     this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, DH5Obj[] content){
+    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(content));
     return cast(O)this;
   }
   O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, DH5Obj[] content...){
@@ -180,6 +240,10 @@ template AddContent(string name, string content) {
     return cast(O)this;
   }
 
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] content){
+    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
+    return cast(O)this;
+  }
   O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] content...){
     this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
     return cast(O)this;

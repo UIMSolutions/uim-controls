@@ -8,14 +8,27 @@ class DUIMInputGroupControl : DUIMControl {
 
   mixin(OProperty!("string", "size"));
 
-  mixin(AddContent!("TextAddon", "UIMTextInputGroup"));
+  mixin(AddContent!("TextAddon", "UIMTextAddonControl"));
+  O addIconAddon(this O)(string icon) { 
+    this.addContent(UIMIconAddonControl.icon(icon)); 
+    return cast(O)this; };
 
-  mixin(AddContent!("Email", "UIMEmailControl"));
-  mixin(AddContent!("File", "UIMFileControl"));
-  mixin(AddContent!("Password", "UIMPasswordControl"));
-  mixin(AddContent!("Search", "UIMSearchControl"));
-  mixin(AddContent!("Text", "UIMTextControl"));
-  mixin(AddContent!("Url", "UIMUrlControl"));
+  mixin(AddContent!("DatetimeInput", "UIMDatetimeInputControl"));
+  mixin(AddContent!("DateInput", "UIMDateInputControl"));
+  mixin(AddContent!("EmailInput", "UIMEmailInputControl"));
+  mixin(AddContent!("FileInput", "UIMFileInputControl"));
+  mixin(AddContent!("ImageInput", "UIMImageInputControl"));
+  mixin(AddContent!("MonthInput", "UIMMonthInputControl"));
+  mixin(AddContent!("NumberInput", "UIMNumberInputControl"));
+  mixin(AddContent!("PasswordInput", "UIMPasswordInputControl"));
+  mixin(AddContent!("RangeInput", "UIMRangeInputControl"));
+  mixin(AddContent!("ResetInput", "UIMResetInputControl"));
+  mixin(AddContent!("SearchInput", "UIMSearchInputControl"));
+  mixin(AddContent!("TextInput", "UIMTextInputControl"));
+  mixin(AddContent!("TextareaInput", "UIMTextareaInputControl"));
+  mixin(AddContent!("TimeInput", "UIMTimeInputControl"));
+  mixin(AddContent!("UrlInput", "UIMUrlInputControl"));
+  mixin(AddContent!("WeekInput", "UIMWeekInputControl"));
 
   override void initialize() {
     super.initialize;
