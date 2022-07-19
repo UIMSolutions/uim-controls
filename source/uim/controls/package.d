@@ -254,19 +254,45 @@ template ControlThis(string name) {
   const char[] ControlThis = `
     this() { super(); }
 `;
+
 }
 
 template ControlCalls(string callName, string className) {
   const char[] ControlCalls = `
 auto `~callName~`() { return new `~className~`(); }
 auto `~callName~`(string anId) { return `~callName~`().id(anId); }
-auto `~callName~`(string[] newClasses) { return `~callName~`().addClasses(newClasses); }
-auto `~callName~`(string[string] newAttributes) { return `~callName~`().addAttributes(newAttributes); }
+auto `~callName~`(string[] newClasses) { return `~callName~`.addClasses(newClasses); }
+auto `~callName~`(string[string] newAttributes) { return `~callName~`.addAttributes(newAttributes); }
 
 auto `~callName~`(string anId, string[] newClasses) { return `~callName~`(anId).addClasses(newClasses); }
 auto `~callName~`(string anId, string[string] newAttributes) { return `~callName~`(anId).addAttributes(newAttributes); }
 auto `~callName~`(string anId, string[] newClasses, string[string] newAttributes) { return `~callName~`(anId, newClasses).addAttributes(newAttributes); }
 
-auto `~callName~`(string[] newClasses, string[string] newAttributes) { return `~callName~`().addClasses(newClasses).addAttributes(newAttributes); }
+auto `~callName~`(string[] newClasses, string[string] newAttributes) { return `~callName~`(newClasses).addAttributes(newAttributes); }
+
+auto `~callName~`(string[] newClasses, DH5Obj[] content...) { return `~callName~`(newClasses).addContent(content); }
+auto `~callName~`(string[] newClasses, DH5Obj[] content) { return `~callName~`(newClasses).addContent(content); }
+
+auto `~callName~`(string[string] newAttributes, DH5Obj[] content...) { return `~callName~`(newAttributes).addContent(content); }
+auto `~callName~`(string[string] newAttributes, DH5Obj[] content) { return `~callName~`(newAttributes).addContent(content); }
+
+auto `~callName~`(string[] newClasses, string[string] newAttributes, DH5Obj[] content...) { return `~callName~`(newClasses, newAttributes).addContent(content); }
+auto `~callName~`(string[] newClasses, string[string] newAttributes, DH5Obj[] content) { return `~callName~`(newClasses, newAttributes).addContent(content); }
+
+auto `~callName~`(string anId, string[] newClasses, DH5Obj[] content...) { return `~callName~`(anId, newClasses).addContent(content); }
+auto `~callName~`(string anId, string[] newClasses, DH5Obj[] content) { return `~callName~`(anId, newClasses).addContent(content); }
+
+auto `~callName~`(string anId, string[string] newAttributes, DH5Obj[] content...) { return `~callName~`(anId, newAttributes).addContent(content); }
+auto `~callName~`(string anId, string[string] newAttributes, DH5Obj[] content) { return `~callName~`(anId, newAttributes).addContent(content); }
+
+auto `~callName~`(string anId, string[] newClasses, string[string] newAttributes, DH5Obj[] content...) { return `~callName~`(anId, newClasses, newAttributes).addContent(content); }
+auto `~callName~`(string anId, string[] newClasses, string[string] newAttributes, DH5Obj[] content) { return `~callName~`(anId, newClasses, newAttributes).addContent(content); }
+
+auto `~callName~`(string anId, DH5Obj[] content...) { return `~callName~`(anId).addContent(content); }
+auto `~callName~`(string anId, DH5Obj[] content) { return `~callName~`(anId).addContent(content); }
+
+auto `~callName~`(DH5Obj[] content...) { return `~callName~`.addContent(content); }
+auto `~callName~`(DH5Obj[] content) { return `~callName~`.addContent(content); }
+
 `;
 }
