@@ -31,11 +31,10 @@ class DUIMChartControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      BS5Card(myId, myClasses, myAttributes)
-        .body_(myId~"-chart", [""])~
+      H5Div(myId, myClasses, myAttributes)~
       H5Script(`document.addEventListener("DOMContentLoaded", function () {
   window.ApexCharts && (new ApexCharts(
-    document.getElementById('`~myId~"-chart"~`'), `~chartOptions~`)).render();
+    document.getElementById('`~myId~`'), `~chartOptions~`)).render();
 });`); 
 
   }
