@@ -7,8 +7,11 @@ class DUIMCheckboxControl : DUIMInputControl {
   mixin(ControlThis!("UIMCheckboxControl"));
 
   mixin(OProperty!("bool", "checked"));
+  mixin(OProperty!("bool", "inline"));
   // mixin(OProperty!("bool", "disabled"));
   mixin(OProperty!("string", "label"));
+  mixin(OProperty!("string", "description"));
+  mixin(OProperty!("bool", "descriptionTop"));
 
   override void initialize() {
     super.initialize;
@@ -23,14 +26,14 @@ class DUIMCheckboxControl : DUIMInputControl {
 
     myClasses = myClasses.remove!(`a == "form-control"`);
     if (checked) myAttributes["checked"] = "checked";
-    if (checked) myAttributes["disabled"] = "disabled";
+    if (disabled) myAttributes["disabled"] = "disabled";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
     return [
-      H5Div(["form-check"], 
+      H5Div(["form-check"]~(inline ? "form-check-inline" : null), 
         H5Input(myId, myClasses, myAttributes),
         (label ? H5Label(["form-check-label"], ["for":myId], label) : null))].toH5;
   }
