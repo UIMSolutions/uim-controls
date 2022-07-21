@@ -14,13 +14,14 @@ class DUIMCheckboxControl : DUIMInputControl {
     super.initialize;
 
     this
-      .addClasses(["form-check-input"])
+      .classes(["form-check-input"])
       .attributes(["type":"checkbox"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
+    myClasses = myClasses.remove!(`a == "form-control"`);
     if (checked) myAttributes["checked"] = "checked";
     if (checked) myAttributes["disabled"] = "disabled";
   }
@@ -29,7 +30,7 @@ class DUIMCheckboxControl : DUIMInputControl {
     super.toH5(options);
 
     return [
-      H5Div(
+      H5Div(["form-check"], 
         H5Input(myId, myClasses, myAttributes),
         (label ? H5Label(["form-check-label"], ["for":myId], label) : null))].toH5;
   }
