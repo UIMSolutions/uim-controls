@@ -3,16 +3,18 @@ module uim.controls.forms.inputs.checkbox;
 @safe: 
 import uim.controls;
 
-class DUIMCheckboxInputControl : DUIMInputControl {
-  mixin(ControlThis!("UIMCheckboxInputControl"));
+class DUIMCheckboxControl : DUIMInputControl {
+  mixin(ControlThis!("UIMCheckboxControl"));
 
-  mixin(OProperty!("string", "checked"));
+  mixin(OProperty!("bool", "checked"));
+  // mixin(OProperty!("bool", "disabled"));
+  mixin(OProperty!("string", "label"));
 
   override void initialize() {
     super.initialize;
 
     this
-      .addClasses(["form-check"])
+      .addClasses(["form-check-input"])
       .attributes(["type":"checkbox"]);
   }
 
@@ -20,24 +22,26 @@ class DUIMCheckboxInputControl : DUIMInputControl {
     super.beforeH5(options);
 
     if (checked) myAttributes["checked"] = "checked";
+    if (checked) myAttributes["disabled"] = "disabled";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
     return [
-      H5Div(myClasses,
-        H5Input(myId, ["form-check-input"], myAttributes),
-        H5Label(["form-check-label"], ["for":myId], title))].toH5;
+      H5Div(
+        H5Input(myId, myClasses, myAttributes),
+        (label ? H5Label(["form-check-label"], ["for":myId], label) : null))].toH5;
   }
 }
-mixin(ControlCalls!("UIMCheckboxInputControl", "DUIMCheckboxInputControl"));
-mixin(ControlCalls!("UIMCheckboxInput", "DUIMCheckboxInputControl"));
+
+mixin(ControlCalls!("UIMCheckboxControl", "DUIMCheckboxControl"));
+mixin(ControlCalls!("UIMCheckbox", "DUIMCheckboxControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMCheckboxInput);
+    assert(UIMCheckbox);
 
-    auto control = UIMCheckboxInput;
+    auto control = UIMCheckbox;
   }
 }
