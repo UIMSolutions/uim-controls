@@ -13,6 +13,7 @@ class DUIMChartControl : DUIMControl {
   /* Specify the chart type. Available Options:
   * line, area, bar, radar, histogram, pie, donut, radialBar, scatter, bubble, heatmap, candlestick */
   mixin(OProperty!("string", "type")); 
+  mixin(OProperty!("string", "chartOptions")); 
 
   override void initialize() {
     super.initialize;
@@ -30,12 +31,11 @@ class DUIMChartControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Div(myId, myClasses, myAttributes, myContent)~
+      BS5Card(myId, myClasses, myAttributes)
+        .body_(myId~"-chart", [""])~
       H5Script(`document.addEventListener("DOMContentLoaded", function () {
   window.ApexCharts && (new ApexCharts(
-    document.getElementById('`~myId~`'), {`
-    ~""~
-  `})).render();
+    document.getElementById('`~myId~"-chart"~`'), `~chartOptions~`)).render();
 });`); 
 
   }
