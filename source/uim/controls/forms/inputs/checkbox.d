@@ -10,7 +10,7 @@ class DUIMCheckboxControl : DUIMInputControl {
   mixin(OProperty!("bool", "inline"));
   // mixin(OProperty!("bool", "disabled"));
   mixin(OProperty!("string", "label"));
-  mixin(OProperty!("string", "description"));
+  // mixin(OProperty!("string", "description"));
   mixin(OProperty!("bool", "descriptionTop"));
 
   override void initialize() {
@@ -34,8 +34,11 @@ class DUIMCheckboxControl : DUIMInputControl {
 
     return [
       H5Div(["form-check"]~(inline ? "form-check-inline" : null), 
+        (description && descriptionTop ? H5Span(["form-check-description"], description) : null),
         H5Input(myId, myClasses, myAttributes),
-        (label ? H5Label(["form-check-label"], ["for":myId], label) : null))].toH5;
+        (label ? H5Label(["form-check-label"], ["for":myId], label) : null),
+        (description && !descriptionTop ? H5Span(["form-check-description", "mt-0"], description) : null)
+      )].toH5;
   }
 }
 
