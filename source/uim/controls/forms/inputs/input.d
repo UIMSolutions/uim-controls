@@ -51,6 +51,9 @@ class DUIMInputControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
+    this
+      .id("input-%s".format(uniform(0, 1000000)));
+    
     if (rounded) myClasses ~= "form-control-rounded";
     if (flush) myClasses ~= "form-control-flush";
     if (plaintext) myClasses = ["form-control-plaintext"];
