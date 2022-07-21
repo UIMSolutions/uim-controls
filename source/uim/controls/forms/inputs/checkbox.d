@@ -12,6 +12,7 @@ class DUIMCheckboxControl : DUIMInputControl {
   mixin(OProperty!("string", "label"));
   // mixin(OProperty!("string", "description"));
   mixin(OProperty!("bool", "descriptionTop"));
+  mixin(OProperty!("bool", "inputMode"));
 
   override void initialize() {
     super.initialize;
@@ -31,6 +32,13 @@ class DUIMCheckboxControl : DUIMInputControl {
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
+
+    if (inputMode) {
+      myClasses ~= "m-0";
+      return [
+        H5Span(["input-group-text"],
+          H5Input(myId, myClasses, myAttributes))].toH5;
+    }
 
     return [
       H5Div(["form-check"]~(inline ? "form-check-inline" : null), 

@@ -24,6 +24,7 @@ public import uim.controls.forms.inputs.range;
 public import uim.controls.forms.inputs.reset;
 public import uim.controls.forms.inputs.search;
 public import uim.controls.forms.inputs.submit;
+public import uim.controls.forms.inputs.switch_;
 public import uim.controls.forms.inputs.telephone;
 public import uim.controls.forms.inputs.text;
 public import uim.controls.forms.inputs.time;

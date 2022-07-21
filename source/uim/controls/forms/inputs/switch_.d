@@ -1,10 +1,10 @@
-module uim.controls.forms.inputs.radio;
+module uim.controls.forms.inputs.switch_;
 
 @safe: 
 import uim.controls;
 
-class DUIMRadioControl : DUIMInputControl {
-  mixin(ControlThis!("UIMRadioControl"));
+class DUIMSwitchControl : DUIMInputControl {
+  mixin(ControlThis!("UIMSwitchControl"));
 
   mixin(OProperty!("bool", "checked"));
   mixin(OProperty!("bool", "inline"));
@@ -18,8 +18,8 @@ class DUIMRadioControl : DUIMInputControl {
     super.initialize;
 
     this
-      .addClasses(["form-check-input"])
-      .attributes(["type":"radio"]);
+      .classes(["form-check-input"])
+      .attributes(["type":"checkbox"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -41,7 +41,7 @@ class DUIMRadioControl : DUIMInputControl {
     }
 
     return [
-      H5Div(["form-check"]~(inline ? "form-check-inline" : null), 
+      H5Div(["form-check", "form-switch"]~(inline ? "form-check-inline" : null), 
         (description && descriptionTop ? H5Span(["form-check-description"], description) : null),
         H5Input(myId, myClasses, myAttributes),
         (label ? H5Label(["form-check-label"], ["for":myId], label) : null),
@@ -49,13 +49,14 @@ class DUIMRadioControl : DUIMInputControl {
       )].toH5;
   }
 }
-mixin(ControlCalls!("UIMRadioControl", "DUIMRadioControl"));
-mixin(ControlCalls!("UIMRadio", "DUIMRadioControl"));
+
+mixin(ControlCalls!("UIMSwitchControl", "DUIMSwitchControl"));
+mixin(ControlCalls!("UIMSwitch", "DUIMSwitchControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMRadio);
+    assert(UIMSwitch);
 
-    auto control = UIMRadio;
+    auto control = UIMSwitch;
   }
 }
