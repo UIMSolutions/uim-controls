@@ -21,10 +21,7 @@ class DUIMSelectGroupCheckboxControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
-    return [
-        H5Label()
-      
-    ].toH5;
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMSelectGroupCheckboxControl", "DUIMSelectGroupCheckboxControl"));
