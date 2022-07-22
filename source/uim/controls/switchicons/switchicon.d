@@ -6,8 +6,13 @@ import uim.controls;
 class DUIMSwitchIconControl : DUIMControl {
   mixin(ControlThis!("UIMSwitchIconControl"));
 
+  mixin(OProperty!("string[]", "icons"));
   mixin(OProperty!("string", "iconOne"));
   mixin(OProperty!("string", "iconTwo"));
+
+  mixin(OProperty!("bool", "fill"));
+  mixin(OProperty!("bool", "fillOne"));
+  mixin(OProperty!("bool", "fillTwo"));
 
   mixin(OProperty!("string[]", "classesOne"));
   mixin(OProperty!("string[]", "classesTwo"));
@@ -28,6 +33,21 @@ class DUIMSwitchIconControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
+    if (fill) {
+      this
+        .fillOne(true)
+        .fillTwo(true);
+    }
+    if (icons.length == 1) {
+      this
+        .iconOne(icons[0])
+        .iconTwo(icons[0]);
+    }
+    else if (icons.length > 1) {
+      this
+        .iconOne(icons[0])
+        .iconTwo(icons[1]);
+    }
     if (fade) myClasses ~= "switch-icon-fade";
     if (scale) myClasses ~= "switch-icon-scale";
     if (flip) myClasses ~= "switch-icon-flip";
@@ -38,9 +58,10 @@ class DUIMSwitchIconControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Button(myId, myClasses, myAttributes, 
-        H5Span(["switch-icon-a"]~classesOne, tablerIcon(iconOne)),
-        H5Span(["switch-icon-b"]~classesTwo, tablerIcon(iconTwo)));
+      // H5Div(["d-flex space-x-2"],
+        H5Button(myId, myClasses, myAttributes, 
+          H5Span(["switch-icon-a"]~classesOne, tablerIcon(iconOne, (fillOne ? ["icon-filled"] : null))),
+          H5Span(["switch-icon-b"]~classesTwo, tablerIcon(iconTwo, (fillTwo ? ["icon-filled"] : null)))); // );
   }
 }
 mixin(ControlCalls!("UIMSwitchIconControl", "DUIMSwitchIconControl"));
