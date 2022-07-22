@@ -7,6 +7,7 @@ class DUIMListItemControl : DUIMContainerControl {
   mixin(ControlThis!("UIMListItemControl"));
 
   mixin(OProperty!("string", "color"));
+  mixin(OProperty!("string", "link"));
 
   override void initialize() {
     super.initialize;
