@@ -12,6 +12,11 @@ class DUIMSwitchIconControl : DUIMControl {
   mixin(OProperty!("string[]", "classesOne"));
   mixin(OProperty!("string[]", "classesTwo"));
 
+  mixin(OProperty!("bool", "fade"));
+  mixin(OProperty!("bool", "scale"));
+  mixin(OProperty!("bool", "flip"));
+  mixin(OProperty!("string", "slide")); // up, left, right, down
+
   override void initialize() {
     super.initialize;
 
@@ -23,6 +28,10 @@ class DUIMSwitchIconControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
+    if (fade) myClasses ~= "switch-icon-fade";
+    if (scale) myClasses ~= "switch-icon-scale";
+    if (flip) myClasses ~= "switch-icon-flip";
+    if (slide) myClasses ~= "switch-icon-slide-"~slide;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
