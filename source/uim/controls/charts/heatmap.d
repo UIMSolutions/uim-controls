@@ -5,6 +5,10 @@ import uim.controls;
 
 class DUIMHeatmapChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMHeatmapChartControl"));
+  
+  override void initialize() {
+    super.initialize;
+  }
 }
 mixin(ControlCalls!("UIMHeatmapChartControl", "DUIMHeatmapChartControl"));
 mixin(ControlCalls!("UIMHeatmapChart", "DUIMHeatmapChartControl"));

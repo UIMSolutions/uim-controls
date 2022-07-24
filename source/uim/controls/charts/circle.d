@@ -5,6 +5,10 @@ import uim.controls;
 
 class DUIMCircleChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMCircleChartControl"));
+  
+  override void initialize() {
+    super.initialize;
+  }
 }
 mixin(ControlCalls!("UIMCircleChartControl", "DUIMCircleChartControl"));
 mixin(ControlCalls!("UIMCircleChart", "DUIMCircleChartControl"));
