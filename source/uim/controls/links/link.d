@@ -4,8 +4,8 @@ module uim.controls.links.link;
 import uim.controls;
 
 // A LinkControl is a hyperlink control which is used to navigate to other pages or to trigger actions.
-class DUIMFormControl : DUIMContainerControl {
-  mixin(ControlThis!("UIMFormControl"));
+class DUIMLinkControl : DUIMContainerControl {
+  mixin(ControlThis!("UIMLinkControl"));
 
   override void initialize() {
     super.initialize;
@@ -15,17 +15,17 @@ class DUIMFormControl : DUIMContainerControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Form(myId, myClasses, myAttributes, myContent);
+      H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMFormControl", "DUIMFormControl"));
-mixin(ControlCalls!("UIMForm", "DUIMFormControl"));
+mixin(ControlCalls!("UIMLinkControl", "DUIMLinkControl"));
+mixin(ControlCalls!("UIMLink", "DUIMLinControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMForm);
+    assert(UIMLink);
 
-    auto control = UIMForm;
+    auto control = UIMLink;
   }
 }
 
