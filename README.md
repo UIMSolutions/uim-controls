@@ -4,4 +4,4 @@ uim-controls are a set of web controls to build enterprise-ready web application
 
 On server level it's based on D, on client level it's based on JavaScript and follows web standards. 
 
-It eases your development with HTML5.
+It eases developments with HTML5.
