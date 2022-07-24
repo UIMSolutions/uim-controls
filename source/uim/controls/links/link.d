@@ -19,7 +19,7 @@ class DUIMLinkControl : DUIMContainerControl {
   }
 }
 mixin(ControlCalls!("UIMLinkControl", "DUIMLinkControl"));
-mixin(ControlCalls!("UIMLink", "DUIMLinControl"));
+mixin(ControlCalls!("UIMLink", "DUIMLinkControl"));
 
 version(test_uim_controls) {
   unittest {

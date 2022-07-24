@@ -14,7 +14,7 @@ class DUIMImageControl : DUIMContainerControl {
   mixin(OProperty!("string", "altText"));
 
   // ariaHasPopup is a value for the aria-haspopup attribute of the Image.
-  mixin(OProperty!("string", "ariaHasPopup"));
+  // mixin(OProperty!("string", "ariaHasPopup"));
 
   // backgroundPosition defines the position of the image in background mode.  
   mixin(OProperty!("string", "backgroundPosition"));

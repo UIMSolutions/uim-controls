@@ -84,6 +84,7 @@ public import uim.controls.tabs;
 public import uim.controls.tiles;
 public import uim.controls.timelines;
 public import uim.controls.toasts;
+public import uim.controls.tokens;
 public import uim.controls.tokenizers;
 public import uim.controls.toolbars;
 public import uim.controls.tooltips;
