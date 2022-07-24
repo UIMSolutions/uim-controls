@@ -1,1 +1,1 @@
- module uim.control.illustrations.illustration;
+ module uim.controls.illustrations.illustration;

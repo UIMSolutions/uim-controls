@@ -1,1 +1,1 @@
-module uim.contrrols.factes.filters.item;
+module uim.controls.factes.filters.item;

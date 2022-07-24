@@ -1,4 +1,4 @@
-module uim.contrrols.factes.filters;
+module uim.controls.factes.filters;
 
-public import uim.contrrols.factes.filters.item;
-public import uim.contrrols.factes.filters.list;
+public import uim.controls.factes.filters.item;
+public import uim.controls.factes.filters.list;
