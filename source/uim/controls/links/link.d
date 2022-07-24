@@ -1,5 +1,8 @@
 module uim.controls.links.link;
 
+// A LinkControl is a hyperlink control which is used to navigate to other pages or to trigger actions.
+
+
 /*
 Ein Hyperlink-Steuerelement zum Navigieren zu anderen Apps und Webseiten oder zum Auslösen von Aktionen.
 
