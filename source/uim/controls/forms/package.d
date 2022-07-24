@@ -1,7 +1,6 @@
 module uim.controls.forms;
 
 // package
-public import uim.controls.forms.inputs;
 public import uim.controls.forms.selectgroups;
 
 
