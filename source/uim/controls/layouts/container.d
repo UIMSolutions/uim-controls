@@ -3,8 +3,8 @@ module uim.controls.layouts.container;
 @safe: 
 import uim.controls;
 
-class DUIMContainerLayoutControl : DUIMLayoutControl {
-  mixin(ControlThis!("UIMContainerLayoutControl"));
+class DUIMContainerControl : DUIMLayoutControl {
+  mixin(ControlThis!("UIMContainerControl"));
 
   mixin(OProperty!("string", "breakpoint"));
 
@@ -31,9 +31,16 @@ class DUIMContainerLayoutControl : DUIMLayoutControl {
       default: myClasses ~= ["container"]; break;
     }
   }
+
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    auto results = super.toH5(options);
+
+    return results~
+      H5Div(myId, myClasses, myAttributes, myContent);
+  }
 }
-mixin(ControlCalls!("UIMContainerLayoutControl", "DUIMContainerLayoutControl"));
-mixin(ControlCalls!("UIMContainer", "DUIMContainerLayoutControl"));
+mixin(ControlCalls!("UIMContainerControl", "DUIMContainerControl"));
+mixin(ControlCalls!("UIMContainer", "DUIMContainerControl"));
 
 version(test_uim_controls) {
   unittest {

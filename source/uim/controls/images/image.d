@@ -48,10 +48,17 @@ class DUIMImageControl : DUIMControl {
 
   // width defines the width of the displayed image
   mixin(OProperty!("string", "width"));
+  mixin(OProperty!("string", "srcset"));
+  mixin(OProperty!("string", "sizes"));
 
   mixin(OProperty!("bool", "fluid"));
   mixin(OProperty!("bool", "thumbnail"));
   mixin(OProperty!("bool", "rounded"));
+  mixin(OProperty!("bool", "circle"));
+  mixin(OProperty!("bool", "pill"));
+  mixin(OProperty!("string", "rotate"));
+  mixin(OProperty!("string", "position"));
+  mixin(OProperty!("string", "fit"));
 
   override void initialize() {
     super.initialize;
@@ -63,7 +70,28 @@ class DUIMImageControl : DUIMControl {
     if (fluid) myClasses ~= "img-fluid";
     if (thumbnail) myClasses ~= "img-thumbnail";
     if (rounded) myClasses ~= "rounded";
-    if (source) myAttributes["src"] = "source";
+    if (circle) myClasses ~= "rounded-circle";
+    if (pill) myClasses ~= "rounded-pill";
+
+    if (altText) myAttributes["alt"] = altText;
+    if (height) myAttributes["height"] = height;
+    if (fit) {
+      if ("style" !in myAttributes) myAttributes["style"] = "";
+      myAttributes["style"] = (myAttributes["style"].split(";")~"object-fit:%s".format(fit)).join(";");
+    }    
+    if (position) {
+      if ("style" !in myAttributes) myAttributes["style"] = "";
+      myAttributes["style"] = (myAttributes["style"].split(";")~"object-position:%s".format(position)).join(";");
+    }    
+    if (rotate) {
+      if ("style" !in myAttributes) myAttributes["style"] = "";
+      myAttributes["style"] = (myAttributes["style"].split(";")~"transform: rotate(%sdeg)".format(rotate)).join(";");
+    }    
+    if (source) myAttributes["src"] = source;
+    if (srcset) myAttributes["srcset"] = srcset;
+    if (sizes) myAttributes["sizes"] = sizes;
+    if (width) myAttributes["width"] = width;
+    
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -78,7 +106,13 @@ mixin(ControlCalls!("UIMImage", "DUIMImageControl"));
 version(test_uim_controls) {
   unittest {
     assert(UIMImage);
+    assert(UIMImage == "<img>");
 
     auto control = UIMImage;
   }
 }
+
+unittest {
+  writeln(UIMImage.source("test.jpg"));
+}
+

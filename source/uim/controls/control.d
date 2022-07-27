@@ -66,7 +66,12 @@ aria-rowindex
 aria-rowspan
 aria-setsize
 */
-  override void initialize() {}
+  override void initialize() {
+    super.initialize;
+
+    this
+      .id("control-%s".format(uniform(0, 1_000_000)));
+  }
 
   // Used before toH5 
   protected string myId;
@@ -110,16 +115,6 @@ aria-setsize
     if (ariaRole) myAttributes["aria-role"] = ariaRole;
     if (ariaRoleDescription) myAttributes["aria-roledescription"] = ariaRoleDescription;
 
-  }
-
-  alias content = DH5Obj.content;
-  O content(this O)(DUIMControl[] controls...) {
-    this.content(controls);
-    return cast(O)this;
-  }
-  O content(this O)(DUIMControl[] controls) {
-    this.content(controls.map!(control => cast(DH5Obj)control).array);
-    return cast(O)this;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
