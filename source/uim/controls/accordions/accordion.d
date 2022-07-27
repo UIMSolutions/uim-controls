@@ -6,6 +6,8 @@ import uim.controls;
 class DUIMAccordionControl : DUIMControl {
   mixin(ControlThis!("UIMAccordionControl"));
 
+  mixin(OProperty!("bool", "flush"));
+
   override void initialize() {
     super.initialize;
 
@@ -15,6 +17,8 @@ class DUIMAccordionControl : DUIMControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
+
+    if (flush) myClasses ~= "accordion-flush";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
