@@ -3,7 +3,7 @@ module uim.controls.dropdowns.dropdown;
 @safe: 
 import uim.controls;
 
-class DUIMDropdownControl : DUIMContainerControl {
+class DUIMDropdownControl : DUIMControl {
   mixin(ControlThis!("UIMDropdownControl"));
 
   mixin(OProperty!("string", "color"));

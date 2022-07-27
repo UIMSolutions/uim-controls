@@ -3,7 +3,7 @@ module uim.controls.forms.selectgroups.selectgroup;
 @safe: 
 import uim.controls;
 
-class DUIMSelectGroupControl : DUIMContainerControl {
+class DUIMSelectGroupControl : DUIMControl {
   mixin(ControlThis!("UIMSelectGroupControl"));
 
   mixin(OProperty!("string", "forElement"));

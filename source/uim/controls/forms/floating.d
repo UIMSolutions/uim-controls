@@ -3,7 +3,7 @@ module uim.controls.forms.floating;
 @safe: 
 import uim.controls;
 
-class DUIMFormFloatingControl : DUIMContainerControl {
+class DUIMFormFloatingControl : DUIMControl {
   mixin(ControlThis!("UIMFormFloatingControl"));
 
   mixin(OProperty!("string", "title"));

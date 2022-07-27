@@ -3,7 +3,7 @@ module uim.controls.buttons.list;
 @safe: 
 import uim.controls;
 
-class DUIMButtonListControl : DUIMContainerControl {
+class DUIMButtonListControl : DUIMControl {
   mixin(ControlThis!("UIMButtonListControl"));
 
   override void initialize() {

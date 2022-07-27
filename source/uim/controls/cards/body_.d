@@ -3,7 +3,7 @@ module uim.controls.cards.body_;
 @safe: 
 import uim.controls;
 
-class DUIMCardBodyControl : DUIMContainerControl {
+class DUIMCardBodyControl : DUIMControl {
   mixin(ControlThis!("UIMCardBodyControl"));
 
   override void initialize() {

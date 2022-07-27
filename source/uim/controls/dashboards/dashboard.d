@@ -3,7 +3,7 @@ module uim.controls.carousels.dashboard;
 @safe: 
 import uim.controls;
 
-class DUIMDashboardControl : DUIMContainerControl {
+class DUIMDashboardControl : DUIMControl {
   mixin(ControlThis!("UIMDashboard"));
 
   override void initialize() {

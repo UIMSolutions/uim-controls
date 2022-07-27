@@ -3,7 +3,7 @@ module uim.controls.datagrids.datagrid;
 @safe: 
 import uim.controls;
 
-class DUIMDatagridControl : DUIMContainerControl {
+class DUIMDatagridControl : DUIMControl {
   mixin(ControlThis!("UIMDatagridControl"));
 
   override void initialize() {

@@ -3,7 +3,7 @@ module uim.controls.lists.list;
 @safe: 
 import uim.controls;
 
-class DUIMListControl : DUIMContainerControl {
+class DUIMListControl : DUIMControl {
   mixin(ControlThis!("UIMListControl"));
 
 

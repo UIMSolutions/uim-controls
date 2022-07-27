@@ -4,7 +4,7 @@ module uim.controls.lists.items.avatar;
 import uim.controls;
 
 // Simple listitem with a avatar at start or end or both. 
-class DUIMAvatarListItemControl : DUIMContainerControl {
+class DUIMAvatarListItemControl : DUIMControl {
   mixin(ControlThis!("UIMAvatarListItemControl"));
 
   override void initialize() {

@@ -3,7 +3,7 @@ module uim.controls.lists.items.custom;
 @safe: 
 import uim.controls;
 
-class DUIMCustomListitemControl : DUIMContainerControl {
+class DUIMCustomListitemControl : DUIMControl {
   mixin(ControlThis!("UIMCustomListitemControl"));
 
   override void initialize() {

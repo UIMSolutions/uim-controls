@@ -3,7 +3,7 @@ module uim.controls.avatars.list;
 @safe: 
 import uim.controls;
 
-class DUIMAvatarListControl : DUIMContainerControl {
+class DUIMAvatarListControl : DUIMControl {
   mixin(ControlThis!("UIMAvatarListControl"));
 
   override void initialize() {
@@ -20,7 +20,7 @@ class DUIMAvatarListControl : DUIMContainerControl {
     if (stacked) myClasses ~= "avatar-list-stacked"; 
 
     return results~
-      H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);  
+      H5Div(myId, myClasses, myAttributes, myContent);  
   }
 }
 mixin(ControlCalls!("UIMAvatarListControl", "DUIMAvatarListControl"));

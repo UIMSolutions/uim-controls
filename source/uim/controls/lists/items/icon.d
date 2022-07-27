@@ -4,7 +4,7 @@ module uim.controls.lists.items.icon;
 import uim.controls;
 
 // Simple listitem with a Icon at start or end or both. 
-class DUIMIconListItemControl : DUIMContainerControl {
+class DUIMIconListItemControl : DUIMControl {
   mixin(ControlThis!("UIMIconListItemControl"));
 
   override void initialize() {

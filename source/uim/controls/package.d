@@ -34,7 +34,6 @@ public import layouts.tabler;
 
 // Packages for main classes
 public import uim.controls.control;
-public import uim.controls.container;
 
 // PACKAGES
 public import uim.controls.accordions;

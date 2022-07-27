@@ -3,7 +3,7 @@ module  uim.controls.lists.items.item;
 @safe: 
 import uim.controls;
 
-class DUIMListItemControl : DUIMContainerControl {
+class DUIMListItemControl : DUIMControl {
   mixin(ControlThis!("UIMListItemControl"));
 
   mixin(OProperty!("string", "color"));

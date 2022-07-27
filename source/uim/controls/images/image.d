@@ -4,7 +4,7 @@ module uim.controls.images.image;
 import uim.controls;
 
 // ImageControl is like a wrapper around the <img> tag and more ;-) Every image can be loaded from a remote or local server. 
-class DUIMImageControl : DUIMContainerControl {
+class DUIMImageControl : DUIMControl {
   mixin(ControlThis!("UIMImageControl"));
 
   // activeSource defines the source of the image which is used when the image is pressed.
@@ -49,6 +49,10 @@ class DUIMImageControl : DUIMContainerControl {
   // width defines the width of the displayed image
   mixin(OProperty!("string", "width"));
 
+  mixin(OProperty!("bool", "fluid"));
+  mixin(OProperty!("bool", "thumbnail"));
+  mixin(OProperty!("bool", "rounded"));
+
   override void initialize() {
     super.initialize;
   }
@@ -56,7 +60,10 @@ class DUIMImageControl : DUIMContainerControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
-    // TODO
+    if (fluid) myClasses ~= "img-fluid";
+    if (thumbnail) myClasses ~= "img-thumbnail";
+    if (rounded) myClasses ~= "rounded";
+    if (source) myAttributes["src"] = "source";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

@@ -3,7 +3,7 @@ module uim.controls.paginations.pagination;
 @safe:
 import uim.controls;
 
-class DUIMPaginationControl : DUIMContainerControl {
+class DUIMPaginationControl : DUIMControl {
   mixin(ControlThis!("UIMPaginationControl"));
 
   mixin(OProperty!("string", "size"));

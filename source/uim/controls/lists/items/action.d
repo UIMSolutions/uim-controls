@@ -5,7 +5,7 @@ import uim.controls;
 
 // This control provides the text feature, which enables you to set a center aligned text. 
 // This is a simple list item for triggering actions. 
-class DUIMActionListItemControl : DUIMContainerControl {
+class DUIMActionListItemControl : DUIMControl {
   mixin(ControlThis!("UIMActionListItemControl"));
 
   override void initialize() {

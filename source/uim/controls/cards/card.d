@@ -8,7 +8,7 @@ options.
 @safe: 
 import uim.controls;
 
-class DUIMCardControl : DUIMContainerControl {
+class DUIMCardControl : DUIMControl {
   mixin(ControlThis!("UIMCard"));
 
   mixin(OProperty!("string", "size"));

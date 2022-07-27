@@ -3,7 +3,7 @@ module uim.controls.rows.row;
 @safe: 
 import uim.controls;
 
-class DUIMRowControl : DUIMContainerControl {
+class DUIMRowControl : DUIMControl {
   mixin(ControlThis!("UIMRow"));
 
   mixin(OProperty!("bool", "deck"));

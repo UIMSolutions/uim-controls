@@ -3,7 +3,7 @@ module uim.controls.tiles.slide;
 @safe: 
 import uim.controls;
 
-class DUIMTileSlideControl : DUIMContainerControl {
+class DUIMTileSlideControl : DUIMControl {
   mixin(ControlThis!("UIMTileSlide"));
 
   override void initialize() {

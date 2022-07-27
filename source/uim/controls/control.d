@@ -112,6 +112,16 @@ aria-setsize
 
   }
 
+  alias content = DH5Obj.content;
+  O content(this O)(DUIMControl[] controls...) {
+    this.content(controls);
+    return cast(O)this;
+  }
+  O content(this O)(DUIMControl[] controls) {
+    this.content(controls.map!(control => cast(DH5Obj)control).array);
+    return cast(O)this;
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
     beforeH5(options);
     return null;

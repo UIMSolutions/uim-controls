@@ -3,7 +3,7 @@ module uim.controls.empties.empty;
 @safe: 
 import uim.controls;
 
-class DUIMEmptyControl : DUIMContainerControl {
+class DUIMEmptyControl : DUIMControl {
   mixin(ControlThis!("UIMEmptyControl"));
 
   override void initialize() {
@@ -24,7 +24,7 @@ class DUIMEmptyControl : DUIMContainerControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Div(myId, myClasses, myAttributes, myContent~items.map!(item => item.toH5(options)).join);
+      H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
 mixin(ControlCalls!("UIMEmptyControl", "DUIMEmptyControl"));

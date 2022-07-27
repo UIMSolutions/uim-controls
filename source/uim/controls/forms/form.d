@@ -3,7 +3,7 @@ module uim.controls.forms.form;
 @safe: 
 import uim.controls;
 
-class DUIMFormControl : DUIMContainerControl {
+class DUIMFormControl : DUIMControl {
   mixin(ControlThis!("UIMFormControl"));
 
   override void initialize() {

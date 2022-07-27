@@ -4,7 +4,7 @@ module uim.controls.lists.items.badge;
 import uim.controls;
 
 // Simple listitem with a badge at start or end or both. 
-class DUIMBadgeListItemControl : DUIMContainerControl {
+class DUIMBadgeListItemControl : DUIMControl {
   mixin(ControlThis!("UIMBadgeListItemControl"));
 
   mixin(OProperty!("string", "badgePosition")); // default right. Other values are left and both

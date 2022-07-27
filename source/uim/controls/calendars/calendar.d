@@ -3,7 +3,7 @@ module uim.controls.calendars.calendar;
 @safe: 
 import uim.controls;
 
-class DUIMCalendarControl : DUIMContainerControl {
+class DUIMCalendarControl : DUIMControl {
   mixin(ControlThis!("UIMCalendarControl"));
 
   override void initialize() {

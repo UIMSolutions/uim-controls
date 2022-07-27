@@ -3,7 +3,7 @@ module uim.controls.invoices.invoice;
 @safe: 
 import uim.controls;
 
-class DUIMInvoiceControl : DUIMContainerControl {
+class DUIMInvoiceControl : DUIMControl {
   mixin(ControlThis!("UIMInvoiceControl"));
 
   override void initialize() {

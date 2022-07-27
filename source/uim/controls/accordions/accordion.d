@@ -3,7 +3,7 @@ module uim.controls.accordions.accordion;
 @safe:
 import uim.controls;
 
-class DUIMAccordionControl : DUIMContainerControl {
+class DUIMAccordionControl : DUIMControl {
   mixin(ControlThis!("UIMAccordionControl"));
 
   override void initialize() {
