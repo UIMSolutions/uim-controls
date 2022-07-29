@@ -35,3 +35,6 @@ version(test_uim_controls) {
     auto control = UIMBreadcrumb;
   }
 }
+unittest {
+  writeln(UIMBreadcrumb);
+}
