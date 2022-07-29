@@ -29,10 +29,10 @@ class DUIMAccordionControl : DUIMControl {
     auto style = "";
     if (icons) {
       style ~= `#`~this.id~`.accordion-button::after {
-    background-image: url(/img/icons/`~icons[0]~`); transform: scale(0.75) !important;
+    background-image: url(`~icons[0]~`); transform: scale(0.75) !important;
 }
 #`~this.id~`.accordion-button:not(.collapsed)::after {
-    background-image: url(/img/icons/`~icons[1]~`);
+    background-image: url(`~icons[1]~`);
 }`;
     }
 
