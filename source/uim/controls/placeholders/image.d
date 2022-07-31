@@ -8,6 +8,9 @@ class DUIMPlaceHolderImageControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes(["placeholder-image"]);
   }
 }
 mixin(ControlCalls!("UIMPlaceHolderImageControl", "DUIMPlaceHolderImageControl"));
