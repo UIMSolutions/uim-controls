@@ -7,7 +7,7 @@ class DUIMEmailInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMEmailInputControl"));
 
   mixin(OProperty!("bool", "multiple"));
-  #
+  
   override void initialize() {
     super.initialize;
 
