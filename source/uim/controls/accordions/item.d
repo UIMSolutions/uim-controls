@@ -27,7 +27,7 @@ class DUIMAccordionItemControl : DUIMControl {
     auto myParentId = this.parent ? this.parent.id : null;
 
     return results~
-      BS5AccordionItem( 
+      BS5AccordionItem.id(myId)( 
         BS5AccordionHeader(myId~"-header", headerClasses,
           BS5AccordionButton(active ? null : ["collapsed"], ["data-bs-toggle":"collapse", "data-bs-target":"#"~myId~"-collapse"], 
             title
@@ -46,9 +46,11 @@ mixin(ControlCalls!("UIMAccordionItem", "DUIMAccordionItemControl"));
 version(test_uim_controls) {
   unittest {
     assert(UIMAccordionItem);
-    auto control = UIMAccordionItem;
-    // TODO
+    assert(UIMAccordionItem.id("test") == `<div id="test" class="accordion-item"><h2 id="test-header" class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#test-collapse" data-bs-toggle="collapse" type="button"></button></h2><div id="test-collapse" class="accordion-collapse collapse" data-bs-parent="#"><div class="accordion-body"></div></div></div>`);
+
     assert(UIMAccordionItem.title("testTitle").title == "testTitle");
+    assert(UIMAccordionItem.id("test").title("testTitle") == `<div id="test" class="accordion-item"><h2 id="test-header" class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#test-collapse" data-bs-toggle="collapse" type="button">testTitle</button></h2><div id="test-collapse" class="accordion-collapse collapse" data-bs-parent="#"><div class="accordion-body"></div></div></div>
+<nav aria-label="breadcrumb"><ol id="control-921455" class="breadcrumb breadcrumb-test" aria-label="breadcrumbs"></ol></nav>`);
 
     assert(UIMAccordionItem.bodyClasses(["a", "b"]).bodyClasses == ["a", "b"]);
     assert(UIMAccordionItem.headerClasses(["a", "b"]).headerClasses == ["a", "b"]);
@@ -56,6 +58,4 @@ version(test_uim_controls) {
 }
 
 unittest {
-    writeln(UIMAccordionItem);
-    writeln(UIMAccordionItem.title("testTitle"));
 }
