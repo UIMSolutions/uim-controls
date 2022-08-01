@@ -48,5 +48,14 @@ version(test_uim_controls) {
     assert(UIMAccordionItem);
     auto control = UIMAccordionItem;
     // TODO
+    assert(UIMAccordionItem.title("testTitle").title == "testTitle");
+
+    assert(UIMAccordionItem.bodyClasses(["a", "b"]).bodyClasses == ["a", "b"]);
+    assert(UIMAccordionItem.headerClasses(["a", "b"]).headerClasses == ["a", "b"]);
   }
+}
+
+unittest {
+    writeln(UIMAccordionItem);
+    writeln(UIMAccordionItem.title("testTitle"));
 }
