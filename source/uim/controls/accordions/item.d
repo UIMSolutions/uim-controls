@@ -6,7 +6,9 @@ import uim.controls;
 class DUIMAccordionItemControl : DUIMControl {
   mixin(ControlThis!("UIMAccordionItemControl"));
 
-  mixin(OProperty!("string", "titel"));
+  mixin(OProperty!("string", "title"));
+  mixin(OProperty!("string[]", "bodyClasses"));
+  mixin(OProperty!("string[]", "headerClasses"));
 
   override void initialize() {
     super.initialize;
@@ -26,13 +28,14 @@ class DUIMAccordionItemControl : DUIMControl {
 
     return results~
       BS5AccordionItem( 
-        BS5AccordionHeader(myId~"-header",
+        BS5AccordionHeader(myId~"-header", headerClasses,
           BS5AccordionButton(active ? null : ["collapsed"], ["data-bs-toggle":"collapse", "data-bs-target":"#"~myId~"-collapse"], 
-            titel
+            title
           )
         ),
         BS5AccordionCollapse(myId~"-collapse", ["collapse"]~(active ? ["show"] : null), ["data-bs-parent":"#"~myParentId], 
-          BS5AccordionBody(myContent)
+          BS5AccordionBody(bodyClasses,
+            myContent)
         )
       );
   }
