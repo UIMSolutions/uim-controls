@@ -45,7 +45,18 @@ mixin(ControlCalls!("UIMSpinner", "DUIMSpinnerControl"));
 version(test_uim_controls) {
   unittest {
     assert(UIMSpinner);
+    assert(UIMSpinner.color("red").color == "red"); 
+    assert(UIMSpinner.size("small").size == "small"); 
+    assert(UIMSpinner.style("grow").style == "grow");
+    assert(UIMSpinner.embedded(true).embedded); 
 
     auto control = UIMSpinner;
   }
+}
+unittest {
+  writeln(UIMSpinner);
+  writeln(UIMSpinner.color("red")); 
+  writeln(UIMSpinner.size("small")); 
+  writeln(UIMSpinner.style("grow"));
+  writeln(UIMSpinner.embedded(true)); 
 }
