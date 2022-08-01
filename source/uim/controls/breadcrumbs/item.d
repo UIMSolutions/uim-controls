@@ -6,6 +6,8 @@ import uim.controls;
 class DUIMBreadcrumbItemControl : DUIMControl {
   mixin(ControlThis!("UIMBreadcrumbItemControl"));
 
+  mixin(OProperty!("string", "link"));
+
   override void initialize() {
     super.initialize;
 
@@ -20,6 +22,10 @@ class DUIMBreadcrumbItemControl : DUIMControl {
       myClasses ~= ["active"];
       myAttributes["aria-current"] = "page"; 
     }
+
+    if (link) 
+      return results~
+        H5Li(myId, myClasses, myAttributes, H5A(["href":link], myContent));
 
     return results~
       H5Li(myId, myClasses, myAttributes, myContent);
