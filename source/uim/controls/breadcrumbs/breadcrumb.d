@@ -7,6 +7,7 @@ class DUIMBreadcrumbControl : DUIMControl {
   mixin(ControlThis!("UIMBreadcrumbControl"));
 
   mixin(OProperty!("string", "style"));
+  mixin(OProperty!("string", "icon"));
 
   override void initialize() {
     super.initialize;
@@ -20,9 +21,12 @@ class DUIMBreadcrumbControl : DUIMControl {
     auto results = super.toH5(options);
 
     if (style) {myClasses ~= "breadcrumb-"~style; }
-    
+    auto navAttributes = ["aria-label":"breadcrumb"];
+    if (icon) navAttributes["style"] = "--bs-breadcrumb-divider: url(/img/icons/"~icon~");";
+
     return results~
-      H5Ol(myId, myClasses, myAttributes, myContent);
+      H5Nav(navAttributes, 
+        H5Ol(myId, myClasses, myAttributes, myContent));
   }
 }
 mixin(ControlCalls!("UIMBreadcrumbControl", "DUIMBreadcrumbControl"));
@@ -33,8 +37,10 @@ version(test_uim_controls) {
     assert(UIMBreadcrumb);
 
     auto control = UIMBreadcrumb;
-  }
+    assert(UIMBreadcrumb.style("test").style == "test");
+//    assert(UIMBreadcrumb.style("test").style == "test");
+ }
 }
 unittest {
-  writeln(UIMBreadcrumb);
+  writeln(UIMBreadcrumb.style("test"));
 }

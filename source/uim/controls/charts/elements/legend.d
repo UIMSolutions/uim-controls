@@ -18,6 +18,15 @@ class DUIMChartLegendElement {
       
   mixin(OProperty!("string", "fontSize"));
   mixin(OProperty!("string", "fontFamily"));
+  mixin(OProperty!("string", "fontWeight"));
+  mixin(OProperty!("string", "formatter"));
+  mixin(OProperty!("bool", "inverseOrder"));
+  mixin(OProperty!("string", "width"));
+  mixin(OProperty!("string", "height"));
+  mixin(OProperty!("string", "tooltipHoverFormatter"));
+  mixin(OProperty!("string", "customLegendItems"));
+  mixin(OProperty!("string", "offsetX"));
+  mixin(OProperty!("string", "offsetY"));
   
   
   override string toString() {
