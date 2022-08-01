@@ -6,6 +6,8 @@ import uim.controls;
 class DUIMPlaceHolderControl : DUIMControl {
   mixin(ControlThis!("UIMPlaceHolderControl"));
 
+  mixin(OProperty!("string", "color"));
+
   override void initialize() {
     super.initialize;
   }
