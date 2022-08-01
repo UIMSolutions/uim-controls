@@ -14,6 +14,7 @@ class DUIMAvatarControl : DUIMControl {
   }
 
   mixin(OProperty!("string", "image"));
+  mixin(OProperty!("string", "style"));
   mixin(OProperty!("string", "icon"));
   mixin(OProperty!("string", "text"));
   mixin(OProperty!("string", "color"));
@@ -37,6 +38,7 @@ class DUIMAvatarControl : DUIMControl {
     if (color) { myClasses ~= "bg-"~color.toLower; }
     if (shape) { myClasses ~= this.shape; }
     if (size)  { myClasses ~= "avatar-"~this.size; }
+    if (style)  { myClasses ~= style; }
 
     if (image) { myAttributes["style"] = "background-image: url("~image~")"; }
     if (icon)  { myContent ~= H5String(tablerIcon(icon)); }
