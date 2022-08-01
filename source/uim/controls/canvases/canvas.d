@@ -1,1 +1,33 @@
-module uim.controls.canvases.convas;
+module uim.controls.canvases.canvas;
+
+@safe: 
+import uim.controls;
+
+class DUIMCanvasControl : DUIMControl {
+  mixin(ControlThis!("UIMCanvasControl"));
+
+  mixin(OProperty!("string", "width"));
+  mixin(OProperty!("string", "height"));
+  
+  override void initialize() {
+    super.initialize;
+  }
+
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    auto results = super.toH5(options);
+
+    return results~
+      H5Canvas(myId, myClasses, myAttributes, myContent);
+  }
+}
+mixin(ControlCalls!("UIMCanvasControl", "DUIMCanvasControl"));
+mixin(ControlCalls!("UIMCanvas", "DUIMCanvasControl"));
+
+version(test_uim_controls) {
+  unittest {
+    assert(UIMCanvas);
+
+    auto control = UIMCanvas;
+    // TODO
+  }
+}

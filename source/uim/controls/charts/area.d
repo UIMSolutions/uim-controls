@@ -9,6 +9,13 @@ class DUIMAreaChartControl : DUIMChartControl {
   override void initialize() {
     super.initialize;
   }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    this
+      .type("area"); 
+  }
 }
 mixin(ControlCalls!("UIMAreaChartControl", "DUIMAreaChartControl"));
 mixin(ControlCalls!("UIMAreaChart", "DUIMAreaChartControl"));

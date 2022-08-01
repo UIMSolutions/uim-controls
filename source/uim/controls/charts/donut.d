@@ -8,6 +8,9 @@ class DUIMDonutChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("donut"); 
   }
 }
 mixin(ControlCalls!("UIMDonutChartControl", "DUIMDonutChartControl"));

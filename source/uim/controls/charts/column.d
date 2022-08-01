@@ -8,6 +8,9 @@ class DUIMColumnChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("column"); 
   }
 }
 mixin(ControlCalls!("UIMColumnChartControl", "DUIMColumnChartControl"));

@@ -8,6 +8,9 @@ class DUIMScatterChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("scatter"); 
   }
 }
 mixin(ControlCalls!("UIMScatterChartControl", "DUIMScatterChartControl"));

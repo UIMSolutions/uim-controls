@@ -8,6 +8,13 @@ class DUIMBarChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("bar"); 
+  }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
   }
 }
 mixin(ControlCalls!("UIMPieChartControl", "DUIMBarChartControl"));

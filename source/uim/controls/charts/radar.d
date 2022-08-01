@@ -8,6 +8,9 @@ class DUIMRadarChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("radar"); 
   }
 }
 mixin(ControlCalls!("UIMRadarChartControl", "DUIMRadarChartControl"));

@@ -8,6 +8,9 @@ class DUIMCircleChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("circle"); 
   }
 }
 mixin(ControlCalls!("UIMCircleChartControl", "DUIMCircleChartControl"));
