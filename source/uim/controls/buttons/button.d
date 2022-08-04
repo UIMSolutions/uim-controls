@@ -61,25 +61,25 @@ class DUIMButtonControl : DUIMControl {
       case "link":
         myAttributes["href"] = link;
         myAttributes["role"] = "button";
-        return [H5A(myId, myClasses, myAttributes, myTitle)].toH5;
+        return [H5A(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
       case "input":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, myTitle)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
       case "button":
         myAttributes["type"] = "button";
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, myTitle)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
       case "reset":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, myTitle)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
       case "submit":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, myTitle)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
       default: 
-        return [H5Button(myId, myClasses, myAttributes, myTitle)].toH5;      
+        return [H5Button(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;      
       }
   }
 }
