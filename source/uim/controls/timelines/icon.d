@@ -7,6 +7,8 @@ class DUIMLinkControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this.classes(["list-timeline-icon"]);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
