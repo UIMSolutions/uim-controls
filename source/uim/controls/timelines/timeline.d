@@ -8,6 +8,8 @@ class DUIMTimelineControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+this.classes(["list", "Lust-Timeline"]);
   }
 
   // Rendering
