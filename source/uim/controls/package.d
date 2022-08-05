@@ -69,6 +69,7 @@ public import uim.controls.navigations;
 public import uim.controls.offcanvases;
 public import uim.controls.pageheaders;
 public import uim.controls.paginations;
+public import uim.controls.pictures;
 public import uim.controls.placeholders;
 public import uim.controls.popovers;
 public import uim.controls.processes;
