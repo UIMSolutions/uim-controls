@@ -3,7 +3,6 @@ module uim.controls.timelines.content;
 @safe: 
 import uim.controls;
 
-// A LinkControl is a hyperlink control which is used to navigate to other pages or to trigger actions.
 class DUIMTimelineContentControl : DUIMControl {
   mixin(ControlThis!("UIMTimelineContent"));
 
