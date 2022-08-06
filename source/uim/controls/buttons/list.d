@@ -34,3 +34,6 @@ version(test_uim_controls) {
     auto control = UIMButtonList;
   }
 }
+unittest {
+  writeln(UIMButtonList.id("test"));
+}

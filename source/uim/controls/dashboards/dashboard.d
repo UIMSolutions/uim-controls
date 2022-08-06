@@ -10,7 +10,7 @@ class DUIMDashboardControl : DUIMControl {
     super.initialize;
 
     this
-      .classes(["dropdown"]);
+      .classes(["dashboard"]);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
