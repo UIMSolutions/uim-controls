@@ -1,6 +1,4 @@
 module uim.controls.tooltips;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.tooltips.tooltip;
