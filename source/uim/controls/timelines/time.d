@@ -1,3 +1,5 @@
+module uim.controls.timelines.time;
+
 @safe: 
 import uim.controls;
 
