@@ -40,3 +40,8 @@ version(test_uim_controls) {
     // TODO
   }
 }
+unittest {
+  writeln(UIMDivider.id("test"));
+  writeln(UIMDivider.id("test").position("testPosition"));
+  writeln(UIMDivider.id("test").color("testColor"));
+}
