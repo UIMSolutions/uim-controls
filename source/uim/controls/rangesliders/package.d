@@ -1,6 +1,4 @@
 module uim.controls.rangesliders;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.rangesliders.rangeslider;
