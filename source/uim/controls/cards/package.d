@@ -1,10 +1,9 @@
 module uim.controls.cards;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.cards.card;
 
+// Additional
 public import uim.controls.cards.body_;
 public import uim.controls.cards.footer;
 public import uim.controls.cards.header;

@@ -93,6 +93,7 @@ public import uim.controls.tokenizers;
 public import uim.controls.toolbars;
 public import uim.controls.tooltips;
 public import uim.controls.trees;
+public import uim.controls.wizards;
 
 public import uim.controls.tests;
 

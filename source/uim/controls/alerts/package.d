@@ -1,8 +1,8 @@
 module uim.controls.alerts;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.alerts.alert;
+
+// Additional
 public import uim.controls.alerts.link;
 public import uim.controls.alerts.title;

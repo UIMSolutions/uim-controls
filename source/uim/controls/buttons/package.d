@@ -1,7 +1,7 @@
 module uim.controls.buttons;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.buttons.button;
+
+// Container
 public import uim.controls.buttons.list;

@@ -1,6 +1,4 @@
 module uim.controls.modals;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.modals.modal;

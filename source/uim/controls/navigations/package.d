@@ -1,8 +1,8 @@
 module uim.controls.navigations;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.navigations.navigation;
+
+// Additional
 public import uim.controls.navigations.messages;
 public import uim.controls.navigations.usermenu;

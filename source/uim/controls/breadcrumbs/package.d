@@ -1,7 +1,7 @@
 module uim.controls.breadcrumbs;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.breadcrumbs.breadcrumb;
+
+// Additional
 public import uim.controls.breadcrumbs.item;
