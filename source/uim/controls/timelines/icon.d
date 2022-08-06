@@ -1,30 +1,36 @@
+module uim.controls.timelines.icon;
+
 @safe: 
 import uim.controls;
 
-// A LinkControl is a hyperlink control which is used to navigate to other pages or to trigger actions.
-class DUIMLinkControl : DUIMControl {
-  mixin(ControlThis!("UIMLinkControl"));
+class DUIMTimelineIconControl : DUIMControl {
+  mixin(ControlThis!("UIMTimelineIconControl"));
 
+  mixin(OProperty!("string", "color"));
+  
   override void initialize() {
     super.initialize;
 
-    this.classes(["list-timeline-icon"]);
+    this
+      .classes(["list-timeline-icon"]);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
+    if (color) myClasses ~= "bg-"+color;
+    
     return results~
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMLinkControl", "DUIMLinkControl"));
-mixin(ControlCalls!("UIMLink", "DUIMLinkControl"));
+mixin(ControlCalls!("UIMTimelineIconControl", "DUIMTimelineIconControl"));
+mixin(ControlCalls!("UIMTimelineIcon", "DUIMTimelineIconControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMLink);
+    assert(UIMTimelineIcon);
 
-    auto control = UIMLink;
+    auto control = UIMTimelineIcon;
   }
 }
