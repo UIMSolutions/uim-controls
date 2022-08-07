@@ -12,6 +12,8 @@ class DUIMRangeSliderControl : DUIMControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
+ 
+    myAttributes["data-slider"] = ˋ'{"js-name": "slider1","start": 50,"range": {"min": 0,"max": 100}}'ˋ;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -19,7 +21,7 @@ class DUIMRangeSliderControl : DUIMControl {
 
     return results~
       H5Div(myId, myClasses, myAttributes, myContent);
-  }
+    }
 }
 mixin(ControlCalls!("UIMRangeSliderControl", "DUIMRangeSliderControl"));
 mixin(ControlCalls!("UIMRangeSlider", "DUIMRangeSliderControl"));

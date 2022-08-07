@@ -8,6 +8,8 @@ class DUIMTimelineControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this.classes(["list", "list-timeline"]);
   }
 
   // Rendering
@@ -15,7 +17,7 @@ class DUIMTimelineControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+      H5Ul(myId, myClasses, myAttributes, myContent);
   }
 }
 mixin(ControlCalls!("UIMTimelineControl", "DUIMTimelineControl")); 

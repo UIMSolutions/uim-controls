@@ -1,6 +1,4 @@
 module uim.controls.switchicons;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.switchicons.switchicon;

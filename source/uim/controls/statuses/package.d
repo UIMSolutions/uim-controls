@@ -1,8 +1,8 @@
 module uim.controls.statuses;
 
-@safe: 
-import uim.controls;
+// Main
+public import uim.controls.statuses.status;
 
+// Additional
 public import uim.controls.statuses.dot;
 public import uim.controls.statuses.indicator;
-public import uim.controls.statuses.status;

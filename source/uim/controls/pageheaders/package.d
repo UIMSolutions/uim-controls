@@ -1,6 +1,8 @@
 module uim.controls.pageheaders;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.pageheaders.pageheader;
+
+// Additional
+public import uim.controls.pageheaders.pretitle;
+public import uim.controls.pageheaders.title;

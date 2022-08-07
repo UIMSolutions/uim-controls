@@ -1,6 +1,4 @@
 module uim.controls.panels;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.panels.panel;
