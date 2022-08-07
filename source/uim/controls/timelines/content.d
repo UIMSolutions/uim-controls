@@ -10,7 +10,7 @@ class DUIMTimelineContentControl : DUIMControl {
     super.initialize;
     
     this
-      .classes(["list-timeline-content"])
+      .classes(["list-timeline-content"]);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

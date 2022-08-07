@@ -6,6 +6,10 @@ import uim.controls;
 class DUIMRangeSliderControl : DUIMControl {
   mixin(ControlThis!("UIMRangeSlider"));
 
+  mixin(OProperty!("string", "startValue"));
+  mixin(OProperty!("string", "minValue"));
+  mixin(OProperty!("string", "maxValue"));
+
   override void initialize() {
     super.initialize;
   }
@@ -13,7 +17,7 @@ class DUIMRangeSliderControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
  
-    myAttributes["data-slider"] = ˋ'{"js-name": "slider1","start": 50,"range": {"min": 0,"max": 100}}'ˋ;
+    myAttributes["data-slider"] = `'{"js-name": "%s","start": %s,"range": {"min": %s,"max": %s}}'`.format(myId, startValue, minValue, maxValue);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

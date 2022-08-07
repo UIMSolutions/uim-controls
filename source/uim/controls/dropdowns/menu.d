@@ -22,8 +22,7 @@ class DUIMDropdownMenuControl : DUIMControl {
     auto results = super.toH5(options);
     
     return results~
-        H5Div(myId, myClasses, myAttributes, myContent));
-    }
+        H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
 mixin(ControlCalls!("UIMDropdownMenuControl", "DUIMDropdownMenuControl"));

@@ -1,4 +1,4 @@
-module uim.controls.maps.map;
+module uim.controls.modals.map;
 
 @safe: 
 import uim.controls;
