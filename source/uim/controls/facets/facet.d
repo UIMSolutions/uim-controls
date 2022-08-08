@@ -4,8 +4,8 @@ module uim.controls.facets.facet;
 import uim.controls;
 
 // A LinkControl is a hyperlink control which is used to navigate to other pages or to trigger actions.
-class DUIMLinkControl : DUIMControl {
-  mixin(ControlThis!("UIMLinkControl"));
+class DUIMFacetControl : DUIMControl {
+  mixin(ControlThis!("UIMFacetControl"));
 
   override void initialize() {
     super.initialize;
@@ -18,13 +18,13 @@ class DUIMLinkControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMLinkControl", "DUIMLinkControl"));
-mixin(ControlCalls!("UIMLink", "DUIMLinkControl"));
+mixin(ControlCalls!("UIMFacetControl", "DUIMFacetControl"));
+mixin(ControlCalls!("UIMFacet", "DUIMFacetControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMLink);
+    assert(UIMFacet);
 
-    auto control = UIMLink;
+    auto control = UIMFacet;
   }
 }
