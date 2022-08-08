@@ -20,8 +20,8 @@ class DUIMTimelineContentControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMTimelineContentControl", "DUIMTimelineContent"));
-mixin(ControlCalls!("UIMTimelineContent", "DUIMTimelineContent"));
+mixin(ControlCalls!("UIMTimelineContentControl", "DUIMTimelineContentControl"));
+mixin(ControlCalls!("UIMTimelineContent", "DUIMTimelineContentControl"));
 
 version(test_uim_controls) {
   unittest {

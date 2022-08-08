@@ -116,7 +116,7 @@ aria-setsize
     if (ariaRole) myAttributes["aria-role"] = ariaRole;
     if (ariaRoleDescription) myAttributes["aria-roledescription"] = ariaRoleDescription;
 
-    if (!styles.empty) { myAttributes["styles"] = styles.map} 
+    if (!styles.empty) { myAttributes["style"] = styles.keys.map!(key => "%s:%s;".format(key, styles["key"])).join(); } 
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

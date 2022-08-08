@@ -1,10 +1,10 @@
-module uim.controls.modals.map;
+module uim.controls.modals.header;
 
 @safe: 
 import uim.controls;
 
-class DUIMMapControl : DUIMControl {
-  mixin(ControlThis!("UIMMapControl"));
+class DUIMModalHeaderControl : DUIMControl {
+  mixin(ControlThis!("UIMModalHeaderControl"));
 
   override void initialize() {
     super.initialize;
@@ -22,13 +22,13 @@ class DUIMMapControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMMapControl", "DUIMMapControl"));
-mixin(ControlCalls!("UIMMap", "DUIMMapControl"));
+mixin(ControlCalls!("UIMModalHeaderControl", "DUIMModalHeaderControl"));
+mixin(ControlCalls!("UIMModalHeader", "DUIMModalHeaderControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMMap);
+    assert(UIMModalHeader);
 
-    auto control = UIMMap;
+    auto control = UIMModalHeader;
   }
 }

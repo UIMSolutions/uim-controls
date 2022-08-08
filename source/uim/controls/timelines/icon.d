@@ -18,7 +18,7 @@ class DUIMTimelineIconControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    if (color) myClasses ~= "bg-"+color;
+    if (color) myClasses ~= ["bg-"~color];
     
     return results~
       H5Div(myId, myClasses, myAttributes, myContent);

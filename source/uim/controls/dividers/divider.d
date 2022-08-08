@@ -36,12 +36,12 @@ version(test_uim_controls) {
   unittest {
     assert(UIMDivider);
 
-    auto control = UIMDivider;
-    // TODO
+    assert(UIMDivider.id("test1") == `<div id="test1" class="hr-text"></div>`);
+
+    assert(UIMDivider.position("left").position == "left");
+    assert(UIMDivider.id("test2").position("right") == `<div id="test2" class="hr-text hr-text-right"></div>`);
+
+    assert(UIMDivider.color("blue").color == "blue");
+    assert(UIMDivider.id("test3").color("red") == `<div id="test3" class="hr-text text-red"></div>`);
   }
-}
-unittest {
-  writeln(UIMDivider.id("test"));
-  writeln(UIMDivider.id("test").position("testPosition"));
-  writeln(UIMDivider.id("test").color("testColor"));
 }

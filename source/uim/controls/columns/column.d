@@ -3,8 +3,8 @@ module uim.controls.columns.column;
 @safe: 
 import uim.controls;
 
-class DUIMColumnDividerControl : DUIMColumnItemControl {
-  mixin(ControlThis!("UIMColumnDividerControl"));
+class DUIMColumnControl : DUIMControl {
+  mixin(ControlThis!("UIMColumnControl"));
 
   override void initialize() {
     super.initialize;
@@ -22,8 +22,8 @@ class DUIMColumnDividerControl : DUIMColumnItemControl {
         H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMColumnDividerControl", "DUIMColumnDividerControl"));
-mixin(ControlCalls!("UIMColumnDivider", "DUIMColumnDividerControl"));
+mixin(ControlCalls!("UIMColumnControl", "DUIMColumnControl"));
+mixin(ControlCalls!("UIMColumn", "DUIMColumnControl"));
 
 version(test_uim_controls) {
   unittest {

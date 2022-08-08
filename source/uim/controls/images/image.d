@@ -64,6 +64,9 @@ class DUIMImageControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .id("image-%s".format(uniform(0, 1_000_000)));
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -118,7 +121,8 @@ version(test_uim_controls) {
     assert(UIMImage);
     assert(UIMImage == "<img>");
 
-    auto control = UIMImage;
+    assert(UIMImage.source("image.jpg").source == "image.jpg");
+    assert(UIMImage.id("test1").source("image.jpg") == `<img id="test1" src="image.jpg">`);
   }
 }
 

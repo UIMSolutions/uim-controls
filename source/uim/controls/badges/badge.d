@@ -42,6 +42,7 @@ class DUIMBadgeControl : DUIMControl {
     if (color && !outline) { myClasses ~= "bg-"~this.color; }
     if (color && outline) { myClasses ~= ["text-"~this.color, "badge-outline"]; }
     if (style) { myClasses ~= "badge-"~style; }
+    if (outline) { myClasses ~= "badge-outline"; }
     if (link) { myAttributes["href"] = link; }
   }
 
@@ -58,13 +59,20 @@ mixin(ControlCalls!("UIMBadge", "DUIMBadgeControl"));
 
 version(test_uim_controls) {
   unittest {
-    auto control = UIMBadge;
-   // TODO
+    assert(UIMBadge);
+    assert(UIMBadge.id("test1") == `<span id="test2" class="badge"></span>`);
+
+    assert(UIMBadge.color("green").color == "green");
+    assert(UIMBadge.id("test2").color("yellow") == `<span id="test2" class="badge bg-yellow"></span>`);
+
+    assert(UIMBadge.link("somewhere/link.html").link == "somewhere/link.html");
+    assert(UIMBadge.id("test3").link("somewhere/link.html") == `<a id="test3" class="badge" href="somewhere/link.html"></a>`);
+
+    assert(UIMBadge.outline(true).outline);
+    assert(UIMBadge.id("test4").outline(true) == `<span id="test4" class="badge badge-outline"></span>`);
+
+    assert(UIMBadge.style("testStyle"));
+    assert(UIMBadge.id("test5").style("pill") == `<span id="test5" class="badge badge-pill"></span>`);
   }
 }
-unittest {
-  writeln(UIMBadge.id("test").color("testColor"));
-  writeln(UIMBadge.id("test").link("testLink"));
-  writeln(UIMBadge.id("test").outline(true));
-  writeln(UIMBadge.id("test").style("testStyle"));
-}
+

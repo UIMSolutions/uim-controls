@@ -6,36 +6,25 @@ import uim.controls;
 class DUIMDropdownToggleControl : DUIMControl {
   mixin(ControlThis!("UIMDropdownToggleControl"));
 
-  protected DUIMControl[] _items;  
-  DUIMControl[] items(this O)() {
-    return _items;
-  }
-  O items(this O)(DUIMControl[] newItems) {
-    _items = newItems;
-    items.each!(item => item.parent(this));
-    return cast(O)this;
-  }
-  O items(this O)(DUIMControl[] newItems...) { 
-    this.items(newItems); 
-    return cast(O)this;
-  }
+ mixin(OProperty!("string", "color"));
 
   override void initialize() {
     super.initialize;
 
     this
-      .classes(["dropdown"]);
+      .classes(["dropdown-toggle"]);
+  }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
     return results~
-      BS5Dropdown(myId, myClasses, myAttributes,
-        BS5DropdownMenu(
-          items.map!(item => item.toH5).join
-        ) 
-      );
+      UIMButton(myId, myClasses, ["data-bs-toggle":"dropdown", "aria-expanded":"false"]).color(color);
   }
 }
 mixin(ControlCalls!("UIMDropdownToggleControl", "DUIMDropdownToggleControl"));
