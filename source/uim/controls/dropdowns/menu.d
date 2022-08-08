@@ -7,7 +7,13 @@ class DUIMDropdownMenuControl : DUIMControl {
   mixin(ControlThis!("UIMDropdownMenuControl"));
 
   mixin(OProperty!("bool", "dark"));
+  mixin(OProperty!("string", "rounded"));
   mixin(OProperty!("string", "buttonId"));
+  mixin(OProperty!("string[]", "colors"));
+  O colors(this O)(string[] newColors...) {
+    this.colors(newColors);
+    return cast(O)this;
+  }
 
   override void initialize() {
     super.initialize;
@@ -21,6 +27,9 @@ class DUIMDropdownMenuControl : DUIMControl {
     super.beforeH5(options);
 
     if (dark) myClasses ~= "dropdown-menu-dark";
+    if (rounded) myClasses ~= "rounded-"~rounded;
+    if (colors.length > 0 && colors[0].length > 0) myClasses ~= "bg-"~colors[0];
+    if (colors.length > 1 && colors[1].length > 0) myClasses ~= "text-"~colors[1];
     if (buttonId) myAttributes["aria-labelledby"] = buttonId;
   }
 

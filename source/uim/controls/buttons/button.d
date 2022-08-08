@@ -29,10 +29,6 @@ class DUIMButtonControl : DUIMControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    DH5Obj[] results = super.toH5(options);
 
     if (color) { myClasses ~= ["btn-"~(ghost ? "ghost-" : "")~(outline ? "outline-" : "")~color]; }
     if (disabled) { myClasses ~= ["disabled"]; }
@@ -40,10 +36,7 @@ class DUIMButtonControl : DUIMControl {
     if (pill) { myClasses ~= ["btn-pill"]; }
     if (loading) { myClasses ~= ["btn-loading"]; }
     if (square) { myClasses ~= ["btn-square"]; }
-    if (icon && !title) { myClasses ~= ["btn-icon"]; }
-
-    string myTitle = this.title.dup;
-    myTitle = (this.icon ? tablerIcon(this.icon)~" ": "")~myTitle;
+    // if (icon && !title) { myClasses ~= ["btn-icon"]; }
 
     if (link) { this.type("link"); }
 
@@ -57,29 +50,40 @@ class DUIMButtonControl : DUIMControl {
       myAttributes["title"] = tooltip;
     }
 
+    if (title) {
+      myContent ~= H5String((this.icon ? tablerIcon(this.icon)~" ": null)~this.title);
+    }
+    else if (icon) {
+      myContent ~= H5String(this.icon ? tablerIcon(this.icon) : null);
+    }
+  }
+
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    DH5Obj[] results = super.toH5(options);
+
     switch (type) {
       case "link":
         myAttributes["href"] = link;
         myAttributes["role"] = "button";
-        return [H5A(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
+        return [H5A(myId, myClasses, myAttributes, myContent)].toH5;
       case "input":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, myContent)].toH5;
       case "button":
         myAttributes["type"] = "button";
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, myContent)].toH5;
       case "reset":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, myContent)].toH5;
       case "submit":
         myAttributes["type"] = type;
         myAttributes["value"] = value;
-        return [H5Input(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;
+        return [H5Input(myId, myClasses, myAttributes, myContent)].toH5;
       default: 
-        return [H5Button(myId, myClasses, myAttributes, H5String(myTitle)~myContent)].toH5;      
+        return [H5Button(myId, myClasses, myAttributes, myContent)].toH5;      
       }
   }
 }

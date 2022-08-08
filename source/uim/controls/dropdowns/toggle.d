@@ -6,7 +6,11 @@ import uim.controls;
 class DUIMDropdownToggleControl : DUIMControl {
   mixin(ControlThis!("UIMDropdownToggleControl"));
 
- mixin(OProperty!("string", "color"));
+  mixin(OProperty!("string", "title"));
+  mixin(OProperty!("string", "icon"));
+  mixin(OProperty!("string", "color"));
+  mixin(OProperty!("string", "size"));
+  mixin(OProperty!("bool", "outline"));
 
   override void initialize() {
     super.initialize;
@@ -18,13 +22,16 @@ class DUIMDropdownToggleControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
+    myAttributes["data-bs-toggle"] = "dropdown";
+    myAttributes["aria-expanded"] = "false";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
     return results~
-      UIMButton(myId, myClasses, ["data-bs-toggle":"dropdown", "aria-expanded":"false"]).color(color);
+      UIMButton(myId, myClasses, myAttributes, myContent)
+        .color(color).title(title).icon(icon).size(size).outline(outline);
   }
 }
 mixin(ControlCalls!("UIMDropdownToggleControl", "DUIMDropdownToggleControl"));
