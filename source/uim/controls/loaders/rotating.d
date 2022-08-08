@@ -12,6 +12,11 @@ class DUIMRotatingLoaderControl : DUIMLoaderControl {
     this
       .style("border");
   }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+  }
+
 }
 mixin(ControlCalls!("UIMRotatingLoaderControl", "DUIMRotatingLoaderControl"));
 mixin(ControlCalls!("UIMRotatingLoader", "DUIMRotatingLoaderControl"));

@@ -3,14 +3,14 @@ module uim.controls.steps.step;
 @safe: 
 import uim.controls;
 
-class DUIMStepControl : DUIMControl {
-  mixin(ControlThis!("UIMStep"));
+class DUIMStepItemItemControl : DUIMControl {
+  mixin(ControlThis!("UIMStepItemItem"));
 
   override void initialize() {
     super.initialize;
 
     this
-      .classes(["steps"]);
+      .classes(["step-item"]);
   }
 
   // Rendering
@@ -20,14 +20,14 @@ class DUIMStepControl : DUIMControl {
     return results ~= H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
-mixin(ControlCalls!("UIMStepControl", "DUIMStepControl"));
-mixin(ControlCalls!("UIMStep", "DUIMStepControl"));
+mixin(ControlCalls!("UIMStepItemItemControl", "DUIMStepItemItemControl"));
+mixin(ControlCalls!("UIMStepItemItem", "DUIMStepItemItemControl"));
 
 version(test_uim_controls) {
   unittest {
-    assert(UIMStep);
+    assert(UIMStepItemItem);
 
-    auto control = UIMStep;
+    auto control = UIMStepItemItem;
     // TODO 
   }
 }

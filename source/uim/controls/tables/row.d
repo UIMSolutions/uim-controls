@@ -10,6 +10,12 @@ class DUIMTableRowControl : DUIMControl {
     super.initialize;
   }
 
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+  }
+
+
   // Rendering
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);

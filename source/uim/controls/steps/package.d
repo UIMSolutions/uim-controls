@@ -1,4 +1,7 @@
 module uim.controls.steps;
 
-// Main
+// Maincontrol
 public import uim.controls.steps.step;
+
+// Control
+public import uim.controls.steps.item;

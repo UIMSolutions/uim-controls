@@ -15,6 +15,11 @@ class DUIMBreadcrumbItemControl : DUIMControl {
       .classes(["breadcrumb-item"]);
   }
 
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
