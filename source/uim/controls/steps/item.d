@@ -49,8 +49,9 @@ version(test_uim_controls) {
   unittest {
     assert(UIMStep);
 
-    auto control = UIMStep;
-    // TODO 
+    assert(UIMStep.link("/server/page").link == "/server/page");
+    assert(UIMStep.status("finished").status == "finished");
+    assert(UIMStep.tooltip("Watch your step").tooltip == "Watch your step");
   }
 }
 
