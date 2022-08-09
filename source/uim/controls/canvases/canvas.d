@@ -1,1 +1,1 @@
-module uim.controls.canvases.convas;
+module uim.controls.canvases.canvas;
