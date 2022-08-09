@@ -8,6 +8,9 @@ class DUIMPageHeaderControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this 
+      .classes(["page-header"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
