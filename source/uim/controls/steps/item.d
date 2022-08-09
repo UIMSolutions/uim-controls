@@ -36,7 +36,7 @@ class DUIMStepControl : DUIMControl {
       case "finished":
         return results ~= H5A(myId, myClasses, myAttributes, myContent);
       case "current":
-        return results ~= H5A(myId, myClasses, myAttributes, myContent);
+        return results ~= H5A(myId, myClasses~["active"], myAttributes, myContent);
       default:
         return results ~= H5Span(myId, myClasses, myAttributes, myContent);
     }
@@ -53,5 +53,10 @@ version(test_uim_controls) {
     assert(UIMStep.status("finished").status == "finished");
     assert(UIMStep.tooltip("Watch your step").tooltip == "Watch your step");
   }
+}
+unittest {
+  writeln(UIMStep.link("/server/page"));
+  writeln(UIMStep.status("finished"));
+  writeln(UIMStep.tooltip("Watch your step"));
 }
 
