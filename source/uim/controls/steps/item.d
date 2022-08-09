@@ -48,15 +48,18 @@ mixin(ControlCalls!("UIMStep", "DUIMStepControl"));
 version(test_uim_controls) {
   unittest {
     assert(UIMStep);
+    assert(UIMStep.id("test1") == `<a id="test1" class="step-item"></a>`);
 
     assert(UIMStep.link("/server/page").link == "/server/page");
+    assert(UIMStep.id("test2").link("/server/page") == `<span id="test2" class="step-item" href="/server/page"></span>`);
+
     assert(UIMStep.status("finished").status == "finished");
+    assert(UIMStep.id("test3-1").status("finished") == `<a id="test3-1" class="step-item"></a>`);
+    assert(UIMStep.id("test3-2").status("current") == `<a id="test3-2" class="active step-item"></a>`);
+    assert(UIMStep.id("test3-3").status("open") == `<span id="test3-3" class="step-item"></span>`);
+    
     assert(UIMStep.tooltip("Watch your step").tooltip == "Watch your step");
+    assert(UIMStep.id("test4").tooltip("Watch your step") == `<span id="test4" class="step-item" data-bs-toggle="tooltip" title="Watch your step"></span>`);
   }
-}
-unittest {
-  writeln(UIMStep.link("/server/page"));
-  writeln(UIMStep.status("finished"));
-  writeln(UIMStep.tooltip("Watch your step"));
 }
 
