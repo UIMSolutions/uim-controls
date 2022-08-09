@@ -8,6 +8,9 @@ class DUIMPolarChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("polar"); 
   }
 }
 mixin(ControlCalls!("UIMPolarChartControl", "DUIMPolarChartControl"));

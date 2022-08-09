@@ -59,9 +59,14 @@ class DUIMImageControl : DUIMControl {
   mixin(OProperty!("string", "rotate"));
   mixin(OProperty!("string", "position"));
   mixin(OProperty!("string", "fit"));
+  mixin(OProperty!("string", "link"));
+  mixin(OProperty!("string", "floatPosition")); // left, right
 
   override void initialize() {
     super.initialize;
+
+    this
+      .id("image-%s".format(uniform(0, 1_000_000)));
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -87,6 +92,10 @@ class DUIMImageControl : DUIMControl {
       if ("style" !in myAttributes) myAttributes["style"] = "";
       myAttributes["style"] = (myAttributes["style"].split(";")~"transform: rotate(%sdeg)".format(rotate)).join(";");
     }    
+    if (floatPosition) {
+      if ("style" !in myAttributes) myAttributes["style"] = "";
+      myAttributes["style"] = (myAttributes["style"].split(";")~["float:"~floatPosition]).join(";");
+    }    
     if (source) myAttributes["src"] = source;
     if (srcset) myAttributes["srcset"] = srcset;
     if (sizes) myAttributes["sizes"] = sizes;
@@ -97,6 +106,10 @@ class DUIMImageControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
+    if (link) {
+      return [
+        H5A(["href":link], H5Img(myId, myClasses, myAttributes))].toH5;
+    }
     return [H5Img(myId, myClasses, myAttributes)].toH5;
   }
 }
@@ -108,7 +121,8 @@ version(test_uim_controls) {
     assert(UIMImage);
     assert(UIMImage == "<img>");
 
-    auto control = UIMImage;
+    assert(UIMImage.source("image.jpg").source == "image.jpg");
+    assert(UIMImage.id("test1").source("image.jpg") == `<img id="test1" src="image.jpg">`);
   }
 }
 

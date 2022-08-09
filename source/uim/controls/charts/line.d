@@ -8,6 +8,9 @@ class DUIMLineChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("line"); 
   }
 }
 mixin(ControlCalls!("UIMLineChartControl", "DUIMLineChartControl"));

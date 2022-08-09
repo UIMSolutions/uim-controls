@@ -15,6 +15,7 @@ class DUIMControl : DH5Obj, IControl {
   mixin(OProperty!("DUIMControl", "parent"));
   mixin(OProperty!("bool", "active"));
   mixin(OProperty!("bool", "disabled"));
+  mixin(OProperty!("STRINGAA", "styles"));
 
   mixin(OProperty!("string", "ariaAutocomplete"));
   mixin(OProperty!("string", "ariaChecked"));
@@ -115,6 +116,7 @@ aria-setsize
     if (ariaRole) myAttributes["aria-role"] = ariaRole;
     if (ariaRoleDescription) myAttributes["aria-roledescription"] = ariaRoleDescription;
 
+    if (!styles.empty) { myAttributes["style"] = styles.keys.map!(key => "%s:%s;".format(key, styles["key"])).join(); } 
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

@@ -1,6 +1,7 @@
 module uim.controls.steps;
 
-@safe: 
-import uim.controls;
+// Maincontrol
+public import uim.controls.steps.container;
 
-public import uim.controls.steps.step;
+// Control
+public import uim.controls.steps.item;

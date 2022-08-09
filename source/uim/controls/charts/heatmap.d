@@ -8,6 +8,9 @@ class DUIMHeatmapChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("heatmap"); 
   }
 }
 mixin(ControlCalls!("UIMHeatmapChartControl", "DUIMHeatmapChartControl"));

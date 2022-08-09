@@ -8,6 +8,9 @@ class DUIMPieChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("pie"); 
   }
 }
 mixin(ControlCalls!("UIMPieChartControl", "DUIMPieChartControl"));

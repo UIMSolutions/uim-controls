@@ -1,6 +1,4 @@
 module uim.controls.trees;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.trees.tree;

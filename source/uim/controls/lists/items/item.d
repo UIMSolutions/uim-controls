@@ -17,6 +17,7 @@ class DUIMListItemControl : DUIMControl {
     super.beforeH5(options);
 
     if (color) myClasses ~= "list-group-item-"~color.toLower;
+    if (link) myAttributes["href"] = link;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -34,6 +35,10 @@ class DUIMListItemControl : DUIMControl {
           return results~
             BS5ListItem(myId, myClasses, myAttributes, myContent);
       }
+    }
+    if (link) {
+      return results~
+            BS5ListLink(myId, myClasses, myAttributes, myContent);
     }
     return results~
       BS5ListItem(myId, myClasses, myAttributes, myContent);

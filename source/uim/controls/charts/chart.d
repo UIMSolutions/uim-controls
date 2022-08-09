@@ -14,13 +14,15 @@ class DUIMChartControl : DUIMControl {
   * line, area, bar, radar, histogram, pie, donut, radialBar, scatter, bubble, heatmap, candlestick */
   mixin(OProperty!("string", "type")); 
   mixin(OProperty!("string", "chartOptions")); 
-
+  mixin(OProperty!("DUIMChartLegendElement", "legend"));
+  
   override void initialize() {
     super.initialize;
 
     this
       .id("chart-%s".format(uniform(0, 1000000)))
-      .classes(["chart-lg"]);
+      .classes(["chart-lg"])
+      .legend(new DUIMChartLegendElement);
   }
 
   override void beforeH5(STRINGAA options = null) {

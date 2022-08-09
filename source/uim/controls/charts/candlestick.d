@@ -8,6 +8,9 @@ class DUIMCandlestickChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+    
+    this
+      .type("candlestick"); 
   }
 }
 mixin(ControlCalls!("UIMCandlestickChartControl", "DUIMCandlestickChartControl"));

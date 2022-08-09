@@ -1,10 +1,9 @@
 module uim.controls.empties;
 
-@safe:
-import uim.controls;
-
+// Main
 public import uim.controls.empties.empty;
 
+// Additional
 public import uim.controls.empties.action;
 public import uim.controls.empties.header;
 public import uim.controls.empties.icon;

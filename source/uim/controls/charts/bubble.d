@@ -8,6 +8,9 @@ class DUIMBubbleChartControl : DUIMChartControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .type("bubble"); 
   }
 }
 mixin(ControlCalls!("UIMBubbleChartControl", "DUIMBubbleChartControl"));

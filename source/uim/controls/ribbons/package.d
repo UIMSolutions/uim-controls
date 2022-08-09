@@ -1,6 +1,4 @@
 module uim.controls.ribbons;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.ribbons.ribbon;

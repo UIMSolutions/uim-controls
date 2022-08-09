@@ -7,15 +7,23 @@ import uim.controls;
 class DUIMLinkControl : DUIMControl {
   mixin(ControlThis!("UIMLinkControl"));
 
+  mixin(OProperty!("string", "link"));
+
   override void initialize() {
     super.initialize;
+  }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    if (link) myAttributes["href"] = link;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
     return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+      H5A(myId, myClasses, myAttributes, myContent);
   }
 }
 mixin(ControlCalls!("UIMLinkControl", "DUIMLinkControl"));

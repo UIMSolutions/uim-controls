@@ -6,6 +6,8 @@ import uim.controls;
 class DUIMEmailInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMEmailInputControl"));
 
+  mixin(OProperty!("bool", "multiple"));
+  
   override void initialize() {
     super.initialize;
 
@@ -16,6 +18,8 @@ class DUIMEmailInputControl : DUIMInputControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
+
+    if (multiple) myAttributes["multiple"] = "multiple";
   }
 }
 mixin(ControlCalls!("UIMEmailInputControl", "DUIMEmailInputControl"));

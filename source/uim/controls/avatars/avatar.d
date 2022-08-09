@@ -14,6 +14,7 @@ class DUIMAvatarControl : DUIMControl {
   }
 
   mixin(OProperty!("string", "image"));
+  mixin(OProperty!("string", "style"));
   mixin(OProperty!("string", "icon"));
   mixin(OProperty!("string", "text"));
   mixin(OProperty!("string", "color"));
@@ -31,12 +32,18 @@ class DUIMAvatarControl : DUIMControl {
     return cast(O)this;
   }
 
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
 
     if (color) { myClasses ~= "bg-"~color.toLower; }
     if (shape) { myClasses ~= this.shape; }
     if (size)  { myClasses ~= "avatar-"~this.size; }
+    if (style)  { myClasses ~= style; }
 
     if (image) { myAttributes["style"] = "background-image: url("~image~")"; }
     if (icon)  { myContent ~= H5String(tablerIcon(icon)); }

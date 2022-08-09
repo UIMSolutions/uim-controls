@@ -1,6 +1,4 @@
 module uim.controls.invoices;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.invoices.invoice;

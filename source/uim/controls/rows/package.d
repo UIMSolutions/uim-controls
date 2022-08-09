@@ -1,6 +1,4 @@
 module uim.controls.rows;
 
-@safe: 
-import uim.controls;
-
+// Main
 public import uim.controls.rows.row;
