@@ -13,6 +13,7 @@ class DUIMStepsControl : DUIMControl {
     super.initialize;
 
     this
+      .id("steps-%s".format(uniform(0, 1_000_000)))
       .classes(["steps"]);
   }
   override void beforeH5(STRINGAA options = null) {
@@ -34,9 +35,13 @@ mixin(ControlCalls!("UIMSteps", "DUIMStepsControl"));
 version(test_uim_controls) {
   unittest {
     assert(UIMSteps);
+    assert(UIMSteps.id("test1") == `<div id="steps-743176" class="steps"></div>`);
 
-    auto control = UIMSteps;
-    // TODO 
+    assert(UIMSteps.color("blue").color == "blue");
+    assert(UIMSteps.id("test2").color("red") == `<div id="test2" class="steps steps-red"></div>`);
+
+    assert(UIMSteps.counter(true).counter);
+    assert(UIMSteps.id("test3").counter(true) == `<div id="test3" class="steps steps-counter"></div>`);
   }
 }
 
