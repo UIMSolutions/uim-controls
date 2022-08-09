@@ -55,15 +55,21 @@ class DUIMCardControl : DUIMControl {
     return cast(O)this;
   }
 
-  mixin(AddContent!("Header", "UIMCardHeader"));
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    if (size) myClasses ~= ["card-"~size];
+    if (stacked) myClasses ~= ["card-stacked"];
+  }
+
+/*   mixin(AddContent!("Header", "UIMCardHeader"));
   mixin(AddContent!("Body", "UIMCardBody"));
-  mixin(AddContent!("Footer", "UIMCardFooter"));
+  mixin(AddContent!("Footer", "UIMCardFooter")); */
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    if (size) myClasses ~= ["card-"~size];
-    if (stacked) myClasses ~= ["card-stacked"];
+/*     
 
     auto myCard = BS5Card(myId, myClasses, myAttributes);
     if (statusColor) {
@@ -81,9 +87,9 @@ class DUIMCardControl : DUIMControl {
     if (imageContent && imagePosition == "bottom") {
       imageContent.addClasses("card-img-bottom");
       myCard.addContent(imageContent);
-    }
-    return results~
-      myCard;
+    } */
+
+    return results~BS5Card(myId, myClasses, myAttributes, myContent);
   }
 }
 mixin(ControlCalls!("UIMCardControl", "DUIMCardControl"));

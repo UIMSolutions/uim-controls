@@ -7,4 +7,5 @@ public import uim.controls.cards.card;
 public import uim.controls.cards.body_;
 public import uim.controls.cards.footer;
 public import uim.controls.cards.header;
+public import uim.controls.cards.status;
 public import uim.controls.cards.title;
