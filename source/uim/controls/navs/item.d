@@ -4,6 +4,8 @@ module uim.controls.navs.item;
 import uim.controls;
 
 class DUIMNavItemControl : DUIMControl {
+  mixin(ControlThis!("UIMNavItemControl"));
+
   override void initialize() {
     super.initialize;
 

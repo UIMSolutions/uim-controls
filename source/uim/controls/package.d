@@ -38,6 +38,7 @@ public import uim.controls.control;
 // PACKAGES
 public import uim.controls.accordions;
 public import uim.controls.alerts;
+public import uim.controls.audios;
 public import uim.controls.avatars;
 public import uim.controls.badges;
 public import uim.controls.breadcrumbs;
@@ -95,6 +96,7 @@ public import uim.controls.tokenizers;
 public import uim.controls.toolbars;
 public import uim.controls.tooltips;
 public import uim.controls.trees;
+public import uim.controls.videos;
 public import uim.controls.wizards;
 
 public import uim.controls.tests;
@@ -106,8 +108,8 @@ template AddContent(string name, string content) {
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string content){
-    this.addContent(`~content~`.addContent(content));
+  O add`~name~`(this O)(string newContent){
+    this.addContent(`~content~`.addContent(newContent));
     return cast(O)this;
   }
 
@@ -140,131 +142,107 @@ template AddContent(string name, string content) {
 
   // -------------------
 
-  O add`~name~`(this O)(string[] classes, string[] content){
-    this.addContent(`~content~`.addClasses(classes).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(string[] classes, string[] content...){
-    this.addContent(`~content~`.addClasses(classes).addContent(content));
+  O add`~name~`(this O)(string[] classes, string newContent){
+    this.addContent(`~content~`.addClasses(classes).addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(STRINGAA attributes, string[] content){
-    this.addContent(`~content~`.addAttributes(attributes).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(STRINGAA attributes, string[] content...){
-    this.addContent(`~content~`.addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(STRINGAA attributes, string newContent){
+    this.addContent(`~content~`.addAttributes(attributes).addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string id, string[] classes, string[] content){
-    this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(string id, string[] classes, string[] content...){
-    this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
+  O add`~name~`(this O)(string id, string[] classes, string newContent){
+    this.addContent(`~content~`.id(id).addClasses(classes).addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string id, STRINGAA attributes, string[] content){
-    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(string id, STRINGAA attributes, string[] content...){
-    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(string id, STRINGAA attributes, string newContent){
+    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, string[] content){
-    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, string[] content...){
-    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, string newContent){
+    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string[] classes, STRINGAA attributes, string[] content){
-    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(string[] classes, STRINGAA attributes, string[] content...){
-    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, string newContent){
+    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(newContent));
     return cast(O)this;
   }
 
   // ---------------------------------
 
-  O add`~name~`(this O)(DH5Obj[] content){
-    this.addContent(`~content~`.addContent(content));
+  O add`~name~`(this O)(DH5Obj[] newContent){
+    this.addContent(`~content~`.addContent(newContent));
     return cast(O)this;
   }
-  O add`~name~`(this O)(DH5Obj[] content...){
-    this.addContent(`~content~`.addContent(content));
-    return cast(O)this;
-  }
-
-  O add`~name~`(this O)(string id, DH5Obj[] content){
-    this.addContent(`~content~`.id(id).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(string id, DH5Obj[] content...){
-    this.addContent(`~content~`.id(id).addContent(content));
+  O add`~name~`(this O)(DH5Obj[] newContent...){
+    this.addContent(`~content~`.addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string[] classes, DH5Obj[] content){
-    this.addContent(`~content~`.addClasses(classes).addContent(content));
+  O add`~name~`(this O)(string id, DH5Obj[] newContent){
+    this.addContent(`~content~`.id(id).addContent(newContent));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string[] classes, DH5Obj[] content...){
-    this.addContent(`~content~`.addClasses(classes).addContent(content));
-    return cast(O)this;
-  }
-
-  O add`~name~`(this O)(STRINGAA attributes, DH5Obj[] content){
-    this.addContent(`~content~`.addAttributes(attributes).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(STRINGAA attributes, DH5Obj[] content...){
-    this.addContent(`~content~`.addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(string id, DH5Obj[] newContent...){
+    this.addContent(`~content~`.id(id).addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string id, string[] classes, DH5Obj[] content){
-    this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
+  O add`~name~`(this O)(string[] classes, DH5Obj[] newContent){
+    this.addContent(`~content~`.addClasses(classes).addContent(newContent));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string id, string[] classes, DH5Obj[] content...){
-    this.addContent(`~content~`.id(id).addClasses(classes).addContent(content));
-    return cast(O)this;
-  }
-
-  O add`~name~`(this O)(string id, STRINGAA attributes, DH5Obj[] content){
-    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
-    return cast(O)this;
-  }
-  O add`~name~`(this O)(string id, STRINGAA attributes, DH5Obj[] content...){
-    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(string[] classes, DH5Obj[] newContent...){
+    this.addContent(`~content~`.addClasses(classes).addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, DH5Obj[] content){
-    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(STRINGAA attributes, DH5Obj[] newContent){
+    this.addContent(`~content~`.addAttributes(attributes).addContent(newContent));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, DH5Obj[] content...){
-    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(STRINGAA attributes, DH5Obj[] newContent...){
+    this.addContent(`~content~`.addAttributes(attributes).addContent(newContent));
     return cast(O)this;
   }
 
-  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] content){
-    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(string id, string[] classes, DH5Obj[] newContent){
+    this.addContent(`~content~`.id(id).addClasses(classes).addContent(newContent));
     return cast(O)this;
   }
-  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] content...){
-    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(content));
+  O add`~name~`(this O)(string id, string[] classes, DH5Obj[] newContent...){
+    this.addContent(`~content~`.id(id).addClasses(classes).addContent(newContent));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string id, STRINGAA attributes, DH5Obj[] newContent){
+    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(newContent));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string id, STRINGAA attributes, DH5Obj[] newContent...){
+    this.addContent(`~content~`.id(id).addAttributes(attributes).addContent(newContent));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, DH5Obj[] newContent){
+    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(newContent));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string id, string[] classes, STRINGAA attributes, DH5Obj[] newContent...){
+    this.addContent(`~content~`.id(id).addClasses(classes).addAttributes(attributes).addContent(newContent));
+    return cast(O)this;
+  }
+
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] newContent){
+    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(newContent));
+    return cast(O)this;
+  }
+  O add`~name~`(this O)(string[] classes, STRINGAA attributes, DH5Obj[] newContent...){
+    this.addContent(`~content~`.addClasses(classes).addAttributes(attributes).addContent(newContent));
     return cast(O)this;
   }`;
 }
@@ -272,6 +250,44 @@ template AddContent(string name, string content) {
 template ControlThis(string name) {
   const char[] ControlThis = `
     this() { super(); }
+
+    this(string newContent)      { this().addContent(newContent); }
+    this(DH5Obj[] newContent...) { this().addContent(newContent); }
+    this(DH5Obj[] newContent)    { this().addContent(newContent); }
+
+    this(string[] newClasses) { this().addClasses(newClasses); }
+    this(string[] newClasses, string newContent)      { this(newClasses).addContent(newContent); }
+    this(string[] newClasses, DH5Obj[] newContent...) { this(newClasses).addContent(newContent); }
+    this(string[] newClasses, DH5Obj[] newContent)    { this(newClasses).addContent(newContent); }   
+    
+    this(STRINGAA newAttributes) { this().addAttributes(newAttributes); }
+    this(STRINGAA newAttributes, string newContent)      { this(newAttributes).addContent(newContent); }
+    this(STRINGAA newAttributes, DH5Obj[] newContent...) { this(newAttributes).addContent(newContent); }
+    this(STRINGAA newAttributes, DH5Obj[] newContent)    { this(newAttributes).addContent(newContent); }
+
+    this(string[] newClasses, STRINGAA newAttributes) { this(newClasses).addAttributes(newAttributes); }
+    this(string[] newClasses, STRINGAA newAttributes, string newContent)      { this(newClasses, newAttributes).addContent(newContent); }
+    this(string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent...) { this(newClasses, newAttributes).addContent(newContent); }
+    this(string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent)    { this(newClasses, newAttributes).addContent(newContent); }
+
+    this(string newId, DH5Obj[] newContent...) { this(newContent).id(newId); }
+    this(string newId, DH5Obj[] newContent)    { this(newContent).id(newId); }
+
+    this(string newId, string[] newClasses) { this(newClasses).id(newId); }
+    this(string newId, string[] newClasses, string newContent)      { this(newClasses, newContent).id(newId); }
+    this(string newId, string[] newClasses, DH5Obj[] newContent...) { this(newClasses, newContent).id(newId); }
+    this(string newId, string[] newClasses, DH5Obj[] newContent)    { this(newClasses, newContent).id(newId); }   
+    
+    this(string newId, STRINGAA newAttributes) { this(newAttributes).id(newId); }
+    this(string newId, STRINGAA newAttributes, string newContent)      { this(newAttributes, newContent).id(newId); }
+    this(string newId, STRINGAA newAttributes, DH5Obj[] newContent...) { this(newAttributes, newContent).id(newId); }
+    this(string newId, STRINGAA newAttributes, DH5Obj[] newContent)    { this(newAttributes, newContent).id(newId); }
+
+    this(string newId, string[] newClasses, STRINGAA newAttributes) { this(newClasses, newAttributes).id(newId); }
+    this(string newId, string[] newClasses, STRINGAA newAttributes, string newContent)      { this(newClasses, newAttributes, newContent).id(newId); }
+    this(string newId, string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent...) { this(newClasses, newAttributes, newContent).id(newId); }
+    this(string newId, string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent)    { this(newClasses, newAttributes, newContent).id(newId); }
+
 `;
 
 }
@@ -279,39 +295,43 @@ template ControlThis(string name) {
 template ControlCalls(string callName, string className) {
   const char[] ControlCalls = `
 auto `~callName~`() { return new `~className~`(); }
-auto `~callName~`(string anId) { return `~callName~`().id(anId); }
+
+auto `~callName~`(string newContent)      { return new `~className~`(newContent); }
+auto `~callName~`(DH5Obj[] newContent...) { return new `~className~`(newContent); }
+auto `~callName~`(DH5Obj[] newContent)    { return new `~className~`(newContent); }
+
 auto `~callName~`(string[] newClasses) { return `~callName~`.addClasses(newClasses); }
-auto `~callName~`(string[string] newAttributes) { return `~callName~`.addAttributes(newAttributes); }
+auto `~callName~`(string[] newClasses, string newContent)      { return new `~className~`(newClasses, newContent); }
+auto `~callName~`(string[] newClasses, DH5Obj[] newContent...) { return new `~className~`(newClasses, newContent); }
+auto `~callName~`(string[] newClasses, DH5Obj[] newContent)    { return new `~className~`(newClasses, newContent); }
+
+auto `~callName~`(STRINGAA newAttributes) { return `~callName~`.addAttributes(newAttributes); }
+auto `~callName~`(STRINGAA newAttributes, string newContent)      { return new `~className~`(newAttributes, newContent); }
+auto `~callName~`(STRINGAA newAttributes, DH5Obj[] newContent...) { return new `~className~`(newAttributes, newContent); }
+auto `~callName~`(STRINGAA newAttributes, DH5Obj[] newContent)    { return new `~className~`(newAttributes, newContent); }
+
+auto `~callName~`(string[] newClasses, STRINGAA newAttributes) { return new `~className~`(newClasses, newAttributes); }
+auto `~callName~`(string[] newClasses, STRINGAA newAttributes, string newContent)      { return new `~className~`(newClasses, newAttributes, newContent); }
+auto `~callName~`(string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent...) { return new `~className~`(newClasses, newAttributes, newContent); }
+auto `~callName~`(string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent)    { return new `~className~`(newClasses, newAttributes, newContent); }
+
+auto `~callName~`(string anId, DH5Obj[] newContent...) { return `~callName~`(anId).addContent(newContent); }
+auto `~callName~`(string anId, DH5Obj[] newContent)    { return `~callName~`(anId).addContent(newContent); }
 
 auto `~callName~`(string anId, string[] newClasses) { return `~callName~`(anId).addClasses(newClasses); }
-auto `~callName~`(string anId, string[string] newAttributes) { return `~callName~`(anId).addAttributes(newAttributes); }
-auto `~callName~`(string anId, string[] newClasses, string[string] newAttributes) { return `~callName~`(anId, newClasses).addAttributes(newAttributes); }
+auto `~callName~`(string anId, string[] newClasses, string newContent)      { return `~callName~`(anId, newClasses).addContent(newContent); }
+auto `~callName~`(string anId, string[] newClasses, DH5Obj[] newContent...) { return `~callName~`(anId, newClasses).addContent(newContent); }
+auto `~callName~`(string anId, string[] newClasses, DH5Obj[] newContent)    { return `~callName~`(anId, newClasses).addContent(newContent); }
 
-auto `~callName~`(string[] newClasses, string[string] newAttributes) { return `~callName~`(newClasses).addAttributes(newAttributes); }
+auto `~callName~`(string anId, STRINGAA newAttributes) { return `~callName~`(anId).addAttributes(newAttributes); }
+auto `~callName~`(string anId, STRINGAA newAttributes, string newContent)      { return `~callName~`(anId, newAttributes).addContent(newContent); }
+auto `~callName~`(string anId, STRINGAA newAttributes, DH5Obj[] newContent...) { return `~callName~`(anId, newAttributes).addContent(newContent); }
+auto `~callName~`(string anId, STRINGAA newAttributes, DH5Obj[] newContent)    { return `~callName~`(anId, newAttributes).addContent(newContent); }
 
-auto `~callName~`(string[] newClasses, DH5Obj[] content...) { return `~callName~`(newClasses).addContent(content); }
-auto `~callName~`(string[] newClasses, DH5Obj[] content) { return `~callName~`(newClasses).addContent(content); }
-
-auto `~callName~`(string[string] newAttributes, DH5Obj[] content...) { return `~callName~`(newAttributes).addContent(content); }
-auto `~callName~`(string[string] newAttributes, DH5Obj[] content) { return `~callName~`(newAttributes).addContent(content); }
-
-auto `~callName~`(string[] newClasses, string[string] newAttributes, DH5Obj[] content...) { return `~callName~`(newClasses, newAttributes).addContent(content); }
-auto `~callName~`(string[] newClasses, string[string] newAttributes, DH5Obj[] content) { return `~callName~`(newClasses, newAttributes).addContent(content); }
-
-auto `~callName~`(string anId, string[] newClasses, DH5Obj[] content...) { return `~callName~`(anId, newClasses).addContent(content); }
-auto `~callName~`(string anId, string[] newClasses, DH5Obj[] content) { return `~callName~`(anId, newClasses).addContent(content); }
-
-auto `~callName~`(string anId, string[string] newAttributes, DH5Obj[] content...) { return `~callName~`(anId, newAttributes).addContent(content); }
-auto `~callName~`(string anId, string[string] newAttributes, DH5Obj[] content) { return `~callName~`(anId, newAttributes).addContent(content); }
-
-auto `~callName~`(string anId, string[] newClasses, string[string] newAttributes, DH5Obj[] content...) { return `~callName~`(anId, newClasses, newAttributes).addContent(content); }
-auto `~callName~`(string anId, string[] newClasses, string[string] newAttributes, DH5Obj[] content) { return `~callName~`(anId, newClasses, newAttributes).addContent(content); }
-
-auto `~callName~`(string anId, DH5Obj[] content...) { return `~callName~`(anId).addContent(content); }
-auto `~callName~`(string anId, DH5Obj[] content) { return `~callName~`(anId).addContent(content); }
-
-auto `~callName~`(DH5Obj[] content...) { return `~callName~`.addContent(content); }
-auto `~callName~`(DH5Obj[] content) { return `~callName~`.addContent(content); }
+auto `~callName~`(string anId, string[] newClasses, STRINGAA newAttributes) { return `~callName~`(anId, newClasses).addAttributes(newAttributes); }
+auto `~callName~`(string anId, string[] newClasses, STRINGAA newAttributes, string newContent)      { return `~callName~`(anId, newClasses, newAttributes).addContent(newContent); }
+auto `~callName~`(string anId, string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent...) { return `~callName~`(anId, newClasses, newAttributes).addContent(newContent); }
+auto `~callName~`(string anId, string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent)    { return `~callName~`(anId, newClasses, newAttributes).addContent(newContent); }
 
 `;
 }

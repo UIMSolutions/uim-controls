@@ -10,10 +10,18 @@ class DUIMDropdownMenuControl : DUIMControl {
   mixin(OProperty!("string", "rounded"));
   mixin(OProperty!("string", "buttonId"));
   mixin(OProperty!("string[]", "colors"));
+  mixin(OProperty!("string", "labelledBy"));
+
   O colors(this O)(string[] newColors...) {
     this.colors(newColors);
     return cast(O)this;
   }
+
+	mixin(MyContent!("divider", "BS5DropdownDivider"));
+	mixin(MyContent!("header", "BS5DropdownHeader"));
+	mixin(MyContent!("item", "BS5DropdownItem"));
+	mixin(MyContent!("link", "BS5DropdownLink"));
+	mixin(MyContent!("text", "BS5DropdownText"));
 
   override void initialize() {
     super.initialize;
@@ -31,6 +39,7 @@ class DUIMDropdownMenuControl : DUIMControl {
     if (colors.length > 0 && colors[0].length > 0) myClasses ~= "bg-"~colors[0];
     if (colors.length > 1 && colors[1].length > 0) myClasses ~= "text-"~colors[1];
     if (buttonId) myAttributes["aria-labelledby"] = buttonId;
+    if (labelledBy) myAttributes["aria-labelledby"] = labelledBy;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
