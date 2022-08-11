@@ -6,12 +6,7 @@ import uim.controls;
 class DUIMEmptyControl : DUIMControl {
   mixin(ControlThis!("UIMEmptyControl"));
 
-  override void initialize() {
-    super.initialize;
-
-    this
-      .classes(["empty"]);
-  }
+  mixin(OProperty!("string", "color"));
 
   mixin(AddContent!("Icon", "UIMEmptyIcon"));
   mixin(AddContent!("Title", "UIMEmptyTitle"));
@@ -20,21 +15,31 @@ class DUIMEmptyControl : DUIMControl {
   mixin(AddContent!("Action", "UIMEmptyAction"));
   mixin(AddContent!("Image", "UIMEmptyImage"));
 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+  override void initialize() {
+    super.initialize;
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    this
+      .classes(["empty"]);
+  }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    if (color) myClasses ~= "bg-"~color;
+  }
+
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    super.toH5(options);
+
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMEmptyControl", "DUIMEmptyControl"));
 mixin(ControlCalls!("UIMEmpty", "DUIMEmptyControl"));
 
-version(test_uim_controls) {
-  unittest {
-    assert(UIMEmpty);
-
-    auto control = UIMEmpty;
-    // TODO
-  }
+unittest {
+  assert(UIMEmpty);
+  assert(UIMEmpty.id(null) == `<div class="empty"></div>`);
+  assert(UIMEmpty.id(null)(UIMEmptyIcon) == `<div class="empty"><div class="empty-icon"></div></div>`);
+  assert(UIMEmpty.id(null)(UIMEmptyIcon) == `<div class="empty"><div class="empty-icon"></div></div>`);
 }

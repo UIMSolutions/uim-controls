@@ -252,17 +252,17 @@ template ControlThis(string name) {
     this() { super(); }
 
     this(string newContent)      { this().addContent(newContent); }
-    this(DH5Obj[] newContent...) { this().addContent(newContent); }
+    this(DH5Obj[] newContent...) { this(newContent); }
     this(DH5Obj[] newContent)    { this().addContent(newContent); }
 
     this(string[] newClasses) { this().addClasses(newClasses); }
     this(string[] newClasses, string newContent)      { this(newClasses).addContent(newContent); }
-    this(string[] newClasses, DH5Obj[] newContent...) { this(newClasses).addContent(newContent); }
+    this(string[] newClasses, DH5Obj[] newContent...) { this(newClasses, newContent); }
     this(string[] newClasses, DH5Obj[] newContent)    { this(newClasses).addContent(newContent); }   
     
     this(STRINGAA newAttributes) { this().addAttributes(newAttributes); }
     this(STRINGAA newAttributes, string newContent)      { this(newAttributes).addContent(newContent); }
-    this(STRINGAA newAttributes, DH5Obj[] newContent...) { this(newAttributes).addContent(newContent); }
+    this(STRINGAA newAttributes, DH5Obj[] newContent...) { this(newAttributes, newContent); }
     this(STRINGAA newAttributes, DH5Obj[] newContent)    { this(newAttributes).addContent(newContent); }
 
     this(string[] newClasses, STRINGAA newAttributes) { this(newClasses).addAttributes(newAttributes); }

@@ -14,11 +14,9 @@ class DUIMEmptyActionControl : DUIMEmptyItemControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
-  }
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;  }
 }
 mixin(ControlCalls!("UIMEmptyActionControl", "DUIMEmptyActionControl"));
 mixin(ControlCalls!("UIMEmptyAction", "DUIMEmptyActionControl"));
@@ -26,7 +24,6 @@ mixin(ControlCalls!("UIMEmptyAction", "DUIMEmptyActionControl"));
 version(test_uim_controls) {
   unittest {
     assert(UIMEmptyAction);
-
-    auto control = UIMEmptyAction;
+    assert(UIMEmptyAction.id(null) == `<div class="empty-action"></div>`);
   }
 }

@@ -14,11 +14,15 @@ class DUIMEmptyHeaderControl : DUIMEmptyItemControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMEmptyHeaderControl", "DUIMEmptyHeaderControl"));
 mixin(ControlCalls!("UIMEmptyHeader", "DUIMEmptyHeaderControl"));
+
+unittest {
+  assert(UIMEmptyHeader);
+  assert(UIMEmptyHeader.id(null) == `<div class="empty-header"></div>`);
+}

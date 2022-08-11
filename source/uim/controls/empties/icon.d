@@ -14,11 +14,15 @@ class DUIMEmptyIconControl : DUIMEmptyItemControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMEmptyIconControl", "DUIMEmptyIconControl"));
 mixin(ControlCalls!("UIMEmptyIcon", "DUIMEmptyIconControl"));
+
+unittest {
+  assert(UIMEmptyIcon);
+  assert(UIMEmptyIcon.id(null) == `<div class="empty-icon"></div>`);
+}
