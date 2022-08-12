@@ -67,8 +67,7 @@ class DUIMSwitchIconControl : DUIMControl {
 mixin(ControlCalls!("UIMSwitchIconControl", "DUIMSwitchIconControl"));
 mixin(ControlCalls!("UIMSwitchIcon", "DUIMSwitchIconControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSwitchIcon);
 
     auto control = UIMSwitchIcon;

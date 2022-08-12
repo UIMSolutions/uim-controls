@@ -21,8 +21,7 @@ class DUIMSubmitInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMSubmitInputControl", "DUIMSubmitInputControl"));
 mixin(ControlCalls!("UIMSubmitInput", "DUIMSubmitInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSubmitInput);
 
     auto control = UIMSubmitInput;

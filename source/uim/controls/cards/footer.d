@@ -27,8 +27,7 @@ class DUIMCardFooterControl : DUIMControl {
 mixin(ControlCalls!("UIMCardFooterControl", "DUIMCardFooterControl"));
 mixin(ControlCalls!("UIMCardFooter", "DUIMCardFooterControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMCardFooter);
 
     auto control = UIMCardFooter;

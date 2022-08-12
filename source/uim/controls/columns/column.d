@@ -25,8 +25,7 @@ class DUIMColumnControl : DUIMControl {
 mixin(ControlCalls!("UIMColumnControl", "DUIMColumnControl"));
 mixin(ControlCalls!("UIMColumn", "DUIMColumnControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMColumn);
 
     auto control = UIMColumn;

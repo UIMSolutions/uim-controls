@@ -16,8 +16,7 @@ class DUIMHeatmapChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMHeatmapChartControl", "DUIMHeatmapChartControl"));
 mixin(ControlCalls!("UIMHeatmapChart", "DUIMHeatmapChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMHeatmapChart);
 
     auto control = UIMHeatmapChart;

@@ -83,8 +83,7 @@ class DUIMCarouselControl : DUIMControl {
 mixin(ControlCalls!("UIMCarouselControl", "DUIMCarouselControl"));
 mixin(ControlCalls!("UIMCarousel", "DUIMCarouselControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMCarousel);
 
     auto control = UIMCarousel;

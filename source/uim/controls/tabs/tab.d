@@ -60,8 +60,7 @@ class DUIMTabControl : DUIMControl {
 mixin(ControlCalls!("UIMTabControl", "DUIMTabControl"));
 mixin(ControlCalls!("UIMTab", "DUIMTabControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTab);
 
     auto control = UIMTab;

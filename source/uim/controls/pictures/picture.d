@@ -42,8 +42,7 @@ class DUIMPictureControl : DUIMLayoutControl {
 mixin(ControlCalls!("UIMPictureControl", "DUIMPictureControl"));
 mixin(ControlCalls!("UIMPicture", "DUIMPictureControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPicture);
 
     auto control = UIMPicture;

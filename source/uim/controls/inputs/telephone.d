@@ -21,8 +21,7 @@ class DUIMTelephoneInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMTelephoneInputControl", "DUIMTelephoneInputControl"));
 mixin(ControlCalls!("UIMTelephoneInput", "DUIMTelephoneInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTelephoneInput);
 
     auto control = UIMTelephoneInput;

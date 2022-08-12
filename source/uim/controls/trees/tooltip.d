@@ -21,8 +21,7 @@ class DUIMTreeControl : DUIMControl {
 mixin(ControlCalls!("UIMTreeControl", "DUIMTreeControl"));
 mixin(ControlCalls!("UIMTree", "DUIMTreeControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTree);
 
     auto control = UIMTree;

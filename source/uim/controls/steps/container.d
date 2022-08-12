@@ -32,8 +32,7 @@ class DUIMStepsControl : DUIMControl {
 mixin(ControlCalls!("UIMStepsControl", "DUIMStepsControl"));
 mixin(ControlCalls!("UIMSteps", "DUIMStepsControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSteps);
     assert(UIMSteps.id("test1") == `<div id="steps-743176" class="steps"></div>`);
 

@@ -25,8 +25,7 @@ class DUIMAudioControl : DUIMControl {
 mixin(ControlCalls!("UIMAudioControl", "DUIMAudioControl"));
 mixin(ControlCalls!("UIMAudio", "DUIMAudioControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMAudio);
 
     auto control = UIMAudio;

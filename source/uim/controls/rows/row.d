@@ -30,8 +30,7 @@ class DUIMRowControl : DUIMControl {
 mixin(ControlCalls!("UIMRowControl", "DUIMRowControl"));
 mixin(ControlCalls!("UIMRow", "DUIMRowControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMRow);
 
     auto control = UIMRow;

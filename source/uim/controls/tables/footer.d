@@ -28,8 +28,7 @@ class DUIMTableFooterControl : DUIMControl {
 mixin(ControlCalls!("UIMTableFooterControl", "DUIMTableFooterControl")); 
 mixin(ControlCalls!("UIMTableFooter", "DUIMTableFooterControl")); 
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTableFooter);
 
     auto control = UIMTableFooter;

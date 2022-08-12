@@ -20,8 +20,7 @@ class DUIMColorInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMColorInputControl", "DUIMColorInputControl"));
 mixin(ControlCalls!("UIMColorInput", "DUIMColorInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMColorInput);
 
     auto control = UIMColorInput;

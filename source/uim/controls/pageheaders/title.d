@@ -27,8 +27,7 @@ class DUIMPageTitleControl : DUIMControl {
 mixin(ControlCalls!("UIMPageTitleControl", "DUIMPageTitleControl"));
 mixin(ControlCalls!("UIMPageTitle", "DUIMPageTitleControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPageTitle);
   }
 }

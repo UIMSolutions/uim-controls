@@ -25,8 +25,7 @@ class DUIMShellControl : DUIMControl {
 mixin(ControlCalls!("UIMShellControl", "DUIMShellControl"));
 mixin(ControlCalls!("UIMShell", "DUIMShellControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMShell);
 
     auto control = UIMShell;

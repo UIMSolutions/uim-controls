@@ -37,8 +37,7 @@ class DUIMDropdownToggleControl : DUIMControl {
 mixin(ControlCalls!("UIMDropdownToggleControl", "DUIMDropdownToggleControl"));
 mixin(ControlCalls!("UIMDropdownToggle", "DUIMDropdownToggleControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDropdownToggle);
 
     auto control = UIMDropdownToggle;

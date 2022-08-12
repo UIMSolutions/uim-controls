@@ -25,8 +25,7 @@ class DUIMModalTitleControl : DUIMControl {
 mixin(ControlCalls!("UIMModalTitleControl", "DUIMModalTitleControl"));
 mixin(ControlCalls!("UIMModalTitle", "DUIMModalTitleControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMModalTitle);
 
     auto control = UIMModalTitle;

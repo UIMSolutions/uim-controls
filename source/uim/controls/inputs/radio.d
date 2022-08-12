@@ -52,8 +52,7 @@ class DUIMRadioControl : DUIMInputControl {
 mixin(ControlCalls!("UIMRadioControl", "DUIMRadioControl"));
 mixin(ControlCalls!("UIMRadio", "DUIMRadioControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMRadio);
 
     auto control = UIMRadio;

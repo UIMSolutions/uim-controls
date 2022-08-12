@@ -16,8 +16,7 @@ class DUIMCandlestickChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMCandlestickChartControl", "DUIMCandlestickChartControl"));
 mixin(ControlCalls!("UIMCandlestickChart", "DUIMCandlestickChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMCandlestickChart);
 
     auto control = UIMCandlestickChart;

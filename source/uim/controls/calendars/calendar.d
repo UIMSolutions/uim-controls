@@ -27,8 +27,7 @@ class DUIMCalendarControl : DUIMControl {
 mixin(ControlCalls!("UIMCalendarControl", "DUIMCalendarControl"));
 mixin(ControlCalls!("UIMCalendar", "DUIMCalendarControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMCalendar);
 
     auto control = UIMCalendar;

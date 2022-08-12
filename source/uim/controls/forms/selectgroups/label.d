@@ -30,8 +30,7 @@ class DUIMSelectGroupLabelControl : DUIMControl {
 mixin(ControlCalls!("UIMSelectGroupLabelControl", "DUIMSelectGroupLabelControl"));
 mixin(ControlCalls!("UIMSelectGroupLabel", "DUIMSelectGroupLabelControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSelectGroupLabel);
 
     auto control = UIMSelectGroupLabel;

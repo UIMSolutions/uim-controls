@@ -27,8 +27,7 @@ class DUIMTimelineIconControl : DUIMControl {
 mixin(ControlCalls!("UIMTimelineIconControl", "DUIMTimelineIconControl"));
 mixin(ControlCalls!("UIMTimelineIcon", "DUIMTimelineIconControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTimelineIcon);
 
     auto control = UIMTimelineIcon;

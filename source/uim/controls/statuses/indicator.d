@@ -39,8 +39,7 @@ class DUIMStatusIndicatorControl : DUIMControl {
 mixin(ControlCalls!("UIMStatusIndicatorControl", "DUIMStatusIndicatorControl"));
 mixin(ControlCalls!("UIMStatusIndicator", "DUIMStatusIndicatorControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMStatusIndicator);
 
     auto control = UIMStatusIndicator;

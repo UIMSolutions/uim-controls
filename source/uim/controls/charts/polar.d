@@ -16,8 +16,7 @@ class DUIMPolarChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMPolarChartControl", "DUIMPolarChartControl"));
 mixin(ControlCalls!("UIMPolarChart", "DUIMPolarChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPolarChart);
 
     auto control = UIMPolarChart;

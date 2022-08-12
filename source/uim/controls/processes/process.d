@@ -20,8 +20,7 @@ class DUIMProcessControl : DUIMControl {
 mixin(ControlCalls!("UIMProcessControl", "DUIMProcessControl"));
 mixin(ControlCalls!("UIMProcess", "DUIMProcessControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMProcess);
 
     auto control = UIMProcess;

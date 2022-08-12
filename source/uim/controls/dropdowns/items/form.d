@@ -23,8 +23,7 @@ class DUIMDropdownFormControl : DUIMDropdownItemControl {
 mixin(ControlCalls!("UIMDropdownFormControl", "DUIMDropdownFormControl"));
 mixin(ControlCalls!("UIMDropdownForm", "DUIMDropdownFormControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDropdownForm);
 
     auto control = UIMDropdownForm;

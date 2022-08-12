@@ -57,8 +57,7 @@ class DUIMAvatarControl : DUIMControl {
 mixin(ControlCalls!("UIMAvatarControl", "DUIMAvatarControl"));
 mixin(ControlCalls!("UIMAvatar", "DUIMAvatarControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     auto control = UIMAvatar;
     // TODO
   }

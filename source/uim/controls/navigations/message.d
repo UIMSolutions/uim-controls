@@ -58,8 +58,7 @@ class DUIMMessagesControl : DUIMControl {
 mixin(ControlCalls!("UIMMessagesControl", "DUIMMessagesControl"));
 mixin(ControlCalls!("UIMMessages", "DUIMMessagesControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     // TODO
   }
 }

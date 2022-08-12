@@ -44,8 +44,7 @@ class DUIMDropdownPaneControl : DUIMTabPaneControl {
 mixin(ControlCalls!("UIMDropdownPaneControl", "DUIMDropdownPaneControl"));
 mixin(ControlCalls!("UIMDropdownPane", "DUIMDropdownPaneControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDropdownPane);
 
     auto control = UIMDropdownPane;

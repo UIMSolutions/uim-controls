@@ -21,8 +21,7 @@ class DUIMRotatingLoaderControl : DUIMLoaderControl {
 mixin(ControlCalls!("UIMRotatingLoaderControl", "DUIMRotatingLoaderControl"));
 mixin(ControlCalls!("UIMRotatingLoader", "DUIMRotatingLoaderControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMRotatingLoader);
     assert(UIMRotatingLoader.id("test1") == `<div id="test1" class="spinner-border" role="status"></div>`);
 

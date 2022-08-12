@@ -16,8 +16,7 @@ class DUIMDonutChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMDonutChartControl", "DUIMDonutChartControl"));
 mixin(ControlCalls!("UIMDonutChart", "DUIMDonutChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDonutChart);
 
     auto control = UIMDonutChart;

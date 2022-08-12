@@ -27,8 +27,7 @@ class DUIMButtonListControl : DUIMControl {
 mixin(ControlCalls!("UIMButtonListControl", "DUIMButtonListControl"));
 mixin(ControlCalls!("UIMButtonList", "DUIMButtonListControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMButtonList);
 
     auto control = UIMButtonList;

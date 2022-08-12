@@ -13,8 +13,7 @@ class DUIMTimelineChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMTimelineChartControl", "DUIMTimelineChartControl"));
 mixin(ControlCalls!("UIMTimelineChart", "DUIMTimelineChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTimelineChart);
 
     auto control = UIMTimelineChart;

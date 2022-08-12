@@ -33,8 +33,7 @@ class DUIMRibbonControl : DUIMControl {
 mixin(ControlCalls!("UIMRibbonControl", "DUIMRibbonControl"));
 mixin(ControlCalls!("UIMRibbon", "DUIMRibbonControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMRibbon);
 
     auto control = UIMRibbon;

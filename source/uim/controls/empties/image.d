@@ -23,8 +23,7 @@ class DUIMEmptyImageControl : DUIMEmptyItemControl {
 mixin(ControlCalls!("UIMEmptyImageControl", "DUIMEmptyImageControl"));
 mixin(ControlCalls!("UIMEmptyImage", "DUIMEmptyImageControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMEmptyImage);
 
     auto control = UIMEmptyImage;

@@ -30,8 +30,7 @@ class DUIMCarouselItemControl : DUIMControl {
 mixin(ControlCalls!("UIMCarouselItemControl", "DUIMCarouselItemControl"));
 mixin(ControlCalls!("UIMCarouselItem", "DUIMCarouselItemControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     // TODO
   }
 }

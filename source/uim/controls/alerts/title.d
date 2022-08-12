@@ -13,8 +13,7 @@ class DUIMAlertTitleControl : DUIMControl {
 mixin(ControlCalls!("UIMAlertTitleControl", "DUIMAlertTitleControl"));
 mixin(ControlCalls!("UIMAlertTitle", "DUIMAlertTitleControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMAlertTitle);
 
     auto control = UIMAlertTitle;

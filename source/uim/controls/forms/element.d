@@ -26,9 +26,10 @@ class DUIMFormElementControl : DUIMControl {
     return [H5Label(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
+mixin(ControlCalls!("UIMFormElementControl", "DUIMFormElementControl"));
+mixin(ControlCalls!("UIMFormElement", "DUIMFormElementControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMFormElement);
 
     auto control = UIMFormElement;

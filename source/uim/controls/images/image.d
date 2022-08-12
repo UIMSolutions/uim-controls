@@ -116,8 +116,7 @@ class DUIMImageControl : DUIMControl {
 mixin(ControlCalls!("UIMImageControl", "DUIMImageControl"));
 mixin(ControlCalls!("UIMImage", "DUIMImageControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMImage);
     assert(UIMImage == "<img>");
 

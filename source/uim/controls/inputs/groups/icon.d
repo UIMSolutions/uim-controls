@@ -28,8 +28,7 @@ class DUIMIconAddonControl : DUIMControl {
 mixin(ControlCalls!("UIMIconAddonControl", "DUIMIconAddonControl"));
 mixin(ControlCalls!("UIMIconAddon", "DUIMIconAddonControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMIconAddon);
 
     auto control = UIMIconAddon;

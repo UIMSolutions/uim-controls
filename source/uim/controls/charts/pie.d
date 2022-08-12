@@ -16,8 +16,7 @@ class DUIMPieChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMPieChartControl", "DUIMPieChartControl"));
 mixin(ControlCalls!("UIMPieChart", "DUIMPieChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPieChart);
 
     auto control = UIMPieChart;

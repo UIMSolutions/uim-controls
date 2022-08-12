@@ -20,8 +20,7 @@ class DUIMTokenizerControl : DUIMControl {
 mixin(ControlCalls!("UIMTokenizerControl", "DUIMTokenizerControl"));
 mixin(ControlCalls!("UIMTokenizer", "DUIMTokenizerControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTokenizer);
 
     auto control = UIMTokenizer;

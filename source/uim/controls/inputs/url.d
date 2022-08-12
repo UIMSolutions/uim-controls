@@ -21,8 +21,7 @@ class DUIMUrlInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMUrlInputControl", "DUIMUrlInputControl"));
 mixin(ControlCalls!("UIMUrlInput", "DUIMUrlInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMUrlInput);
 
     auto control = UIMUrlInput;

@@ -20,8 +20,7 @@ class DUIMTileContainerControl : DUIMControl {
 mixin(ControlCalls!("UIMTileContainerControl", "DUIMTileContainerControl")); 
 mixin(ControlCalls!("UIMTileContainer", "DUIMTileContainerControl")); 
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTileContainer);
 
     auto control = UIMTileContainer;

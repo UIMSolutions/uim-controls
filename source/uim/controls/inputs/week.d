@@ -32,8 +32,7 @@ class DUIMWeekInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMWeekInputControl", "DUIMWeekInputControl"));
 mixin(ControlCalls!("UIMWeekInput", "DUIMWeekInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMWeekInput);
 
     auto control = UIMWeekInput;

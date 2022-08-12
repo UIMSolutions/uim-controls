@@ -16,8 +16,7 @@ class DUIMCircleChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMCircleChartControl", "DUIMCircleChartControl"));
 mixin(ControlCalls!("UIMCircleChart", "DUIMCircleChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMCircleChart);
 
     auto control = UIMCircleChart;

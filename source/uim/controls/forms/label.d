@@ -30,8 +30,7 @@ class DUIMFormLabelControl : DUIMControl {
 mixin(ControlCalls!("UIMFormLabelControl", "DUIMFormLabelControl"));
 mixin(ControlCalls!("UIMFormLabel", "DUIMFormLabelControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMFormLabel);
 
     auto control = UIMFormLabel;

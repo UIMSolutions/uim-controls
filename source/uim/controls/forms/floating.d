@@ -28,8 +28,7 @@ class DUIMFormFloatingControl : DUIMControl {
 mixin(ControlCalls!("UIMFormFloatingControl", "DUIMFormFloatingControl"));
 mixin(ControlCalls!("UIMFormFloating", "DUIMFormFloatingControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMFormFloating);
 
     auto control = UIMFormFloating;

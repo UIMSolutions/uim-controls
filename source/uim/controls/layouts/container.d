@@ -42,8 +42,7 @@ class DUIMContainerControl : DUIMLayoutControl {
 mixin(ControlCalls!("UIMContainerControl", "DUIMContainerControl"));
 mixin(ControlCalls!("UIMContainer", "DUIMContainerControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMContainer);
 
     auto control = UIMContainer;

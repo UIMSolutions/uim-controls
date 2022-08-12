@@ -90,8 +90,7 @@ class DUIMTextareaControl : DUIMInputControl {
 mixin(ControlCalls!("UIMTextareaControl", "DUIMTextareaControl"));
 mixin(ControlCalls!("UIMTextarea", "DUIMTextareaControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTextarea);
 
     auto control = UIMTextarea;

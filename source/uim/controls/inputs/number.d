@@ -31,8 +31,7 @@ class DUIMNumberInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMNumberInputControl", "DUIMNumberInputControl"));
 mixin(ControlCalls!("UIMNumberInput", "DUIMNumberInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMNumberInput);
 
     auto control = UIMNumberInput;

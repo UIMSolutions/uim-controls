@@ -27,8 +27,7 @@ class DUIMPagePretitleControl : DUIMControl {
 mixin(ControlCalls!("UIMPagePretitleControl", "DUIMPagePretitleControl"));
 mixin(ControlCalls!("UIMPagePretitle", "DUIMPagePretitleControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPagePretitle);
   }
 }

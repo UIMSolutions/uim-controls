@@ -21,8 +21,7 @@ class DUIMImageInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMImageInputControl", "DUIMImageInputControl"));
 mixin(ControlCalls!("UIMImageInput", "DUIMImageInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMImageInput);
 
     auto control = UIMImageInput;

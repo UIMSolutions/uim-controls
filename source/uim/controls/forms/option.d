@@ -30,8 +30,7 @@ class DUIMOptionControl : DUIMControl {
 mixin(ControlCalls!("UIMOptionControl", "DUIMOptionControl"));
 mixin(ControlCalls!("UIMOption", "DUIMOptionControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMOption);
 
     auto control = UIMOption;

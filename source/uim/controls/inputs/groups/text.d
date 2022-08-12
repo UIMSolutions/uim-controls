@@ -26,8 +26,7 @@ class DUIMTextAddonControl : DUIMControl {
 mixin(ControlCalls!("UIMTextAddonControl", "DUIMTextAddonControl"));
 mixin(ControlCalls!("UIMTextAddon", "DUIMTextAddonControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTextAddon);
 
     auto control = UIMTextAddon;

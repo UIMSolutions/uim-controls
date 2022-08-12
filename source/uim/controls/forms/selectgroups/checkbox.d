@@ -27,8 +27,7 @@ class DUIMSelectGroupCheckboxControl : DUIMControl {
 mixin(ControlCalls!("UIMSelectGroupCheckboxControl", "DUIMSelectGroupCheckboxControl"));
 mixin(ControlCalls!("UIMSelectGroupCheckbox", "DUIMSelectGroupCheckboxControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSelectGroupCheckbox);
 
     auto control = UIMSelectGroupCheckbox;

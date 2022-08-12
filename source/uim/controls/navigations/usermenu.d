@@ -34,8 +34,7 @@ class DUIMUsermenuControl : DUIMControl {
 mixin(ControlCalls!("UIMUsermenuControl", "DUIMUsermenuControl"));
 mixin(ControlCalls!("UIMUsermenu", "DUIMUsermenuControl"));
 
-version(test_uim_controls) {
-  unittest {  
+version(test_uim_controls) { unittest {  
     assert(UIMUsermenu);
     
     auto control = UIMUsermenu;

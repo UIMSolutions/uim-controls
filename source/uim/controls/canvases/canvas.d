@@ -28,8 +28,7 @@ class DUIMCanvasControl : DUIMControl {
 mixin(ControlCalls!("UIMCanvasControl", "DUIMCanvasControl"));
 mixin(ControlCalls!("UIMCanvas", "DUIMCanvasControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMCanvas);
 
     auto control = UIMCanvas;

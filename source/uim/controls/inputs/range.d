@@ -26,8 +26,7 @@ class DUIMRangeInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMRangeInputControl", "DUIMRangeInputControl"));
 mixin(ControlCalls!("UIMRangeInput", "DUIMRangeInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMRangeInput);
 
     auto control = UIMRangeInput;

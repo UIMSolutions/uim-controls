@@ -57,8 +57,7 @@ class DUIMBadgeControl : DUIMControl {
 mixin(ControlCalls!("UIMBadgeControl", "DUIMBadgeControl"));
 mixin(ControlCalls!("UIMBadge", "DUIMBadgeControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMBadge);
     assert(UIMBadge.id("test1") == `<span id="test2" class="badge"></span>`);
 

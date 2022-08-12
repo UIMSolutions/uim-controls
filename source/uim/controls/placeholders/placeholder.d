@@ -15,8 +15,7 @@ class DUIMPlaceHolderControl : DUIMControl {
 mixin(ControlCalls!("UIMPlaceHolderControl", "DUIMPlaceHolderControl"));
 mixin(ControlCalls!("UIMPlaceHolder", "DUIMPlaceHolderControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPlaceHolder);
 
     auto control = UIMPlaceHolder;

@@ -32,8 +32,7 @@ class DUIMDividerControl : DUIMControl {
 mixin(ControlCalls!("UIMDividerControl", "DUIMDividerControl"));
 mixin(ControlCalls!("UIMDivider", "DUIMDividerControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDivider);
 
     assert(UIMDivider.id("test1") == `<div id="test1" class="hr-text"></div>`);

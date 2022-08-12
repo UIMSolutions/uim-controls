@@ -21,8 +21,7 @@ class DUIMResetInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMResetInputControl", "DUIMResetInputControl"));
 mixin(ControlCalls!("UIMResetInput", "DUIMResetInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMResetInput);
 
     auto control = UIMResetInput;

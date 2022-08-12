@@ -53,8 +53,7 @@ class DUIMCheckboxControl : DUIMInputControl {
 mixin(ControlCalls!("UIMCheckboxControl", "DUIMCheckboxControl"));
 mixin(ControlCalls!("UIMCheckbox", "DUIMCheckboxControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMCheckbox);
 
     auto control = UIMCheckbox;

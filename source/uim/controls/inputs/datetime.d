@@ -33,8 +33,7 @@ class DUIMDatetimeInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMDatetimeInputControl", "DUIMDatetimeInputControl"));
 mixin(ControlCalls!("UIMDatetimeInput", "DUIMDatetimeInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDatetimeInput);
 
     auto control = UIMDatetimeInput;

@@ -134,8 +134,7 @@ aria-setsize
   }
 }
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     // TODO 
   }
 }

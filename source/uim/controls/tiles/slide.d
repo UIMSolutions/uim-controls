@@ -20,8 +20,7 @@ class DUIMTileSlideControl : DUIMControl {
 mixin(ControlCalls!("UIMTileSlideControl", "DUIMTileSlideControl")); 
 mixin(ControlCalls!("UIMTileSlide", "DUIMTileSlideControl")); 
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTileSlide);
 
     auto control = UIMTileSlide;

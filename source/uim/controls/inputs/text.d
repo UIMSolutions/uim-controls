@@ -23,8 +23,7 @@ class DUIMTextInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMTextInputControl", "DUIMTextInputControl"));
 mixin(ControlCalls!("UIMTextInput", "DUIMTextInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTextInput);
 
     auto control = UIMTextInput;

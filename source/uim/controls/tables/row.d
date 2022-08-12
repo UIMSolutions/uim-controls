@@ -27,8 +27,7 @@ class DUIMTableRowControl : DUIMControl {
 mixin(ControlCalls!("UIMTableRowControl", "DUIMTableRowControl"));
 mixin(ControlCalls!("UIMTableRow", "DUIMTableRowControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTableRow);
 
     auto control = UIMTableRow;

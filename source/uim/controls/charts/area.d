@@ -20,8 +20,7 @@ class DUIMAreaChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMAreaChartControl", "DUIMAreaChartControl"));
 mixin(ControlCalls!("UIMAreaChart", "DUIMAreaChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMAreaChart);
 
     auto control = UIMAreaChart;

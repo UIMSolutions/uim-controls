@@ -25,8 +25,7 @@ class DUIMEmailInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMEmailInputControl", "DUIMEmailInputControl"));
 mixin(ControlCalls!("UIMEmailInput", "DUIMEmailInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMEmailInput);
 
     auto control = UIMEmailInput;

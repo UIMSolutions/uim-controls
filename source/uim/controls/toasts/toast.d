@@ -25,8 +25,7 @@ class DUIMToastControl : DUIMControl {
 mixin(ControlCalls!("UIMToastControl", "DUIMToastControl"));
 mixin(ControlCalls!("UIMToast", "DUIMToastControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMToast);
 
     auto control = UIMToast;

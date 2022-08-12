@@ -25,8 +25,7 @@ class DUIMModalDialogControl : DUIMControl {
 mixin(ControlCalls!("UIMModalDialogControl", "DUIMModalDialogControl"));
 mixin(ControlCalls!("UIMModalDialog", "DUIMModalDialogControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMModalDialog);
 
     auto control = UIMModalDialog;

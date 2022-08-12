@@ -57,8 +57,7 @@ class DUIMChartLegendElement {
 }
 auto UIMChartLegendElement() { return new DUIMChartLegendElement; }
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMChartLegendElement);
 
     auto element = UIMChartLegendElement;

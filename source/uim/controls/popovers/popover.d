@@ -23,8 +23,7 @@ class DUIMPopoverControl : DUIMControl {
 mixin(ControlCalls!("UIMPopoverControl", "DUIMPopoverControl"));
 mixin(ControlCalls!("UIMPopover", "DUIMPopoverControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPopover);
 
     auto control = UIMPopover;

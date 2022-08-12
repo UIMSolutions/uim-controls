@@ -24,8 +24,7 @@ class DUIMFileInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMFileInputControl", "DUIMFileInputControl"));
 mixin(ControlCalls!("UIMFileInput", "DUIMFileInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMFileInput);
 
     auto control = UIMFileInput;

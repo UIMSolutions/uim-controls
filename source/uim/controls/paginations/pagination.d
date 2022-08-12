@@ -33,8 +33,7 @@ class DUIMPaginationControl : DUIMControl {
 mixin(ControlCalls!("UIMPaginationControl", "DUIMPaginationControl"));
 mixin(ControlCalls!("UIMPagination", "DUIMPaginationControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPagination);
     
     auto control = UIMPagination;

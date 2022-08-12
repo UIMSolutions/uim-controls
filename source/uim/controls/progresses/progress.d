@@ -26,8 +26,7 @@ class DUIMProgressControl : DUIMControl {
 mixin(ControlCalls!("UIMProgressControl", "DUIMProgressControl"));
 mixin(ControlCalls!("UIMProgress", "DUIMProgressControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMProgress);
 
     auto control = UIMProgress;

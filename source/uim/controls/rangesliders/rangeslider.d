@@ -30,8 +30,7 @@ class DUIMRangeSliderControl : DUIMControl {
 mixin(ControlCalls!("UIMRangeSliderControl", "DUIMRangeSliderControl"));
 mixin(ControlCalls!("UIMRangeSlider", "DUIMRangeSliderControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMRangeSlider);
 
     auto control = UIMRangeSlider;

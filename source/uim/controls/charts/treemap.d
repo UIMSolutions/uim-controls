@@ -13,8 +13,7 @@ class DUIMTreemapChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMTreemapChartControl", "DUIMTreemapChartControl"));
 mixin(ControlCalls!("UIMTreemapChart", "DUIMTreemapChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTreemapChart);
 
     auto control = UIMTreemapChart;

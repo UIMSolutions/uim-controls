@@ -23,8 +23,7 @@ class DUIMTableBodyControl : DUIMControl {
 mixin(ControlCalls!("UIMTableBodyControl", "DUIMTableBodyControl")); 
 mixin(ControlCalls!("UIMTableBody", "DUIMTableBodyControl")); 
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTableBody);
 
     auto control = UIMTableBody;

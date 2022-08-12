@@ -53,8 +53,7 @@ class DUIMSwitchControl : DUIMInputControl {
 mixin(ControlCalls!("UIMSwitchControl", "DUIMSwitchControl"));
 mixin(ControlCalls!("UIMSwitch", "DUIMSwitchControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSwitch);
 
     auto control = UIMSwitch;

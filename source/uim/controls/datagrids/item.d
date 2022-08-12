@@ -45,8 +45,7 @@ class DUIMDatagridItemControl : DUIMControl {
 mixin(ControlCalls!("UIMDatagridItemControl", "DUIMDatagridItemControl"));
 mixin(ControlCalls!("UIMDatagridItem", "DUIMDatagridItemControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDatagridItem);
 
     auto control = UIMDatagridItem;

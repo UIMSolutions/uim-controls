@@ -28,8 +28,7 @@ class DUIMTableHeaderControl : DUIMControl {
 mixin(ControlCalls!("UIMTableHeaderControl", "DUIMTableHeaderControl")); 
 mixin(ControlCalls!("UIMTableHeader", "DUIMTableHeaderControl")); 
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTableHeader);
 
     auto control = UIMTableHeader;

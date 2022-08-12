@@ -40,8 +40,7 @@ class DUIMAlertControl : DUIMControl {
 mixin(ControlCalls!("UIMAlertControl", "DUIMAlertControl"));
 mixin(ControlCalls!("UIMAlert", "DUIMAlertControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     auto control = UIMAlert;
   }
 }

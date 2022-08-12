@@ -38,8 +38,7 @@ class DUIMMonthInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMMonthInputControl", "DUIMMonthInputControl"));
 mixin(ControlCalls!("UIMMonthInput", "DUIMMonthInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMMonthInput);
 
     auto control = UIMMonthInput;

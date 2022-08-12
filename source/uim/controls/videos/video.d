@@ -25,8 +25,7 @@ class DUIMVideoControl : DUIMControl {
 mixin(ControlCalls!("UIMVideoControl", "DUIMVideoControl"));
 mixin(ControlCalls!("UIMVideo", "DUIMVideoControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMVideo);
 
     auto control = UIMVideo;

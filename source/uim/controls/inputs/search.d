@@ -21,8 +21,7 @@ class DUIMSearchInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMSearchInputControl", "DUIMSearchInputControl"));
 mixin(ControlCalls!("UIMSearchInput", "DUIMSearchInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSearchInput);
 
     auto control = UIMSearchInput;

@@ -36,8 +36,7 @@ class DUIMPageItemControl : DUIMControl {
 mixin(ControlCalls!("UIMPageItemControl", "DUIMPageItemControl"));
 mixin(ControlCalls!("UIMPageItem", "DUIMPageItemControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     // TODO
   }
 }

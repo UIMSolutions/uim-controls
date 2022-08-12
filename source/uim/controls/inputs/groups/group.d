@@ -52,8 +52,7 @@ class DUIMInputGroupControl : DUIMControl {
 mixin(ControlCalls!("UIMInputGroupControl", "DUIMInputGroupControl"));
 mixin(ControlCalls!("UIMInputGroup", "DUIMInputGroupControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMInputGroup);
 
     auto control = UIMInputGroup;

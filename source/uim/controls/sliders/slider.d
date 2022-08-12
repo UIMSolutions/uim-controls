@@ -24,8 +24,7 @@ class DUIMSliderControl : DUIMControl {
 mixin(ControlCalls!("UIMSliderControl", "DUIMSliderControl"));
 mixin(ControlCalls!("UIMSlider", "DUIMSliderControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSlider);
 
     auto control = UIMSlider;

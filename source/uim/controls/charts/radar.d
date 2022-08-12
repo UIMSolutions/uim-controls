@@ -16,8 +16,7 @@ class DUIMRadarChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMRadarChartControl", "DUIMRadarChartControl"));
 mixin(ControlCalls!("UIMRadarChart", "DUIMRadarChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMRadarChart);
 
     auto control = UIMRadarChart;

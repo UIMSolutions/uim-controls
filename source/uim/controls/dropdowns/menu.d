@@ -52,8 +52,7 @@ class DUIMDropdownMenuControl : DUIMControl {
 mixin(ControlCalls!("UIMDropdownMenuControl", "DUIMDropdownMenuControl"));
 mixin(ControlCalls!("UIMDropdownMenu", "DUIMDropdownMenuControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDropdownMenu);
 
     assert(UIMDropdownMenu.id("test") == `<div id="test" class="dropdown-menu"></div>`);

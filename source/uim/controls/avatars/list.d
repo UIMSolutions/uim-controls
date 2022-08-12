@@ -26,8 +26,7 @@ class DUIMAvatarListControl : DUIMControl {
 mixin(ControlCalls!("UIMAvatarListControl", "DUIMAvatarListControl"));
 mixin(ControlCalls!("UIMAvatarList", "DUIMAvatarListControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     auto control = UIMAvatarList;
   }
 }

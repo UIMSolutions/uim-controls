@@ -24,8 +24,7 @@ class DUIMFigureControl : DUIMControl {
 mixin(ControlCalls!("UIMFigureControl", "DUIMFigureControl"));
 mixin(ControlCalls!("UIMFigure", "DUIMFigureControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMFigure);
 
     auto control = UIMFigure;

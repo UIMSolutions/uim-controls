@@ -20,8 +20,7 @@ class DUIMPasswordInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMPasswordInputControl", "DUIMPasswordInputControl"));
 mixin(ControlCalls!("UIMPasswordInput", "DUIMPasswordInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPasswordInput);
 
     auto control = UIMPasswordInput;

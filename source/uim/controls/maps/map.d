@@ -25,8 +25,7 @@ class DUIMMapControl : DUIMControl {
 mixin(ControlCalls!("UIMMapControl", "DUIMMapControl"));
 mixin(ControlCalls!("UIMMap", "DUIMMapControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMMap);
 
     auto control = UIMMap;

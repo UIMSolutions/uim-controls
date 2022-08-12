@@ -90,8 +90,7 @@ class DUIMButtonControl : DUIMControl {
 mixin(ControlCalls!("UIMButtonControl", "DUIMButtonControl"));
 mixin(ControlCalls!("UIMButton", "DUIMButtonControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMButton);
 
     auto control = UIMButton;

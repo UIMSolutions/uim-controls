@@ -17,8 +17,7 @@ class DUIMAlertLinkControl : DUIMControl {
 mixin(ControlCalls!("UIMAlertLinkControl", "DUIMAlertLinkControl"));
 mixin(ControlCalls!("UIMAlertLink", "DUIMAlertLinkControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMAlertLink);
 
     auto control = UIMAlertLink;

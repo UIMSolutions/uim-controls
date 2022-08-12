@@ -32,8 +32,7 @@ class DUIMBreadcrumbControl : DUIMControl {
 mixin(ControlCalls!("UIMBreadcrumbControl", "DUIMBreadcrumbControl"));
 mixin(ControlCalls!("UIMBreadcrumb", "DUIMBreadcrumbControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMBreadcrumb);
 
     auto control = UIMBreadcrumb;

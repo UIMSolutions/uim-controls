@@ -27,8 +27,7 @@ class DUIMDatagridTitleControl : DUIMControl {
 mixin(ControlCalls!("UIMDatagridTitleControl", "DUIMDatagridTitleControl"));
 mixin(ControlCalls!("UIMDatagridTitle", "DUIMDatagridTitleControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDatagridTitle);
 
     auto control = UIMDatagridTitle;

@@ -27,8 +27,8 @@ class DUIMPageHeaderControl : DUIMControl {
 mixin(ControlCalls!("UIMPageHeaderControl", "DUIMPageHeaderControl"));
 mixin(ControlCalls!("UIMPageHeader", "DUIMPageHeaderControl"));
 
-version(test_uim_controls) {
-  unittest {
-    // TODO
-  }
-}
+version(test_uim_controls) { unittest {
+    assert(UIMPageHeader);
+    writeln(UIMPageHeader);
+}}
+

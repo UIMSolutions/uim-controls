@@ -25,8 +25,7 @@ class DUIMModalBodyControl : DUIMControl {
 mixin(ControlCalls!("UIMModalBodyControl", "DUIMModalBodyControl"));
 mixin(ControlCalls!("UIMModalBody", "DUIMModalBodyControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMModalBody);
 
     auto control = UIMModalBody;

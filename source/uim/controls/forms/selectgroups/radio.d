@@ -27,8 +27,7 @@ class DUIMSelectGroupRadioControl : DUIMControl {
 mixin(ControlCalls!("UIMSelectGroupRadioControl", "DUIMSelectGroupRadioControl"));
 mixin(ControlCalls!("UIMSelectGroupRadio", "DUIMSelectGroupRadioControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSelectGroupRadio);
 
     auto control = UIMSelectGroupRadio;

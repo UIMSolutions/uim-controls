@@ -21,8 +21,7 @@ class DUIMFacetFilterControl : DUIMControl {
 mixin(ControlCalls!("UIMFacetFilterControl", "DUIMFacetFilterControl"));
 mixin(ControlCalls!("UIMFacetFilter", "DUIMFacetFilterControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMFacetFilter);
 
     auto control = UIMFacetFilter;

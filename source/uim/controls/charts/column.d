@@ -16,8 +16,7 @@ class DUIMColumnChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMColumnChartControl", "DUIMColumnChartControl"));
 mixin(ControlCalls!("UIMColumnChart", "DUIMColumnChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMColumnChart);
 
     auto control = UIMColumnChart;

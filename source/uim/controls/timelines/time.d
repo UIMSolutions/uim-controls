@@ -28,8 +28,7 @@ class DUIMTimelineTimeControl : DUIMControl {
 mixin(ControlCalls!("UIMTimelineTimeControl", "DUIMTimelineTimeControl"));
 mixin(ControlCalls!("UIMTimelineTime", "DUIMTimelineTimeControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTimelineTime);
 
     auto control = UIMTimelineTime;

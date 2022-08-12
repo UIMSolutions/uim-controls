@@ -27,8 +27,7 @@ class DUIMNavItemControl : DUIMControl {
 mixin(ControlCalls!("UIMNavItemControl", "DUIMNavItemControl"));
 mixin(ControlCalls!("UIMNavItem", "DUIMNavItemControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     // TODO
   }
 }

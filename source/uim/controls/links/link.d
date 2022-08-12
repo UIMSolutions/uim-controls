@@ -29,8 +29,7 @@ class DUIMLinkControl : DUIMControl {
 mixin(ControlCalls!("UIMLinkControl", "DUIMLinkControl"));
 mixin(ControlCalls!("UIMLink", "DUIMLinkControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMLink);
 
     auto control = UIMLink;

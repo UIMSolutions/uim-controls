@@ -13,8 +13,7 @@ class DUIMPanelControl : DUIMControl {
 mixin(ControlCalls!("UIMPanelControl", "DUIMPanelControl"));
 mixin(ControlCalls!("UIMPanel", "DUIMPanelControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMPanel);
 
     auto control = UIMPanel;

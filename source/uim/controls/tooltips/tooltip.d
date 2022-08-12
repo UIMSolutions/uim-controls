@@ -25,8 +25,7 @@ class DUIMTooltipControl : DUIMControl {
 mixin(ControlCalls!("UIMTooltipControl", "DUIMTooltipControl"));
 mixin(ControlCalls!("UIMTooltip", "DUIMTooltipControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTooltip);
 
     auto control = UIMTooltip;

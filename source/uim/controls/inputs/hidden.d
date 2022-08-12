@@ -21,8 +21,7 @@ class DUIMHiddenInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMHiddenInputControl", "DUIMHiddenInputControl"));
 mixin(ControlCalls!("UIMHiddenInput", "DUIMHiddenInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMHiddenInput);
 
     auto control = UIMHiddenInput;

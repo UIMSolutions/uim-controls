@@ -22,8 +22,7 @@ class DUIMDashboardControl : DUIMControl {
 mixin(ControlCalls!("UIMDashboardControl", "DUIMDashboardControl"));
 mixin(ControlCalls!("UIMDashboard", "DUIMDashboardControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDashboard);
 
     auto control = UIMDashboard;

@@ -27,8 +27,7 @@ class DUIMInvoiceControl : DUIMControl {
 mixin(ControlCalls!("UIMInvoiceControl", "DUIMInvoiceControl"));
 mixin(ControlCalls!("UIMInvoice", "DUIMInvoiceControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMInvoice);
 
     auto control = UIMInvoice;

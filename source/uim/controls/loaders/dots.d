@@ -31,8 +31,7 @@ class DUIMDotsLoaderControl : DUIMLoaderControl {
 mixin(ControlCalls!("UIMDotsLoaderControl", "DUIMDotsLoaderControl"));
 mixin(ControlCalls!("UIMDotsLoader", "DUIMDotsLoaderControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMDotsLoader);
     assert(UIMDotsLoader.id("test1") == `<div id="test1" class="spinner-border" role="status"></div>`);
 

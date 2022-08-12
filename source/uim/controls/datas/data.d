@@ -24,8 +24,7 @@ class DUIMDataControl : DUIMControl {
 mixin(ControlCalls!("UIMDataControl", "DUIMDataControl"));
 mixin(ControlCalls!("UIMData", "DUIMDataControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMData);
 
     auto control = UIMData;

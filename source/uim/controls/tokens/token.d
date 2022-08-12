@@ -20,8 +20,7 @@ class DUIMTokenControl : DUIMControl {
 mixin(ControlCalls!("UIMTokenControl", "DUIMTokenControl"));
 mixin(ControlCalls!("UIMToken", "DUIMTokenControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMToken);
 
     auto control = UIMToken;

@@ -95,8 +95,7 @@ class DUIMCardControl : DUIMControl {
 mixin(ControlCalls!("UIMCardControl", "DUIMCardControl"));
 mixin(ControlCalls!("UIMCard", "DUIMCardControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMCard);
 
     auto control = UIMCard;

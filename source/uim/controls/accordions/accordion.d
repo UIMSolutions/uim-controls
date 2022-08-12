@@ -45,8 +45,7 @@ class DUIMAccordionControl : DUIMControl {
 mixin(ControlCalls!("UIMAccordionControl", "DUIMAccordionControl"));
 mixin(ControlCalls!("UIMAccordion", "DUIMAccordionControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMAccordion);
     auto control = UIMAccordion;   
 

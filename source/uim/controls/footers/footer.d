@@ -26,8 +26,7 @@ class DUIMFooterControl : DUIMControl {
 mixin(ControlCalls!("UIMFooterControl", "DUIMFooterControl"));
 mixin(ControlCalls!("UIMFooter", "DUIMFooterControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMFooter);
 
     auto control = UIMFooter;

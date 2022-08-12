@@ -48,8 +48,7 @@ class DUIMModalControl : DUIMControl {
 mixin(ControlCalls!("UIMModalControl", "DUIMModalControl"));
 mixin(ControlCalls!("UIMModal", "DUIMModalControl"));
 
-version(test_uim_controls) {
-  unittest {  
+version(test_uim_controls) { unittest {  
     assert(UIMModal);
     
     auto control = UIMModal;

@@ -31,8 +31,7 @@ class DUIMTimeInputControl : DUIMInputControl {
 mixin(ControlCalls!("UIMTimeInputControl", "DUIMTimeInputControl"));
 mixin(ControlCalls!("UIMTimeInput", "DUIMTimeInputControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMTimeInput);
 
     auto control = UIMTimeInput;

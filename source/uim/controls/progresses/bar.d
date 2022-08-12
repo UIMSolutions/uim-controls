@@ -51,8 +51,7 @@ class DUIMProgressBarControl : DUIMControl {
 mixin(ControlCalls!("UIMProgressBarControl", "DUIMProgressBarControl"));
 mixin(ControlCalls!("UIMProgressBar", "DUIMProgressBarControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMProgressBar);
 
     auto control = UIMProgressBar;

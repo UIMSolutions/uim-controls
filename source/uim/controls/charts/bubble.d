@@ -16,8 +16,7 @@ class DUIMBubbleChartControl : DUIMChartControl {
 mixin(ControlCalls!("UIMBubbleChartControl", "DUIMBubbleChartControl"));
 mixin(ControlCalls!("UIMBubbleChart", "DUIMBubbleChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMBubbleChart);
 
     auto control = UIMBubbleChart;

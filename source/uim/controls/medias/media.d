@@ -20,8 +20,7 @@ class DUIMMediaControl : DUIMControl {
 mixin(ControlCalls!("UIMMediaControl", "DUIMMediaControl"));
 mixin(ControlCalls!("UIMMedia", "DUIMMediaControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     // TODO
   }
 }

@@ -43,8 +43,7 @@ class DUIMAccordionItemControl : DUIMControl {
 mixin(ControlCalls!("UIMAccordionItemControl", "DUIMAccordionItemControl"));
 mixin(ControlCalls!("UIMAccordionItem", "DUIMAccordionItemControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMAccordionItem);
     assert(UIMAccordionItem.id("test") == `<div id="test" class="accordion-item"><h2 id="test-header" class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#test-collapse" data-bs-toggle="collapse" type="button"></button></h2><div id="test-collapse" class="accordion-collapse collapse" data-bs-parent="#"><div class="accordion-body"></div></div></div>`);
 

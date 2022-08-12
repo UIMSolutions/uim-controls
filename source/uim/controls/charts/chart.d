@@ -44,8 +44,7 @@ class DUIMChartControl : DUIMControl {
 mixin(ControlCalls!("UIMChartControl", "DUIMChartControl"));
 mixin(ControlCalls!("UIMChart", "DUIMChartControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMChart);
 
     auto control = UIMChart;

@@ -29,8 +29,7 @@ class DUIMSelectGroupItemControl : DUIMControl {
 mixin(ControlCalls!("UIMSelectGroupItemControl", "DUIMSelectGroupItemControl"));
 mixin(ControlCalls!("UIMSelectGroupItem", "DUIMSelectGroupItemControl"));
 
-version(test_uim_controls) {
-  unittest {
+version(test_uim_controls) { unittest {
     assert(UIMSelectGroupItem);
 
     auto control = UIMSelectGroupItem;
