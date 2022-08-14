@@ -41,5 +41,5 @@ unittest {
   assert(UIMEmpty);
   assert(UIMEmpty.id(null) == `<div class="empty"></div>`);
   assert(UIMEmpty.id(null)(UIMEmptyIcon) == `<div class="empty"><div class="empty-icon"></div></div>`);
-  assert(UIMEmpty.id(null)(UIMEmptyIcon) == `<div class="empty"><div class="empty-icon"></div></div>`);
+  writeln(UIMEmpty.id(null)(UIMEmptyIcon));
 }

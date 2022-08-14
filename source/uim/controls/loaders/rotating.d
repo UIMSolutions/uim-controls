@@ -29,7 +29,7 @@ version(test_uim_controls) { unittest {
     assert(UIMRotatingLoader.id("test2").color("red") == `<div id="test2" class="spinner-border text-red" role="status"></div>`); 
 
     assert(UIMRotatingLoader.size("small").size == "small"); 
-    assert(UIMRotatingLoader.id("test3").size("small") == ""); 
+    writeln(UIMRotatingLoader.id("test3").size("small")); 
 
     assert(UIMRotatingLoader.style("grow").style == "grow");
     assert(UIMRotatingLoader.id("test4").style("grow") == `<div id="test4" class="spinner-grow" role="status"></div>`);
