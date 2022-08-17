@@ -14,6 +14,7 @@ class DUIMCardControl : DUIMControl {
   mixin(OProperty!("string", "size"));
   mixin(OProperty!("bool", "stacked"));
 
+  mixin(OProperty!("STRINGAA", "statuses"));
   mixin(OProperty!("string", "statusColor"));
   mixin(OProperty!("string", "statusPosition"));
 
@@ -60,6 +61,7 @@ class DUIMCardControl : DUIMControl {
 
     if (size) myClasses ~= ["card-"~size];
     if (stacked) myClasses ~= ["card-stacked"];
+    if (statusPosition) statuses[statusPosition] = statusColor;
   }
 
 /*   mixin(AddContent!("Header", "UIMCardHeader"));
@@ -89,7 +91,9 @@ class DUIMCardControl : DUIMControl {
       myCard.addContent(imageContent);
     } */
 
-    return results~BS5Card(myId, myClasses, myAttributes, myContent);
+    return results~BS5Card(myId, myClasses, myAttributes,
+      statuses.keys.map!(key => cast(DH5Obj)UIMCardStatus.position(key).color(statuses[key])).array~ 
+      myContent);
   }
 }
 mixin(ControlCalls!("UIMCardControl", "DUIMCardControl"));
