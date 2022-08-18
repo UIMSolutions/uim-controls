@@ -126,6 +126,6 @@ version(test_uim_controls) { unittest {
 }
 
 unittest {
-  writeln(UIMImage.source("test.jpg"));
+  // writeln(UIMImage.source("test.jpg"));
 }
 

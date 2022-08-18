@@ -48,6 +48,8 @@ version(test_uim_controls) { unittest {
     assert(UIMVideo);
     assert(UIMVideo.noId == `<video></video>`);
 
+    mixin(TestControlBooleanAttributes!("UIMVideo", ["autoplay", "autopictureinpicture"]));
+
     assert(!UIMVideo.autoplay);
     assert(UIMVideo.autoplay(true).autoplay);
     assert(UIMVideo.noId.autoplay(true) == `<video autoplay></video>`);
@@ -63,8 +65,8 @@ version(test_uim_controls) { unittest {
 }
 
 unittest {
-    writeln(UIMVideo);
-    writeln(UIMVideo.autoplay(true));
-    writeln(UIMVideo.autopictureinpicture(true));
-    writeln(UIMVideo.controls(true));
+    // writeln(UIMVideo);
+    // writeln(UIMVideo.autoplay(true));
+    // writeln(UIMVideo.autopictureinpicture(true));
+    // writeln(UIMVideo.controls(true));
 }

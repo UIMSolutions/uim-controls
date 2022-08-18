@@ -34,5 +34,5 @@ version(test_uim_controls) { unittest {
   }
 }
 unittest {
-  writeln(UIMButtonList.id("test"));
+  // writeln(UIMButtonList.id("test"));
 }

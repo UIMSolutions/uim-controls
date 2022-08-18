@@ -68,14 +68,14 @@ version(test_uim_controls) { unittest {
   }
 }
 unittest {
-  writeln(UIMDropdown.id("test"));
-  writeln(UIMDropdown.id("test").title("testTitle"));
-  writeln(UIMDropdown.id("test").link("testLink"));
-  writeln(UIMDropdown.id("test").type("testType"));
-  writeln(UIMDropdown.id("test").value("testValue"));
-  writeln(UIMDropdown.id("test").size("testSize"));
-  writeln(UIMDropdown.id("test").tooltip("testTooltip"));
-  writeln(UIMDropdown.id("test").split(true));
-  writeln(UIMDropdown.id("test").arrow(true));
-  writeln(UIMDropdown.id("test").dark(true));
+  // writeln(UIMDropdown.id("test"));
+  // writeln(UIMDropdown.id("test").title("testTitle"));
+  // writeln(UIMDropdown.id("test").link("testLink"));
+  // writeln(UIMDropdown.id("test").type("testType"));
+  // writeln(UIMDropdown.id("test").value("testValue"));
+  // writeln(UIMDropdown.id("test").size("testSize"));
+  // writeln(UIMDropdown.id("test").tooltip("testTooltip"));
+  // writeln(UIMDropdown.id("test").split(true));
+  // writeln(UIMDropdown.id("test").arrow(true));
+  // writeln(UIMDropdown.id("test").dark(true));
 }

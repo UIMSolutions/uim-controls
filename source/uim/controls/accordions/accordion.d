@@ -47,15 +47,14 @@ mixin(ControlCalls!("UIMAccordion", "DUIMAccordionControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMAccordion);
+
     auto control = UIMAccordion;   
 
     assert(UIMAccordion.id("test") == `<div id="test" class="accordion"></div>`); 
   }
 }
 unittest{
-  writeln(UIMAccordion.id("test").flush(true));
-  writeln(UIMAccordion.id("test").icons(["sun", "moon"]));
+  // writeln(UIMAccordion.id("test").flush(true));
+  // writeln(UIMAccordion.id("test").icons(["sun", "moon"]));
 }
 
-/*
-*/

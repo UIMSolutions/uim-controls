@@ -29,6 +29,6 @@ mixin(ControlCalls!("UIMPageHeader", "DUIMPageHeaderControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMPageHeader);
-    writeln(UIMPageHeader);
+    assert(UIMPageHeader.noId == `<div class="page-header"></div>`);
 }}
 

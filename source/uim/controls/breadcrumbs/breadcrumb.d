@@ -41,5 +41,5 @@ version(test_uim_controls) { unittest {
  }
 }
 unittest {
-  writeln(UIMBreadcrumb.style("test"));
+  // writeln(UIMBreadcrumb.style("test"));
 }
