@@ -23,13 +23,16 @@
 			"versions": [
 				"test_uim_core",
 				"test_uim_oop",
+				"test_uim_css",
+				"test_uim_javascript",
+				"test_uim_json",
+				"test_uim_bootstrap",
 				"test_uim_controls"
 			]
 		}
 	],
 	"dependencies": {
 		"colored": "~>0.0.27",
-		"silly": "~>1.1.1",
 		"vibe-d": "~>0.9.5"
 	},
 	"description": "A minimal D application.",
