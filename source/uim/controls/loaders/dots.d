@@ -33,18 +33,18 @@ mixin(ControlCalls!("UIMDotsLoader", "DUIMDotsLoaderControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMDotsLoader);
-    assert(UIMDotsLoader.id("test1") == `<div id="test1" class="spinner-border" role="status"></div>`);
+    assert(UIMDotsLoader.noId == `<div class="spinner-border" role="status"></div>`);
 
     assert(UIMDotsLoader.color("red").color == "red"); 
-    assert(UIMDotsLoader.id("test2").color("red") == `<div id="test2" class="spinner-border text-red" role="status"></div>`); 
+    assert(UIMDotsLoader.noId.color("red") == `<div class="spinner-border text-red" role="status"></div>`); 
 
     assert(UIMDotsLoader.size("small").size == "small"); 
     writeln(UIMDotsLoader.id("test3").size("small")); 
 
     assert(UIMDotsLoader.style("grow").style == "grow");
-    assert(UIMDotsLoader.id("test4").style("grow") == `<div id="test4" class="spinner-grow" role="status"></div>`);
+    assert(UIMDotsLoader.noId.style("grow") == `<div class="spinner-grow" role="status"></div>`);
 
     assert(UIMDotsLoader.embedded(true).embedded); 
-    assert(UIMDotsLoader.id("test5").embedded(true) == `<span id="test5" class="spinner-border" role="status"></span>`); 
+    assert(UIMDotsLoader.noId.embedded(true) == `<span class="spinner-border" role="status"></span>`); 
   }
 }

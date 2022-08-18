@@ -13,8 +13,12 @@ class DUIMCardFooterControl : DUIMControl {
       .classes(["card-footer"]);
   }
 
+  mixin(OProperty!("string", "color"));
+
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
+
+    if (color) myClasses ~= "bg-"~color;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -29,7 +33,10 @@ mixin(ControlCalls!("UIMCardFooter", "DUIMCardFooterControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMCardFooter);
+    assert(UIMCardFooter.noId == `<div class="card-footer"></div>`);
 
-    auto control = UIMCardFooter;
+    assert(UIMCardFooter.color("blue").color == "blue");
+    assert(UIMCardFooter.noId.color("blue") == `<div class="bg-blue card-footer"></div>`);
   }
 }
+

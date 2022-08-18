@@ -10,7 +10,7 @@ interface IControl {
 }
 
 class DUIMControl : DH5Obj, IControl {
-  this() { initialize; }
+  this() { super(); }
 
   mixin(OProperty!("DUIMControl", "parent"));
   mixin(OProperty!("bool", "active"));
@@ -44,6 +44,8 @@ class DUIMControl : DH5Obj, IControl {
 
   mixin(OProperty!("string", "ariaRole"));
   mixin(OProperty!("string", "ariaRoleDescription"));
+
+  O noId(this O)(){ this.id(null); return cast(O)this; }
 
 /*
 aria-dropeffect

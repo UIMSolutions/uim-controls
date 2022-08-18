@@ -61,7 +61,8 @@ class DUIMCardControl : DUIMControl {
 
     if (size) myClasses ~= ["card-"~size];
     if (stacked) myClasses ~= ["card-stacked"];
-    if (statusPosition) statuses[statusPosition] = statusColor;
+    
+    if (statusPosition) this.statuses([statusPosition:statusColor]);
   }
 
 /*   mixin(AddContent!("Header", "UIMCardHeader"));

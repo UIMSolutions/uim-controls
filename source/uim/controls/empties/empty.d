@@ -39,7 +39,6 @@ mixin(ControlCalls!("UIMEmpty", "DUIMEmptyControl"));
 
 unittest {
   assert(UIMEmpty);
-  assert(UIMEmpty.id(null) == `<div class="empty"></div>`);
-  writeln(UIMEmpty.id(null)(UIMEmptyIcon));
-  assert(UIMEmpty.id(null)(UIMEmptyIcon) == `<div class="empty"><div class="empty-icon"></div></div>`);
+  assert(UIMEmpty.noId == `<div class="empty"></div>`);
+  assert(UIMEmpty.noId()(UIMEmptyIcon.noId) == `<div class="empty"><div class="empty-icon"></div></div>`);
 }
