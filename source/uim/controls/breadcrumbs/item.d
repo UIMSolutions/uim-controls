@@ -42,7 +42,7 @@ mixin(ControlCalls!("UIMBreadcrumbItem", "DUIMBreadcrumbItemControl"));
 version(test_uim_controls) { unittest {
     assert(UIMBreadcrumbItem);
 
-    auto control = UIMBreadcrumbItem;
-    // TODO
-  }
-}
+    mixin(TestControlStringAttributes!("UIMBreadcrumbItem", [
+      "link" 
+    ]));
+}}

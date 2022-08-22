@@ -91,9 +91,13 @@ mixin(ControlCalls!("UIMButtonControl", "DUIMButtonControl"));
 mixin(ControlCalls!("UIMButton", "DUIMButtonControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMButton);
+  assert(UIMButton);
 
-    auto control = UIMButton;
-    // TODO
-  }
-}
+  mixin(TestControlBooleanAttributes!("UIMButton", [
+    "ghost", "outline", "square", "pill", "loading"
+  ])); 
+
+  mixin(TestControlStringAttributes!("UIMButton", [
+    "color", "icon", "link", "size", "title", "type", "value", "tooltip"
+  ]));
+}}

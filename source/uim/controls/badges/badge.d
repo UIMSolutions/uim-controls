@@ -59,19 +59,20 @@ mixin(ControlCalls!("UIMBadge", "DUIMBadgeControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMBadge);
-    assert(UIMBadge.id("test1") == `<span id="test2" class="badge"></span>`);
+    assert(UIMBadge.noId == `<span class="badge"></span>`);
 
-    assert(UIMBadge.color("green").color == "green");
-    assert(UIMBadge.id("test2").color("yellow") == `<span id="test2" class="badge bg-yellow"></span>`);
+    mixin(TestControlBooleanAttributes!("UIMBadge", [
+      "outline"
+    ]));
 
-    assert(UIMBadge.link("somewhere/link.html").link == "somewhere/link.html");
-    assert(UIMBadge.id("test3").link("somewhere/link.html") == `<a id="test3" class="badge" href="somewhere/link.html"></a>`);
+    mixin(TestControlStringAttributes!("UIMBadge", [
+      "color", "link", "style"
+    ]));
 
-    assert(UIMBadge.outline(true).outline);
-    assert(UIMBadge.id("test4").outline(true) == `<span id="test4" class="badge badge-outline"></span>`);
-
-    assert(UIMBadge.style("testStyle"));
-    assert(UIMBadge.id("test5").style("pill") == `<span id="test5" class="badge badge-pill"></span>`);
+    assert(UIMBadge.noId.color("yellow") == `<span class="badge bg-yellow"></span>`);
+    assert(UIMBadge.noId.link("somewhere/link.html") == `<a class="badge" href="somewhere/link.html"></a>`);
+    assert(UIMBadge.noId.outline(true) == `<span class="badge badge-outline"></span>`);
+    assert(UIMBadge.noId.style("pill") == `<span class="badge badge-pill"></span>`);
   }
 }
 

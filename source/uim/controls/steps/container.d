@@ -34,10 +34,10 @@ mixin(ControlCalls!("UIMSteps", "DUIMStepsControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMSteps);
-    assert(UIMSteps.id(null) == `<div class="steps"></div>`);
+    assert(UIMSteps.noId == `<div class="steps"></div>`);
 
     assert(UIMSteps.color("blue").color == "blue");
-    assert(UIMSteps.id(null).color("red") == `<div class="steps steps-red"></div>`);
+    assert(UIMSteps.noId.color("red") == `<div class="steps steps-red"></div>`);
 
     assert(UIMSteps.counter(true).counter);
     assert(UIMSteps.id("test3").counter(true) == `<div id="test3" class="steps steps-counter"></div>`);

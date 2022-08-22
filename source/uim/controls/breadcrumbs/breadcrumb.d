@@ -35,11 +35,7 @@ mixin(ControlCalls!("UIMBreadcrumb", "DUIMBreadcrumbControl"));
 version(test_uim_controls) { unittest {
     assert(UIMBreadcrumb);
 
-    auto control = UIMBreadcrumb;
-    assert(UIMBreadcrumb.style("test").style == "test");
-//    assert(UIMBreadcrumb.style("test").style == "test");
- }
-}
-unittest {
-  // writeln(UIMBreadcrumb.style("test"));
-}
+    mixin(TestControlStringAttributes!("UIMBreadcrumb", [
+      "icon", "style" 
+    ]));
+}}

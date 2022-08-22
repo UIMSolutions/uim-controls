@@ -101,9 +101,13 @@ mixin(ControlCalls!("UIMCardControl", "DUIMCardControl"));
 mixin(ControlCalls!("UIMCard", "DUIMCardControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMCard);
+  assert(UIMCard);
 
-    auto control = UIMCard;
-    // TODO
-  }
-}
+  mixin(TestControlBooleanAttributes!("UIMCard", [
+    "stacked"
+  ]));
+
+  mixin(TestControlStringAttributes!("UIMCard", [
+    "size", "statusColor", "statusPosition", "imagePosition"
+  ]));  
+}}

@@ -118,10 +118,15 @@ mixin(ControlCalls!("UIMImage", "DUIMImageControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMImage);
-    assert(UIMImage == "<img>");
+    writeln(UIMImage);
+    assert(UIMImage.noId == "<img>");
 
-    assert(UIMImage.source("image.jpg").source == "image.jpg");
-    assert(UIMImage.id("test1").source("image.jpg") == `<img id="test1" src="image.jpg">`);
+    mixin(TestControlStringAttributes!("UIMImage", [
+      "activeSource", "altText", "backgroundPosition", "backgroundRepeat", "cover", "height", "image", 
+      "source", "useMap", "width", "srcset", "sizes", "rotate", "position", "fit", "link", "floatPosition"
+    ]));
+    
+    assert(UIMImage.noId.source("image.jpg") == `<img src="image.jpg">`);
   }
 }
 

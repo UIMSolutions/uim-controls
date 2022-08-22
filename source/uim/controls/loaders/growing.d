@@ -18,18 +18,18 @@ mixin(ControlCalls!("UIMGrowingLoader", "DUIMGrowingLoaderControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMGrowingLoader);
-    assert(UIMGrowingLoader.id("test1") == `<div id="test1" class="spinner-grow" role="status"></div>`);
+    assert(UIMGrowingLoader.noId == `<div class="spinner-grow" role="status"></div>`);
 
     assert(UIMGrowingLoader.color("red").color == "red"); 
-    assert(UIMGrowingLoader.id("test2").color("red") == `<div id="test2" class="spinner-grow text-red" role="status"></div>`); 
+    assert(UIMGrowingLoader.noId.color("red") == `<div class="spinner-grow text-red" role="status"></div>`); 
 
     assert(UIMGrowingLoader.size("small").size == "small"); 
-    assert(UIMGrowingLoader.id("test3").size("small") == ""); 
+    assert(UIMGrowingLoader.noId.size("small") == `<div class="spinner-grow spinner-grow-sm" role="status"></div>`); 
 
     assert(UIMGrowingLoader.style("grow").style == "grow");
-    assert(UIMGrowingLoader.id("test4").style("grow") == `<div id="test4" class="spinner-grow" role="status"></div>`);
+    assert(UIMGrowingLoader.noId.style("grow") == `<div class="spinner-grow" role="status"></div>`);
 
     assert(UIMGrowingLoader.embedded(true).embedded); 
-    assert(UIMGrowingLoader.id("test5").embedded(true) == `<span id="test5" class="spinner-grow" role="status"></span>`); 
+    assert(UIMGrowingLoader.noId.embedded(true) == `<span class="spinner-grow" role="status"></span>`); 
   }
 }
