@@ -12,6 +12,15 @@ class DUIMGrowingLoaderControl : DUIMLoaderControl {
     this
       .style("grow");
   }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    switch (this.size) {
+      case "sm", "small": myClasses ~= "spinner-grow-sm"; break;
+      default: break;
+    }
+  }
 }
 mixin(ControlCalls!("UIMGrowingLoaderControl", "DUIMGrowingLoaderControl"));
 mixin(ControlCalls!("UIMGrowingLoader", "DUIMGrowingLoaderControl"));

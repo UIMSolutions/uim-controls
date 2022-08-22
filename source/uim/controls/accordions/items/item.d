@@ -48,13 +48,15 @@ version(test_uim_controls) { unittest {
     assert(UIMAccordionItem.id("test") == `<div id="test" class="accordion-item"><h2 id="test-header" class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#test-collapse" data-bs-toggle="collapse" type="button"></button></h2><div id="test-collapse" class="accordion-collapse collapse" data-bs-parent="#"><div class="accordion-body"></div></div></div>`);
 
     assert(UIMAccordionItem.title("testTitle").title == "testTitle");
-    assert(UIMAccordionItem.id("test").title("testTitle") == `<div id="test" class="accordion-item"><h2 id="test-header" class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#test-collapse" data-bs-toggle="collapse" type="button">testTitle</button></h2><div id="test-collapse" class="accordion-collapse collapse" data-bs-parent="#"><div class="accordion-body"></div></div></div>
-<nav aria-label="breadcrumb"><ol id="control-921455" class="breadcrumb breadcrumb-test" aria-label="breadcrumbs"></ol></nav>`);
+    assert(UIMAccordionItem.id("test").title("testTitle") == 
+      `<div id="test" class="accordion-item">`~
+        `<h2 id="test-header" class="accordion-header">`~
+          `<button class="accordion-button collapsed" data-bs-target="#test-collapse" data-bs-toggle="collapse" type="button">testTitle</button>`~
+          `</h2>`~
+          `<div id="test-collapse" class="accordion-collapse collapse" data-bs-parent="#">`~
+    `<div class="accordion-body"></div></div></div>`);
 
     assert(UIMAccordionItem.bodyClasses(["a", "b"]).bodyClasses == ["a", "b"]);
     assert(UIMAccordionItem.headerClasses(["a", "b"]).headerClasses == ["a", "b"]);
   }
-}
-
-unittest {
 }

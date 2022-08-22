@@ -24,3 +24,5 @@ docs/
 *.lst
 dub.selections.json
 uim-controls-test-offline
+uim-controls-test-test
+uim-controls-test-testUnit

@@ -54,13 +54,12 @@ mixin(ControlCalls!("UIMDropdownMenu", "DUIMDropdownMenuControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMDropdownMenu);
-
-    assert(UIMDropdownMenu.id("test") == `<div id="test" class="dropdown-menu"></div>`);
+    assert(UIMDropdownMenu.noId == `<ul class="dropdown-menu"></ul>`);
 
     assert(UIMDropdownMenu.dark(true).dark);
-    assert(UIMDropdownMenu.id("test").dark(true) == `<div id="test" class="dropdown-menu dropdown-menu-dark"></div>`);
+    assert(UIMDropdownMenu.noId.dark(true) == `<ul class="dropdown-menu dropdown-menu-dark"></ul>`);
 
     assert(UIMDropdownMenu.buttonId("abc").buttonId == `abc`);
-    assert(UIMDropdownMenu.id("test").buttonId("abc") == `<div id="test" class="dropdown-menu" aria-labelledby="abc"></div>`);
+    assert(UIMDropdownMenu.noId.buttonId("abc") == `<ul class="dropdown-menu" aria-labelledby="abc"></ul>`);
   }
 }

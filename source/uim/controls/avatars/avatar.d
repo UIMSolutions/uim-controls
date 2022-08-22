@@ -64,7 +64,7 @@ version(test_uim_controls) { unittest {
     mixin(TestControlStringAttributes!("UIMAvatar", 
       ["image", "style", "icon", "text", "color", "size", "shape", "status", "statusValue"]));
 
-    assert(UIMAvatar.noId.image("testPath") == `<span class="avatar" style="background-image: url("testPath")"></span>`);
+    assert(UIMAvatar.noId.image("testPath") == `<span class="avatar" style="background-image: url(testPath)"></span>`);
     assert(UIMAvatar.noId.style("pill") == `<span class="avatar pill"></span>`);
     assert(UIMAvatar.noId.icon("moon") == `<span class="avatar">`~tablerIcon("moon")~`</span>`);
     assert(UIMAvatar.noId.text("testText") == `<span class="avatar">testText</span>`);

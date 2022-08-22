@@ -29,10 +29,6 @@ class DUIMLoaderControl : DUIMControl {
       case "dots": myClasses ~= "animated-dots"; break;
       default: myClasses ~= "spinner-border"; break;
     }
-    switch (this.size) {
-      case "sm", "small": myClasses ~= this.style == "grow" ? "spinner-grow-sm" : "spinner-border-sm"; break;
-      default: break;
-    }
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -54,7 +50,6 @@ version(test_uim_controls) { unittest {
     assert(UIMLoader.id("test2").color("red") == `<div id="test2" class="spinner-border text-red" role="status"></div>`); 
 
     assert(UIMLoader.size("small").size == "small"); 
-    assert(UIMLoader.id("test3").size("small") == `<div id="test3" class="spinner-border spinner-border-sm" role="status"></div>`); 
 
     assert(UIMLoader.style("grow").style == "grow");
     assert(UIMLoader.id("test4").style("grow") == `<div id="test4" class="spinner-grow" role="status"></div>`);

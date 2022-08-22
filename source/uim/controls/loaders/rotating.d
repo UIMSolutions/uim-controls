@@ -15,8 +15,12 @@ class DUIMRotatingLoaderControl : DUIMLoaderControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
-  }
 
+    switch (this.size) {
+      case "sm", "small": myClasses ~= "spinner-border-sm"; break;
+      default: break;
+    }
+  }
 }
 mixin(ControlCalls!("UIMRotatingLoaderControl", "DUIMRotatingLoaderControl"));
 mixin(ControlCalls!("UIMRotatingLoader", "DUIMRotatingLoaderControl"));
@@ -29,7 +33,6 @@ version(test_uim_controls) { unittest {
     assert(UIMRotatingLoader.id("test2").color("red") == `<div id="test2" class="spinner-border text-red" role="status"></div>`); 
 
     assert(UIMRotatingLoader.size("small").size == "small"); 
-    // // writeln(UIMRotatingLoader.id("test3").size("small")); 
 
     assert(UIMRotatingLoader.style("grow").style == "grow");
     assert(UIMRotatingLoader.id("test4").style("grow") == `<div id="test4" class="spinner-grow" role="status"></div>`);

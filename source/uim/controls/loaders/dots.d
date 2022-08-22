@@ -40,10 +40,7 @@ version(test_uim_controls) { unittest {
     assert(UIMDotsLoader.noId.color("red") == `<div class="animated-dots text-red" role="status"></div>`); 
 
     assert(UIMDotsLoader.size("small").size == "small"); 
-    assert(UIMGrowingLoader.noId.size("small") == `<div class="animated-dots display-5" role="status"></div>`); 
-
-    assert(UIMDotsLoader.style("grow").style == "grow");
-    assert(UIMDotsLoader.noId.style("grow") == `<div class="animated-dots" role="status"></div>`);
+    assert(UIMDotsLoader.noId.size("small") == `<div class="animated-dots display-5" role="status"></div>`); 
 
     assert(UIMDotsLoader.embedded(true).embedded); 
     assert(UIMDotsLoader.noId.embedded(true) == `<span class="animated-dots" role="status"></span>`); 

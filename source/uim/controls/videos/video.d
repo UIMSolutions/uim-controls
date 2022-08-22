@@ -63,10 +63,3 @@ version(test_uim_controls) { unittest {
     assert(UIMVideo.noId.controls(true) == `<video controls></video>`);
   }
 }
-
-unittest {
-    // writeln(UIMVideo);
-    // writeln(UIMVideo.autoplay(true));
-    // writeln(UIMVideo.autopictureinpicture(true));
-    // writeln(UIMVideo.controls(true));
-}

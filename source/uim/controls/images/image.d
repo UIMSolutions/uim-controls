@@ -118,7 +118,6 @@ mixin(ControlCalls!("UIMImage", "DUIMImageControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMImage);
-    writeln(UIMImage);
     assert(UIMImage.noId == "<img>");
 
     mixin(TestControlStringAttributes!("UIMImage", [
@@ -130,7 +129,4 @@ version(test_uim_controls) { unittest {
   }
 }
 
-unittest {
-  // writeln(UIMImage.source("test.jpg"));
-}
 
