@@ -58,7 +58,19 @@ mixin(ControlCalls!("UIMAvatarControl", "DUIMAvatarControl"));
 mixin(ControlCalls!("UIMAvatar", "DUIMAvatarControl"));
 
 version(test_uim_controls) { unittest {
-    auto control = UIMAvatar;
-    // TODO
+    assert(UIMAvatar);
+    assert(UIMAvatar.noId == `<span class="avatar"></span>`);
+
+    mixin(TestControlStringAttributes!("UIMAvatar", 
+      ["image", "style", "icon", "text", "color", "size", "shape", "status", "statusValue"]));
+
+    assert(UIMAvatar.noId.image("testPath") == `<span class="avatar" style="background-image: url("testPath")"></span>`);
+    assert(UIMAvatar.noId.style("pill") == `<span class="avatar pill"></span>`);
+    assert(UIMAvatar.noId.icon("moon") == `<span class="avatar">`~tablerIcon("moon")~`</span>`);
+    assert(UIMAvatar.noId.text("testText") == `<span class="avatar">testText</span>`);
+    assert(UIMAvatar.noId.color("red") == `<span class="avatar bg-red"></span>`);
+    assert(UIMAvatar.noId.size("sm") == `<span class="avatar avatar-sm"></span>`);
+    assert(UIMAvatar.noId.shape("rounded") == `<span class="avatar rounded"></span>`);
+    assert(UIMAvatar.noId.status("red") == `<span class="avatar">`~BS5Badge(["bg-red"]).toString~`</span>`);
   }
 }

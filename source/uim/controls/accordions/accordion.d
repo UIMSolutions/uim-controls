@@ -26,7 +26,7 @@ class DUIMAccordionControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    auto style = "";
+    string style = null;
     if (icons) {
       style ~= `#`~this.id~`.accordion-button::after {
     background-image: url(`~icons[0]~`); transform: scale(0.75) !important;
@@ -47,14 +47,10 @@ mixin(ControlCalls!("UIMAccordion", "DUIMAccordionControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMAccordion);
+    assert(UIMAccordion.noId == `<div class="accordion"></div>`);
 
-    auto control = UIMAccordion;   
-
-    assert(UIMAccordion.id("test") == `<div id="test" class="accordion"></div>`); 
+    assert(UIMAccordion.flush(true).flush); 
+    assert(UIMAccordion.noId.flush(true) == `<div class="accordion accordion-flush"></div>`); 
   }
-}
-unittest{
-  // writeln(UIMAccordion.id("test").flush(true));
-  // writeln(UIMAccordion.id("test").icons(["sun", "moon"]));
 }
 

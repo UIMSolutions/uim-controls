@@ -41,6 +41,17 @@ mixin(ControlCalls!("UIMAlertControl", "DUIMAlertControl"));
 mixin(ControlCalls!("UIMAlert", "DUIMAlertControl"));
 
 version(test_uim_controls) { unittest {
-    auto control = UIMAlert;
-  }
-}
+  assert(UIMAlert);
+  mixin(TestControlBooleanAttributes!("UIMAlert", ["dismissible", "important"]));
+  mixin(TestControlStringAttributes!("UIMAlert", ["type", "title"]));
+
+  assert(UIMAlert.noId == `<div class="alert" role="alert"></div>`);
+  assert(UIMAlert.noId.dismissible(true) == `<div class="alert" role="alert"></div>`);
+}}
+
+/* unittest {
+  writeln(UIMAlert.noId.dismissible(true));
+  writeln(UIMAlert.noId.important(true));
+  writeln(UIMAlert.noId.type("true"));
+  writeln(UIMAlert.noId.title("true"));
+} */

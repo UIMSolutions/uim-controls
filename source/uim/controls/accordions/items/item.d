@@ -1,4 +1,4 @@
-module uim.controls.accordions.item;
+module uim.controls.accordions.items.item;
 
 @safe:
 import uim.controls;
