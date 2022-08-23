@@ -23,13 +23,18 @@ class DUIMDropdownDividerControl : DUIMDropdownItemControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return [BS5DropdownDivider].toH5;
+    if (style == "list") {
+      return [H5Li(H5Hr(myId, myClasses, myAttributes))].toH5;
+    }
+    return [H5Div(myId, myClasses, myAttributes)].toH5;
   }
 }
 mixin(ControlCalls!("UIMDropdownDividerControl", "DUIMDropdownDividerControl"));
 mixin(ControlCalls!("UIMDropdownDivider", "DUIMDropdownDividerControl"));
 
 version(test_uim_controls) { unittest {
-  writeln(UIMDropdown);
-  assert(UIMDropdown);
+  assert(UIMDropdownDivider);
+  assert(UIMDropdownDivider.noId == `<div class="dropdown-divider"></div>`);
+  writeln(UIMDropdownDivider.style("list").noId);
+  assert(UIMDropdownDivider.style("list").noId == `<li><hr class="dropdown-divider"></li>`);
 }}

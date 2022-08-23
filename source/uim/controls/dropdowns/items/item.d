@@ -15,6 +15,7 @@ class DUIMDropdownItemControl : DUIMControl {
   mixin(OProperty!("bool", "disabled")); */
   mixin(OProperty!("string", "badge"));
   mixin(OProperty!("string", "badgeColor"));
+  mixin(OProperty!("string", "style"));
 
   override void initialize() {
     super.initialize;

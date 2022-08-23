@@ -47,6 +47,7 @@ public import uim.controls.calendars;
 public import uim.controls.cards;
 public import uim.controls.carousels;
 public import uim.controls.charts;
+public import uim.controls.collapses;
 public import uim.controls.columns;
 public import uim.controls.containers;
 public import uim.controls.dashboards;

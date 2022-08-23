@@ -11,6 +11,7 @@ class DUIMDropdownMenuControl : DUIMControl {
   mixin(OProperty!("string", "buttonId"));
   mixin(OProperty!("string[]", "colors"));
   mixin(OProperty!("string", "labelledBy"));
+  mixin(OProperty!("string", "style"));
 
   O colors(this O)(string[] newColors...) {
     this.colors(newColors);
@@ -39,14 +40,18 @@ class DUIMDropdownMenuControl : DUIMControl {
     if (colors.length > 0 && colors[0].length > 0) myClasses ~= "bg-"~colors[0];
     if (colors.length > 1 && colors[1].length > 0) myClasses ~= "text-"~colors[1];
     if (buttonId) myAttributes["aria-labelledby"] = buttonId;
-    if (labelledBy) myAttributes["aria-labelledby"] = labelledBy;
+    else if (labelledBy) myAttributes["aria-labelledby"] = labelledBy;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
-    
+
+    if (style ==  "list") {   
+      return results~
+        H5Ul(myId, myClasses, myAttributes, myContent);
+    }
     return results~
-      H5Ul(myId, myClasses, myAttributes, myContent);
+      H5Div(myId, myClasses, myAttributes, myContent);
   }
 }
 mixin(ControlCalls!("UIMDropdownMenuControl", "DUIMDropdownMenuControl"));

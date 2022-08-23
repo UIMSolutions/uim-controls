@@ -17,6 +17,9 @@ class DUIMDropdownTextControl : DUIMDropdownItemControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
+    if (style == "list") {
+      return [H5Li(H5Div(["p-3"], ["style":"max-width: 200px;"], myContent))].toH5;
+    }
     return [H5Div(["p-3"], ["style":"max-width: 200px;"], myContent)].toH5;
   }
 }
