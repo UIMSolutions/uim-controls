@@ -43,10 +43,18 @@ class DUIMDropdownControl : DUIMControl {
         .color(color).title(`<span class="visually-hidden">Toggle Dropdown</span>`).link(link).value(value).tooltip(tooltip).type(type).size(size);
 
 
+      if (style == "list") {
+        return results~
+          H5Div(myId, ["btn-group"], myAttributes, 
+            myButton, myButtonSplit,
+            H5Ul(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"], 
+              myContent
+            ));
+      }
       return results~
         H5Div(myId, ["btn-group"], myAttributes, 
           myButton, myButtonSplit,
-          BS5DropdownMenu(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"],
+          H5Div(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"],
             myContent
           ));
     }
@@ -56,7 +64,7 @@ class DUIMDropdownControl : DUIMControl {
     return results~
       BS5Dropdown(myId, myClasses, myAttributes,
         myButton,
-        UIMDropdownMenu.buttonId(myButton.id)(
+        UIMDropdownMenu.buttonId(myButton.id).style(style)(
           myContent
         ) 
     );
