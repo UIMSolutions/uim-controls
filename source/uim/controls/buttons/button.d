@@ -93,10 +93,9 @@ mixin(ControlCalls!("UIMButton", "DUIMButtonControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMButton);
-  writeln(UIMButton);
-  writeln(UIMButton("test1"));
-  writeln(UIMButton("test2", ["testClass"]));
-  writeln(UIMButton("myId-toggle", ["dropdown-toggle"], ["data-bs-toggle":"dropdown", "aria-expanded":"false"]));
+  assert(UIMButton.noId == `<button class="btn"></button>`);
+  assert(UIMButton.noId.link("xxx") == `<a href="xxx" role="button"></a>`);
+  assert(UIMButton.noId.value("xxx") == `<input type="button" value="xxx">`);
 
   mixin(TestControlBooleanAttributes!("UIMButton", [
     "ghost", "outline", "square", "pill", "loading"])); 

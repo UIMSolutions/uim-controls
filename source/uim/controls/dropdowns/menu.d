@@ -41,11 +41,13 @@ class DUIMDropdownMenuControl : DUIMControl {
     if (colors.length > 1 && colors[1].length > 0) myClasses ~= "text-"~colors[1];
     if (buttonId) myAttributes["aria-labelledby"] = buttonId;
     else if (labelledBy) myAttributes["aria-labelledby"] = labelledBy;
+
+    myContent.filter!(c => cast(DUIMDropdownItemControl)c).map!(c => c.style(style));
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
-
+    
     if (style ==  "list") {   
       return results~
         H5Ul(myId, myClasses, myAttributes, myContent);

@@ -11,6 +11,7 @@ class DUIMDropdownItemControl : DUIMControl {
   mixin(OProperty!("string", "link"));
   mixin(OProperty!("string", "icon"));
   mixin(OProperty!("string", "color"));
+  mixin(OProperty!("string[]", "colors"));
 /*   mixin(OProperty!("bool", "active"));
   mixin(OProperty!("bool", "disabled")); */
   mixin(OProperty!("string", "badge"));
@@ -28,6 +29,7 @@ class DUIMDropdownItemControl : DUIMControl {
     super.beforeH5(options);
 
     if (color) myClasses ~= "bg-"~color.toLower;
+    if (colors) myClasses ~= ["bg-"~colors[0].toLower]~(colors.length > 1 ? ["text-"~colors[1].toLower] : null);
     if (active) myClasses ~= "active";
     if (disabled) myClasses ~= "disabled";
 
@@ -58,7 +60,12 @@ version(test_uim_controls) { unittest {
     writeln(UIMDropdownItem);
     writeln(UIMDropdownItem.style("list"));
 
-    auto control = UIMDropdownItem;
-    // TODO
+    mixin(TestControlBooleanAttributes!("UIMDropdownItem", [
+      "isDivider", "isHeader", "active", "disabled"
+    ]));
+
+    mixin(TestControlStringAttributes!("UIMDropdownItem", [
+      "link", "icon", "color", "badge", "badgeColor", "style"     
+    ]));
   }
 }
