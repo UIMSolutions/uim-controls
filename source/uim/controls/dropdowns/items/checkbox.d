@@ -18,7 +18,8 @@ class DUIMDropdownCheckboxControl : DUIMDropdownItemControl {
     auto results = super.toH5(options);
 
     auto coreContent = H5Label(["dropdown-item"], 
-      H5Input(["form-check-input m-0 me-2"], ["type":"checkbox"], myContent));
+      H5Input(["form-check-input m-0 me-2"], ["type":"checkbox"])~ 
+      myContent);
 
     if (style == "list") {
       return [H5Li(coreContent)].toH5;

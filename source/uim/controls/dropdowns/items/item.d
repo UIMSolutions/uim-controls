@@ -29,7 +29,7 @@ class DUIMDropdownItemControl : DUIMControl {
     super.beforeH5(options);
 
     if (color) myClasses ~= "bg-"~color.toLower;
-    if (colors) myClasses ~= ["bg-"~colors[0].toLower]~(colors.length > 1 ? ["text-"~colors[1].toLower] : null);
+    if (colors) myClasses ~= (colors[0].length > 0 ? ["bg-"~colors[0].toLower] : null)~(colors.length > 1 ? ["text-"~colors[1].toLower] : null);
     if (active) myClasses ~= "active";
     if (disabled) myClasses ~= "disabled";
 
