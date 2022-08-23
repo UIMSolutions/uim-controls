@@ -316,15 +316,15 @@ auto `~callName~`(string[] newClasses, STRINGAA newAttributes, string newContent
 auto `~callName~`(string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent...) { return new `~className~`(newClasses, newAttributes, newContent); }
 auto `~callName~`(string[] newClasses, STRINGAA newAttributes, DH5Obj[] newContent)    { return new `~className~`(newClasses, newAttributes, newContent); }
 
-auto `~callName~`(string anId, DH5Obj[] newContent...) { return `~callName~`(anId).addContent(newContent); }
-auto `~callName~`(string anId, DH5Obj[] newContent)    { return `~callName~`(anId).addContent(newContent); }
+auto `~callName~`(string anId, DH5Obj[] newContent...) { return `~callName~`.id(anId).addContent(newContent); }
+auto `~callName~`(string anId, DH5Obj[] newContent)    { return `~callName~`.id(anId).addContent(newContent); }
 
-auto `~callName~`(string anId, string[] newClasses) { return `~callName~`(anId).addClasses(newClasses); }
+auto `~callName~`(string anId, string[] newClasses) { return `~callName~`.id(anId).addClasses(newClasses); }
 auto `~callName~`(string anId, string[] newClasses, string newContent)      { return `~callName~`(anId, newClasses).addContent(newContent); }
 auto `~callName~`(string anId, string[] newClasses, DH5Obj[] newContent...) { return `~callName~`(anId, newClasses).addContent(newContent); }
 auto `~callName~`(string anId, string[] newClasses, DH5Obj[] newContent)    { return `~callName~`(anId, newClasses).addContent(newContent); }
 
-auto `~callName~`(string anId, STRINGAA newAttributes) { return `~callName~`(anId).addAttributes(newAttributes); }
+auto `~callName~`(string anId, STRINGAA newAttributes) { return `~callName~`.id(anId).addAttributes(newAttributes); }
 auto `~callName~`(string anId, STRINGAA newAttributes, string newContent)      { return `~callName~`(anId, newAttributes).addContent(newContent); }
 auto `~callName~`(string anId, STRINGAA newAttributes, DH5Obj[] newContent...) { return `~callName~`(anId, newAttributes).addContent(newContent); }
 auto `~callName~`(string anId, STRINGAA newAttributes, DH5Obj[] newContent)    { return `~callName~`(anId, newAttributes).addContent(newContent); }

@@ -19,6 +19,9 @@ class DUIMDropdownItemControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes(["dropdown-item"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -27,14 +30,23 @@ class DUIMDropdownItemControl : DUIMControl {
     if (color) myClasses ~= "bg-"~color.toLower;
     if (active) myClasses ~= "active";
     if (disabled) myClasses ~= "disabled";
+
+    if (link) myAttributes["href"] = link;
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
+    auto coreContent = H5A(myId, myClasses, myAttributes, 
+      (icon ? H5String(tablerIcon(icon)~"&nbsp;") : null)~myContent~(badge || badgeColor ? UIMBadge(["ms-auto"]).color(badgeColor).content(badge) : null));
+
+    if (style == "list") {
+      return [
+        H5Li(coreContent)
+      ].toH5;
+    }
     return [
-      BS5DropdownLink(myId, myClasses, myAttributes, 
-        (icon ? H5String(tablerIcon(icon)~"&nbsp;") : null)~myContent~(badge || badgeColor ? UIMBadge.addClasses(["ms-auto"]).color(badgeColor).content(badge) : null))
+      coreContent
     ].toH5;
   }
 }
@@ -43,6 +55,8 @@ mixin(ControlCalls!("UIMDropdownItem", "DUIMDropdownItemControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMDropdownItem);
+    writeln(UIMDropdownItem);
+    writeln(UIMDropdownItem.style("list"));
 
     auto control = UIMDropdownItem;
     // TODO

@@ -33,8 +33,6 @@ mixin(ControlCalls!("UIMDropdownHeader", "DUIMDropdownHeaderControl"));
 version(test_uim_controls) { unittest {  
   assert(UIMDropdownHeader);   
 
-  mixin(TestControlStringAttributes!("UIMDropdownHeader", [
-    "title"]));
   assert(UIMDropdownHeader.noId.style("list") == `<li><h6 class="dropdown-header"></h6></li>`);
   assert(UIMDropdownHeader.noId == `<h6 class="dropdown-header"></h6>`);
   assert(UIMDropdownHeader("test").noId == `<h6 class="dropdown-header">test</h6>`);

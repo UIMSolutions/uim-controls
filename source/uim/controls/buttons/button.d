@@ -24,6 +24,7 @@ class DUIMButtonControl : DUIMControl {
     super.initialize;
 
     this
+      .id("button-%s".format(uniform(0, 1_000_000)))
       .classes(["btn"]);
   }
 
@@ -92,10 +93,13 @@ mixin(ControlCalls!("UIMButton", "DUIMButtonControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMButton);
+  writeln(UIMButton);
+  writeln(UIMButton("test1"));
+  writeln(UIMButton("test2", ["testClass"]));
+  writeln(UIMButton("myId-toggle", ["dropdown-toggle"], ["data-bs-toggle":"dropdown", "aria-expanded":"false"]));
 
   mixin(TestControlBooleanAttributes!("UIMButton", [
-    "ghost", "outline", "square", "pill", "loading"
-  ])); 
+    "ghost", "outline", "square", "pill", "loading"])); 
 
   mixin(TestControlStringAttributes!("UIMButton", [
     "color", "icon", "link", "size", "title", "type", "value", "tooltip"

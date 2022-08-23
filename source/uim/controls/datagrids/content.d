@@ -24,7 +24,6 @@ mixin(ControlCalls!("UIMDatagridContent", "DUIMDatagridContentControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMDatagridContent);
-
-    auto control = UIMDatagridContent;
+    assert(UIMDatagridContent.noId == `<div class="datagrid-content"></div>`);
   }
 }

@@ -16,6 +16,7 @@ class DUIMDropdownControl : DUIMControl {
   mixin(OProperty!("bool", "split"));
   mixin(OProperty!("bool", "arrow"));
   mixin(OProperty!("bool", "dark"));
+  mixin(OProperty!("string", "style")); // empty or 'list'
 
   override void initialize() {
     super.initialize;
@@ -28,6 +29,8 @@ class DUIMDropdownControl : DUIMControl {
     super.beforeH5(options);
     if (arrow) myClasses ~= "dropdown-menu-arrow";
     if (dark) myClasses ~= "dropdown-menu-dark";
+
+    myContent.filter!(c => cast(DUIMDropdownItemControl)c).map!(c => c.style(style));
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -38,6 +41,7 @@ class DUIMDropdownControl : DUIMControl {
       auto myButtonSplit = UIMButton.id(myId~"-toggle").addClasses(["dropdown-toggle", "dropdown-toggle-split"])
         .addAttributes(["data-bs-toggle":"dropdown", "aria-expanded":"false"])
         .color(color).title(`<span class="visually-hidden">Toggle Dropdown</span>`).link(link).value(value).tooltip(tooltip).type(type).size(size);
+
 
       return results~
         H5Div(myId, ["btn-group"], myAttributes, 
@@ -62,8 +66,12 @@ mixin(ControlCalls!("UIMDropdownControl", "DUIMDropdownControl"));
 mixin(ControlCalls!("UIMDropdown", "DUIMDropdownControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMDropdown);
+  writeln(UIMDropdown);
+  assert(UIMDropdown);
 
-    auto control = UIMDropdown;
-  }
-}
+  mixin(TestControlBooleanAttributes!("UIMDropdown", [
+    "split", "arrow", "dark"])); 
+
+  mixin(TestControlStringAttributes!("UIMDropdown", [
+    "color", "title", "link", "type", "value", "size", "tooltip"]));   
+}}
