@@ -34,8 +34,6 @@ mixin(ControlCalls!("UIMDropdownHeaderControl", "DUIMDropdownHeaderControl"));
 mixin(ControlCalls!("UIMDropdownHeader", "DUIMDropdownHeaderControl"));
 
 version(test_uim_controls) { unittest {  
-    assert(UIMDropdownHeader);
-    
-    auto control = UIMDropdownHeader;
-  }
-}
+  writeln(UIMDropdownHeader);
+  assert(UIMDropdownHeader);   
+}}
