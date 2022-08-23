@@ -28,6 +28,6 @@ mixin(ControlCalls!("UIMPageTitleControl", "DUIMPageTitleControl"));
 mixin(ControlCalls!("UIMPageTitle", "DUIMPageTitleControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMPageTitle);
-  }
-}
+  assert(UIMPageTitle);
+  assert(UIMPageTitle == `<div class="page-title"></div>`);
+}}

@@ -52,9 +52,17 @@ mixin(ControlCalls!("UIMProgressBarControl", "DUIMProgressBarControl"));
 mixin(ControlCalls!("UIMProgressBar", "DUIMProgressBarControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMProgressBar);
+  assert(UIMProgressBar);
+  assert(UIMProgressBar.classes == ["progress-bar"]);
+  assert(UIMProgressBar.noId == `<div class="progress-bar" role="progressbar"></div>`);
 
-    auto control = UIMProgressBar;
-    assert(control.classes == ["progress-bar"]);
+  mixin(TestControlBooleanAttributes!("UIMProgressBar", [
+    "indeterminate", "hideLabel"]));
+  assert(UIMProgressBar.noId.indeterminate(true) == `<div class="progress-bar progress-bar-indeterminate" role="progressbar"></div>`);
+  assert(UIMProgressBar.noId.label("test").hideLabel(true) == 
+    `<div class="progress-bar" aria-label="test" role="progressbar"><span class="visually-hidden">test</span></div>`);
+
+  mixin(TestControlStringAttributes!("UIMProgressBar", [
+    "color","width", "valueNow", "valueMin", "valueMax", "label"]));
   }
 }

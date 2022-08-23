@@ -28,6 +28,6 @@ mixin(ControlCalls!("UIMPagePretitleControl", "DUIMPagePretitleControl"));
 mixin(ControlCalls!("UIMPagePretitle", "DUIMPagePretitleControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMPagePretitle);
-  }
-}
+  assert(UIMPagePretitle);
+  assert(UIMPagePretitle.noId == `<div class="page-pretitle"></div>`);
+}}

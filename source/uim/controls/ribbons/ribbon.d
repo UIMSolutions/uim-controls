@@ -34,9 +34,11 @@ mixin(ControlCalls!("UIMRibbonControl", "DUIMRibbonControl"));
 mixin(ControlCalls!("UIMRibbon", "DUIMRibbonControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMRibbon);
-
-    auto control = UIMRibbon;
-    // TODO
-  }
-}
+  assert(UIMRibbon);
+  assert(UIMRibbon.noId == `<div class="ribbon"></div>`);
+  
+  mixin(TestControlStringAttributes!("UIMRibbon", [
+    "color", "style"]));
+  assert(UIMRibbon.noId.color("red") == `<div class="bg-red ribbon"></div>`);
+  assert(UIMRibbon.noId.style("test") == `<div class="ribbon ribbon-test"></div>`);
+}}

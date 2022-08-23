@@ -24,6 +24,7 @@ mixin(ControlCalls!("UIMDropdownTextControl", "DUIMDropdownTextControl"));
 mixin(ControlCalls!("UIMDropdownText", "DUIMDropdownTextControl"));
 
 version(test_uim_controls) { unittest {
+    writeln(UIMDropdownText);
     assert(UIMDropdownText);
 
     auto control = UIMDropdownText;
