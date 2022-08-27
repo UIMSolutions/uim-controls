@@ -11,7 +11,7 @@
 			"targetType": "library"
 		},
 		{
-			"name": "testUnit",
+			"name": "testLib",
 			"targetType": "library",
 			"versions": [
 				"test_uim_controls"
