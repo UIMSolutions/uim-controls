@@ -32,7 +32,7 @@ mixin(ControlCalls!("UIMDropdownCheckbox", "DUIMDropdownCheckboxControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMDropdownCheckbox);
-  assert(UIMDropdownCheckbox.noId == `<div class="dropdown-checkbox"></div>`);
-  writeln(UIMDropdownCheckbox.style("list").noId);
-  assert(UIMDropdownCheckbox.style("list").noId == `<li><hr class="dropdown-checkbox"></li>`);
+  assert(UIMDropdownCheckbox.noId == `<label class="dropdown-item"><input class="form-check-input m-0 me-2" type="checkbox"></label>`);
+
+  assert(UIMDropdownCheckbox.noId.style("list") == `<li><label class="dropdown-item"><input class="form-check-input m-0 me-2" type="checkbox"></label></li>`);
 }}

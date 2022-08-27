@@ -94,8 +94,9 @@ mixin(ControlCalls!("UIMButton", "DUIMButtonControl"));
 version(test_uim_controls) { unittest {
   assert(UIMButton);
   assert(UIMButton.noId == `<button class="btn"></button>`);
-  assert(UIMButton.noId.link("xxx") == `<a href="xxx" role="button"></a>`);
-  assert(UIMButton.noId.value("xxx") == `<input type="button" value="xxx">`);
+
+  assert(UIMButton.noId.link("xxx") == `<a class="btn" href="xxx" role="button"></a>`);
+  assert(UIMButton.noId.value("xxx") == `<input class="btn" type="button" value="xxx">`);
 
   mixin(TestControlBooleanAttributes!("UIMButton", [
     "ghost", "outline", "square", "pill", "loading"])); 

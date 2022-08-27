@@ -42,6 +42,10 @@ mixin(ControlCalls!("UIMBreadcrumbItem", "DUIMBreadcrumbItemControl"));
 version(test_uim_controls) { unittest {
     assert(UIMBreadcrumbItem);
 
+    mixin(TestControlBooleanAttributes!("UIMBreadcrumbItem", [
+      "active" 
+    ]));
+
     mixin(TestControlStringAttributes!("UIMBreadcrumbItem", [
       "link" 
     ]));

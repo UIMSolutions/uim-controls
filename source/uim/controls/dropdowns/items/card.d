@@ -17,8 +17,7 @@ class DUIMDropdownCardControl : DUIMDropdownItemControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    auto coreContent = H5Label(["dropdown-item"], 
-      H5Input(["form-check-input m-0 me-2"], ["type":"card"], myContent));
+    auto coreContent = H5Div(["dropdown-menu", "dropdown-menu-card"], ["style":"max-width: 20rem;"]);
 
     if (style == "list") {
       return [H5Li(coreContent)].toH5;
@@ -31,7 +30,7 @@ mixin(ControlCalls!("UIMDropdownCard", "DUIMDropdownCardControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMDropdownCard);
-  assert(UIMDropdownCard.noId == `<div class="dropdown-card"></div>`);
-  writeln(UIMDropdownCard.style("list").noId);
-  assert(UIMDropdownCard.style("list").noId == `<li><hr class="dropdown-card"></li>`);
+  assert(UIMDropdownCard.noId == `<div class="dropdown-menu dropdown-menu-card" style="max-width: 20rem;"></div>`);
+
+  assert(UIMDropdownCard.style("list").noId == `<li><div class="dropdown-menu dropdown-menu-card" style="max-width: 20rem;"></div></li>`);
 }}

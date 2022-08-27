@@ -74,7 +74,6 @@ mixin(ControlCalls!("UIMDropdownControl", "DUIMDropdownControl"));
 mixin(ControlCalls!("UIMDropdown", "DUIMDropdownControl"));
 
 version(test_uim_controls) { unittest {
-  writeln(UIMDropdown);
   assert(UIMDropdown);
 
   mixin(TestControlBooleanAttributes!("UIMDropdown", [

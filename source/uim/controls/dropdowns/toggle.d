@@ -39,5 +39,5 @@ mixin(ControlCalls!("UIMDropdownToggle", "DUIMDropdownToggleControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMDropdownToggle);
-  assert(UIMDropdownToggle.noId == `<button s="btn dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown"></button>`);
+  assert(UIMDropdownToggle.noId == `<button class="btn dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown"></button>`);
 }}

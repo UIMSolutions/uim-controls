@@ -32,7 +32,8 @@ mixin(ControlCalls!("UIMDropdownRadio", "DUIMDropdownRadioControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMDropdownRadio);
-  assert(UIMDropdownRadio.noId == `<div class="dropdown-radio"></div>`);
-  writeln(UIMDropdownRadio.style("list").noId);
-  assert(UIMDropdownRadio.style("list").noId == `<li><hr class="dropdown-radio"></li>`);
+  assert(UIMDropdownRadio.noId == `<label class="dropdown-item"><input class="form-check-input m-0 me-2" type="radio"></label>`);
+
+  assert(UIMDropdownRadio.noId.style("list") == `<li><label class="dropdown-item"><input class="form-check-input m-0 me-2" type="radio"></label></li>`);
 }}
+

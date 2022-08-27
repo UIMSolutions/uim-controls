@@ -24,7 +24,7 @@ class DUIMDropdownDividerControl : DUIMDropdownItemControl {
     auto results = super.toH5(options);
 
     if (style == "list") {
-      return [H5Li(H5Hr(myId, myClasses, myAttributes))].toH5;
+      return [H5Li(H5Div(myId, myClasses, myAttributes))].toH5;
     }
     return [H5Div(myId, myClasses, myAttributes)].toH5;
   }
@@ -35,6 +35,6 @@ mixin(ControlCalls!("UIMDropdownDivider", "DUIMDropdownDividerControl"));
 version(test_uim_controls) { unittest {
   assert(UIMDropdownDivider);
   assert(UIMDropdownDivider.noId == `<div class="dropdown-divider"></div>`);
-  writeln(UIMDropdownDivider.style("list").noId);
-  assert(UIMDropdownDivider.style("list").noId == `<li><hr class="dropdown-divider"></li>`);
+
+  assert(UIMDropdownDivider.style("list").noId == `<li><div class="dropdown-divider"></div></li>`);
 }}

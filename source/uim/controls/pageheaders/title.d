@@ -20,8 +20,7 @@ class DUIMPageTitleControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMPageTitleControl", "DUIMPageTitleControl"));
@@ -29,5 +28,5 @@ mixin(ControlCalls!("UIMPageTitle", "DUIMPageTitleControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMPageTitle);
-  assert(UIMPageTitle == `<div class="page-title"></div>`);
+  assert(UIMPageTitle.noId == `<div class="page-title"></div>`);
 }}

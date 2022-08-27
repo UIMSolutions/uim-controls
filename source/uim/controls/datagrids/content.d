@@ -16,7 +16,7 @@ class DUIMDatagridContentControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results;  
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;  
   }
 }
 mixin(ControlCalls!("UIMDatagridContentControl", "DUIMDatagridContentControl"));
