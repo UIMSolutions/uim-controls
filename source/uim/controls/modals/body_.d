@@ -8,6 +8,9 @@ class DUIMModalBodyControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("modal-body");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -27,7 +30,5 @@ mixin(ControlCalls!("UIMModalBody", "DUIMModalBodyControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMModalBody);
-
-    auto control = UIMModalBody;
-  }
-}
+    assert(UIMModalBody.noId == `<div class="modal-body"></div>`);
+}}

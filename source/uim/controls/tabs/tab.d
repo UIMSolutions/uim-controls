@@ -12,7 +12,7 @@ class DUIMTabControl : DUIMControl {
   mixin(OProperty!("string", "title"));
   mixin(OProperty!("DUIMTabPaneControl[]", "panes"));
   O panes(this O)(DUIMTabPaneControl[] newPanes...) {
-    this.panes(newPanes);
+    this.panes(newPanes.dup);
     return cast(O)this;
   }
 

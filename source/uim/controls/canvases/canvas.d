@@ -21,7 +21,7 @@ class DUIMCanvasControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return [H5Canvas(myId, myClasses, myAttributes, myContent)].toH5;
+    return [H5Obj(myId, myClasses, myAttributes, myContent).tag("canvas")].toH5;
   }
 }
 mixin(ControlCalls!("UIMCanvasControl", "DUIMCanvasControl"));

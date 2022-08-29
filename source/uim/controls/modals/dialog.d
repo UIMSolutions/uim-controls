@@ -14,9 +14,14 @@ class DUIMModalDialogControl : DUIMControl {
       .attributes(["role":"document"]);
   }
 
+  mixin(OProperty!("bool", "scrollable"));
+  mixin(OProperty!("bool", "centered"));
+
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
+    if (scrollable) myClasses ~= "modal-dialog-scrollable";
+    if (centered)   myClasses ~= "modal-dialog-centered";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

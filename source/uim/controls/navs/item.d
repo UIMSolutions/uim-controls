@@ -29,5 +29,5 @@ mixin(ControlCalls!("UIMNavItem", "DUIMNavItemControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMNavItem);
-  assert(UIMNavItem.noId == `<div class="nav-item"></div>`);
+  assert(UIMNavItem.noId == `<li class="nav-item"></li>`);
 }}

@@ -20,6 +20,13 @@ class DUIMModalControl : DUIMControl {
   
   mixin(OProperty!("DH5Obj[]", "footer"));
 
+  mixin(OProperty!("DUIMModalHeaderControl[]", "headers"));
+  mixin(OProperty!("DUIMModalBodyControl[]", "bodies"));
+  mixin(OProperty!("DUIMModalFooterControl[]", "footers"));
+
+  mixin(OProperty!("bool", "scrollable"));
+  mixin(OProperty!("bool", "centered"));
+
   override void initialize() {
     super.initialize;
 
@@ -33,7 +40,22 @@ class DUIMModalControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto myModal = BS5Modal;
+    super.toH5(options);
+
+    if ( // If using slots
+      this.headers.length > 0 ||
+      this.bodies.length > 0 ||
+      this.footers.length > 0) {
+      myContent = this.headers.toH5~this.bodies.toH5~this.footers.toH5;
+      myContent = UIMModalContent(myContent).toH5;
+      myContent = UIMModalDialog(myContent)
+        .scrollable(scrollable).centered(centered).toH5;
+    }
+    // General 
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
+
+      
+/*     auto myModal = BS5Modal;
     if (id) { myModal.id(this.id); }
     if (fade) { myModal.addClasses("fade"); }
 
@@ -46,7 +68,7 @@ class DUIMModalControl : DUIMControl {
     if (footer) { myContent.footer(this.footer); }
 
     if (visible) return [myDialog(myContent)].toH5;
-    return [myModal(myDialog(myContent))].toH5;
+    return [myModal(myDialog(myContent))].toH5; */
   }
 }
 mixin(ControlCalls!("UIMModalControl", "DUIMModalControl"));
@@ -54,6 +76,6 @@ mixin(ControlCalls!("UIMModal", "DUIMModalControl"));
 
 version(test_uim_controls) { unittest {  
     assert(UIMModal);
-    assert(UIMModal == `<div class="modal" tabindex="-1"></div>`);
+    assert(UIMModal.noId == `<div class="modal" tabindex="-1"></div>`);
 }}
 

@@ -97,7 +97,5 @@ version(test_uim_controls) { unittest {
     assert(UIMTabPane.noId == `<div class="tab-pane" role="tabpanel"></div>`);
 
     assert(UIMTabPane(UIMButton("text").noId).noId == `<div class="tab-pane" role="tabpanel"><button class="btn">text</button></div>`);
-    writeln(UIMTabPane(UIMBreadcrumb.items(UIMBreadcrumbItem("a"), UIMBreadcrumbItem("b"), UIMBreadcrumbItem("c"))));
-    writeln(UIMTabPane.content(UIMBreadcrumb.items(UIMBreadcrumbItem("a"), UIMBreadcrumbItem("b"), UIMBreadcrumbItem("c"))));
   }
 }

@@ -6,7 +6,6 @@ import uim.controls;
 class DUIMListControl : DUIMControl {
   mixin(ControlThis!("UIMListControl"));
 
-
   // List could be build of three types: 
   // list -> ul & li - that is the standard  
   // link -> div & a
@@ -16,6 +15,12 @@ class DUIMListControl : DUIMControl {
   // Flush removes some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).
   mixin(OProperty!("bool", "flush"));
   mixin(OProperty!("bool", "numbered"));
+  
+  mixin(OProperty!("DUIMListItemControl[]", "items"));
+  O items(this O)(DUIMListItemControl[] newItems...) {
+    this.items(newItems.dup);
+    return cast(O)this;
+  }
 
   override void initialize() {
     super.initialize;
@@ -31,6 +36,10 @@ class DUIMListControl : DUIMControl {
     if (flush) myClasses ~= "list-group-flush";
     if (numbered) myClasses ~= "list-group-numbered";
     if (horizontal) myClasses ~= horizontal != "all" ? "list-group-horizontal-"~this.horizontal : "list-group-horizontal";
+
+    if (items.length > 0) {
+      myContent ~= this.items.toH5;
+    }
 
     switch (type) {
       case "link": 

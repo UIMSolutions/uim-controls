@@ -94,8 +94,6 @@ class DUIMBreadcrumbControl : DUIMControl {
     }
 
     string myC;
-    writeln("items");
-    writeln(items);
     foreach(index, i; items) {
       if (i) myC ~= i.toString;
     } // BUG!!!
@@ -120,7 +118,6 @@ version(test_uim_controls) { unittest {
       UIMBreadcrumbItem("test3")
     );
     assert(breadcrumb.items.length == 3);
-    writeln(breadcrumb);
 
     breadcrumb = UIMBreadcrumb.items([
       UIMBreadcrumbItem("test1"),
@@ -128,7 +125,6 @@ version(test_uim_controls) { unittest {
       UIMBreadcrumbItem("test3")
     ]);
     assert(breadcrumb.items.length == 3);
-    writeln(breadcrumb);
 
     breadcrumb = UIMBreadcrumb;
     breadcrumb.items(
@@ -137,22 +133,20 @@ version(test_uim_controls) { unittest {
       UIMBreadcrumbItem("test3")
     );
     assert(breadcrumb.items.length == 3);
-    writeln(breadcrumb);
 
-    breadcrumb = UIMBreadcrumb;
+/*     breadcrumb = UIMBreadcrumb;
     breadcrumb.addItems(UIMBreadcrumbItem("test1"));
     breadcrumb.addItems(UIMBreadcrumbItem("test2"));
     breadcrumb.addItems(UIMBreadcrumbItem("test3"));
     assert(breadcrumb.items.length == 3);
     writeln(breadcrumb);
-
+ */
     breadcrumb = UIMBreadcrumb.items([
       UIMBreadcrumbItem("test1").link("a/b/c"),
       UIMBreadcrumbItem("test2").link("a/b/c"),
       UIMBreadcrumbItem("test3").link("a/b/c")
     ]);
     assert(breadcrumb.items.length == 3);
-    writeln(breadcrumb);    
 
     breadcrumb = UIMBreadcrumb.items([
       ["x/b/c", "test1"],
@@ -160,7 +154,6 @@ version(test_uim_controls) { unittest {
       ["x/b/c", "test3"]
     ]);
     assert(breadcrumb.items.length == 3);
-    writeln(breadcrumb);    
 
     breadcrumb = UIMBreadcrumb.items(
       ["x/y/c", "test1"],
@@ -168,7 +161,4 @@ version(test_uim_controls) { unittest {
       ["x/y/c", "test3"]
     );
     assert(breadcrumb.items.length == 3);
-    writeln(breadcrumb); 
-
-    writeln(breadcrumb.toH5); 
 }}
