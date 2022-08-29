@@ -22,6 +22,10 @@ class DUIMModalControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("modal")
+      .attributes(["tabindex":"-1"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -50,8 +54,6 @@ mixin(ControlCalls!("UIMModal", "DUIMModalControl"));
 
 version(test_uim_controls) { unittest {  
     assert(UIMModal);
-    
-    auto control = UIMModal;
-  }
-}
+    assert(UIMModal == `<div class="modal" tabindex="-1"></div>`);
+}}
 

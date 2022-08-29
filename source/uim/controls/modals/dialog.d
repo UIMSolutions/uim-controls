@@ -8,6 +8,10 @@ class DUIMModalDialogControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this 
+      .classes("modal-dialog")
+      .attributes(["role":"document"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -27,7 +31,5 @@ mixin(ControlCalls!("UIMModalDialog", "DUIMModalDialogControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMModalDialog);
-
-    auto control = UIMModalDialog;
-  }
-}
+    assert(UIMModalDialog.noId == `<div class="modal-dialog" role="document"></div>`);
+}}

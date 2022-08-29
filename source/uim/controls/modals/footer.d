@@ -8,6 +8,9 @@ class DUIMModalFooterControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("modal-footer");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -26,8 +29,6 @@ mixin(ControlCalls!("UIMModalFooterControl", "DUIMModalFooterControl"));
 mixin(ControlCalls!("UIMModalFooter", "DUIMModalFooterControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMModalFooter);
-
-    auto control = UIMModalFooter;
-  }
-}
+  assert(UIMModalFooter);
+  assert(UIMModalFooter == `<div class="modal-footer"></div>`);
+}}

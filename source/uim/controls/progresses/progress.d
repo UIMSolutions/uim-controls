@@ -27,9 +27,10 @@ mixin(ControlCalls!("UIMProgressControl", "DUIMProgressControl"));
 mixin(ControlCalls!("UIMProgress", "DUIMProgressControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMProgress);
+  assert(UIMProgress);
+  assert(UIMProgress.noId == `<div class="progress"></div>`);
+  assert(UIMProgress.noId.size("sm") == `<div class="progress progress-sm"></div>`);
 
-    auto control = UIMProgress;
-    // TODO 
-  }
-}
+  mixin(TestControlStringAttributes!("UIMProgress", [
+    "size"]));
+}}

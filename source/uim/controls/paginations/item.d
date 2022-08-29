@@ -26,18 +26,21 @@ class DUIMPageItemControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      BS5PageItem(myId, myClasses, myAttributes, 
-        BS5PageLink((textColor ? ["text-"~textColor] : null), ["href": link], (icon ? H5String(tablerIcon(icon)) : null)~myContent))
-      .active(active)
-      .disabled(disabled);
+    return [BS5PageItem(myId, myClasses, myAttributes, 
+      BS5PageLink((textColor ? ["text-"~textColor] : null), ["href": link], (icon ? H5String(tablerIcon(icon)) : null)~myContent))
+        .active(active)
+        .disabled(disabled)].toH5;
   }
 }
 mixin(ControlCalls!("UIMPageItemControl", "DUIMPageItemControl"));
 mixin(ControlCalls!("UIMPageItem", "DUIMPageItemControl"));
 
 version(test_uim_controls) { unittest {
-    // TODO
+    assert(UIMPageItem);
+    writeln(UIMPageItem);
+
+    mixin(TestControlStringAttributes!("UIMPageItem", [
+      "color", "icon", "link", "textColor"]));    
   }
 }
 

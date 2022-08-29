@@ -25,9 +25,5 @@ mixin(ControlCalls!("UIMPageLink", "DUIMPageLinkControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMPageLink);
-    
-    auto control = UIMPageLink;
-    // TODO
-  }
-}
+}}
 

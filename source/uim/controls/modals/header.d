@@ -8,6 +8,9 @@ class DUIMModalHeaderControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("modal-header");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -27,7 +30,6 @@ mixin(ControlCalls!("UIMModalHeader", "DUIMModalHeaderControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMModalHeader);
-
-    auto control = UIMModalHeader;
+    assert(UIMModalHeader.noId == `<div class="modal-header"></div>`);
   }
 }
