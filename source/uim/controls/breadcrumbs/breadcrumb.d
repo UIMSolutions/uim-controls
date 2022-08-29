@@ -10,7 +10,7 @@ class DUIMBreadcrumbControl : DUIMControl {
   mixin(OProperty!("string", "icon"));
 
   O items(this O)(string[][] newItems...) {
-    this.items(newItems);
+    this.items(newItems.dup);
     return cast(O)this;
   }
   O items(this O)(string[][] newItems) {
@@ -19,12 +19,12 @@ class DUIMBreadcrumbControl : DUIMControl {
       .map!(item => UIMBreadcrumbItem.link(item[0])(item[1]))
       .array);
     return cast(O)this;
-  }
+  } 
   mixin(OProperty!("DUIMBreadcrumbItemControl[]", "items"));  
   O items(this O)(DUIMBreadcrumbItemControl[] newItems...) {
-    this.items(newItems);
+    _items = newItems.dup;
     return cast(O)this;
-  }  
+  } 
 
   override void initialize() {
     super.initialize;
@@ -34,7 +34,7 @@ class DUIMBreadcrumbControl : DUIMControl {
       .attributes(["aria-label":"breadcrumbs"]);
   }
 
-  O addItems(this O)(string[][] newItems...) {
+  /* O addItems(this O)(string[][] newItems...) {
     this.addItems(newItems);
     return cast(O)this;
   }
@@ -52,44 +52,32 @@ class DUIMBreadcrumbControl : DUIMControl {
   O addItems(this O)(DUIMBreadcrumbItemControl[] newItems) {
     _items ~= newItems;
     return cast(O)this;
-  }
+  } */
 
   bool hasActiveItem() {
-    writeln("? hasActiveItem ?");
-    writeln("items:", _items.length);
-    foreach(item; _items) {      
-      writeln(item);
+    foreach(item; this.items) {      
       if (item) {
-        writeln("! has !");
-        bool a = item.active;
-        if (a) {
-          writeln("! return true !");
+        if (item.active) {
           return true;
         }
-        writeln("Next try");
       }
-      else 
-        writeln("? null ?");
     }
-    writeln("! has not!");
     return false;
   }
 
   auto activeItem() {
-    foreach(item; _items) if (item && item.active) return item;
+    foreach(item; this.items) if (item && item.active) return item;
     return null;
   }
 
   O activateItem(this O)(size_t pos) {
-    foreach(index, item; _items) if (item) item.active(index == pos);
+    foreach(index, item; this.items) if (item) item.active(index == pos);
     return cast(O)this;
   }
 
   O activateLastItem(this O)() {
-    writeln("? activateLastItem ?");
-    if (_items.length > 0) {
-      auto item = _items[_items.length-1];
-      if (item) item.active(true);
+    if (this.items.length > 0) {
+      this.items[this.items.length-1].active(true);
     }
     return cast(O)this;
   }
@@ -101,18 +89,19 @@ class DUIMBreadcrumbControl : DUIMControl {
     auto navAttributes = ["aria-label":"breadcrumb"];
     if (icon) navAttributes["style"] = "--bs-breadcrumb-divider: url(/img/icons/"~icon~");";
 
-    writeln("Items: ", items.length);
-    writeln("1");
     if (!hasActiveItem) {
-      writeln("Has no active item");
       activateLastItem;
     }
-    else 
-      writeln("Has active item");
-    
-    return results~
-      H5Nav(navAttributes, 
-        H5Ol(myId, myClasses, myAttributes, _items.toH5));
+
+    string myC;
+    writeln("items");
+    writeln(items);
+    foreach(index, i; items) {
+      if (i) myC ~= i.toString;
+    } // BUG!!!
+
+    return [H5Nav(navAttributes, 
+      H5Ol(myId, myClasses, myAttributes, myC))].toH5;
   }
 }
 mixin(ControlCalls!("UIMBreadcrumbControl", "DUIMBreadcrumbControl"));

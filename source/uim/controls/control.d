@@ -90,6 +90,9 @@ aria-setsize
     myAttributes = this.attributes.dup;
     myContent = this.content.dup;
 
+    if (active)   this.disabled(false); // Active or disabled 
+    if (disabled) this.active(false);
+
     if (ariaAutocomplete) myAttributes["aria-autocomplete"] = ariaAutocomplete;
     if (ariaChecked) myAttributes["aria-checked"] = ariaChecked;
     if (ariaDisabled) myAttributes["aria-disabled"] = ariaDisabled;
@@ -135,8 +138,12 @@ aria-setsize
     } return "";
   }
 }
+auto UIMControl() { return new DUIMControl; };
 
 version(test_uim_controls) { unittest {
-    // TODO 
-  }
-}
+  mixin(TestControlBooleanAttributes!("UIMControl", 
+    ["active", "disabled"]));
+
+  mixin(TestControlStringAttributes!("UIMControl", 
+    ["ariaAutocomplete", "ariaChecked", "ariaDisabled", "ariaErrormessage", "ariaExpanded", "ariaHaspopup", "ariaHidden", "ariaInvalid", "ariaLabel", "ariaLevel", "ariaModal", "ariaMultiline", "ariaMultiselectable", "ariaOrientation", "ariaPlaceholder", "ariaPressed", "ariaReadonly", "ariaRequired", "ariaSelected", "ariaSort", "ariaValuemax", "ariaValuemin", "ariaValuenow", "ariaValuetext", "ariaRole", "ariaRoleDescription"]));
+}}

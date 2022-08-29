@@ -82,7 +82,7 @@ class DUIMTabPaneControl : DUIMControl {
       DH5Obj[] results = super.toH5(options);
 
       return results~
-        H5Div(id, myClasses, myAttributes,
+        H5Div(id, myClasses, myAttributes, 
         (showHeader && header ? header : null)
         ~myContent~
         (showFooter && footer ? footer : null)
@@ -94,7 +94,10 @@ mixin(ControlCalls!("UIMTabPane", "DUIMTabPaneControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMTabPane);
+    assert(UIMTabPane.noId == `<div class="tab-pane" role="tabpanel"></div>`);
 
-    auto control = UIMTabPane;
+    assert(UIMTabPane(UIMButton("text").noId).noId == `<div class="tab-pane" role="tabpanel"><button class="btn">text</button></div>`);
+    writeln(UIMTabPane(UIMBreadcrumb.items(UIMBreadcrumbItem("a"), UIMBreadcrumbItem("b"), UIMBreadcrumbItem("c"))));
+    writeln(UIMTabPane.content(UIMBreadcrumb.items(UIMBreadcrumbItem("a"), UIMBreadcrumbItem("b"), UIMBreadcrumbItem("c"))));
   }
 }

@@ -20,8 +20,7 @@ class DUIMButtonListControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);  
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;  
   }
 }
 mixin(ControlCalls!("UIMButtonListControl", "DUIMButtonListControl"));
@@ -29,8 +28,6 @@ mixin(ControlCalls!("UIMButtonList", "DUIMButtonListControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMButtonList);
-
-    auto control = UIMButtonList;
-  }
-}
+    assert(UIMButtonList.noId == `<div class="btn-list"></div>`);
+}}
 
