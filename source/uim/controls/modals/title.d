@@ -8,6 +8,9 @@ class DUIMModalTitleControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("modal-title");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -18,16 +21,13 @@ class DUIMModalTitleControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5H5(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMModalTitleControl", "DUIMModalTitleControl"));
 mixin(ControlCalls!("UIMModalTitle", "DUIMModalTitleControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMModalTitle);
-
-    auto control = UIMModalTitle;
-  }
-}
+  assert(UIMModalTitle);
+  assert(UIMModalTitle.noId == `<h5 class="modal-title"></h5>`);
+}}
