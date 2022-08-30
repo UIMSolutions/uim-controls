@@ -26,3 +26,4 @@ dub.selections.json
 uim-controls-test-offline
 uim-controls-test-test
 uim-controls-test-testUnit
+uim-controls-test-testLib
