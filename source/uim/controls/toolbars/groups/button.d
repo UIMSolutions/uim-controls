@@ -15,8 +15,8 @@ class DUIMButtonGroupControl : DUIMControl {
   }
 
   mixin(OProperty!("DUIMButtonControl[]", "buttons"));
-  O button(this O)(DUIMButtonControl[] newButtons...) {
-    this.button(newButtons.dup);
+  O buttons(this O)(DUIMButtonControl[] newButtons...) {
+    this.buttons(newButtons.dup);
     return cast(O)this;
   }
 
