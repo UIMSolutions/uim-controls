@@ -97,5 +97,13 @@ version(test_uim_controls) { unittest {
     assert(UIMTabPane.noId == `<div class="tab-pane" role="tabpanel"></div>`);
 
     assert(UIMTabPane(UIMButton("text").noId).noId == `<div class="tab-pane" role="tabpanel"><button class="btn">text</button></div>`);
+
+    mixin(TestControlBooleanAttributes!("UIMTabPane", [
+      "isDropdown", "showHeader"       
+    ]));
+
+    mixin(TestControlStringAttributes!("UIMTabPane", [
+      "title", "tooltip", "icon", "key", "path", "position", "border", "borderColor", "badge", "badgeColor"
+    ]));
   }
 }
