@@ -8,6 +8,9 @@ class DUIMFeedListitemActionControl : DUIMControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("feed-listitem-action");
   }
 
   override void beforeH5(STRINGAA options = null) {

@@ -8,6 +8,9 @@ class DUIMFeedContentControl : DUIMControl {
   
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("feed-content");
   }
 
   override void beforeH5(STRINGAA options = null) {

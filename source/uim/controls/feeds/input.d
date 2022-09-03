@@ -8,6 +8,9 @@ class DUIMFeedInputControl : DUIMControl {
   
   override void initialize() {
     super.initialize;
+    
+    this
+      .classes("feed-input");
   }
 
   override void beforeH5(STRINGAA options = null) {
