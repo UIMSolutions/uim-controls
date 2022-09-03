@@ -3,7 +3,10 @@ module uim.controls.accordions.items.item;
 @safe:
 import uim.controls;
 
-class DUIMAccordionItemControl : DUIMControl {
+interface IAccordionItem {
+}
+
+class DUIMAccordionItemControl : DUIMControl, IAccordionItem {
   mixin(ControlThis!("UIMAccordionItemControl"));
 
   mixin(OProperty!("string", "title"));
