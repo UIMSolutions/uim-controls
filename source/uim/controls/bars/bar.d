@@ -15,11 +15,8 @@ class DUIMBarControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    string myId = this.id.dup;
-    auto myClasses = this.classes.dup;
-    auto myAttributes = this.attributes.dup;
-    auto myContent = this.content.dup;
-
+    super.toH5(options);
+    
     return [
       H5Div(myId, myClasses, myAttributes, myContent)
     ].toH5;
@@ -30,8 +27,5 @@ mixin(ControlCalls!("UIMBar", "DUIMBarControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMBar);
-
-    auto control = UIMBar;
-    // TODO
   }
 }
