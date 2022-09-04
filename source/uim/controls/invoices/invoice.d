@@ -18,18 +18,15 @@ class DUIMInvoiceControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      BS5CardHeader(myId, myClasses, myAttributes, myContent);  
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMInvoiceControl", "DUIMInvoiceControl"));
 mixin(ControlCalls!("UIMInvoice", "DUIMInvoiceControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMInvoice);
-
-    auto control = UIMInvoice;
-  }
-}
+  assert(UIMInvoice);
+  assert(UIMInvoice.noId == `<div class="invoice"></div>`);
+}}

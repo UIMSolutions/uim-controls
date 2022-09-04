@@ -10,6 +10,9 @@ class DUIMTableFooterControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("table-foot");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -21,8 +24,7 @@ class DUIMTableFooterControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Tfoot(myId, myClasses, myAttributes, myContent)].toH5;
+    return [H5Tfoot(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTableFooterControl", "DUIMTableFooterControl")); 
@@ -30,7 +32,6 @@ mixin(ControlCalls!("UIMTableFooter", "DUIMTableFooterControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMTableFooter);
-
-    auto control = UIMTableFooter;
+    assert(UIMTableFooter.noId == `<tfoot class="table-foot"></tfoot>`;
   }
 }

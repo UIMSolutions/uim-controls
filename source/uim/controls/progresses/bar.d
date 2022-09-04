@@ -44,8 +44,7 @@ class DUIMProgressBarControl : DUIMControl {
       myContent ~= H5Span(hideLabel ? ["visually-hidden"] : null, label); 
     }
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMProgressBarControl", "DUIMProgressBarControl"));
