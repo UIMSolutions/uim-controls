@@ -23,26 +23,19 @@ class DUIMStatusIndicatorControl : DUIMControl {
   }
   
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
+    
+    if (tooltip) { myAttributes["title"] = tooltip; }
 
-    auto myIndicator = BS5StatusIndicator;
-    if (id) myIndicator.id(id);
-    if (animated) { myIndicator.animated; }
-    if (color) { myIndicator.color(color); }    
-
-    if (tooltip) { myIndicator.attribute("title", tooltip); }
-
-    return results~
-      myIndicator;
+    return [BS5StatusIndicator(myId, myClasses, myAttributes, myContent)
+      .animated(animated)
+      .color(color)].toH5;
   }
 }
 mixin(ControlCalls!("UIMStatusIndicatorControl", "DUIMStatusIndicatorControl"));
 mixin(ControlCalls!("UIMStatusIndicator", "DUIMStatusIndicatorControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMStatusIndicator);
-
-    auto control = UIMStatusIndicator;
-    // TODO
-  }
-}
+  assert(UIMStatusIndicator);
+  assert(UIMStatusIndicator.noId = `<div class=""status-indicator""></div>`);
+}}

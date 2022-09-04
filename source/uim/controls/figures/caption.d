@@ -8,6 +8,9 @@ class DUIMFigureCaptionControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("figure-caption");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -16,18 +19,15 @@ class DUIMFigureCaptionControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMFigureCaptionControl", "DUIMFigureCaptionControl"));
 mixin(ControlCalls!("UIMFigureCaption", "DUIMFigureCaptionControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFigureCaption);
-
-    auto control = UIMFigureCaption;
-  }
-}
+  assert(UIMFigureCaption);
+  assert(UIMFigureCaption.noId == `<div class="figure-caption"></div>`);
+}}

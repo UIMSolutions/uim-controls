@@ -8,19 +8,21 @@ class DUIMMediaControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("media");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    DH5Obj[] results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMMediaControl", "DUIMMediaControl"));
 mixin(ControlCalls!("UIMMedia", "DUIMMediaControl"));
 
 version(test_uim_controls) { unittest {
-    // TODO
-  }
-}
+  assert(UIMMedia);
+  assert(UIMMedia.noId == `<div class="media"></div>`);
+}}

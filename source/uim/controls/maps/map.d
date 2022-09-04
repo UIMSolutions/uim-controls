@@ -8,26 +8,25 @@ class DUIMMapControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("map");
   }
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
-
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMMapControl", "DUIMMapControl"));
 mixin(ControlCalls!("UIMMap", "DUIMMapControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMMap);
-
-    auto control = UIMMap;
-  }
-}
+  assert(UIMMap);
+  assert(UIMMap.noId == `<div class="map"></div>`);
+}}

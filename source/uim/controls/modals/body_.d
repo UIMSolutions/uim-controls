@@ -21,14 +21,13 @@ class DUIMModalBodyControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMModalBodyControl", "DUIMModalBodyControl"));
 mixin(ControlCalls!("UIMModalBody", "DUIMModalBodyControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMModalBody);
-    assert(UIMModalBody.noId == `<div class="modal-body"></div>`);
+  assert(UIMModalBody);
+  assert(UIMModalBody.noId == `<div class="modal-body"></div>`);
 }}

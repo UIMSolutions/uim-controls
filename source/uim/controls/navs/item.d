@@ -18,10 +18,9 @@ class DUIMNavItemControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Li(myId, myClasses, myAttributes, myContent);
+    return [H5Li(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMNavItemControl", "DUIMNavItemControl"));
