@@ -7,6 +7,7 @@ class DUIMEntityListItemControl : DUIMListItemControl {
   mixin(ControlThis!("UIMEntityListItemControl"));
 
   mixin(OProperty!("DOOPEntity", "entity"));
+  mixin(OProperty!("string", "rootPath"));
 
   override void initialize() {
     super.initialize;
@@ -21,3 +22,7 @@ class DUIMEntityListItemControl : DUIMListItemControl {
 }
 mixin(ControlCalls!("UIMEntityListItemControl", "DUIMEntityListItemControl"));
 mixin(ControlCalls!("UIMEntityListItem", "DUIMEntityListItemControl"));
+
+version(test_uim_controls) { unittest {
+  assert(UIMEntityListItem);
+}}
