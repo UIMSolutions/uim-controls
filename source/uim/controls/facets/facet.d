@@ -9,6 +9,9 @@ class DUIMFacetControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this 
+      .classes("facet");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -18,16 +21,13 @@ class DUIMFacetControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMFacetControl", "DUIMFacetControl"));
 mixin(ControlCalls!("UIMFacet", "DUIMFacetControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFacet);
-
-    auto control = UIMFacet;
-  }
-}
+  assert(UIMFacet);
+  assert(UIMFacet.noIid == `<div class="facet"></div>`);
+}}

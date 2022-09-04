@@ -24,10 +24,9 @@ class DUIMCardStatusControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);  
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5
   }
 }
 mixin(ControlCalls!("UIMCardStatusControl", "DUIMCardStatusControl"));
@@ -35,7 +34,6 @@ mixin(ControlCalls!("UIMCardStatus", "DUIMCardStatusControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMCardStatus);
-
-    auto control = UIMCardStatus;
+    assert(UIMCardStatus.noId == `<div class="card-status"></div>`);
   }
 }

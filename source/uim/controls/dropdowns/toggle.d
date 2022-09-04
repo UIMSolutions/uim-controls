@@ -29,9 +29,8 @@ class DUIMDropdownToggleControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      UIMButton(myId, myClasses, myAttributes, myContent)
-        .color(color).title(title).icon(icon).size(size).outline(outline);
+    return [UIMButton(myId, myClasses, myAttributes, myContent)
+      .color(color).title(title).icon(icon).size(size).outline(outline)].toH5;
   }
 }
 mixin(ControlCalls!("UIMDropdownToggleControl", "DUIMDropdownToggleControl"));

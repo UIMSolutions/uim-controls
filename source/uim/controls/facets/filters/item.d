@@ -9,21 +9,21 @@ class DUIMLinkControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("link");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMLinkControl", "DUIMLinkControl"));
 mixin(ControlCalls!("UIMLink", "DUIMLinkControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMLink);
-
-    auto control = UIMLink;
-  }
-}
+  assert(UIMLink);
+  assert(UIMLink.noId == `<div class="link"></div>`);
+}}

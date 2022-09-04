@@ -24,9 +24,9 @@ class DUIMDividerControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMDividerControl", "DUIMDividerControl"));
@@ -35,12 +35,12 @@ mixin(ControlCalls!("UIMDivider", "DUIMDividerControl"));
 version(test_uim_controls) { unittest {
     assert(UIMDivider);
 
-    assert(UIMDivider.id("test1") == `<div id="test1" class="hr-text"></div>`);
+    assert(UIMDivider.noId == `<div class="hr-text"></div>`);
 
     assert(UIMDivider.position("left").position == "left");
-    assert(UIMDivider.id("test2").position("right") == `<div id="test2" class="hr-text hr-text-right"></div>`);
+    assert(UIMDivider.noId.position("right") == `<div class="hr-text hr-text-right"></div>`);
 
     assert(UIMDivider.color("blue").color == "blue");
-    assert(UIMDivider.id("test3").color("red") == `<div id="test3" class="hr-text text-red"></div>`);
+    assert(UIMDivider.noId.color("red") == `<div class="hr-text text-red"></div>`);
   }
 }

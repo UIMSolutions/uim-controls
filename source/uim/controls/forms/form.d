@@ -8,6 +8,9 @@ class DUIMFormControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("form");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -21,8 +24,6 @@ mixin(ControlCalls!("UIMFormControl", "DUIMFormControl"));
 mixin(ControlCalls!("UIMForm", "DUIMFormControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMForm);
-
-    auto control = UIMForm;
-  }
-}
+  assert(UIMForm);
+  assert(UIMForm.noId == `<form class="form"></form>`);
+}}

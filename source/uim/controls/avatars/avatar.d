@@ -50,8 +50,7 @@ class DUIMAvatarControl : DUIMControl {
     if (text)  { myContent ~= H5String(text); }
     if (status){ myContent ~= BS5Badge(["bg-"~status], statusValue); }
 
-    return results~
-      H5Span(myId, myClasses, myAttributes, myContent);
+    return [H5Span(myId, myClasses, myAttributes, myContent)].toH5;
   }
 } 
 mixin(ControlCalls!("UIMAvatarControl", "DUIMAvatarControl"));

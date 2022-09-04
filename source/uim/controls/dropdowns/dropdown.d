@@ -42,21 +42,18 @@ class DUIMDropdownControl : DUIMControl {
         .addAttributes(["data-bs-toggle":"dropdown", "aria-expanded":"false"])
         .color(color).title(`<span class="visually-hidden">Toggle Dropdown</span>`).link(link).value(value).tooltip(tooltip).type(type).size(size);
 
-
       if (style == "list") {
-        return results~
-          H5Div(myId, ["btn-group"], myAttributes, 
-            myButton, myButtonSplit,
-            H5Ul(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"], 
-              myContent
-            ));
-      }
-      return results~
-        H5Div(myId, ["btn-group"], myAttributes, 
+        return [H5Div(myId, ["btn-group"], myAttributes, 
           myButton, myButtonSplit,
-          H5Div(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"],
+          H5Ul(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"], 
             myContent
-          ));
+          ))].toH5;
+      }
+      return [H5Div(myId, ["btn-group"], myAttributes, 
+        myButton, myButtonSplit,
+        H5Div(myId~"-Toggle", ["aria-labelledby":myId~"-toggle"],
+          myContent
+        ))].toH5;
     }
     auto myButton = UIMButton(myId~"-toggle", ["dropdown-toggle"], ["data-bs-toggle":"dropdown", "aria-expanded":"false"])
       .color(color).title(title).link(link).value(value).tooltip(tooltip).type(type).size(size);

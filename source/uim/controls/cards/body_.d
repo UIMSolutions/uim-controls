@@ -18,10 +18,10 @@ class DUIMCardBodyControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      BS5CardBody(myId, myClasses, myAttributes, myContent);  
+    return [
+      BS5CardBody(myId, myClasses, myAttributes, myContent)].toH5; 
   }
 }
 mixin(ControlCalls!("UIMCardBodyControl", "DUIMCardBodyControl"));
@@ -29,7 +29,6 @@ mixin(ControlCalls!("UIMCardBody", "DUIMCardBodyControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMCardBody);
-
-    auto control = UIMCardBody;
+    assert(UIMCardBody.noId == `<div class="card-body"></div>`);
   }
 }

@@ -37,9 +37,9 @@ class DUIMAccordionControl : DUIMControl {
     }
 
     foreach(c; myContent) if (auto item = cast(DUIMAccordionItemControl)c) item.parent(this);
-    return results~
-      (style ? H5Style(style) : null)~ 
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [
+      (style ? H5Style(style) : null),  
+      H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMAccordionControl", "DUIMAccordionControl"));

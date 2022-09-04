@@ -21,18 +21,15 @@ class DUIMSelectControl : DUIMInputControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Select(myId, myClasses, myAttributes, myContent);
+    return [H5Select(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMSelectControl", "DUIMSelectControl"));
 mixin(ControlCalls!("UIMSelect", "DUIMSelectControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMSelect);
-
-    auto control = UIMSelect;
-  }
-}
+  assert(UIMSelect);
+  assert(UIMSelect.noId == `<select class="form-select"></figure>`;
+}}

@@ -46,14 +46,12 @@ class DUIMDropdownMenuControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
     
     if (style ==  "list") {   
-      return results~
-        H5Ul(myId, myClasses, myAttributes, myContent);
+      return [H5Ul(myId, myClasses, myAttributes, myContent)].toH5;
     }
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)];
   }
 }
 mixin(ControlCalls!("UIMDropdownMenuControl", "DUIMDropdownMenuControl"));

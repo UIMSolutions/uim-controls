@@ -42,18 +42,14 @@ class DUIMListControl : DUIMControl {
     }
 
     switch (type) {
-      case "link": 
-        return results~
-          BS5ListGroup(myId, myClasses, myAttributes, myContent);
-      case "button": 
-        return results~
-          BS5ListGroup(myId, myClasses, myAttributes, myContent);
+      case "link": return [
+          BS5ListGroup(myId, myClasses, myAttributes, myContent)].toH5;
+      case "button": return [
+          BS5ListGroup(myId, myClasses, myAttributes, myContent)].toH5;
       default: 
         if (numbered)
-          return results~
-            H5Ol(myId, myClasses, myAttributes, myContent);
-        return results~
-          BS5List(myId, myClasses, myAttributes, myContent);
+          return [H5Ol(myId, myClasses, myAttributes, myContent)].toH5;
+        return [BS5List(myId, myClasses, myAttributes, myContent)].toH5;
     }
   }
 }

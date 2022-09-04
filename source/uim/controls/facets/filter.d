@@ -9,21 +9,21 @@ class DUIMFacetFilterControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("facet-filter");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMFacetFilterControl", "DUIMFacetFilterControl"));
 mixin(ControlCalls!("UIMFacetFilter", "DUIMFacetFilterControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFacetFilter);
-
-    auto control = UIMFacetFilter;
-  }
-}
+  assert(UIMFacetFilter);
+  assert(UIMFacetFilter.noId == `<div class="fact-filter"></div>`);
+}}

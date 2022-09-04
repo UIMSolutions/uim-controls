@@ -32,12 +32,12 @@ class DUIMChartControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
+    return [
       H5Div(myId, myClasses, myAttributes)~
       H5Script(`document.addEventListener("DOMContentLoaded", function () {
   window.ApexCharts && (new ApexCharts(
     document.getElementById('`~myId~`'), `~chartOptions~`)).render();
-});`); 
+});`)].toH5;
 
   }
 }

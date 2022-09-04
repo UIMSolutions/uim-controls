@@ -18,10 +18,10 @@ class DUIMCardTitleControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      BS5CardTitle(myId, myClasses, myAttributes, myContent);  
+    return [
+      BS5CardTitle(myId, myClasses, myAttributes, myContent)].toH5;  
   }
 }
 mixin(ControlCalls!("UIMCardTitleControl", "DUIMCardTitleControl"));

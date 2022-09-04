@@ -35,16 +35,13 @@ class DUIMContainerControl : DUIMLayoutControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMContainerControl", "DUIMContainerControl"));
 mixin(ControlCalls!("UIMContainer", "DUIMContainerControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMContainer);
-
-    auto control = UIMContainer;
-  }
-}
+  assert(UIMContainer);
+  assert(UIMContainer.noId == `<div class="container"></div>`);
+}}
