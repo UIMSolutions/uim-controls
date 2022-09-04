@@ -3,6 +3,9 @@ module  uim.controls.lists.items.item;
 @safe: 
 import uim.controls;
 
+interface IListItem {
+}
+
 class DUIMListItemControl : DUIMControl {
   mixin(ControlThis!("UIMListItemControl"));
 

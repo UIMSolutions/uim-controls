@@ -1,13 +1,16 @@
-module uim.controls.bars.bar;
+module uim.controls.feeds.content;
 
 @safe:
 import uim.controls;
 
-class DUIMBarControl : DUIMControl {
-  mixin(ControlThis!("UIMBarControl"));
+class DUIMFeedContentControl : DUIMControl {
+  mixin(ControlThis!("UIMFeedContentControl"));
   
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("feed-content");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -22,10 +25,10 @@ class DUIMBarControl : DUIMControl {
     ].toH5;
   }
 }
-mixin(ControlCalls!("UIMBarControl", "DUIMBarControl"));
-mixin(ControlCalls!("UIMBar", "DUIMBarControl"));
+mixin(ControlCalls!("UIMFeedContentControl", "DUIMFeedContentControl"));
+mixin(ControlCalls!("UIMFeedContent", "DUIMFeedContentControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMBar);
+    assert(UIMFeedContent);
   }
 }
