@@ -26,8 +26,7 @@ class DUIMRibbonControl : DUIMControl {
     if (style) { myClasses ~= "ribbon-"~style; }
     myClasses = myClasses.sort.array.uniq.array;
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMRibbonControl", "DUIMRibbonControl"));

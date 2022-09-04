@@ -19,17 +19,15 @@ class DUIMModalHeaderControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMModalHeaderControl", "DUIMModalHeaderControl"));
 mixin(ControlCalls!("UIMModalHeader", "DUIMModalHeaderControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMModalHeader);
-    assert(UIMModalHeader.noId == `<div class="modal-header"></div>`);
-  }
-}
+  assert(UIMModalHeader);
+  assert(UIMModalHeader.noId == `<div class="modal-header"></div>`);
+}}

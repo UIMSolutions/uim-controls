@@ -55,24 +55,20 @@ class DUIMSwitchIconControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      // H5Div(["d-flex space-x-2"],
-        H5Button(myId, myClasses, myAttributes, 
-          H5Span(["switch-icon-a"]~classesOne, tablerIcon(iconOne, (fillOne ? ["icon-filled"] : null))),
-          H5Span(["switch-icon-b"]~classesTwo, tablerIcon(iconTwo, (fillTwo ? ["icon-filled"] : null)))); // );
+    return [
+      H5Button(myId, myClasses, myAttributes, 
+        H5Span(["switch-icon-a"]~classesOne, tablerIcon(iconOne, (fillOne ? ["icon-filled"] : null))),
+        H5Span(["switch-icon-b"]~classesTwo, tablerIcon(iconTwo, (fillTwo ? ["icon-filled"] : null))))].toH5;
   }
 }
 mixin(ControlCalls!("UIMSwitchIconControl", "DUIMSwitchIconControl"));
 mixin(ControlCalls!("UIMSwitchIcon", "DUIMSwitchIconControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMSwitchIcon);
-
-    auto control = UIMSwitchIcon;
-    // TODO
-  }
-}
+  assert(UIMSwitchIcon);
+  writeln(UIMSwitchIcon);
+}}
 
 

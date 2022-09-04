@@ -16,20 +16,17 @@ class DUIMTimelineIconControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     if (color) myClasses ~= ["bg-"~color];
     
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTimelineIconControl", "DUIMTimelineIconControl"));
 mixin(ControlCalls!("UIMTimelineIcon", "DUIMTimelineIconControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTimelineIcon);
-
-    auto control = UIMTimelineIcon;
-  }
-}
+  assert(UIMTimelineIcon);
+  assert(UIMTimelineIcon.noId == `<div class="list-timeline-icon"></div>`;
+}}

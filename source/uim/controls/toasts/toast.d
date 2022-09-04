@@ -8,6 +8,9 @@ class DUIMToastControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("toast");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -16,19 +19,15 @@ class DUIMToastControl : DUIMControl {
   }
   
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMToastControl", "DUIMToastControl"));
 mixin(ControlCalls!("UIMToast", "DUIMToastControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMToast);
-
-    auto control = UIMToast;
-    // TODO
-  }
-}
+  assert(UIMToast);
+  assert(UIMToast.noId == `<div class="toast"></div>`);
+}}

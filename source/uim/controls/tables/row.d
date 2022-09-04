@@ -8,6 +8,9 @@ class DUIMTableRowControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("table-row");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -15,22 +18,17 @@ class DUIMTableRowControl : DUIMControl {
 
   }
 
-
   // Rendering
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+  override DH5Obj[] toH5(STRINGAA options = null) {    
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTableRowControl", "DUIMTableRowControl"));
 mixin(ControlCalls!("UIMTableRow", "DUIMTableRowControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTableRow);
-
-    auto control = UIMTableRow;
-    // TODO
-  }
-}
+  assert(UIMTableRow);
+  assert(UIMTableRow.noId == `<div class="table-row"></div>`);
+}}

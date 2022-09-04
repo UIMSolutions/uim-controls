@@ -23,17 +23,13 @@ class DUIMRowControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     auto results = super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMRowControl", "DUIMRowControl"));
 mixin(ControlCalls!("UIMRow", "DUIMRowControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMRow);
-
-    auto control = UIMRow;
-    // TODO
-  }
-}
+  assert(UIMRow);
+  assert(UIMRow.noId == `<div class="row"></div>`);
+}}

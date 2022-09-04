@@ -8,21 +8,21 @@ class DUIMTokenizerControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("tokenizer");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTokenizerControl", "DUIMTokenizerControl"));
 mixin(ControlCalls!("UIMTokenizer", "DUIMTokenizerControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTokenizer);
-
-    auto control = UIMTokenizer;
-  }
-}
+  assert(UIMTokenizer);
+  assert(UIMTokenizer.noId == `<div class="tokenizer"></div>`);
+}}

@@ -79,14 +79,14 @@ class DUIMTabPaneControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) { 
-      DH5Obj[] results = super.toH5(options);
+      super.toH5(options);
 
-      return results~
+      return [
         H5Div(id, myClasses, myAttributes, 
         (showHeader && header ? header : null)
         ~myContent~
         (showFooter && footer ? footer : null)
-      );
+      )].toH5;
   }
 }
 mixin(ControlCalls!("UIMTabPaneControl", "DUIMTabPaneControl"));

@@ -25,8 +25,7 @@ class DUIMStatusDotControl : DUIMControl {
 
     if (tooltip) { myAttributes["title"] = tooltip; }
 
-    return results~
-      BS5StatusDot(myId, myClasses, myAttributes, myContent);
+    return [BS5StatusDot(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMStatusDotControl", "DUIMStatusDotControl"));
@@ -34,7 +33,5 @@ mixin(ControlCalls!("UIMStatusDot", "DUIMStatusDotControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMStatusDot);
-
-    auto control = UIMStatusDot;
-  }
-}
+    assert(UIMStatusDot.noId == `<span class="status-dot"></span>`);
+}}

@@ -17,7 +17,7 @@ class DUIMTimelineControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Ul(myId, myClasses, myAttributes, myContent);
+      H5Ul(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTimelineControl", "DUIMTimelineControl")); 

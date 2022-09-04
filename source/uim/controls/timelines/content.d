@@ -19,18 +19,15 @@ class DUIMTimelineContentControl : DUIMControl {
   }
   
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTimelineContentControl", "DUIMTimelineContentControl"));
 mixin(ControlCalls!("UIMTimelineContent", "DUIMTimelineContentControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTimelineContent);
-
-    auto control = UIMTimelineContent;
-  }
-}
+  assert(UIMTimelineContent);
+  assert(UIMTimelineContent.noId == `<div class="list-timeline-content"></div>`);
+}}

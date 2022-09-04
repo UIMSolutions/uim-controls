@@ -46,7 +46,7 @@ class DUIMTabControl : DUIMControl {
       panes[0].active(true);
     }
 
-    return results~
+    return [
       BS5Card(myId, myClasses, myAttributes, 
         H5Ul(["nav nav-tabs"]~tabClasses~(reverse ? ["flex-row-reverse"] : null)~(alternative ? ["nav-tabs-alt"] : null), ["data-bs-toggle":"tabs", "role":"tablist"], 
           panes.map!(pane => pane.tabHeader).array
@@ -54,7 +54,7 @@ class DUIMTabControl : DUIMControl {
         H5Div(["card-body"],
           H5Div(["tab-content"],
             panes.map!(pane => !pane.isDropdown ? pane.toH5 : null).join
-        )));
+        )))].toH5;
   }
 }
 mixin(ControlCalls!("UIMTabControl", "DUIMTabControl"));

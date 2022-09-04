@@ -22,7 +22,7 @@ class DUIMTableFooterControl : DUIMControl {
     auto results = super.toH5(options);
 
     return results~
-      H5Tfoot(myId, myClasses, myAttributes, myContent);
+      H5Tfoot(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTableFooterControl", "DUIMTableFooterControl")); 
