@@ -15,7 +15,7 @@ class DUIMDropdownCheckboxControl : DUIMDropdownItemControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     auto coreContent = H5Label(["dropdown-item"], 
       H5Input(["form-check-input m-0 me-2"], ["type":"checkbox"])~ 

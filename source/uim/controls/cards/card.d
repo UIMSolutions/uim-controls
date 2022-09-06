@@ -70,7 +70,7 @@ class DUIMCardControl : DUIMControl {
   mixin(AddContent!("Footer", "UIMCardFooter")); */
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
 /*     
 
@@ -92,9 +92,10 @@ class DUIMCardControl : DUIMControl {
       myCard.addContent(imageContent);
     } */
 
-    return results~BS5Card(myId, myClasses, myAttributes,
-      statuses.keys.map!(key => cast(DH5Obj)UIMCardStatus.position(key).color(statuses[key])).array~ 
-      myContent);
+    return [
+      BS5Card(myId, myClasses, myAttributes,
+        statuses.keys.map!(key => cast(DH5Obj)UIMCardStatus.position(key).color(statuses[key])).array~ 
+        myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMCardControl", "DUIMCardControl"));

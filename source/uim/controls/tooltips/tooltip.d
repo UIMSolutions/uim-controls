@@ -8,6 +8,9 @@ class DUIMTooltipControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("tooltip");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -16,19 +19,16 @@ class DUIMTooltipControl : DUIMControl {
   }
   
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);
+    return [
+      H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTooltipControl", "DUIMTooltipControl"));
 mixin(ControlCalls!("UIMTooltip", "DUIMTooltipControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTooltip);
-
-    auto control = UIMTooltip;
-    // TODO
-  }
-}
+  assert(UIMTooltip);
+  assert(UIMTooltip.noId == `<div class="tooltip"></div>`);
+}}

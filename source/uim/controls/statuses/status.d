@@ -23,7 +23,7 @@ class DUIMStatusControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     if (color) { myClasses ~= ["status-"~color]; }
     if (lite) { myClasses ~= ["status-lite"]; }
@@ -38,17 +38,13 @@ class DUIMStatusControl : DUIMControl {
         default: myContent = myDot~myContent; break;
       }
     }
-    return results~
-      BS5Status(myId, myClasses, myAttributes, myContent);
+    return [BS5Status(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMStatusControl", "DUIMStatusControl"));
 mixin(ControlCalls!("UIMStatus", "DUIMStatusControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMStatus);
-
-    auto control = UIMStatus;
-    // TODO
-  }
-}
+  assert(UIMStatus);
+  assert(UIMStatus.noId == `<div class="status"></div>`);
+}}

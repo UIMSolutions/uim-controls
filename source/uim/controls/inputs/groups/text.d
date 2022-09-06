@@ -18,17 +18,15 @@ class DUIMTextAddonControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~H5Span(myId, myClasses, myAttributes, myContent);
+    return [H5Span(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTextAddonControl", "DUIMTextAddonControl"));
 mixin(ControlCalls!("UIMTextAddon", "DUIMTextAddonControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTextAddon);
-
-    auto control = UIMTextAddon;
-  }
-}
+  assert(UIMTextAddon);
+  assert(UIMTextAddon.noId == `<span class="input-group-text"></span>`);
+}}

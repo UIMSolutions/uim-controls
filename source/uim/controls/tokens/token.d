@@ -24,5 +24,5 @@ mixin(ControlCalls!("UIMToken", "DUIMTokenControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMToken);
-  assert(UIMToken.noId == `<div class="token"></div>`;
+  assert(UIMToken.noId == `<div class="token"></div>`);
 }}

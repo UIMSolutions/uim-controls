@@ -10,6 +10,9 @@ class DUIMFormFloatingControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("form-floating");
   }
 /* 
 
@@ -17,12 +20,12 @@ class DUIMFormFloatingControl : DUIMControl {
   <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
    */
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
+    return [
       BS5FormFloating(myId, myClasses, myAttributes,
         //input,
-        H5Label(["for":myId], title));
+        H5Label(["for":myId], title))].toH5;
   }
 }
 mixin(ControlCalls!("UIMFormFloatingControl", "DUIMFormFloatingControl"));
@@ -30,7 +33,6 @@ mixin(ControlCalls!("UIMFormFloating", "DUIMFormFloatingControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMFormFloating);
-
-    auto control = UIMFormFloating;
+    assert(UIMFormFloating.noId == `<form class="form-floating"></form>`);
   }
 }

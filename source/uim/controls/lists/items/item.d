@@ -24,27 +24,27 @@ class DUIMListItemControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     if (auto list = cast(DUIMListControl)parent) {
       switch (list.type) {
         case "link": 
-          return results~
-            BS5ListLink(myId, myClasses, myAttributes, myContent);
+          return [
+            BS5ListLink(myId, myClasses, myAttributes, myContent)].toH5;
         case "button": 
-          return results~
-            BS5ListButton(myId, myClasses, myAttributes, myContent);
+          return [
+            BS5ListButton(myId, myClasses, myAttributes, myContent)].toH5;
         default: 
-          return results~
-            BS5ListItem(myId, myClasses, myAttributes, myContent);
+          return [
+            BS5ListItem(myId, myClasses, myAttributes, myContent)].toH5;
       }
     }
     if (link) {
-      return results~
-            BS5ListLink(myId, myClasses, myAttributes, myContent);
+      return [
+        BS5ListLink(myId, myClasses, myAttributes, myContent)].toH5;
     }
-    return results~
-      BS5ListItem(myId, myClasses, myAttributes, myContent);
+    return [
+      BS5ListItem(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMListItemControl", "DUIMListItemControl"));

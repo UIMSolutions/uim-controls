@@ -31,7 +31,7 @@ class DUIMProgressBarControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     if (indeterminate) { myClasses ~= "progress-bar-indeterminate"; }
     if (color) { myClasses ~= "bg-"~color.toLower; }

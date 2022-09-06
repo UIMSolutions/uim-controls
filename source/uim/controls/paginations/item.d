@@ -24,7 +24,7 @@ class DUIMPageItemControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     if (link) {
       myContent = [BS5PageLink((textColor ? ["text-"~textColor] : null), ["href": link], (icon ? H5String(tablerIcon(icon)) : null)~myContent)].toH5;

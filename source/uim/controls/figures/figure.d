@@ -14,11 +14,11 @@ class DUIMFigureControl : DUIMControl {
     super.beforeH5(options);
 
     this
-      .clsses("figure")
+      .clsses("figure");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     return [H5Figure(myId, myClasses, myAttributes, myContent)].toH5;
 }}

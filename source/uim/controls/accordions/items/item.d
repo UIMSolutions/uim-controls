@@ -25,11 +25,11 @@ class DUIMAccordionItemControl : DUIMControl, IAccordionItem {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     auto myParentId = this.parent ? this.parent.id : null;
 
-    return results~
+    return [
       BS5AccordionItem.id(myId)( 
         BS5AccordionHeader(myId~"-header", headerClasses,
           BS5AccordionButton(active ? null : ["collapsed"], ["data-bs-toggle":"collapse", "data-bs-target":"#"~myId~"-collapse"], 
@@ -40,7 +40,7 @@ class DUIMAccordionItemControl : DUIMControl, IAccordionItem {
           BS5AccordionBody(bodyClasses,
             myContent)
         )
-      );
+      )].toH5;
   }
 }
 mixin(ControlCalls!("UIMAccordionItemControl", "DUIMAccordionItemControl"));

@@ -34,7 +34,7 @@ class DUIMDropdownControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     if (split) {
       auto myButton = UIMButton.color(color).title(title).link(link).value(value).tooltip(tooltip).type(type).size(size);
@@ -58,13 +58,13 @@ class DUIMDropdownControl : DUIMControl {
     auto myButton = UIMButton(myId~"-toggle", ["dropdown-toggle"], ["data-bs-toggle":"dropdown", "aria-expanded":"false"])
       .color(color).title(title).link(link).value(value).tooltip(tooltip).type(type).size(size);
 
-    return results~
+    return [
       BS5Dropdown(myId, myClasses, myAttributes,
         myButton,
         UIMDropdownMenu.buttonId(myButton.id).style(style)(
           myContent
         ) 
-    );
+    )].toH5;
   }
 }
 mixin(ControlCalls!("UIMDropdownControl", "DUIMDropdownControl"));

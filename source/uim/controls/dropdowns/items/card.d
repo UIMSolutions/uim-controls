@@ -15,7 +15,7 @@ class DUIMDropdownCardControl : DUIMDropdownItemControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     auto coreContent = H5Div(["dropdown-menu", "dropdown-menu-card"], ["style":"max-width: 20rem;"]);
 

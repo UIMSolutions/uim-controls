@@ -19,13 +19,13 @@ class DUIMAvatarListControl : DUIMControl {
 
     if (stacked) myClasses ~= "avatar-list-stacked"; 
 
-    return results~
-      H5Div(myId, myClasses, myAttributes, myContent);  
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMAvatarListControl", "DUIMAvatarListControl"));
 mixin(ControlCalls!("UIMAvatarList", "DUIMAvatarListControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMAvatarList);
+  assert(UIMAvatarList);
+  assert(UIMAvatarList.noId == `<div class="avatar-list"></div>`);
 }}

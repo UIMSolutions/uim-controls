@@ -22,7 +22,7 @@ class DUIMTableFooterControl : DUIMControl {
 
   // Rendering
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     return [H5Tfoot(myId, myClasses, myAttributes, myContent)].toH5;
   }
@@ -32,6 +32,6 @@ mixin(ControlCalls!("UIMTableFooter", "DUIMTableFooterControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMTableFooter);
-    assert(UIMTableFooter.noId == `<tfoot class="table-foot"></tfoot>`;
+    assert(UIMTableFooter.noId == `<tfoot class="table-foot"></tfoot>`);
   }
 }

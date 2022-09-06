@@ -22,10 +22,9 @@ class DUIMCardHeaderControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      BS5CardHeader(myId, myClasses, myAttributes, myContent);  
+    return [BS5CardHeader(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMCardHeaderControl", "DUIMCardHeaderControl"));

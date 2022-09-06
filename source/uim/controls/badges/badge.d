@@ -49,9 +49,9 @@ class DUIMBadgeControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
     
-    return results~
+    return [
       (link  ? H5A(myId, myClasses, myAttributes, myContent)
-             : H5Span(myId, myClasses, myAttributes, myContent));
+             : H5Span(myId, myClasses, myAttributes, myContent))].toH5;
   }
 }
 mixin(ControlCalls!("UIMBadgeControl", "DUIMBadgeControl"));

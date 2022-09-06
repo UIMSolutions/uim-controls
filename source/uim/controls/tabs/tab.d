@@ -39,7 +39,7 @@ class DUIMTabControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     if ((panes.length > 0) && (activePane is null)) {
       panes.each!(pane => pane.active(false));

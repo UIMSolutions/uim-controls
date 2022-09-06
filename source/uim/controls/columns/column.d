@@ -9,6 +9,8 @@ class DUIMColumnControl : DUIMControl {
   override void initialize() {
     super.initialize;
  
+    this
+      .classes("column");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -16,18 +18,16 @@ class DUIMColumnControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-        H5Div(myId, myClasses, myAttributes, myContent);
+    return [
+        H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMColumnControl", "DUIMColumnControl"));
 mixin(ControlCalls!("UIMColumn", "DUIMColumnControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMColumn);
-
-    auto control = UIMColumn;
-  }
-}
+  assert(UIMColumn);
+  assert(UIMColumn.noId == `<div class="column"></div>`);
+}}

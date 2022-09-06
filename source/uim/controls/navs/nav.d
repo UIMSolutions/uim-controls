@@ -18,7 +18,7 @@ class DUIMNavControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     return [H5Ul(myId, myClasses, myAttributes, myContent)].toH5;
   }

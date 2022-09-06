@@ -28,5 +28,5 @@ mixin(ControlCalls!("UIMTimelineIcon", "DUIMTimelineIconControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMTimelineIcon);
-  assert(UIMTimelineIcon.noId == `<div class="list-timeline-icon"></div>`;
+  assert(UIMTimelineIcon.noId == `<div class="list-timeline-icon"></div>`);
 }}

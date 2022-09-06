@@ -16,10 +16,9 @@ class DUIMAudioControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-      H5Audio(myId, myClasses, myAttributes, myContent);
+    return [H5Audio(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMAudioControl", "DUIMAudioControl"));

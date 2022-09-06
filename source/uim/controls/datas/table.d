@@ -8,6 +8,9 @@ class DUIMDataTableControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("datatable");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -15,19 +18,15 @@ class DUIMDataTableControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-         H5Div(myId, myClasses, myAttributes, myContent);
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMDataTableControl", "DUIMDataTableControl"));
 mixin(ControlCalls!("UIMDataTable", "DUIMDataTableControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMDataTable);
-
-    auto control = UIMDataTable;
-    // TODO
-  }
-}
+  assert(UIMDataTable);
+  assert(UIMDataTable.noId == `<div class="datatable></div>`);
+}}

@@ -31,5 +31,5 @@ mixin(ControlCalls!("UIMSelect", "DUIMSelectControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMSelect);
-  assert(UIMSelect.noId == `<select class="form-select"></figure>`;
+  assert(UIMSelect.noId == `<select class="form-select"></figure>`);
 }}

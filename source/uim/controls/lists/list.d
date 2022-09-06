@@ -31,7 +31,7 @@ class DUIMListControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
     if (flush) myClasses ~= "list-group-flush";
     if (numbered) myClasses ~= "list-group-numbered";

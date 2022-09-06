@@ -8,6 +8,9 @@ class DUIMDataListControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("datalist");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -15,19 +18,16 @@ class DUIMDataListControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
-         H5Div(myId, myClasses, myAttributes, myContent);
+    return [
+      H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMDataListControl", "DUIMDataListControl"));
 mixin(ControlCalls!("UIMDataList", "DUIMDataListControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMDataList);
-
-    auto control = UIMDataList;
-    // TODO
-  }
-}
+  assert(UIMDataList);
+  assert(UIMDataList.noId == `<div class="datalist"></div>`);
+}}

@@ -34,7 +34,8 @@ class DUIMAlertControl : DUIMControl {
     }
     if (important) { myClasses ~= "alert-important"; }
 
-    return results~BS5Alert(myId, myClasses, myAttributes, myContent);
+    return [
+      BS5Alert(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMAlertControl", "DUIMAlertControl"));

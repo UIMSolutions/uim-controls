@@ -9,14 +9,15 @@ class DUIMTimelineControl : DUIMControl {
   override void initialize() {
     super.initialize;
 
-    this.classes(["list", "list-timeline"]);
+    this
+      .classes(["list", "list-timeline"]);
   }
 
   // Rendering
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~
+    return [
       H5Ul(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
@@ -24,9 +25,6 @@ mixin(ControlCalls!("UIMTimelineControl", "DUIMTimelineControl"));
 mixin(ControlCalls!("UIMTimeline", "DUIMTimelineControl")); 
 
 version(test_uim_controls) { unittest {
-    assert(UIMTimeline);
-
-    auto control = UIMTimeline;
-    // TODO
-  }
-}
+  assert(UIMTimeline);
+  assert(UIMTimeline.noId == `<ul class="list list-timeline"></ul>`);
+}}

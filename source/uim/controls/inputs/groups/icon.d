@@ -20,9 +20,10 @@ class DUIMIconAddonControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    auto results = super.toH5(options);
+    super.toH5(options);
 
-    return results~H5Span(myId, myClasses, myAttributes, tablerIcon(icon));
+    return [
+      H5Span(myId, myClasses, myAttributes, tablerIcon(icon))].toH5;
   }
 }
 mixin(ControlCalls!("UIMIconAddonControl", "DUIMIconAddonControl"));
