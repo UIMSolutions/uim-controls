@@ -8,22 +8,23 @@ class DUIMTileContainerControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("tile-container");
   }
 
   // Rendering
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
-    return results;
+    return [
+      H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMTileContainerControl", "DUIMTileContainerControl")); 
 mixin(ControlCalls!("UIMTileContainer", "DUIMTileContainerControl")); 
 
 version(test_uim_controls) { unittest {
-    assert(UIMTileContainer);
-
-    auto control = UIMTileContainer;
-    // TODO
-  }
-}
+  assert(UIMTileContainer);
+  assert(UIMTileContainer.noId == `<div class="tile-container"></div>`);
+}}

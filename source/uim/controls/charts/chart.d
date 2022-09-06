@@ -33,7 +33,7 @@ class DUIMChartControl : DUIMControl {
     super.toH5(options);
 
     return [
-      H5Div(myId, myClasses, myAttributes)~
+      H5Div(myId, myClasses, myAttributes), 
       H5Script(`document.addEventListener("DOMContentLoaded", function () {
   window.ApexCharts && (new ApexCharts(
     document.getElementById('`~myId~`'), `~chartOptions~`)).render();

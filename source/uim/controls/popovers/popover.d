@@ -8,6 +8,9 @@ class DUIMPopoverControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+    
+    this
+      .classes("popover");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -17,16 +20,14 @@ class DUIMPopoverControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
-    return results;
+    return [
+      H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMPopoverControl", "DUIMPopoverControl"));
 mixin(ControlCalls!("UIMPopover", "DUIMPopoverControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMPopover);
-
-    auto control = UIMPopover;
-    // TODO
-  }
-}
+  assert(UIMPopover);
+  assert(UIMPopover.noId == `<div class="popover"></div>`);
+}}

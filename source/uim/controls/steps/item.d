@@ -34,11 +34,11 @@ class DUIMStepControl : DUIMControl {
 
     switch(status) {
       case "finished":
-        return results ~= H5A(myId, myClasses, myAttributes, myContent);
+        return [H5A(myId, myClasses, myAttributes, myContent)].toH5;
       case "current":
-        return results ~= H5A(myId, myClasses~["active"], myAttributes, myContent);
+        return [H5A(myId, myClasses~["active"], myAttributes, myContent)].toH5;
       default:
-        return results ~= H5Span(myId, myClasses, myAttributes, myContent);
+        return [H5Span(myId, myClasses, myAttributes, myContent)].toH5;
     }
   }
 }

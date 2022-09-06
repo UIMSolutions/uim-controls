@@ -14,7 +14,7 @@ class DUIMFigureControl : DUIMControl {
     super.beforeH5(options);
 
     this
-      .clsses("figure");
+      .classes("figure");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

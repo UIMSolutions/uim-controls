@@ -13,7 +13,7 @@ class DUIMLinkControl : DUIMControl {
     super.initialize;
 
     this
-      -classes("link");
+      .classes("link");
   }
 
   override void beforeH5(STRINGAA options = null) {

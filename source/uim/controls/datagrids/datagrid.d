@@ -21,15 +21,14 @@ class DUIMDatagridControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
-    return results;  
+    return [
+      H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMDatagridControl", "DUIMDatagridControl"));
 mixin(ControlCalls!("UIMDatagrid", "DUIMDatagridControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMDatagrid);
-
-    auto control = UIMDatagrid;
-  }
-}
+  assert(UIMDatagrid);
+  assert(UIMDatagrid.noId = `<div class="datagrid"></div>`);
+}}

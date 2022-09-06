@@ -33,16 +33,14 @@ class DUIMTileControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
-    return results ~
-      H5Div(myId, myClasses, myAttributes, myContent~tileContent);  }
+    return [
+      H5Div(myId, myClasses, myAttributes, myContent~tileContent)].toH5;
+  }
 }
 mixin(ControlCalls!("UIMTileControl", "DUIMTileControl")); 
 mixin(ControlCalls!("UIMTile", "DUIMTileControl")); 
 
 version(test_uim_controls) { unittest {
-    assert(UIMTile);
-
-    auto control = UIMTile;
-    // TODO
-  }
-}
+  assert(UIMTile);
+  assert(UIMTile.noId == `<div class="tile"></div>`);
+}}
