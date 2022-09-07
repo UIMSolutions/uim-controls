@@ -17,6 +17,5 @@ mixin(ControlCalls!("UIMAlertIconControl", "DUIMAlertIconControl"));
 mixin(ControlCalls!("UIMAlertIcon", "DUIMAlertIconControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMAlertIcon);
-  }
-}
+  assert(UIMAlertIcon);
+}}
