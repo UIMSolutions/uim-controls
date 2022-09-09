@@ -32,17 +32,11 @@ class DUIMDateInputControl : DUIMInputControl {
     this.value(txt.format(newValue.year, cast(int)newValue.month, newValue.day));
     return cast(O)this;
   }
-
-  override void beforeH5(STRINGAA options = null) {
-    super.beforeH5(options);
-  }
 }
 mixin(ControlCalls!("UIMDateInputControl", "DUIMDateInputControl"));
 mixin(ControlCalls!("UIMDateInput", "DUIMDateInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMDateInput);
-
-    auto control = UIMDateInput;
-  }
-}
+  assert(UIMDateInput);
+  writeln(UIMDateInput.noId);
+}}

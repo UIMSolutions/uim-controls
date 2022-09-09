@@ -22,8 +22,6 @@ mixin(ControlCalls!("UIMButtonInputControl", "DUIMButtonInputControl"));
 mixin(ControlCalls!("UIMButtonInput", "DUIMButtonInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMButtonInput);
-
-    auto control = UIMButtonInput;
-  }
-}
+  assert(UIMButtonInput);
+  writel(UIMButtonInput.noId);
+}}

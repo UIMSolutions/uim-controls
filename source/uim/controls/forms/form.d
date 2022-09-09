@@ -13,6 +13,18 @@ class DUIMFormControl : DUIMControl {
       .classes("form");
   }
 
+  mixin(OProperty!("string", "method"));
+  mixin(OProperty!("string", "action"));
+  mixin(OProperty!("string", "fields"));
+  mixin(OProperty!("DUIMFormHandlerControl", "handler"));
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    if (action) myAttributes["action"] = this.action;
+    if (method) myAttributes["method"] = this.method;  
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 

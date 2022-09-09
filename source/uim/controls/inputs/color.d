@@ -21,8 +21,6 @@ mixin(ControlCalls!("UIMColorInputControl", "DUIMColorInputControl"));
 mixin(ControlCalls!("UIMColorInput", "DUIMColorInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMColorInput);
-
-    auto control = UIMColorInput;
-  }
-}
+  assert(UIMColorInput);
+  writeln(UIMColorInput.noId);
+}}

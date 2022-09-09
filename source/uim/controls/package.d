@@ -102,6 +102,8 @@ public import uim.controls.wizards;
 
 public import uim.controls.tests;
 
+enum CRUDModes { Create, Read, Update, Delete }
+
 template AddContent(string name, string content) {
   const char[] AddContent = `
   O add`~name~`(this O)(){
