@@ -3,8 +3,8 @@ module uim.controls.lists.items.custom;
 @safe: 
 import uim.controls;
 
-class DUIMCustomListitemControl : DUIMControl {
-  mixin(ControlThis!("UIMCustomListitemControl"));
+class DUIMCustomListItemControl : DUIMControl {
+  mixin(ControlThis!("UIMCustomListItemControl"));
 
   override void initialize() {
     super.initialize;
@@ -14,5 +14,5 @@ class DUIMCustomListitemControl : DUIMControl {
     return super.toH5(options);
   }
 }
-mixin(ControlCalls!("UIMCustomListitemControl", "DUIMCustomListitemControl"));
-mixin(ControlCalls!("UIMCustomListitem", "DUIMCustomListitemControl"));
+mixin(ControlCalls!("UIMCustomListItemControl", "DUIMCustomListItemControl"));
+mixin(ControlCalls!("UIMCustomListItem", "DUIMCustomListItemControl"));

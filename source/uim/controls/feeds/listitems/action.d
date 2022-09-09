@@ -3,8 +3,8 @@ module uim.controls.feeds.listitems.action;
 @safe:
 import uim.controls;
 
-class DUIMFeedListitemActionControl : DUIMControl {
-  mixin(ControlThis!("UIMFeedListitemActionControl"));
+class DUIMFeedListItemActionControl : DUIMControl {
+  mixin(ControlThis!("UIMFeedListItemActionControl"));
   
   override void initialize() {
     super.initialize;
@@ -25,10 +25,10 @@ class DUIMFeedListitemActionControl : DUIMControl {
     ].toH5;
   }
 }
-mixin(ControlCalls!("UIMFeedListitemActionControl", "DUIMFeedListitemActionControl"));
-mixin(ControlCalls!("UIMFeedListitemAction", "DUIMFeedListitemActionControl"));
+mixin(ControlCalls!("UIMFeedListItemActionControl", "DUIMFeedListItemActionControl"));
+mixin(ControlCalls!("UIMFeedListItemAction", "DUIMFeedListItemActionControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFeedListitemAction);
+    assert(UIMFeedListItemAction);
   }
 }

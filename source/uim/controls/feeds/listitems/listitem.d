@@ -2,8 +2,8 @@ module uim.controls.feeds.listitems.listitem;
 @safe:
 import uim.controls;
 
-class DUIMFeedListitemControl : DUIMControl {
-  mixin(ControlThis!("UIMFeedListitemControl"));
+class DUIMFeedListItemControl : DUIMControl {
+  mixin(ControlThis!("UIMFeedListItemControl"));
   
   override void initialize() {
     super.initialize;
@@ -24,10 +24,10 @@ class DUIMFeedListitemControl : DUIMControl {
     ].toH5;
   }
 }
-mixin(ControlCalls!("UIMFeedListitemControl", "DUIMFeedListitemControl"));
-mixin(ControlCalls!("UIMFeedListitem", "DUIMFeedListitemControl"));
+mixin(ControlCalls!("UIMFeedListItemControl", "DUIMFeedListItemControl"));
+mixin(ControlCalls!("UIMFeedListItem", "DUIMFeedListItemControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFeedListitem);
+    assert(UIMFeedListItem);
   }
 }
