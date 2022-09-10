@@ -24,5 +24,5 @@ mixin(ControlCalls!("UIMTimelineTitle", "DUIMTimelineTitleControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMTimelineTitle);
-  assert(UIMTimelineTitle.noId == `<p class="list-timeline-title></p>`);
+  assert(UIMTimelineTitle.noId == `<p class="list-timeline-title"></p>`);
 }}

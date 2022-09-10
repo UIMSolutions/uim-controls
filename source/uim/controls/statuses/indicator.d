@@ -20,16 +20,15 @@ class DUIMStatusIndicatorControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
+    if (animated) myClasses ~= "status-indicator-animated";
+    if (color)    myClasses ~= "status-"~color;
+    if (tooltip)  myAttributes["title"] = tooltip;
   }
   
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
     
-    if (tooltip) { myAttributes["title"] = tooltip; }
-
-    return [BS5StatusIndicator(myId, myClasses, myAttributes, myContent)
-      .animated(animated)
-      .color(color)].toH5;
+    return [BS5StatusIndicator(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMStatusIndicatorControl", "DUIMStatusIndicatorControl"));
@@ -37,5 +36,5 @@ mixin(ControlCalls!("UIMStatusIndicator", "DUIMStatusIndicatorControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMStatusIndicator);
-  assert(UIMStatusIndicator.noId = `<div class=""status-indicator""></div>`);
+  assert(UIMStatusIndicator.noId == `<span class="status-indicator"><span class="status-indicator-circle"></span><span class="status-indicator-circle"></span><span class="status-indicator-circle"></span></span>`);
 }}

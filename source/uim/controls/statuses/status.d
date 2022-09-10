@@ -46,5 +46,5 @@ mixin(ControlCalls!("UIMStatus", "DUIMStatusControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMStatus);
-  assert(UIMStatus.noId == `<div class="status"></div>`);
+  assert(UIMStatus.noId == `<span class="status"></span>`);
 }}

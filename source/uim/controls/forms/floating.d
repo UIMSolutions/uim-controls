@@ -3,7 +3,7 @@ module uim.controls.forms.floating;
 @safe: 
 import uim.controls;
 
-class DUIMFormFloatingControl : DUIMControl {
+class DUIMFormFloatingControl : DUIMFormControl {
   mixin(ControlThis!("UIMFormFloatingControl"));
 
   mixin(OProperty!("string", "title"));
@@ -12,27 +12,19 @@ class DUIMFormFloatingControl : DUIMControl {
     super.initialize;
 
     this
-      .classes("form-floating");
+      .addClasses("form-floating");
   }
-/* 
 
-      H5Dib<div class="form-floating mb-3">
-  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-   */
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
 
-    return [
-      BS5FormFloating(myId, myClasses, myAttributes,
-        //input,
-        H5Label(["for":myId], title))].toH5;
+    if (this.title) myContent ~= H5Label(["for":myId], title);
   }
 }
 mixin(ControlCalls!("UIMFormFloatingControl", "DUIMFormFloatingControl"));
 mixin(ControlCalls!("UIMFormFloating", "DUIMFormFloatingControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFormFloating);
-    assert(UIMFormFloating.noId == `<form class="form-floating"></form>`);
-  }
-}
+  assert(UIMFormFloating);
+  assert(UIMFormFloating.noId == `<form class="form form-floating"></form>`);
+}}

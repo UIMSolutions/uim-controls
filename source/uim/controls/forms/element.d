@@ -30,8 +30,6 @@ mixin(ControlCalls!("UIMFormElementControl", "DUIMFormElementControl"));
 mixin(ControlCalls!("UIMFormElement", "DUIMFormElementControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFormElement);
-
-    auto control = UIMFormElement;
-  }
-}
+  assert(UIMFormElement);
+  writeln(UIMFormElement.noId);
+}}

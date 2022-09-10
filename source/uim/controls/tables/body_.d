@@ -27,5 +27,5 @@ mixin(ControlCalls!("UIMTableBody", "DUIMTableBodyControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMTableBody);
-  asssert(UIMTableBody.noId == `<tbody class="table-body"></tbody>`);
+  assert(UIMTableBody.noId == `<tbody class="table-body"></tbody>`);
 }}

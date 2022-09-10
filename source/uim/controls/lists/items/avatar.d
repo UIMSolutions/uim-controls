@@ -4,16 +4,20 @@ module uim.controls.lists.items.avatar;
 import uim.controls;
 
 // Simple listitem with a avatar at start or end or both. 
-class DUIMAvatarListItemControl : DUIMControl {
+class DUIMAvatarListItemControl : DUIMListItemControl {
   mixin(ControlThis!("UIMAvatarListItemControl"));
 
   override void initialize() {
     super.initialize;
-  }
 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    return super.toH5(options);
+    this
+      .addClasses("list-group-avatar");
   }
 }
 mixin(ControlCalls!("UIMAvatarListItemControl", "DUIMAvatarListItemControl"));
 mixin(ControlCalls!("UIMAvatarListItem", "DUIMAvatarListItemControl"));
+
+version(test_uim_controls) { unittest {
+  assert(UIMAvatarListItem);
+  assert(UIMAvatarListItem.noId == `<li class="list-group-avatar list-group-item"></li>`); 
+}}

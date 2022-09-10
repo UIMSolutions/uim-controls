@@ -37,9 +37,7 @@ class DUIMTabPaneControl : DUIMControl {
 
     this
       .classes(["tab-pane"])
-      .attributes(["role":"tabpanel"])
-      .showHeader(true)
-      .showFooter(true);
+      .attributes(["role":"tabpanel"]);
   }
 
   DH5Obj tabHeader(STRINGAA options = null) {

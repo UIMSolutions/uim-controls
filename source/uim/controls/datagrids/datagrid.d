@@ -30,5 +30,5 @@ mixin(ControlCalls!("UIMDatagrid", "DUIMDatagridControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMDatagrid);
-  assert(UIMDatagrid.noId = `<div class="datagrid"></div>`);
+  assert(UIMDatagrid.noId == `<div class="datagrid"></div>`);
 }}

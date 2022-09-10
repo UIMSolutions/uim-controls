@@ -25,8 +25,8 @@ class DUIMTileControl : DUIMControl {
     super.initialize;
 
     this
-      .classes(["tile"])
-      .tileContent(UIMTileContent);
+      .classes(["tile"]);
+//      .tileContent(UIMTileContent);
   }
 
   // Rendering

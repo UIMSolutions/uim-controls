@@ -51,6 +51,7 @@ public import uim.controls.collapses;
 public import uim.controls.columns;
 public import uim.controls.containers;
 public import uim.controls.dashboards;
+public import uim.controls.datas;
 public import uim.controls.datagrids;
 public import uim.controls.datas;
 public import uim.controls.dividers;

@@ -25,5 +25,5 @@ mixin(ControlCalls!("UIMFacetFilterList", "DUIMFacetFilterListControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMFacetFilterList);
-  assert(UIMFacetFilterList.noId == `<div class="facet-filter-list></div>`);
+  assert(UIMFacetFilterList.noId == `<div class="facet-filter-list"></div>`);
 }}

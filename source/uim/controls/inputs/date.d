@@ -38,5 +38,5 @@ mixin(ControlCalls!("UIMDateInput", "DUIMDateInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMDateInput);
-  writeln(UIMDateInput.noId);
+  assert(UIMDateInput.noId == `<input class="form-control" type="date">`);
 }}

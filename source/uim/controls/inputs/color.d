@@ -22,5 +22,5 @@ mixin(ControlCalls!("UIMColorInput", "DUIMColorInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMColorInput);
-  writeln(UIMColorInput.noId);
+  assert(UIMColorInput.noId == `<input class="form-control-color" type="color">`);
 }}

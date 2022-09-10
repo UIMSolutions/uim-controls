@@ -68,7 +68,7 @@ mixin(ControlCalls!("UIMSwitchIcon", "DUIMSwitchIconControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMSwitchIcon);
-  writeln(UIMSwitchIcon);
+  assert(UIMSwitchIcon.noId == `<button class="switch-icon" data-bs-toggle="switch-icon"><span class="switch-icon-a"></span><span class="switch-icon-b"></span></button>`);
 }}
 
 

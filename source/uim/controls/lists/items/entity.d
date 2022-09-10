@@ -13,13 +13,7 @@ class DUIMEntityListItemControl : DUIMListItemControl {
     super.initialize;
 
     this
-      .classes("list-item-entity");
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [BS5ListItem(myId, myClasses, myAttributes, myContent)].toH5;
+      .addClasses("list-group-entity");
   }
 }
 mixin(ControlCalls!("UIMEntityListItemControl", "DUIMEntityListItemControl"));
@@ -27,5 +21,5 @@ mixin(ControlCalls!("UIMEntityListItem", "DUIMEntityListItemControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMEntityListItem);
-  assert(UIMEntityListItem.noId == `<li class="list-item-entity"></li>`);
+  assert(UIMEntityListItem.noId == `<li class="list-group-entity list-group-item"></li>`);
 }}

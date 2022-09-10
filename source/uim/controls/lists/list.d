@@ -55,3 +55,8 @@ class DUIMListControl : DUIMControl {
 }
 mixin(ControlCalls!("UIMListControl", "DUIMListControl"));
 mixin(ControlCalls!("UIMList", "DUIMListControl"));
+
+version(test_uim_controls) { unittest {
+  assert(UIMList);
+  assert(UIMList.noId == `<ul class="list-group"></ul>`);
+}}

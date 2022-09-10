@@ -25,6 +25,6 @@ mixin(ControlCalls!("UIMModalButtonControl", "DUIMModalButtonControl"));
 mixin(ControlCalls!("UIMModalButton", "DUIMModalButtonControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMModalButton);
-    writeln(UIMModalButton.noId);
+  assert(UIMModalButton);
+  assert(UIMModalButton.noId == `<button class="btn" data-bs-target="#" data-bs-toggle="modal"></button>`);
 }}

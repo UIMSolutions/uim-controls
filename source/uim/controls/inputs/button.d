@@ -23,5 +23,5 @@ mixin(ControlCalls!("UIMButtonInput", "DUIMButtonInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMButtonInput);
-  writel(UIMButtonInput.noId);
+  assert(UIMButtonInput.noId == `<input class="form-control" type="button">`);
 }}

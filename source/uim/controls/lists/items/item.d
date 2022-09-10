@@ -14,6 +14,8 @@ class DUIMListItemControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -49,3 +51,8 @@ class DUIMListItemControl : DUIMControl {
 }
 mixin(ControlCalls!("UIMListItemControl", "DUIMListItemControl"));
 mixin(ControlCalls!("UIMListItem", "DUIMListItemControl"));
+
+version(test_uim_controls) { unittest {
+  assert(UIMListItem);
+  assert(UIMListItem.noId == `<li class="list-group-item"></li>`);
+}}

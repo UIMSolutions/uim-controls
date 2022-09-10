@@ -53,8 +53,6 @@ mixin(ControlCalls!("UIMRadioControl", "DUIMRadioControl"));
 mixin(ControlCalls!("UIMRadio", "DUIMRadioControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMRadio);
-
-    auto control = UIMRadio;
-  }
-}
+  assert(UIMRadio);
+  assert(UIMRadio.noId == `<div class="form-check"><input id="control-950212" class="form-check-input" type="radio"></div>`);
+}}

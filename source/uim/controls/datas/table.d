@@ -28,5 +28,5 @@ mixin(ControlCalls!("UIMDataTable", "DUIMDataTableControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMDataTable);
-  assert(UIMDataTable.noId == `<div class="datatable></div>`);
+  assert(UIMDataTable.noId == `<div class="datatable"></div>`);
 }}
