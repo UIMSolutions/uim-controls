@@ -1,4 +1,4 @@
-module uim.controls.carouseks.layout;
+module uim.controls.carousels.layout;
 
 /*
 
