@@ -10,7 +10,7 @@ class DUIMFooterControl : DUIMControl {
     super.initialize;
 
     this
-      .classes(["footer"]);
+      .classes("footer");
   }
 
   override void beforeH5(STRINGAA options = null) {
