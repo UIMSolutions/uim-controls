@@ -9,9 +9,9 @@ class DUIMFooterControl : DUIMControl {
   override void initialize() {
     super.initialize;
 
-/*     this
-      .classes(["form-label"]);
- */  }
+    this
+      .classes("footer");
+  }
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
@@ -28,7 +28,5 @@ mixin(ControlCalls!("UIMFooter", "DUIMFooterControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMFooter);
-
-    auto control = UIMFooter;
-  }
-}
+    assert(UIMFooter.noId == '<div class="footer"></div>');
+}}
