@@ -31,5 +31,4 @@ mixin(ControlCalls!("UIMFormElement", "DUIMFormElementControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMFormElement);
-  writeln(UIMFormElement.noId);
 }}
