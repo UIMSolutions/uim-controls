@@ -13,3 +13,5 @@ public import uim.controls.forms.group;
 public import uim.controls.forms.label;
 public import uim.controls.forms.option;
 public import uim.controls.forms.handler;
+public import uim.controls.forms.header;
+public import uim.controls.forms.footer;

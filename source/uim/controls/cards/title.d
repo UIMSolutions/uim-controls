@@ -29,7 +29,6 @@ mixin(ControlCalls!("UIMCardTitle", "DUIMCardTitleControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMCardTitle);
-
-    auto control = UIMCardTitle;
+    assert(UIMCardTitle.noId == `<`);
   }
 }

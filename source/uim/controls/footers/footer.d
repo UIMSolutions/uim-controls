@@ -27,6 +27,6 @@ mixin(ControlCalls!("UIMFooterControl", "DUIMFooterControl"));
 mixin(ControlCalls!("UIMFooter", "DUIMFooterControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFooter);
-    assert(UIMFooter.noId == '<div class="footer"></div>');
+  assert(UIMFooter);
+  assert(UIMFooter.noId == `<div class="footer"></div>`);
 }}

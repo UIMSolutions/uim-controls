@@ -6,14 +6,14 @@ import uim.controls;
 class DUIMLabelControl : DUIMControl {
   mixin(ControlThis!("UIMLabelControl"));
 
-  mixin(OProperty!("string", "forId"));
-
   override void initialize() {
     super.initialize;
 
     this
       .classes("label");
   }
+
+  mixin(OProperty!("string", "forId"));
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
@@ -28,9 +28,9 @@ class DUIMLabelControl : DUIMControl {
   }
 }
 mixin(ControlCalls!("UIMLabelControl", "DUIMLabelControl"));
-mixin(ControlCalls!("UIMLabel", "DUIMLabelControl")"));
+mixin(ControlCalls!("UIMLabel", "DUIMLabelControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMLabel);
-    assert(UIMLabel.noId == '<label class="label"><label>');
+  assert(UIMLabel);
+  assert(UIMLabel.noId == `<label class="label"></label>`);
 }}

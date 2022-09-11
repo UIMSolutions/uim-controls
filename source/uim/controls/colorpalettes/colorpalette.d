@@ -21,8 +21,8 @@ class DUIMColorPaletteControl : DUIMControl {
       H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
-mixin(ControlCalls!("UIMColorPaletteControl", "DUIMColorPaletteControl); 
-mixin(ControlCalls!("UIMColorPalette", "DUIMColorPaletteControl); 
+mixin(ControlCalls!("UIMColorPaletteControl", "DUIMColorPaletteControl")); 
+mixin(ControlCalls!("UIMColorPalette", "DUIMColorPaletteControl")); 
 
 version(test_uim_controls) { unittest {
   assert(UIMColorPalette);
