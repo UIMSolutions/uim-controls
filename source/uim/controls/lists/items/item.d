@@ -15,6 +15,9 @@ class DUIMListItemControl : DUIMControl {
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("list-group-item");
   }
 
   override void beforeH5(STRINGAA options = null) {
