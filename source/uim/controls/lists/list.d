@@ -42,6 +42,8 @@ class DUIMListControl : DUIMControl {
     }
 
     switch (type) {
+      case "div": return [
+          H5Div(myId, myClasses, myAttributes, myContent)].toH5;
       case "link": return [
           BS5ListGroup(myId, myClasses, myAttributes, myContent)].toH5;
       case "button": return [
@@ -59,4 +61,5 @@ mixin(ControlCalls!("UIMList", "DUIMListControl"));
 version(test_uim_controls) { unittest {
   assert(UIMList);
   assert(UIMList.noId == `<ul class="list-group"></ul>`);
+  assert(UIMList.noId.type("div") == `<div class="list-group"></div>`);
 }}

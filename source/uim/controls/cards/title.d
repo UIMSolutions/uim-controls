@@ -10,7 +10,7 @@ class DUIMCardTitleControl : DUIMControl {
     super.initialize;
 
     this
-      .classes(["card-title"]);
+      .classes("card-title");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -29,6 +29,6 @@ mixin(ControlCalls!("UIMCardTitle", "DUIMCardTitleControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMCardTitle);
-    assert(UIMCardTitle.noId == `<`);
+    assert(UIMCardTitle.noId == `<h2 class="card-title"></h2>`);
   }
 }

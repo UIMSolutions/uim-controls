@@ -20,23 +20,22 @@ class DUIMDatagridItemControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
+    switch(titlePosition) {
+      case "bottom": 
+        myContent = 
+          [(content ? UIMDatagridContent(content) : null),
+          (title ? UIMDatagridTitle(titleColor ? ["text-"~titleColor] : null, title) : null)];
+          break;
+      default:
+        myContent = 
+          [(title ? UIMDatagridTitle(titleColor ? ["text-"~titleColor] : null, title) : null),
+          (content ? UIMDatagridContent(content) : null)];
+          break;
+    }
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
     DH5Obj[] results = super.toH5(options);
-
-    switch(titlePosition) {
-      case "bottom": 
-        myContent = 
-          [(content ? H5Div(["datagrid-content"], content) : null),
-          (title ? H5Div(["datagrid-title"]~(titleColor ? "text-"~titleColor : null), title) : null)];
-          break;
-      default:
-        myContent = 
-          [(title ? H5Div(["datagrid-title"]~(titleColor ? "text-"~titleColor : null), title) : null),
-          (content ? H5Div(["datagrid-content"], content) : null)];
-          break;
-    }
 
     return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
@@ -46,7 +45,5 @@ mixin(ControlCalls!("UIMDatagridItem", "DUIMDatagridItemControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMDatagridItem);
-
-    auto control = UIMDatagridItem;
-  }
-}
+    writeln(UIMDatagridItem.noId);
+}}
