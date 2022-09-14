@@ -3,7 +3,7 @@ module uim.controls.breadcrumbs.breadcrumb;
 @safe: 
 import uim.controls;
 
-class DUIMBreadcrumbControl : DUIMControl {
+class DUIMBreadcrumbControl : DUIMControl, IBreadcrumbs {
   mixin(ControlThis!("UIMBreadcrumbControl"));
 
   mixin(OProperty!("string", "style"));

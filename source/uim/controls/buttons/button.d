@@ -3,7 +3,7 @@ module uim.controls.buttons.button;
 @safe: 
 import uim.controls;
 
-class DUIMButtonControl : DUIMControl {
+class DUIMButtonControl : DUIMControl, IButton {
   mixin(ControlThis!("UIMButtonControl"));
 
   mixin(OProperty!("string", "color"));
