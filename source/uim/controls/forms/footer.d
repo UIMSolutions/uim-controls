@@ -10,7 +10,7 @@ class DUIMFormFooterControl : DUIMCardFooterControl {
     super.initialize;
 
     this
-      .addClasses(["form-footer"]);
+      .classes(["form-footer"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -22,5 +22,5 @@ mixin(ControlCalls!("UIMFormFooter", "DUIMFormFooterControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMFormFooter);
-  assert(UIMFormFooter.noId == `<div class="card-footer form-footer"></div>`);
+  assert(UIMFormFooter.noId == `<div class="form-footer"></div>`);
 }}

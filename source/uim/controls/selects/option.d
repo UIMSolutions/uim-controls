@@ -1,4 +1,4 @@
-module uim.controls.forms.option;
+module uim.controls.selects.option;
 
 @safe: 
 import uim.controls;
@@ -31,8 +31,6 @@ mixin(ControlCalls!("UIMOptionControl", "DUIMOptionControl"));
 mixin(ControlCalls!("UIMOption", "DUIMOptionControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMOption);
-
-    auto control = UIMOption;
-  }
-}
+  assert(UIMOption);
+  assert(UIMOption.noId == `<option></option>`);
+}}
