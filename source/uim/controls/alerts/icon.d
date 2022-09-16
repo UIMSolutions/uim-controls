@@ -18,4 +18,5 @@ mixin(ControlCalls!("UIMAlertIcon", "DUIMAlertIconControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMAlertIcon);
+  assert(UIMAlertIcon.noId == `<div class="alert-icon"></div>`);
 }}
