@@ -31,8 +31,6 @@ mixin(ControlCalls!("UIMFormLabelControl", "DUIMFormLabelControl"));
 mixin(ControlCalls!("UIMFormLabel", "DUIMFormLabelControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFormLabel);
-
-    auto control = UIMFormLabel;
-  }
-}
+  assert(UIMFormLabel);
+  assert(UIMFormLabel.noId = `<label class="form-label"></label>`);
+}}

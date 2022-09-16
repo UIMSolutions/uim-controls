@@ -26,8 +26,6 @@ mixin(ControlCalls!("UIMEmailInputControl", "DUIMEmailInputControl"));
 mixin(ControlCalls!("UIMEmailInput", "DUIMEmailInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMEmailInput);
-
-    auto control = UIMEmailInput;
-  }
-}
+  assert(UIMEmailInput);
+  assert(UIMEmailInput.noId == `<input class="form-control" type="email">`);
+}}
