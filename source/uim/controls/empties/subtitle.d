@@ -21,3 +21,8 @@ class DUIMEmptySubtitleControl : DUIMEmptyItemControl {
 }
 mixin(ControlCalls!("UIMEmptySubtitleControl", "DUIMEmptySubtitleControl"));
 mixin(ControlCalls!("UIMEmptySubtitle", "DUIMEmptySubtitleControl"));
+
+version(test_uim_controls) { unittest {
+  assert(UIMEmptySubtitle);
+  assert(UIMEmptySubtitle.noId == `<div class="facet-filter-item"></div>`);
+}}

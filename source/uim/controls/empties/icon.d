@@ -22,7 +22,7 @@ class DUIMEmptyIconControl : DUIMEmptyItemControl {
 mixin(ControlCalls!("UIMEmptyIconControl", "DUIMEmptyIconControl"));
 mixin(ControlCalls!("UIMEmptyIcon", "DUIMEmptyIconControl"));
 
-unittest {
+version(test_uim_controls) { unittest {
   assert(UIMEmptyIcon);
   assert(UIMEmptyIcon.id(null) == `<div class="empty-icon"></div>`);
-}
+}}

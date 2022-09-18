@@ -37,8 +37,8 @@ class DUIMEmptyControl : DUIMControl {
 mixin(ControlCalls!("UIMEmptyControl", "DUIMEmptyControl"));
 mixin(ControlCalls!("UIMEmpty", "DUIMEmptyControl"));
 
-unittest {
+version(test_uim_controls) { unittest {
   assert(UIMEmpty);
   assert(UIMEmpty.noId == `<div class="empty"></div>`);
   assert(UIMEmpty.noId()(UIMEmptyIcon.noId) == `<div class="empty"><div class="empty-icon"></div></div>`);
-}
+}}

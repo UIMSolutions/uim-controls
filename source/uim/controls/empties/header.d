@@ -22,7 +22,7 @@ class DUIMEmptyHeaderControl : DUIMEmptyItemControl {
 mixin(ControlCalls!("UIMEmptyHeaderControl", "DUIMEmptyHeaderControl"));
 mixin(ControlCalls!("UIMEmptyHeader", "DUIMEmptyHeaderControl"));
 
-unittest {
+version(test_uim_controls) { unittest {
   assert(UIMEmptyHeader);
   assert(UIMEmptyHeader.id(null) == `<div class="empty-header"></div>`);
-}
+}}

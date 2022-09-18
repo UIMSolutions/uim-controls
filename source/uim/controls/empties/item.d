@@ -24,9 +24,6 @@ mixin(ControlCalls!("UIMEmptyItemControl", "DUIMEmptyItemControl"));
 mixin(ControlCalls!("UIMEmptyItem", "DUIMEmptyItemControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMEmptyItem);
-
-    auto control = UIMEmptyItem;
-    // TODO
-  }
-}
+  assert(UIMEmptyItem);
+  assert(UIMEmptyItem.noId == `<div class="facet-filter-item"></div>`);
+}}
