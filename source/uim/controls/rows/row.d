@@ -7,6 +7,7 @@ class DUIMRowControl : DUIMControl {
   mixin(ControlThis!("UIMRow"));
 
   mixin(OProperty!("bool", "deck"));
+  mixin(OProperty!("bool", "cards"));
 
   override void initialize() {
     super.initialize;
@@ -18,6 +19,7 @@ class DUIMRowControl : DUIMControl {
     super.beforeH5(options);
 
     if (deck) myClasses ~= "row-deck";
+    if (cards) myClasses ~= "row-cards";
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -32,4 +34,5 @@ mixin(ControlCalls!("UIMRow", "DUIMRowControl"));
 version(test_uim_controls) { unittest {
   assert(UIMRow);
   assert(UIMRow.noId == `<div class="row"></div>`);
+  assert(UIMRow.deck(true).noId == `<div class="row row-deck"></div>`);
 }}
