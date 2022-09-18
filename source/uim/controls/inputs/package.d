@@ -31,5 +31,4 @@ public import uim.controls.inputs.time;
 public import uim.controls.inputs.url;
 public import uim.controls.inputs.week;
 
-public import uim.controls.inputs.select;
 public import uim.controls.inputs.textarea;

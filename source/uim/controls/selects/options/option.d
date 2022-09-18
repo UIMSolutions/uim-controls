@@ -1,4 +1,4 @@
-module uim.controls.selects.option;
+module uim.controls.selects.options.option;
 
 @safe: 
 import uim.controls;

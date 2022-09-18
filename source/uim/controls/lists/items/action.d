@@ -14,6 +14,9 @@ class DUIMActionListItemControl : DUIMListItemControl {
     this
       .addClasses("list-group-action");
   }
+
+  // Property 'text' defines the text that appears in the control.
+  mixin(OProperty!("string", "text"));
 }
 mixin(ControlCalls!("UIMActionListItemControl", "DUIMActionListItemControl"));
 mixin(ControlCalls!("UIMActionListItem", "DUIMActionListItemControl"));

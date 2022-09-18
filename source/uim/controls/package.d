@@ -34,6 +34,7 @@ public import layouts.tabler;
 
 // Packages for main classes
 public import uim.controls.control;
+public import uim.controls.enums;
 
 // PACKAGES
 public import uim.controls.accordions;
@@ -54,6 +55,7 @@ public import uim.controls.dashboards;
 public import uim.controls.datagrids;
 public import uim.controls.datas;
 public import uim.controls.dates;
+public import uim.controls.dialogs;
 public import uim.controls.dividers;
 public import uim.controls.dropdowns;
 public import uim.controls.empties;
