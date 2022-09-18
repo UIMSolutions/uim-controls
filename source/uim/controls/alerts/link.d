@@ -3,7 +3,7 @@ module uim.controls.alerts.link;
 @safe: 
 import uim.controls;
 
-class DUIMAlertLinkControl : DUIMControl {
+class DUIMAlertLinkControl : DUIMLinkControl {
   mixin(ControlThis!("UIMAlertLinkControl"));
 
   override void initialize() {
@@ -11,16 +11,13 @@ class DUIMAlertLinkControl : DUIMControl {
 
     this
       .classes(["alert-link"])
-      .attributes(["href":"#"]);
+      .link("#");
   }
 }
 mixin(ControlCalls!("UIMAlertLinkControl", "DUIMAlertLinkControl"));
 mixin(ControlCalls!("UIMAlertLink", "DUIMAlertLinkControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMAlertLink);
-
-    auto control = UIMAlertLink;
-    // TODO
-  }
-}
+  assert(UIMAlertLink);
+  assert(UIMAlertLink.toId == `<a class="alert-link" href="#"></a>`);
+}}

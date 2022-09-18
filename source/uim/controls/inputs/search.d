@@ -22,8 +22,6 @@ mixin(ControlCalls!("UIMSearchInputControl", "DUIMSearchInputControl"));
 mixin(ControlCalls!("UIMSearchInput", "DUIMSearchInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMSearchInput);
-
-    auto control = UIMSearchInput;
-  }
-}
+  assert(UIMSearchInput);
+  assert(UIMSearchInput.toId == `<input class="form-control" type="search">`);
+}}

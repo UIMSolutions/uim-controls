@@ -32,8 +32,6 @@ mixin(ControlCalls!("UIMTimeInputControl", "DUIMTimeInputControl"));
 mixin(ControlCalls!("UIMTimeInput", "DUIMTimeInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTimeInput);
-
-    auto control = UIMTimeInput;
-  }
-}
+  assert(UIMTimeInput);
+  assert(UIMTimeInput.toId == `<input class="form-control" type="time">`);
+}}

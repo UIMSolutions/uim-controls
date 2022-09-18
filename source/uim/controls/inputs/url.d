@@ -10,7 +10,6 @@ class DUIMUrlInputControl : DUIMInputControl {
     super.initialize;
 
     this
-      .addClasses(["form-control"])
       .attributes(["type":"url"]);
   }
 
@@ -22,8 +21,7 @@ mixin(ControlCalls!("UIMUrlInputControl", "DUIMUrlInputControl"));
 mixin(ControlCalls!("UIMUrlInput", "DUIMUrlInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMUrlInput);
+  assert(UIMUrlInput);
+  assert(UIMUrlInput.toId == `<input class="form-control" type="url">`);
+}}
 
-    auto control = UIMUrlInput;
-  }
-}

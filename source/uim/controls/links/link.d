@@ -32,11 +32,10 @@ mixin(ControlCalls!("UIMLinkControl", "DUIMLinkControl"));
 mixin(ControlCalls!("UIMLink", "DUIMLinkControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMLink);
-
-    auto control = UIMLink;
-  }
-}
+  assert(UIMLink);
+  assert(UIMLink.toId == `<a class="link"></a>`);
+  assert(UIMLink.link("#").toId == `<a class="link" href="#"></a>`);
+}}
 
 
 /*

@@ -39,8 +39,6 @@ mixin(ControlCalls!("UIMMonthInputControl", "DUIMMonthInputControl"));
 mixin(ControlCalls!("UIMMonthInput", "DUIMMonthInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMMonthInput);
-
-    auto control = UIMMonthInput;
-  }
-}
+  assert(UIMMonthInput);
+  assert(UIMMonthInput.toId == `<input class="form-control" type="month">`);
+}}

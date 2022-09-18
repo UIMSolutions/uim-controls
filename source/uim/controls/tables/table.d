@@ -56,9 +56,6 @@ mixin(ControlCalls!("UIMTableControl", "DUIMTableControl"));
 mixin(ControlCalls!("UIMTable", "DUIMTableControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTable);
-
-    auto control = UIMTable;
-    // TODO
-  }
-}
+  assert(UIMTable);
+  assert(UIMTable.noId == `<table class="table"></table>`);
+}}

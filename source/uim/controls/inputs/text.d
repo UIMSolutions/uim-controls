@@ -10,7 +10,6 @@ class DUIMTextInputControl : DUIMInputControl {
     super.initialize;
 
     this
-      .addClasses(["form-control"])
       .attributes(["type":"text"]);
   }
 
@@ -24,8 +23,6 @@ mixin(ControlCalls!("UIMTextInputControl", "DUIMTextInputControl"));
 mixin(ControlCalls!("UIMTextInput", "DUIMTextInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTextInput);
-
-    auto control = UIMTextInput;
-  }
-}
+  assert(UIMTextInput);
+  assert(UIMTextInput.toId == `<input class="form-control" type="text">`);
+}}

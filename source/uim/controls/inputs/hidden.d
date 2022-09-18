@@ -10,7 +10,6 @@ class DUIMHiddenInputControl : DUIMInputControl {
     super.initialize;
 
     this
-      .addClasses(["form-control"])
       .attributes(["type":"hidden"]);
   }
 
@@ -22,8 +21,6 @@ mixin(ControlCalls!("UIMHiddenInputControl", "DUIMHiddenInputControl"));
 mixin(ControlCalls!("UIMHiddenInput", "DUIMHiddenInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMHiddenInput);
-
-    auto control = UIMHiddenInput;
-  }
-}
+  assert(UIMHiddenInput);
+  assert(UIMHiddenInput.toId == `<input class="form-control" type="hidden">`);
+}}

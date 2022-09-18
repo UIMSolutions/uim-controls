@@ -3,12 +3,14 @@ module uim.controls.shells.shell;
 @safe: 
 import uim.controls;
 
-// A LinkControl is a hyperlink control which is used to navigate to other pages or to trigger actions.
 class DUIMShellControl : DUIMControl {
   mixin(ControlThis!("UIMShellControl"));
 
   override void initialize() {
     super.initialize;
+
+    this
+      .classes("shell");
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -25,8 +27,6 @@ mixin(ControlCalls!("UIMShellControl", "DUIMShellControl"));
 mixin(ControlCalls!("UIMShell", "DUIMShellControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMShell);
-
-    auto control = UIMShell;
-  }
-}
+  assert(UIMShell);
+  assert(UIMShell.noId == `<div class="shell"></div>`);
+}}

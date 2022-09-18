@@ -12,7 +12,6 @@ class DUIMFileInputControl : DUIMInputControl {
     super.initialize;
 
     this
-      .classes(["form-control"])
       .attributes(["type":"file"]);
   }
   override void beforeH5(STRINGAA options = null) {
@@ -25,8 +24,6 @@ mixin(ControlCalls!("UIMFileInputControl", "DUIMFileInputControl"));
 mixin(ControlCalls!("UIMFileInput", "DUIMFileInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMFileInput);
-
-    auto control = UIMFileInput;
-  }
-}
+  assert(UIMFileInput);
+  assert(UIMFileInput.noId == `<input class="form-control" type="file">`);
+}}
