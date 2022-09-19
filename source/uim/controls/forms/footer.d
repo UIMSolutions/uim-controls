@@ -3,7 +3,7 @@ module uim.controls.forms.footer;
 @safe: 
 import uim.controls;
 
-class DUIMFormFooterControl : DUIMCardFooterControl {
+class DUIMFormFooterControl : DUIMControl {
   mixin(ControlThis!("UIMFormFooterControl"));
 
   override void initialize() {
@@ -15,6 +15,12 @@ class DUIMFormFooterControl : DUIMCardFooterControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
+  }
+
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    super.toH5(options);
+
+    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMFormFooterControl", "DUIMFormFooterControl"));

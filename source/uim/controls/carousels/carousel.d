@@ -45,7 +45,7 @@ class DUIMCarouselControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    DH5Obj[] results = super.toH5(options);
+    super.toH5(options);
 
     auto indicatorCounter = 0;
 

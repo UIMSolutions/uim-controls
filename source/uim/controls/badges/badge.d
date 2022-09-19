@@ -47,7 +47,7 @@ class DUIMBadgeControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    DH5Obj[] results = super.toH5(options);
+    super.toH5(options);
     
     return [
       (link  ? H5A(myId, myClasses, myAttributes, myContent)

@@ -3,7 +3,7 @@ module uim.controls.collapses.collapse;
 @safe: 
 import uim.controls;
 
-class DUIMCollapseControl : DUIMControl {
+class DUIMCollapseControl : DUIMDivControl {
   mixin(ControlThis!("UIMCollapseControl"));
 
   override void initialize() {

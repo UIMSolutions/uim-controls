@@ -3,7 +3,7 @@ module uim.controls.alerts.icon;
 @safe: 
 import uim.controls;
 
-class DUIMAlertIconControl : DUIMControl {
+class DUIMAlertIconControl : DUIMDivControl {
   mixin(ControlThis!("UIMAlertIconControl"));
 
   override void initialize() {

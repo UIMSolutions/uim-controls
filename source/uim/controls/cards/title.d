@@ -21,7 +21,7 @@ class DUIMCardTitleControl : DUIMControl {
     super.toH5(options);
 
     return [
-      BS5CardTitle(myId, myClasses, myAttributes, myContent)].toH5;  
+      H5H2(myId, myClasses, myAttributes, myContent)].toH5;  
   }
 }
 mixin(ControlCalls!("UIMCardTitleControl", "DUIMCardTitleControl"));

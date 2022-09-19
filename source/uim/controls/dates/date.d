@@ -3,7 +3,7 @@ module uim.controls.dates.date;
 @safe: 
 import uim.controls;
 
-class DUIMDateControl : DUIMControl {
+class DUIMDateControl : DUIMDivControl {
   mixin(ControlThis!("UIMDateControl"));
 
   override void initialize() {

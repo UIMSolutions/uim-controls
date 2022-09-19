@@ -3,7 +3,7 @@ module uim.controls.datagrids.item;
 @safe: 
 import uim.controls;
 
-class DUIMDatagridItemControl : DUIMControl {
+class DUIMDatagridItemControl : DUIMDivControl {
   mixin(ControlThis!("UIMDatagridItem"));
 
   mixin(OProperty!("string", "title"));
@@ -34,16 +34,11 @@ class DUIMDatagridItemControl : DUIMControl {
     }
   }
 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    DH5Obj[] results = super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
-  }
 }
 mixin(ControlCalls!("UIMDatagridItemControl", "DUIMDatagridItemControl"));
 mixin(ControlCalls!("UIMDatagridItem", "DUIMDatagridItemControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMDatagridItem);
-    writeln(UIMDatagridItem.noId);
+  assert(UIMDatagridItem);
+  assert(UIMDatagridItem.noId == `<div class="datagrid-item"></div>`);
 }}

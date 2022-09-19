@@ -15,7 +15,7 @@ class DUIMAvatarListControl : DUIMControl {
   mixin(OProperty!("bool", "stacked"));
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    DH5Obj[] results = super.toH5(options);
+    super.toH5(options);
 
     if (stacked) myClasses ~= "avatar-list-stacked"; 
 

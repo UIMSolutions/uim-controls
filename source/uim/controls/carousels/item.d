@@ -19,7 +19,7 @@ class DUIMCarouselItemControl : DUIMControl {
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
-    DH5Obj[] results = super.toH5(options);
+    super.toH5(options);
 
     if (active) { myClasses ~= "active"; }
     return [

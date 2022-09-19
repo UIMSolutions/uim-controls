@@ -3,7 +3,7 @@ module uim.controls.empties.empty;
 @safe: 
 import uim.controls;
 
-class DUIMEmptyControl : DUIMControl {
+class DUIMEmptyControl : DUIMDivControl {
   mixin(ControlThis!("UIMEmptyControl"));
 
   mixin(OProperty!("string", "color"));
@@ -26,12 +26,6 @@ class DUIMEmptyControl : DUIMControl {
     super.beforeH5(options);
 
     if (color) myClasses ~= "bg-"~color;
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMEmptyControl", "DUIMEmptyControl"));

@@ -25,5 +25,5 @@ mixin(ControlCalls!("UIMEmptyImage", "DUIMEmptyImageControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMEmptyImage);
-  assert(UIMEmptyImage.noId == `<div class="facet-filter-item"></div>`);
+  assert(UIMEmptyImage.noId == `<div class="empty-img"></div>`);
 }}

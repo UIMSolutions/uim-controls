@@ -34,6 +34,7 @@ public import layouts.tabler;
 
 // Packages for main classes
 public import uim.controls.control;
+public import uim.controls.div;
 public import uim.controls.enums;
 
 // PACKAGES
