@@ -22,5 +22,5 @@ mixin(ControlCalls!("UIMHiddenInput", "DUIMHiddenInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMHiddenInput);
-  assert(UIMHiddenInput.toId == `<input class="form-control" type="hidden">`);
+  assert(UIMHiddenInput.noId == `<input class="form-control" type="hidden">`);
 }}

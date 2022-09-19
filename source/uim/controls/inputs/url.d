@@ -22,6 +22,6 @@ mixin(ControlCalls!("UIMUrlInput", "DUIMUrlInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMUrlInput);
-  assert(UIMUrlInput.toId == `<input class="form-control" type="url">`);
+  assert(UIMUrlInput.noId == `<input class="form-control" type="url">`);
 }}
 

@@ -22,6 +22,6 @@ mixin(ControlCalls!("UIMPasswordInput", "DUIMPasswordInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMPasswordInput);
-  assert(UIMPasswordInput.toId == `<input class="form-control" type="password">`);
+  assert(UIMPasswordInput.noId == `<input class="form-control" type="password">`);
 }}
 

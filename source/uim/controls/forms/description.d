@@ -29,5 +29,5 @@ mixin(ControlCalls!("UIMFormLabelDescription", "DUIMFormLabelDescriptionControl"
 
 version(test_uim_controls) { unittest {
   assert(UIMFormLabelDescription);
-  assert(UIMFormLabelDescription.noId = `<span class="form-label-description"></span>`);
+  assert(UIMFormLabelDescription.toId = `<span class="form-label-description"></span>`);
 }}

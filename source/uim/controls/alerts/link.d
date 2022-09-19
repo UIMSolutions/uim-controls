@@ -19,5 +19,5 @@ mixin(ControlCalls!("UIMAlertLink", "DUIMAlertLinkControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMAlertLink);
-  assert(UIMAlertLink.toId == `<a class="alert-link" href="#"></a>`);
+  assert(UIMAlertLink.noId == `<a class="alert-link" href="#"></a>`);
 }}

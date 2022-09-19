@@ -23,5 +23,5 @@ mixin(ControlCalls!("UIMSearchInput", "DUIMSearchInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMSearchInput);
-  assert(UIMSearchInput.toId == `<input class="form-control" type="search">`);
+  assert(UIMSearchInput.noId == `<input class="form-control" type="search">`);
 }}

@@ -29,5 +29,5 @@ mixin(ControlCalls!("UIMFeedListItem", "DUIMFeedListItemControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMFeedListItem);
-  assert(UIMFeedListItem.noId == `<div class="feed-listitem"></div>`)
+  assert(UIMFeedListItem.noId == `<div class="feed-listitem"></div>`);
 }}

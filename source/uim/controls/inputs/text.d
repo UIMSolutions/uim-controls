@@ -24,5 +24,5 @@ mixin(ControlCalls!("UIMTextInput", "DUIMTextInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMTextInput);
-  assert(UIMTextInput.toId == `<input class="form-control" type="text">`);
+  assert(UIMTextInput.noId == `<input class="form-control" type="text">`);
 }}
