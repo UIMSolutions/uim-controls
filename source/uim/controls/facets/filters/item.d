@@ -10,7 +10,7 @@ class DUIMFacetFilterItemControl : DUIMControl {
     super.initialize;
 
     this
-      .classes("facet-filter-item");;
+      .classes("facet-filter-item");
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
