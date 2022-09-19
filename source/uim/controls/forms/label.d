@@ -32,5 +32,5 @@ mixin(ControlCalls!("UIMFormLabel", "DUIMFormLabelControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMFormLabel);
-  assert(UIMFormLabel.toId = `<label class="form-label"></label>`);
+  assert(UIMFormLabel.noId = `<label class="form-label"></label>`);
 }}
