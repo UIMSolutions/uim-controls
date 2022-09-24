@@ -18,15 +18,14 @@ class DUIMBreadcrumbItemControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
     if (active) {
       myClasses ~= ["active"];
       myAttributes["aria-current"] = "page"; 
     }
+  }
+
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    super.toH5(options);
 
     if (link) {
       auto myLink = H5A(["href":link], myContent);
