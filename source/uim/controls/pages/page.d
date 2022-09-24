@@ -12,7 +12,7 @@ The uIMPageControl is a container control that holds one whole screen of an appl
 
 Structure
 Header
-The top most area of the page is occupied by the header. The standard header includes a navigation button and a title. Alternatively, you can create your own custom header, which is defined in the customHeader aggregation.
+The top most area of the page is occupied by the header. The standard header includes a navbar button and a title. Alternatively, you can create your own custom header, which is defined in the customHeader aggregation.
 
 Content
 The content occupies the main part of the page. Only the content area is scrollable by default. This can be prevented by setting enableScrolling to false.

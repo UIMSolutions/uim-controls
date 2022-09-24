@@ -1,4 +1,4 @@
-module uim.controls.navigations.usermenu;
+module uim.controls.navbars.usermenu;
 
 @safe: 
 import uim.controls;

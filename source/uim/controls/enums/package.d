@@ -76,7 +76,7 @@ enum UIMBreadcrumbsSeparatorStyles : string {
 enum UIMButtonTypes : string {
   Accept = "Accept", // Accept type
   Attention = "Attention", // Attention type
-  Back = "Back", // Back type (back navigation button for header)
+  Back = "Back", // Back type (back navbar button for header)
   Critical = "Critical", // Critical type Note: To be used only in controls of type sap.m.Button. When the button opens a sap.m.MessagePopover list, use this ButtonType if the message with the highest severity is Warning type.
   Default = "Default", // Default type (no special styling)
   Emphasized = "Emphasized", // Emphasized type
@@ -87,7 +87,7 @@ enum UIMButtonTypes : string {
   Success = "Success", // Success type - Note: To be used only in controls of type sap.m.Button. When the button opens a sap.m.MessagePopover list, use this ButtonType if the message with the highest severity is Success type.
   Transparent = "Transparent", // Transparent type
   Unstyled = "Unstyled", // Unstyled type (no styling)
-  Up = "Up", // Up type (up navigation button for header)
+  Up = "Up", // Up type (up navbar button for header)
 }
 
 // Carousel arrows align.

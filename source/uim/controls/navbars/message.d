@@ -1,4 +1,4 @@
-module uim.controls.navigations.messages;
+module uim.controls.navbars.messages;
 
 @safe: 
 import uim.controls;

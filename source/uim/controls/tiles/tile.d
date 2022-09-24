@@ -16,8 +16,8 @@ class DUIMTileControl : DUIMControl {
   mixin(OProperty!("string", "headerImage"));
   mixin(OProperty!("string", "imageDescription"));
 
-  mixin(OProperty!("bool", "hasNavigation"));
-  mixin(OProperty!("bool", "navigationText"));
+  mixin(OProperty!("bool", "hasNavbar"));
+  mixin(OProperty!("bool", "navbarText"));
 
   mixin(OProperty!("DUIMTileContentControl", "tileContent"));
 
