@@ -38,8 +38,8 @@ class DUIMNavbarControl : DUIMControl {
       .togglerState("collapse");
   }
 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
 
     if (printMode) { myClasses ~= "d-print-"~printMode; }
     if (collapseMode) {
@@ -61,6 +61,11 @@ class DUIMNavbarControl : DUIMControl {
     myContent ~= content;
 
     if ("style" in myAttributes) { myAttributes["style"] ~= ";"~style; } else { myAttributes["style"] = style; }
+  }
+  
+  override DH5Obj[] toH5(STRINGAA options = null) {
+    super.toH5(options);
+
     return [
       H5Nav(id, myClasses, myAttributes)(
         BS5Container.mode(containerMode)(myContent)].toH5;
