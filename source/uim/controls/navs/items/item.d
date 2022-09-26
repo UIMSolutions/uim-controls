@@ -1,4 +1,4 @@
-module uim.controls.navs.item;
+module uim.controls.navs.items.item;
 
 @safe: 
 import uim.controls;

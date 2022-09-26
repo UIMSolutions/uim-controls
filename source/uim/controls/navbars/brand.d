@@ -26,5 +26,5 @@ mixin(ControlCalls!("UIMNavbarBrand", "DUIMNavbarBrandControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMNavbarBrand);
-  assert(UIMNavbarBrand.noId == ˋ<a class="navbar-brand"></a>ˋ);
+  assert(UIMNavbarBrand.noId == `<a class="navbar-brand"></a>`);
 }}

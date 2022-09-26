@@ -12,6 +12,10 @@ class DUIMCollapseControl : DUIMDivControl {
     this
       .classes(["collapse"]);
   }
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+  }
 }
 mixin(ControlCalls!("UIMCollapseControl", "DUIMCollapseControl"));
 mixin(ControlCalls!("UIMCollapse", "DUIMCollapseControl"));

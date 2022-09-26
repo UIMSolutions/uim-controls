@@ -68,7 +68,9 @@ class DUIMNavbarControl : DUIMControl {
 
     return [
       H5Nav(id, myClasses, myAttributes)(
-        BS5Container.mode(containerMode)(myContent)].toH5;
+        BS5Container.mode(containerMode)(myContent)
+      )
+    ].toH5;
   }
 }
 mixin(ControlCalls!("UIMNavbarControl", "DUIMNavbarControl"));
