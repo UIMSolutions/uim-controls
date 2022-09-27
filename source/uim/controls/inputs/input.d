@@ -114,8 +114,6 @@ mixin(ControlCalls!("UIMInputControl", "DUIMInputControl"));
 mixin(ControlCalls!("UIMInput", "DUIMInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMInput);
-
-    auto control = UIMInput;
-  }
-}
+  assert(UIMInput);
+  assert(UIMInput.noId = `<input class="form.control">`);
+}}
