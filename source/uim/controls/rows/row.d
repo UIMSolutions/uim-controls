@@ -37,4 +37,5 @@ version(test_uim_controls) { unittest {
   assert(UIMRow);
   assert(UIMRow.noId == `<div class="row"></div>`);
   assert(UIMRow.deck(true).noId == `<div class="row row-deck"></div>`);
+  assert(UIMRow.cards(true).noId == `<div class="row row-cards"></div>`);
 }}

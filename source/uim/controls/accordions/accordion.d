@@ -13,7 +13,6 @@ class DUIMAccordionControl : DUIMControl {
     super.initialize;
 
     this
-      .id("accordion-%s".format(uniform(0, 1000000)))
       .classes("accordion");
   }
 

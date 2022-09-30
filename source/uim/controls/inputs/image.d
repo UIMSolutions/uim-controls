@@ -22,8 +22,6 @@ mixin(ControlCalls!("UIMImageInputControl", "DUIMImageInputControl"));
 mixin(ControlCalls!("UIMImageInput", "DUIMImageInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMImageInput);
-
-    auto control = UIMImageInput;
-  }
-}
+  assert(UIMImageInput);
+  assert(UIMImageInput.noId == `<input class="form-control" type="image">`);
+}}
