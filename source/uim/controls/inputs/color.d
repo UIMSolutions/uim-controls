@@ -10,7 +10,7 @@ class DUIMColorInputControl : DUIMInputControl {
     super.initialize;
 
     this
-      .classes(["form-control-color"])
+      .addClasses("form-control-color")
       .attributes(["type":"color"]);
   }
   override void beforeH5(STRINGAA options = null) {
@@ -22,5 +22,5 @@ mixin(ControlCalls!("UIMColorInput", "DUIMColorInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMColorInput);
-  assert(UIMColorInput.noId == `<input class="form-control-color" type="color">`);
+  assert(UIMColorInput.noId == `<input class="form-control form-control-color" type="color">`);
 }}

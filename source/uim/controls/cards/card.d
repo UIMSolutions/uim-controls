@@ -33,6 +33,10 @@ class DUIMCardControl : DUIMControl {
   mixin(OProperty!("string[]", "footerClasses"));
   mixin(OProperty!("STRINGAA", "footerAttributes"));
 
+  mixin(AddContent!("Header", "UIMCardHeader"));
+  mixin(AddContent!("Body", "UIMCardBody"));
+  mixin(AddContent!("Footer", "UIMCardFooter"));
+
   override void initialize() {
     super.initialize;
 

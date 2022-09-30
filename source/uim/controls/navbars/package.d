@@ -6,6 +6,7 @@ public import uim.controls.navbars.navbar;
 // Additional
 public import uim.controls.navbars.brand;
 public import uim.controls.navbars.collapse;
+public import uim.controls.navbars.image;
 public import uim.controls.navbars.messages;
 public import uim.controls.navbars.nav;
 public import uim.controls.navbars.toggler;

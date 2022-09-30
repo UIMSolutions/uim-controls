@@ -10,13 +10,15 @@ class DUIMNavLinkTitleControl : DUIMControl {
     super.initialize;
 
     this
-      .classes("nav-link-icon");
+      .classes("nav-link-title");
   }
 
-  mixin(OProperty!("string", "icon"));
+  mixin(OProperty!("string", "title"));
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
+
+    if (title) myContent ~= H5String(title);
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -30,5 +32,6 @@ mixin(ControlCalls!("UIMNavLinkTitle", "DUIMNavLinkTitleControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMNavLinkTitle);
-  assert(UIMNavLinkTitle.noId == `<span class="nav-link-icon"></span>`);
+  assert(UIMNavLinkTitle.noId == `<span class="nav-link-title"></span>`);
+  assert(UIMNavLinkTitle.noId.title("newTitle") == `<span class="nav-link-title">newTitle</span>`);
 }}

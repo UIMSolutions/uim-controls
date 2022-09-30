@@ -3,7 +3,7 @@ module uim.controls.layouts.layout;
 @safe: 
 import uim.controls;
 
-class DUIMLayoutControl : DUIMControl {
+class DUIMLayoutControl : DUIMDivControl {
   mixin(ControlThis!("UIMLayoutControl"));
 }
 mixin(ControlCalls!("UIMLayoutControl", "DUIMLayoutControl"));

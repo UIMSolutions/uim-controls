@@ -3,7 +3,7 @@ module uim.controls.footers.footer;
 @safe: 
 import uim.controls;
 
-class DUIMFooterControl : DUIMControl {
+class DUIMFooterControl : DUIMDivControl {
   mixin(ControlThis!("UIMFooterControl"));
 
   override void initialize() {
@@ -13,14 +13,12 @@ class DUIMFooterControl : DUIMControl {
       .classes("footer");
   }
 
+  mixin(OProperty!("string", "fixed"));
+
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
-  }
 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
+    if (fixed) myClasses ~= "fixed-"~fixed;
   }
 }
 mixin(ControlCalls!("UIMFooterControl", "DUIMFooterControl"));

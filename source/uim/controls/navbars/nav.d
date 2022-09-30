@@ -20,7 +20,7 @@ class DUIMNavbarNavControl : DUIMControl {
     super.toH5(options);
         
     return [ 
-      H5Ul(myId, myClassey, myAttributes, myContent)
+      H5Ul(myId, myClasses, myAttributes, myContent)
     ].toH5; 
   }
 }

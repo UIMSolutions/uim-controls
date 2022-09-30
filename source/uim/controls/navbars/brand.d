@@ -13,6 +13,14 @@ class DUIMNavbarBrandControl : DUIMControl {
       .classes("navbar-brand");
   }
 
+  mixin(OProperty!("bool", "autodark"));
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    if (autodark) myClasses ~= "navbar-brand-autodark";
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
             

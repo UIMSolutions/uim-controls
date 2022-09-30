@@ -6,14 +6,16 @@ import uim.controls;
 class DUIMRowControl : DUIMControl {
   mixin(ControlThis!("UIMRow"));
 
-  mixin(OProperty!("bool", "deck"));
-  mixin(OProperty!("bool", "cards"));
-
   override void initialize() {
     super.initialize;
     this
       .classes("row");
   }
+
+  mixin(OProperty!("bool", "deck"));
+  mixin(OProperty!("bool", "cards"));
+
+  mixin(AddContent!("Col", "UIMCol"));
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);

@@ -7,6 +7,32 @@ interface IControl {
   DH5Obj[] toH5(STRINGAA options = null);
   O active(this O)(bool newValue);
   O disabled(this O)(bool newValue);
+
+  // Aria 
+  O ariaAutocomplete(this O)(string newValue);
+  O ariaChecked(this O)(string newValue);
+  O ariaDisabled(this O)(string newValue);
+  O ariaErrormessage(this O)(string newValue);
+  O ariaExpanded(this O)(string newValue);
+  O ariaHaspopup(this O)(string newValue);
+  O ariaHidden(this O)(string newValue);
+  O ariaInvalid(this O)(string newValue);
+  O ariaLabel(this O)(string newValue);
+  O ariaLevel(this O)(string newValue);
+  O ariaModal(this O)(string newValue);
+  O ariaMultiline(this O)(string newValue);
+  O ariaMultiselectable(this O)(string newValue);
+  O ariaOrientation(this O)(string newValue);
+  O ariaPlaceholder(this O)(string newValue);
+  O ariaPressed(this O)(string newValue);
+  O ariaReadonly(this O)(string newValue);
+  O ariaRequired(this O)(string newValue);
+  O ariaSelected(this O)(string newValue);
+  O ariaSort(this O)(string newValue);
+  O ariaValuemax(this O)(string newValue);
+  O ariaValuemin(this O)(string newValue);
+  O ariaValuenow(this O)(string newValue);
+  O ariaValuetext(this O)(string newValue);
 }
 
 class DUIMControl : DH5Obj, IControl {
@@ -15,7 +41,7 @@ class DUIMControl : DH5Obj, IControl {
   mixin(OProperty!("DUIMControl", "parent"));
   mixin(OProperty!("bool", "active"));
   mixin(OProperty!("bool", "disabled"));
-  mixin(OProperty!("STRINGAA", "styles"));
+  mixin(OProperty!("STRINGAA", "cssStyles"));
 
   mixin(OProperty!("string", "ariaAutocomplete"));
   mixin(OProperty!("string", "ariaChecked"));
@@ -45,7 +71,9 @@ class DUIMControl : DH5Obj, IControl {
   mixin(OProperty!("string", "ariaRole"));
   mixin(OProperty!("string", "ariaRoleDescription"));
 
-  O noId(this O)(){ this.id(null); return cast(O)this; }
+  O noId(this O)(){ this.id(null);
+    _html.each!(c => c.id(null)); 
+    return cast(O)this; }
 
 /*
 aria-dropeffect
@@ -121,7 +149,7 @@ aria-setsize
     if (ariaRole) myAttributes["aria-role"] = ariaRole;
     if (ariaRoleDescription) myAttributes["aria-roledescription"] = ariaRoleDescription;
 
-    if (!styles.empty) { myAttributes["style"] = styles.keys.map!(key => "%s:%s;".format(key, styles["key"])).join(); } 
+    if (!cssStyles.empty) { myAttributes["style"] = cssStyles.keys.map!(key => "%s:%s;".format(key, cssStyles[key])).join(); } 
   }
 
   override DH5Obj[] toH5(STRINGAA options = null) {

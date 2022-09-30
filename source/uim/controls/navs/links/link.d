@@ -39,4 +39,7 @@ mixin(ControlCalls!("UIMNavLink", "DUIMNavLinkControl"));
 version(test_uim_controls) { unittest {
   assert(UIMNavLink);
   assert(UIMNavLink.noId == `<a class="nav-link"></a>`);
+  assert(UIMNavLink.icon("moon").noId == `<a class="nav-link"><span class="nav-link-icon">`~tablerIcon("moon")~`</span></a>`);
+  assert(UIMNavLink.title("testTitle").noId == `<a class="nav-link"><span class="nav-link-title">newTitle</span></a>`);
+  assert(UIMNavLink.link("/server/test").noId == `<a class="nav-link" href="/server/test"></a>`);
 }}

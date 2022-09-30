@@ -6,7 +6,7 @@ import uim.controls;
 class DUIMNavbarControl : DUIMControl {
   mixin(ControlThis!("UIMNavbarControl"));
 
-  mixin(OProperty!("string", "printMode"));
+  mixin(OProperty!("bool", "printable"));
   mixin(OProperty!("string", "collapseMode"));
   mixin(OProperty!("string", "colorScheme"));
   mixin(OProperty!("string", "style"));
@@ -32,16 +32,14 @@ class DUIMNavbarControl : DUIMControl {
     this  
       .brandImageText(true)
       .classes(["navbar"])
-      .printMode("none")
       .containerMode("fluid")
-      .hasToggler(true)
       .togglerState("collapse");
   }
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
-    if (printMode) { myClasses ~= "d-print-"~printMode; }
+    if (!printable) { myClasses ~= "d-print-none"; }
     if (collapseMode) {
       if (collapseMode == "never") { myClasses ~= "navbar-expand"; }
       else if (collapseMode == "always") { }
@@ -59,8 +57,6 @@ class DUIMNavbarControl : DUIMControl {
         brandImageText ? H5A(["href":brandLink], brandImage.toString~brandText) : H5A(["href":brandLink], brandText~brandImage.toString));
     }
     myContent ~= content;
-
-    if ("style" in myAttributes) { myAttributes["style"] ~= ";"~style; } else { myAttributes["style"] = style; }
   }
   
   override DH5Obj[] toH5(STRINGAA options = null) {
@@ -68,7 +64,7 @@ class DUIMNavbarControl : DUIMControl {
 
     return [
       H5Nav(id, myClasses, myAttributes)(
-        BS5Container.mode(containerMode)(myContent)
+        BS5Container(myContent).mode(containerMode)
       )
     ].toH5;
   }
@@ -78,7 +74,8 @@ mixin(ControlCalls!("UIMNavbar", "DUIMNavbarControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMNavbar);
-  assert(UIMNavbar.noId == `<nav class="navbar"><div class="container-fluid"></div></nav>`);
+  assert(UIMNavbar.noId == `<nav class="d-print-none navbar"><div class="container-fluid"></div></nav>`);
+  assert(UIMNavbar.noId.printable(true) == `<nav class="navbar"><div class="container-fluid"></div></nav>`);
 }}
 
 /* <header class="navbar navbar-expand-md navbar-transparent d-print-none">
