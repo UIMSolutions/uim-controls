@@ -41,7 +41,7 @@ class DUIMCheckboxControl : DUIMInputControl {
     }
 
     return [
-      H5Div(["form-check"]~(inline ? "form-check-inline" : null), 
+      UIMFormCheck(inline ? ["form-check-inline"] : null), 
         (description && descriptionTop ? H5Span(["form-check-description"], description) : null),
         H5Input(myId, myClasses, myAttributes),
         (label ? H5Label(["form-check-label"], ["for":myId], label) : null),

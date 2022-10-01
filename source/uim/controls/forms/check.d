@@ -3,7 +3,7 @@ module uim.controls.forms.check;
 @safe: 
 import uim.controls;
 
-class DUIMFormCheckControl : DUIMControl {
+class DUIMFormCheckControl : DUIMDivControl {
   mixin(ControlThis!("UIMFormCheckControl"));
 
   override void initialize() {
@@ -13,14 +13,14 @@ class DUIMFormCheckControl : DUIMControl {
       .classes(["form-check"]);
   }
 
+  mixin(OProperty!("bool", "inline"));
+  mixin(OProperty!("bool", "reverse"));
+
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
-  }
 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
+    if (inline) myClasses ~= "form-check-inline";
+    if (reverse) myClasses ~= "form-check-reverse";
   }
 }
 mixin(ControlCalls!("UIMFormCheckControl", "DUIMFormCheckControl"));
@@ -29,4 +29,6 @@ mixin(ControlCalls!("UIMFormCheck", "DUIMFormCheckControl"));
 version(test_uim_controls) { unittest {
   assert(UIMFormCheck);
   assert(UIMFormCheck.noId == `<div class="form-check"></div>`);
+  assert(UIMFormCheck.inline(true).noId == `<div class="form-check form-check-inline"></div>`);
+  assert(UIMFormCheck.reverse(true).noId == `<div class="form-check form-check-reverse"></div>`);
 }}
