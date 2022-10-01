@@ -32,8 +32,6 @@ mixin(ControlCalls!("UIMNumberInputControl", "DUIMNumberInputControl"));
 mixin(ControlCalls!("UIMNumberInput", "DUIMNumberInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMNumberInput);
-
-    auto control = UIMNumberInput;
-  }
-}
+  assert(UIMNumberInput);
+  assert(UIMNumberInput.noId == ˋ<input class="form-control" type="number">ˋ);
+}}

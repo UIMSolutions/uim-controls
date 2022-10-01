@@ -11,7 +11,7 @@ class DUIMTelephoneInputControl : DUIMInputControl {
 
     this
       .addClasses(["form-control"])
-      .attributes(["type":"telephone"]);
+      .attributes(["type":"tel"]);
   }
 
   override void beforeH5(STRINGAA options = null) {
@@ -22,8 +22,6 @@ mixin(ControlCalls!("UIMTelephoneInputControl", "DUIMTelephoneInputControl"));
 mixin(ControlCalls!("UIMTelephoneInput", "DUIMTelephoneInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMTelephoneInput);
-
-    auto control = UIMTelephoneInput;
-  }
-}
+  assert(UIMTelephoneInput);
+  assert(UIMTelephoneInput.noId == ˋ<input class="form-control" type="tel">ˋ);
+}}

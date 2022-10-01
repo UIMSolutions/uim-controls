@@ -33,8 +33,6 @@ mixin(ControlCalls!("UIMWeekInputControl", "DUIMWeekInputControl"));
 mixin(ControlCalls!("UIMWeekInput", "DUIMWeekInputControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMWeekInput);
-
-    auto control = UIMWeekInput;
-  }
-}
+  assert(UIMWeekInput);
+  assert(UIMWeekInput.noId == `<input class="form-control" type="week">`);
+}}
