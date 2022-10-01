@@ -3,8 +3,8 @@ module uim.controls.buttons.check;
 @safe: 
 import uim.controls;
 
-class DUIMButtonCheckControl : DUIMControl {
-  mixin(ControlThis!("UIMButtonCheckControl"));
+class DUIMCheckboxButtonControl : DUIMControl {
+  mixin(ControlThis!("UIMCheckboxButtonControl"));
 
   override void initialize() {
     super.initialize;
@@ -45,11 +45,13 @@ class DUIMButtonCheckControl : DUIMControl {
     ].toH5;  
   }
 }
-mixin(ControlCalls!("UIMButtonCheckControl", "DUIMButtonCheckControl"));
-mixin(ControlCalls!("UIMButtonCheck", "DUIMButtonCheckControl"));
+mixin(ControlCalls!("UIMCheckboxButtonControl", "DUIMCheckboxButtonControl"));
+mixin(ControlCalls!("UIMCheckboxButton", "DUIMCheckboxButtonControl"));
 
 version(test_uim_controls) { unittest {
-  assert(UIMButtonCheck);
-  assert(UIMButtonCheck.noId == `<div class="btn-check"></div>`);
+  assert(UIMCheckboxButton);
+  assert(UIMCheckboxButton.noId == 
+    `<input class="btn-check" autocomplete="off" type="checkbox">ˋ~
+    ˋ<label class="btn"></label>`);
 }}
 
