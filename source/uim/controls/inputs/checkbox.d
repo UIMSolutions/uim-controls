@@ -54,8 +54,6 @@ mixin(ControlCalls!("UIMCheckboxControl", "DUIMCheckboxControl"));
 mixin(ControlCalls!("UIMCheckbox", "DUIMCheckboxControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMCheckbox);
-
-    auto control = UIMCheckbox;
-  }
-}
+  assert(UIMCheckbox);
+  assert(UIMCheckbox.noId == ˋ<div class="form-check"><input class="form-check-input" type="checkbox"></div>ˋ);
+}}
