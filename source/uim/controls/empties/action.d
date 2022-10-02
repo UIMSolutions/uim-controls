@@ -23,5 +23,5 @@ mixin(ControlCalls!("UIMEmptyAction", "DUIMEmptyActionControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMEmptyAction);
-  assert(UIMEmptyAction.id(null) == `<div class="empty-action"></div>`);
+  assert(UIMEmptyAction.noId == `<div class="empty-action"></div>`);
 }}

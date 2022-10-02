@@ -10,7 +10,6 @@ class DUIMButtonGroupControl : DUIMControl {
     super.initialize;
 
     this
-      .classes("btn-group")
       .attributes(["role":"group"]);
   }
 
@@ -20,8 +19,18 @@ class DUIMButtonGroupControl : DUIMControl {
     return cast(O)this;
   }
 
+  mixin(OProperty!("string", "size")); // sm, small, lg, large
+  mixin(OProperty!("bool", "vertical")); 
+
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
+
+    myClasses ~= vertical ? "btn-group" : "btn-group-vertical"; 
+    switch(size) {
+      case "sm", "small": myClasses ~= "btn-group-sm"; break;
+      case "lg", "large": myClasses ~= "btn-group-lg"; break;
+      default: break;
+    }
 
     if (ariaLabel) myAttributes["aria-label"] = this.ariaLabel;
 

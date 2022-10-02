@@ -10,6 +10,8 @@ class DUIMContainerControl : DUIMLayoutControl {
   mixin(OProperty!("bool", "fluid"));
 
   mixin(AddContent!("Row", "UIMRow"));
+  mixin(AddContent!("RowCards", "UIMRowCards"));
+  mixin(AddContent!("RowDeck", "UIMRowDeck"));
   
   override void initialize() {
     super.initialize;

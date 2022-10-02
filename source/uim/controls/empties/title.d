@@ -9,7 +9,6 @@ class DUIMEmptyTitleControl : DUIMEmptyItemControl {
   override void initialize() {
     super.initialize;
 
-
     this
       .classes(["empty-title"]);
   }

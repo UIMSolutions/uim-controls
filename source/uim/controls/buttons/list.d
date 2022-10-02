@@ -3,7 +3,7 @@ module uim.controls.buttons.list;
 @safe: 
 import uim.controls;
 
-class DUIMButtonListControl : DUIMControl {
+class DUIMButtonListControl : DUIMDivControl {
   mixin(ControlThis!("UIMButtonListControl"));
 
   override void initialize() {
@@ -15,12 +15,6 @@ class DUIMButtonListControl : DUIMControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;  
   }
 }
 mixin(ControlCalls!("UIMButtonListControl", "DUIMButtonListControl"));
