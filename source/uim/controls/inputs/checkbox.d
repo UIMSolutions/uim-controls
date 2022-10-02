@@ -41,7 +41,7 @@ class DUIMCheckboxControl : DUIMInputControl {
     }
 
     return [
-      H5Div(["form-check"]~(inline ? "form-check-inline" : null), 
+      UIMFormCheck(inline ? ["form-check-inline"] : null), 
         (description && descriptionTop ? H5Span(["form-check-description"], description) : null),
         H5Input(myId, myClasses, myAttributes),
         (label ? H5Label(["form-check-label"], ["for":myId], label) : null),
@@ -54,8 +54,6 @@ mixin(ControlCalls!("UIMCheckboxControl", "DUIMCheckboxControl"));
 mixin(ControlCalls!("UIMCheckbox", "DUIMCheckboxControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMCheckbox);
-
-    auto control = UIMCheckbox;
-  }
-}
+  assert(UIMCheckbox);
+  assert(UIMCheckbox.noId == ˋ<div class="form-check"><input class="form-check-input" type="checkbox"></div>ˋ);
+}}
