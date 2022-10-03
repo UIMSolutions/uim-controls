@@ -33,5 +33,5 @@ mixin(ControlCalls!("UIMNumberInput", "DUIMNumberInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMNumberInput);
-  assert(UIMNumberInput.noId == ˋ<input class="form-control" type="number">ˋ);
+  assert(UIMNumberInput.noId == `<input class="form-control" type="number">`);
 }}

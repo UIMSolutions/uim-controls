@@ -3,17 +3,16 @@ module uim.controls.buttons.radio;
 @safe: 
 import uim.controls;
 
-class DUIMCheckboxButtonControl : DUIMControl {
-  mixin(ControlThis!("UIMCheckboxButtonControl"));
+class DUIMRadioButtonControl : DUIMControl {
+  mixin(ControlThis!("UIMRadioButtonControl"));
 
   override void initialize() {
     super.initialize;
 
     this
       .inputClasses(["btn-check"])
-      .inputAttributes(["type":"checkbox", "autocomplete":"off"])
-      .labelClasses(["btn"])
-      .labelAttributes(["btn-check"]);      
+      .inputAttributes(["type":"radio", "autocomplete":"off"])
+      .labelClasses(["btn"]);      
   }
 
   // Settings for components
@@ -21,9 +20,8 @@ class DUIMCheckboxButtonControl : DUIMControl {
   mixin(OProperty!("string[string]", "inputAttributes"));
   mixin(OProperty!("string[]", "labelClasses"));
   mixin(OProperty!("string[string]", "labelAttributes"));
-
   mixin(OProperty!("bool", "checked"));
-  mixin(OProperty!("bool", "disabled"));
+
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
@@ -45,13 +43,13 @@ class DUIMCheckboxButtonControl : DUIMControl {
     ].toH5;  
   }
 }
-mixin(ControlCalls!("UIMCheckboxButtonControl", "DUIMCheckboxButtonControl"));
-mixin(ControlCalls!("UIMCheckboxButton", "DUIMCheckboxButtonControl"));
+mixin(ControlCalls!("UIMRadioButtonControl", "DUIMRadioButtonControl"));
+mixin(ControlCalls!("UIMRadioButton", "DUIMRadioButtonControl"));
 
 version(test_uim_controls) { unittest {
-  assert(UIMCheckboxButton);
-  assert(UIMCheckboxButton.noId == 
-    `<input class="btn-check" autocomplete="off" type="checkbox">ˋ~
+  assert(UIMRadioButton);
+  assert(UIMRadioButton.noId == 
+    `<input class="btn-check" autocomplete="off" type="radio">ˋ~
     ˋ<label class="btn"></label>`);
 }}
 

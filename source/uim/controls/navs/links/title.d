@@ -33,5 +33,6 @@ mixin(ControlCalls!("UIMNavLinkTitle", "DUIMNavLinkTitleControl"));
 version(test_uim_controls) { unittest {
   assert(UIMNavLinkTitle);
   assert(UIMNavLinkTitle.noId == `<span class="nav-link-title"></span>`);
-  assert(UIMNavLinkTitle.noId.title("newTitle") == `<span class="nav-link-title">newTitle</span>`);
+  assert(UIMNavLinkTitle.title("newTitle").noId == `<span class="nav-link-title">newTitle</span>`);
+  assert(UIMNavLinkTitle("newTitle").noId == `<span class="nav-link-title">newTitle</span>`);
 }}

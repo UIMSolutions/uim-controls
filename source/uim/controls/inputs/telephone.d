@@ -23,5 +23,5 @@ mixin(ControlCalls!("UIMTelephoneInput", "DUIMTelephoneInputControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMTelephoneInput);
-  assert(UIMTelephoneInput.noId == ˋ<input class="form-control" type="tel">ˋ);
+  assert(UIMTelephoneInput.noId == `<input class="form-control" type="tel">`);
 }}

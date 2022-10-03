@@ -57,6 +57,7 @@ mixin(ControlCalls!("UIMDropdownItem", "DUIMDropdownItemControl"));
 
 version(test_uim_controls) { unittest {
     assert(UIMDropdownItem);
+    assert(UIMDropdownItem.style("list").noId == `<li><a class="dropdown-item"></a></li>`);
 
     mixin(TestControlBooleanAttributes!("UIMDropdownItem", [
       "isDivider", "isHeader", "active", "disabled"
