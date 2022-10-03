@@ -8,6 +8,7 @@ public import uim.controls.forms.form;
 public import uim.controls.forms.card;
 
 // Components 
+public import uim.controls.forms.controls;
 public import uim.controls.forms.check;
 public import uim.controls.forms.description;
 public import uim.controls.forms.floating;
