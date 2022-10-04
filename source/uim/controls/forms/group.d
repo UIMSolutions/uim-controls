@@ -71,7 +71,7 @@ class DUIMFormGroupControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
-    return [H5FormGroup(options)].toH5;
+    return [h5FormGroup(options)].toH5;
   }
 }
 mixin(ControlCalls!("UIMFormGroupControl", "DUIMFormGroupControl"));

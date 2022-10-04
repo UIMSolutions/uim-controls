@@ -1,4 +1,4 @@
-module uim.controls.dropdowns.menu;
+module uim.controls.dropdowns.menus.menu;
 
 @safe: 
 import uim.controls;
@@ -28,7 +28,6 @@ class DUIMDropdownMenuControl : DUIMControl {
     super.initialize;
 
     this
-      .id("dropdown-menu-%s".format(uniform(0, 1000000)))
       .classes(["dropdown-menu"]);
   }
 
@@ -48,10 +47,10 @@ class DUIMDropdownMenuControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
     
-    if (style ==  "list") {   
-      return [H5Ul(myId, myClasses, myAttributes, myContent)].toH5;
+    switch(style) {
+      case "list": return [H5Ul(myId, myClasses, myAttributes, myContent)].toH5;
+      default:     return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
     }
-    return [H5Div(myId, myClasses, myAttributes, myContent)];
   }
 }
 mixin(ControlCalls!("UIMDropdownMenuControl", "DUIMDropdownMenuControl"));
@@ -60,6 +59,7 @@ mixin(ControlCalls!("UIMDropdownMenu", "DUIMDropdownMenuControl"));
 version(test_uim_controls) { unittest {
   assert(UIMDropdownMenu);
   assert(UIMDropdownMenu.noId == `<div class="dropdown-menu"></div>`);
+  assert(UIMDropdownMenu.style("list").noId == `<ul class="dropdown-menu"></ul>`);
 
   assert(UIMDropdownMenu.dark(true).dark);
   assert(UIMDropdownMenu.noId.dark(true) == `<div class="dropdown-menu dropdown-menu-dark"></div>`);
