@@ -2,6 +2,7 @@ module uim.controls.inputs;
 
 // Package
 public import uim.controls.inputs.groups;
+public import uim.controls.inputs.icons;
 
 // Main
 public import uim.controls.inputs.input;
