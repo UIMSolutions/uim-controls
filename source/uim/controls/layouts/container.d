@@ -6,7 +6,7 @@ import uim.controls;
 class DUIMContainerControl : DUIMLayoutControl {
   mixin(ControlThis!("UIMContainerControl"));
 
-  mixin(OProperty!("string", "breakpoint"));
+  mixin(OProperty!("string", "size"));
   mixin(OProperty!("bool", "fluid"));
 
   mixin(AddContent!("Row", "UIMRow"));
@@ -24,7 +24,7 @@ class DUIMContainerControl : DUIMLayoutControl {
       myClasses ~= ["container-fluid"]; 
     }
     else {
-      switch(breakpoint) {
+      switch(size) {
         case "sm": myClasses ~= ["container-sm"]; break;
         case "md": myClasses ~= ["container-md"]; break;
         case "lg": myClasses ~= ["container-lg"]; break;
