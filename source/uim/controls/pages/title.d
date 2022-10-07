@@ -1,26 +1,20 @@
-module uim.controls.pageheaders.title;
+module uim.controls.pages.title;
 
-@safe: 
+@safe:
 import uim.controls;
 
-class DUIMPageTitleControl : DUIMControl {
+class DUIMPageTitleControl : DUIMDivControl {
   mixin(ControlThis!("UIMPageTitleControl"));
 
   override void initialize() {
     super.initialize;
 
     this
-      .classes(["page-title"]);
+      .classes("page-title");
   }
 
   override void beforeH5(STRINGAA options = null) {
-    super.beforeH5(options);
-  }
- 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
+    super.beforeH5(options);    
   }
 }
 mixin(ControlCalls!("UIMPageTitleControl", "DUIMPageTitleControl"));

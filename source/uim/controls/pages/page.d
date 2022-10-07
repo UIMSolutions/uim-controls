@@ -27,7 +27,7 @@ When using the uIMPageControl in SAP Quartz theme, the breakpoints and layout pa
 
 */
 
-class DUIMPageControl : DUIMControl {
+class DUIMPageControl : DUIMDivControl {
   mixin(ControlThis!("UIMPageControl"));
 
   override void initialize() {
@@ -88,12 +88,6 @@ class DUIMPageControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);    
 
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMPageControl", "DUIMPageControl"));

@@ -6,6 +6,21 @@ import uim.controls;
 class DUIMDivControl : DUIMControl {
   mixin(ControlThis!("UIMDivControl"));
 
+  override void initialize() {
+    super.initialize;
+
+    this
+      .printable(true);
+  }
+
+  mixin(OProperty!("bool", "printable"));
+
+  override void beforeH5(STRINGAA options = null) {
+    super.beforeH5(options);
+
+    if (!printable) myClasses ~= "d-print-none";
+  }
+
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 

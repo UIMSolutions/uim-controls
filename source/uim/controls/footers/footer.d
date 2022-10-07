@@ -15,14 +15,12 @@ class DUIMFooterControl : DUIMDivControl {
 
   mixin(OProperty!("string", "fixed"));
   mixin(OProperty!("bool", "transparent"));
-  mixin(OProperty!("bool", "printable"));
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
     if (fixed) myClasses ~= "fixed-"~fixed;
     if (transparent) myClasses ~= "footer-transparent";
-    if (!printable) myClasses ~= "d-print-none";
   }
 }
 mixin(ControlCalls!("UIMFooterControl", "DUIMFooterControl"));

@@ -1,4 +1,4 @@
-module uim.controls.pageheaders.pretitle;
+module uim.controls.pages.pretitle;
 
 @safe: 
 import uim.controls;

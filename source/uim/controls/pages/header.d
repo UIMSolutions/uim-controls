@@ -1,26 +1,20 @@
-module uim.controls.pageheaders.pageheader;
+module uim.controls.pages.header;
 
-@safe: 
+@safe:
 import uim.controls;
 
-class DUIMPageHeaderControl : DUIMControl {
+class DUIMPageHeaderControl : DUIMDivControl {
   mixin(ControlThis!("UIMPageHeaderControl"));
 
   override void initialize() {
     super.initialize;
 
-    this 
-      .classes(["page-header"]);
+    this
+      .classes("page-header");
   }
 
   override void beforeH5(STRINGAA options = null) {
-    super.beforeH5(options);
-  }
- 
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
+    super.beforeH5(options);    
   }
 }
 mixin(ControlCalls!("UIMPageHeaderControl", "DUIMPageHeaderControl"));
@@ -30,4 +24,3 @@ version(test_uim_controls) { unittest {
   assert(UIMPageHeader);
   assert(UIMPageHeader.noId == `<div class="page-header"></div>`);
 }}
-

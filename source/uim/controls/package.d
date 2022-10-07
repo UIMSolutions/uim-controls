@@ -77,7 +77,6 @@ public import uim.controls.modals;
 public import uim.controls.navbars;
 public import uim.controls.navs;
 public import uim.controls.offcanvases;
-public import uim.controls.pageheaders;
 public import uim.controls.pages;
 public import uim.controls.paginations;
 public import uim.controls.pictures;
