@@ -13,8 +13,18 @@ class DUIMButtonListControl : DUIMDivControl {
       .classes(["btn-list"]);
   }
 
-  override void beforeH5(STRINGAA options = null) {
+  mixin(OProperty!("DUIMButtonControl[]", "buttons"));
+  O buttons(this O)(DUIMButtonControl[] newButtons...) {
+    this.buttons(newButtons.dup);
+    return cast(O)this;
+  }
+
+  override void beforeH5(STRINGAA options = null) {   
     super.beforeH5(options);
+
+    if (buttons) {
+      myContent = buttons.map!(b => b.toH5).join.array;
+    }
   }
 }
 mixin(ControlCalls!("UIMButtonListControl", "DUIMButtonListControl"));

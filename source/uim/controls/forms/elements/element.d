@@ -34,6 +34,7 @@ class DUIMFormElementControl : DUIMControl {
   }
 }
 mixin(ControlCalls!("UIMFormElementControl", "DUIMFormElementControl"));
+mixin(ControlCalls!("UIMFormElement", "DUIMFormElementControl"));
 
 version(test_uim_controls) { unittest {
   assert(UIMFormElement);
