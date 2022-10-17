@@ -3,7 +3,7 @@ module uim.controls.datagrids.datagrid;
 @safe: 
 import uim.controls;
 
-class DUIMDatagridControl : DUIMControl {
+class DUIMDatagridControl : DUIMDivControl {
   mixin(ControlThis!("UIMDatagridControl"));
 
   override void initialize() {
@@ -16,13 +16,6 @@ class DUIMDatagridControl : DUIMControl {
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
 
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [
-      H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMDatagridControl", "DUIMDatagridControl"));

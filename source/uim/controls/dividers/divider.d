@@ -3,7 +3,7 @@ module uim.controls.dividers.divider;
 @safe: 
 import uim.controls;
 
-class DUIMDividerControl : DUIMControl {
+class DUIMDividerControl : DUIMDivControl {
   mixin(ControlThis!("UIMDividerControl"));
 
   mixin(OProperty!("string", "position"));
@@ -21,12 +21,6 @@ class DUIMDividerControl : DUIMControl {
 
     if (position) myClasses ~= "hr-text-"~position;
     if (color) myClasses ~= "text-"~color;
-  }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
   }
 }
 mixin(ControlCalls!("UIMDividerControl", "DUIMDividerControl"));
