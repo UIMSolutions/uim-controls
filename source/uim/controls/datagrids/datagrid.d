@@ -15,7 +15,6 @@ class DUIMDatagridControl : DUIMDivControl {
 
   override void beforeH5(STRINGAA options = null) {
     super.beforeH5(options);
-
   }
 }
 mixin(ControlCalls!("UIMDatagridControl", "DUIMDatagridControl"));
