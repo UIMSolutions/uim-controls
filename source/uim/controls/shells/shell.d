@@ -27,6 +27,13 @@ mixin(ControlCalls!("UIMShellControl", "DUIMShellControl"));
 mixin(ControlCalls!("UIMShell", "DUIMShellControl"));
 
 version(test_uim_controls) { unittest {
+<<<<<<< HEAD
+    assert(UIMShell);
+    assert(UIMShell.noId == ``);
+  }
+}
+
+=======
   assert(UIMShell);
   assert(UIMShell.noId == `<div class="shell"></div>`);
 }}
