@@ -31,10 +31,9 @@ mixin(ControlCalls!("UIMCardHeaderControl", "DUIMCardHeaderControl"));
 mixin(ControlCalls!("UIMCardHeader", "DUIMCardHeaderControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMCardHeader);
-    assert(UIMCardHeader.noId == `<div class="card-header"></div>`);
+  assert(UIMCardHeader);
+  assert(UIMCardHeader.noId == `<div class="card-header"></div>`);
 
-    assert(UIMCardHeader.color("blue").color == "blue");
-    assert(UIMCardHeader.noId.color("blue") == `<div class="bg-blue card-header"></div>`);
-  }
-}
+  assert(UIMCardHeader.color("blue").color == "blue");
+  assert(UIMCardHeader.noId.color("blue") == `<div class="bg-blue card-header"></div>`);
+}}

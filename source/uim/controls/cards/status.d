@@ -3,7 +3,7 @@ module uim.controls.cards.status;
 @safe: 
 import uim.controls;
 
-class DUIMCardStatusControl : DUIMControl {
+class DUIMCardStatusControl : DUIMDivControl {
   mixin(ControlThis!("UIMCardStatusControl"));
 
   override void initialize() {
@@ -22,18 +22,11 @@ class DUIMCardStatusControl : DUIMControl {
     if (position) myClasses ~= "card-status-"~position;
     if (color) myClasses ~= "bg-"~color;      
   }
-
-  override DH5Obj[] toH5(STRINGAA options = null) {
-    super.toH5(options);
-
-    return [H5Div(myId, myClasses, myAttributes, myContent)].toH5;
-  }
 }
 mixin(ControlCalls!("UIMCardStatusControl", "DUIMCardStatusControl"));
 mixin(ControlCalls!("UIMCardStatus", "DUIMCardStatusControl"));
 
 version(test_uim_controls) { unittest {
-    assert(UIMCardStatus);
-    assert(UIMCardStatus.noId == `<div class="card-status"></div>`);
-  }
-}
+  assert(UIMCardStatus);
+  assert(UIMCardStatus.noId == `<div class="card-status"></div>`);
+}}
