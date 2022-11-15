@@ -3,6 +3,7 @@ module uim.controls.control;
 @safe:
 import uim.controls;
 
+// Base contol interface 
 interface IControl {
   DH5Obj[] toH5(STRINGAA options = null);
   O active(this O)(bool newValue);
@@ -35,6 +36,7 @@ interface IControl {
   O ariaValuetext(this O)(string newValue);
 }
 
+// Base control class
 class DUIMControl : DH5Obj, IControl {
   this() { super(); }
 
