@@ -38,7 +38,7 @@ class DUIMFormGroupControl : DUIMControl {
   mixin(OProperty!("string[]", "fields"));
   mixin(OProperty!("string", "path"));
   /// mixin(OProperty!("DAPPPanes", "panes"));
-  mixin(OProperty!("DOOPEntity", "entity"));
+  mixin(OProperty!("DEntity", "entity"));
   mixin(OProperty!("CRUDModes", "crudMode"));
 
 

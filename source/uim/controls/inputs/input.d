@@ -22,7 +22,7 @@ class DUIMInputControl : DUIMControl {
   mixin(OProperty!("bool", "flush"));
 
   // Binding to entity
-  mixin(OProperty!("DOOPEntity", "entity"));
+  mixin(OProperty!("DEntity", "entity"));
   mixin(OProperty!("string", "entityField"));
 
   // Validation

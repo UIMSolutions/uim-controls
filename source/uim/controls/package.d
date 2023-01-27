@@ -26,7 +26,6 @@ public import uim.oop;
 public import uim.html;
 public import uim.bootstrap;
 public import uim.javascript;
-public import uim.entities;
 public import uim.jsonbase;
 public import uim.entitybase;
 

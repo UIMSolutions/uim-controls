@@ -6,7 +6,7 @@ import uim.controls;
 class DUIMEntitiesListControl : DUIMListControl {
   mixin(ControlThis!("UIMEntitiesListControl"));
 
-  mixin(OProperty!("DOOPEntity[]", "entities"));
+  mixin(OProperty!("DEntity[]", "entities"));
   mixin(OProperty!("DUIMEntityListItemControl", "templateControl"));
 
   override void initialize() {
