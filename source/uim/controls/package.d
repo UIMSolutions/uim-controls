@@ -7,14 +7,7 @@ module uim.controls;
 
 @safe:
 
-/// Phobos libraries
-public import std.datetime;
-public import std.datetime.stopwatch;
-public import std.digest.sha;
-public import std.stdio;
-public import std.string;
-public import std.file;
-public import std.uuid;
+mixin(ImportPhobos!());
 
 /// External libraries
 // public import colored;
