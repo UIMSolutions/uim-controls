@@ -1,4 +1,5 @@
 module uim.controls.switchicons;
 
-// Main
-public import uim.controls.switchicons.switchicon;
+public { // Main
+  import uim.controls.switchicons.switchicon;
+}
