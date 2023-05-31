@@ -1,21 +1,21 @@
-module uim.controls.charts;
+module web.controls.charts;
 
-public import uim.controls.charts.elements;
+public import web.controls.charts.elements;
 
-public import uim.controls.charts.chart;
+public import web.controls.charts.chart;
 
-public import uim.controls.charts.area;
-public import uim.controls.charts.bar;
-public import uim.controls.charts.bubble;
-public import uim.controls.charts.candlestick;
-public import uim.controls.charts.circle;
-public import uim.controls.charts.column;
-public import uim.controls.charts.donut;
-public import uim.controls.charts.heatmap;
-public import uim.controls.charts.line;
-public import uim.controls.charts.pie;
-public import uim.controls.charts.polar;
-public import uim.controls.charts.radar;
-public import uim.controls.charts.scatter;
-public import uim.controls.charts.timeline;
-public import uim.controls.charts.treemap;
+public import web.controls.charts.area;
+public import web.controls.charts.bar;
+public import web.controls.charts.bubble;
+public import web.controls.charts.candlestick;
+public import web.controls.charts.circle;
+public import web.controls.charts.column;
+public import web.controls.charts.donut;
+public import web.controls.charts.heatmap;
+public import web.controls.charts.line;
+public import web.controls.charts.pie;
+public import web.controls.charts.polar;
+public import web.controls.charts.radar;
+public import web.controls.charts.scatter;
+public import web.controls.charts.timeline;
+public import web.controls.charts.treemap;

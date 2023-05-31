@@ -1,6 +1,6 @@
-module uim.controls.chart.events;
+module web.controls.chart.events;
 
-public import uim.controls;
+public import web.controls;
 
 class DChartEventsElement {
   this() {};

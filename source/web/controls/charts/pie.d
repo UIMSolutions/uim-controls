@@ -1,7 +1,7 @@
-module uim.controls.charts.pie;
+module web.controls.charts.pie;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMPieChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMPieChartControl"));

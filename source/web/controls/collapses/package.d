@@ -1,3 +1,3 @@
-module uim.controls.collapses;
+module web.controls.collapses;
 
-public import uim.controls.collapses.collapse;
+public import web.controls.collapses.collapse;

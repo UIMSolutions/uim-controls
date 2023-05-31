@@ -1,7 +1,7 @@
-module uim.controls.charts.polar;
+module web.controls.charts.polar;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMPolarChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMPolarChartControl"));

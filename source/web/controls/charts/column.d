@@ -1,7 +1,7 @@
-module uim.controls.charts.column;
+module web.controls.charts.column;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMColumnChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMColumnChartControl"));

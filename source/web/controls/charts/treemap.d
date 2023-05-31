@@ -1,7 +1,7 @@
-module uim.controls.charts.treemap;
+module web.controls.charts.treemap;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTreemapChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMTreemapChartControl"));

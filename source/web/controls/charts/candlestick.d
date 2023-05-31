@@ -1,7 +1,7 @@
-module uim.controls.charts.candlestick;
+module web.controls.charts.candlestick;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCandlestickChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMCandlestickChartControl"));

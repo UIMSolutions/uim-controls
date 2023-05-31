@@ -1,7 +1,7 @@
-module uim.controls.charts.circle;
+module web.controls.charts.circle;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCircleChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMCircleChartControl"));

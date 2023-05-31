@@ -1,7 +1,7 @@
-module uim.controls.collapses.collapse;
+module web.controls.collapses.collapse;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCollapseControl : DUIMDivControl {
   mixin(ControlThis!("UIMCollapseControl"));

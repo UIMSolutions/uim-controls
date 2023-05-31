@@ -1,7 +1,7 @@
-module uim.controls.charts.line;
+module web.controls.charts.line;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMLineChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMLineChartControl"));

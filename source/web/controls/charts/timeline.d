@@ -1,7 +1,7 @@
-module uim.controls.charts.timeline;
+module web.controls.charts.timeline;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTimelineChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMTimelineChartControl"));

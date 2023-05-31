@@ -1,7 +1,7 @@
-module uim.controls.charts.radar;
+module web.controls.charts.radar;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMRadarChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMRadarChartControl"));

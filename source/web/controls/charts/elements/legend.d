@@ -1,7 +1,7 @@
-module uim.controls.charts.elements.legend;
+module web.controls.charts.elements.legend;
 
 @safe:
-public import uim.controls;
+public import web.controls;
 
 class DUIMChartLegendElement {
   this() {};

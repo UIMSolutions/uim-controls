@@ -1,7 +1,7 @@
-module uim.controls.charts.scatter;
+module web.controls.charts.scatter;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMScatterChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMScatterChartControl"));

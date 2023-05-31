@@ -1,1 +1,1 @@
-# Package 📦 uim.controls.collapses
+# Package 📦 web.controls.collapses

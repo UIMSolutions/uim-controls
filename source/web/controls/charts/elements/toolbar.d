@@ -1,6 +1,6 @@
-module uim.controls.chart.toolbar;
+module web.controls.chart.toolbar;
 
-public import uim.controls;
+public import web.controls;
 
 class DChartToolbarElement {
   this() {};

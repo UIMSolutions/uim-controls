@@ -1,3 +1,3 @@
-module uim.controls.charts.elements;
+module web.controls.charts.elements;
 
-public import uim.controls.charts.elements.legend;
+public import web.controls.charts.elements.legend;

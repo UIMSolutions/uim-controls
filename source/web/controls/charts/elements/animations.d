@@ -1,6 +1,6 @@
-module uim.controls.chart.animations;
+module web.controls.chart.animations;
 
-public import uim.controls;
+public import web.controls;
 
 class DChartAnimationElement {
   this() {};

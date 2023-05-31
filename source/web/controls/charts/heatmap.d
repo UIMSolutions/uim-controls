@@ -1,7 +1,7 @@
-module uim.controls.charts.heatmap;
+module web.controls.charts.heatmap;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMHeatmapChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMHeatmapChartControl"));
