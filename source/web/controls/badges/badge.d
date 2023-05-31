@@ -1,7 +1,7 @@
-module uim.controls.badges.badge;
+module web.controls.badges.badge;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMBadgeControl : DUIMControl {
   mixin(ControlThis!("UIMBadgeControl"));

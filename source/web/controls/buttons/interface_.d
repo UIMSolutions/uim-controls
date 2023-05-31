@@ -1,6 +1,6 @@
-module uim.controls.buttons.interface_;
+module web.controls.buttons.interface_;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 interface IButton {}

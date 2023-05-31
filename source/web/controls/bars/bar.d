@@ -1,7 +1,7 @@
-module uim.controls.bars.bar;
+module web.controls.bars.bar;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMBarControl : DUIMDivControl {
   mixin(ControlThis!("UIMBarControl"));

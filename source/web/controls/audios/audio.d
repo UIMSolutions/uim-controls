@@ -1,7 +1,7 @@
-module uim.controls.audios.audio;
+module web.controls.audios.audio;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMAudioControl : DUIMControl {
   mixin(ControlThis!("UIMAudioControl"));

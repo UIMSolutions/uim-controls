@@ -1,4 +1,4 @@
-module uim.controls.badges.customdata;
+module web.controls.badges.customdata;
 
 @safe: 
-import uim.controls;
+import web.controls;

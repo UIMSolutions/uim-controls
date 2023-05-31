@@ -1,7 +1,7 @@
-module uim.controls.breadcrumbs.breadcrumb;
+module web.controls.breadcrumbs.breadcrumb;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMBreadcrumbControl : DUIMControl, IBreadcrumbs {
   mixin(ControlThis!("UIMBreadcrumbControl"));

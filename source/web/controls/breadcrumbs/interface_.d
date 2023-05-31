@@ -1,6 +1,6 @@
-module uim.controls.breadcrumbs.interface_;
+module web.controls.breadcrumbs.interface_;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 interface IBreadcrumbs {}

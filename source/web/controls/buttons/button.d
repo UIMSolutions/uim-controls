@@ -1,7 +1,7 @@
-module uim.controls.buttons.button;
+module web.controls.buttons.button;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMButtonControl : DUIMControl, IButton {
   mixin(ControlThis!("UIMButtonControl"));

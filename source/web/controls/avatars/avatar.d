@@ -1,7 +1,7 @@
-module uim.controls.avatars.avatar;
+module web.controls.avatars.avatar;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMAvatarControl : DUIMControl {
   mixin(ControlThis!("UIMAvatarControl"));

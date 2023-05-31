@@ -1,3 +1,3 @@
-module uim.controls.audios;
+module web.controls.audios;
 
-public import uim.controls.audios.audio;
+public import web.controls.audios.audio;

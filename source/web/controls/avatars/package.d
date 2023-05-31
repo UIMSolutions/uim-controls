@@ -1,4 +1,4 @@
-module uim.controls.avatars;
+module web.controls.avatars;
 
-public import uim.controls.avatars.avatar;
-public import uim.controls.avatars.list;
+public import web.controls.avatars.avatar;
+public import web.controls.avatars.list;

@@ -1,7 +1,7 @@
-module uim.controls.buttons.checkbox;
+module web.controls.buttons.checkbox;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCheckboxButtonControl : DUIMControl {
   mixin(ControlThis!("UIMCheckboxButtonControl"));

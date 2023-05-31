@@ -1,3 +1,3 @@
-module uim.controls.bars;
+module web.controls.bars;
 
-public import uim.controls.bars.bar;
+public import web.controls.bars.bar;

@@ -1,1 +1,1 @@
-# Package 📦 uim.controls.avatars
+# Package 📦 web.controls.avatars
