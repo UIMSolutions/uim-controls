@@ -1,7 +1,7 @@
-module uim.controls.lists.items.custom;
+module web.controls.lists.items.custom;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCustomListItemControl : DUIMControl {
   mixin(ControlThis!("UIMCustomListItemControl"));

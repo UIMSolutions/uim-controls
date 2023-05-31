@@ -1,7 +1,7 @@
-module uim.controls.loaders.dots;
+module web.controls.loaders.dots;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDotsLoaderControl : DUIMLoaderControl {
   mixin(ControlThis!("UIMDotsLoader"));

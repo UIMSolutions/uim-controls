@@ -1,7 +1,7 @@
-module uim.controls.lists.items.badge;
+module web.controls.lists.items.badge;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 // Simple listitem with a badge at start or end or both. 
 class DUIMBadgeListItemControl : DUIMControl {

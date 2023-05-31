@@ -1,10 +1,10 @@
-module uim.controls.loaders;
+module web.controls.loaders;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
-public import uim.controls.loaders.loader;
+public import web.controls.loaders.loader;
 
-public import uim.controls.loaders.dots;
-public import uim.controls.loaders.growing;
-public import uim.controls.loaders.rotating;
+public import web.controls.loaders.dots;
+public import web.controls.loaders.growing;
+public import web.controls.loaders.rotating;

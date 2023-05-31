@@ -1,7 +1,7 @@
-module uim.controls.lists.items.icon;
+module web.controls.lists.items.icon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 // Simple listitem with a Icon at start or end or both. 
 class DUIMIconListItemControl : DUIMControl {

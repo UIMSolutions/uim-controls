@@ -1,4 +1,4 @@
-module uim.controls.links;
+module web.controls.links;
 
 // Main
-public import uim.controls.links.link;
+public import web.controls.links.link;

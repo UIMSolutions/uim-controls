@@ -1,7 +1,7 @@
-module  uim.controls.lists.items.entity;
+module  web.controls.lists.items.entity;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMEntityListItemControl : DUIMListItemControl {
   mixin(ControlThis!("UIMEntityListItemControl"));

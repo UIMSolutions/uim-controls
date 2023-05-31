@@ -1,11 +1,11 @@
-module uim.controls.lists;
+module web.controls.lists;
 
 // Main
-public import uim.controls.lists.list;
+public import web.controls.lists.list;
 
 // Package
-public import uim.controls.lists.items;
+public import web.controls.lists.items;
 
 // Module
-public import uim.controls.lists.entities;
-public import uim.controls.lists.header;
+public import web.controls.lists.entities;
+public import web.controls.lists.header;

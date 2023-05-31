@@ -1,7 +1,7 @@
-module uim.controls.lists.items.avatar;
+module web.controls.lists.items.avatar;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 // Simple listitem with a avatar at start or end or both. 
 class DUIMAvatarListItemControl : DUIMListItemControl {

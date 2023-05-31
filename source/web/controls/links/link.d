@@ -1,7 +1,7 @@
-module uim.controls.links.link;
+module web.controls.links.link;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 // A LinkControl is a hyperlink control which is used to navigate to other pages or to trigger actions.
 class DUIMLinkControl : DUIMControl {

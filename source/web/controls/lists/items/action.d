@@ -1,7 +1,7 @@
-module uim.controls.lists.items.action;
+module web.controls.lists.items.action;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 // This control provides the text feature, which enables you to set a center aligned text. 
 // This is a simple list item for triggering actions. 

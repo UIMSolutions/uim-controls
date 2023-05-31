@@ -1,3 +1,3 @@
-module uim.controls.maps;
+module web.controls.maps;
 
-public import uim.controls.maps.map;
+public import web.controls.maps.map;

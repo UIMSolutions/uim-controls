@@ -1,7 +1,7 @@
-module uim.controls.maps.map;
+module web.controls.maps.map;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMMapControl : DUIMControl {
   mixin(ControlThis!("UIMMapControl"));

@@ -1,7 +1,7 @@
-module  uim.controls.lists.items.item;
+module  web.controls.lists.items.item;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 interface IListItem {
 }

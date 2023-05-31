@@ -1,7 +1,7 @@
-module uim.controls.lists.header;
+module web.controls.lists.header;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMListHeaderControl : DUIMListControl {
   mixin(ControlThis!("UIMListHeaderControl"));

@@ -1,7 +1,7 @@
-module uim.controls.loaders.growing;
+module web.controls.loaders.growing;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMGrowingLoaderControl : DUIMLoaderControl {
   mixin(ControlThis!("UIMGrowingLoader"));

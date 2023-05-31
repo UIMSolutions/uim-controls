@@ -1,8 +1,8 @@
-module uim.controls.layouts;
+module web.controls.layouts;
 
-public import uim.controls.layouts.layout;
+public import web.controls.layouts.layout;
 
-public import uim.controls.layouts.col;
-public import uim.controls.layouts.container;
-public import uim.controls.layouts.flexbox;
-public import uim.controls.layouts.grid;
+public import web.controls.layouts.col;
+public import web.controls.layouts.container;
+public import web.controls.layouts.flexbox;
+public import web.controls.layouts.grid;

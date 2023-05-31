@@ -1,7 +1,7 @@
-module uim.controls.loaders.rotating;
+module web.controls.loaders.rotating;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMRotatingLoaderControl : DUIMLoaderControl {
   mixin(ControlThis!("UIMRotatingLoader"));

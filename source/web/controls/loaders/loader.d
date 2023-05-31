@@ -1,7 +1,7 @@
-module uim.controls.loaders.loader;
+module web.controls.loaders.loader;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMLoaderControl : DUIMControl {
   mixin(ControlThis!("UIMLoader"));

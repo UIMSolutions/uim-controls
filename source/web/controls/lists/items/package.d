@@ -1,6 +1,6 @@
-module uim.controls.lists.items;
+module web.controls.lists.items;
 
-public import uim.controls.lists.items.item;
+public import web.controls.lists.items.item;
 
-public import uim.controls.lists.items.action;
-public import uim.controls.lists.items.entity;
+public import web.controls.lists.items.action;
+public import web.controls.lists.items.entity;
