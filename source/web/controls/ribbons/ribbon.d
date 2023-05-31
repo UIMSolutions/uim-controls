@@ -1,7 +1,7 @@
-module uim.controls.ribbons.ribbon;
+module web.controls.ribbons.ribbon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMRibbonControl : DUIMControl {
   mixin(ControlThis!("UIMRibbon"));

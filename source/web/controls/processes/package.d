@@ -1,3 +1,3 @@
-module uim.controls.processes;
+module web.controls.processes;
 
-public import uim.controls.processes.process;
+public import web.controls.processes.process;

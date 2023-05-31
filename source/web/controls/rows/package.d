@@ -1,6 +1,6 @@
-module uim.controls.rows;
+module web.controls.rows;
 
 // Main
-public import uim.controls.rows.row;
-public import uim.controls.rows.cards;
-public import uim.controls.rows.deck;
+public import web.controls.rows.row;
+public import web.controls.rows.cards;
+public import web.controls.rows.deck;

@@ -1,7 +1,7 @@
-module uim.controls.placeholders;
+module web.controls.placeholders;
 
 // main control
-public import uim.controls.placeholders.placeholder;
+public import web.controls.placeholders.placeholder;
 
 // Additional control 
-public import uim.controls.placeholders.image;
+public import web.controls.placeholders.image;

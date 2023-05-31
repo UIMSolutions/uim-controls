@@ -1,7 +1,7 @@
-module uim.controls.progresses.bar;
+module web.controls.progresses.bar;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMProgressBarControl : DUIMControl {
   mixin(ControlThis!("UIMProgressBarControl"));

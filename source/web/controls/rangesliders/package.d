@@ -1,4 +1,4 @@
-module uim.controls.rangesliders;
+module web.controls.rangesliders;
 
 // Main
-public import uim.controls.rangesliders.rangeslider;
+public import web.controls.rangesliders.rangeslider;

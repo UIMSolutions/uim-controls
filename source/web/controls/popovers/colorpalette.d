@@ -1,1 +1,1 @@
-module uim.controls.popovers.colorpalette;
+module web.controls.popovers.colorpalette;

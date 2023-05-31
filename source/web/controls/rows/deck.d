@@ -1,7 +1,7 @@
-module uim.controls.rows.deck;
+module web.controls.rows.deck;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMRowDeckControl : DUIMRowControl {
   mixin(ControlThis!("UIMRowDeck"));

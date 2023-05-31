@@ -1,7 +1,7 @@
-module uim.controls.panels.panel;
+module web.controls.panels.panel;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMPanelControl : DUIMControl {
   mixin(ControlThis!("UIMPanelControl"));

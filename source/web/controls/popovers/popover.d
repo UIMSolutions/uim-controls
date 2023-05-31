@@ -1,7 +1,7 @@
-module uim.controls.popovers.popover;
+module web.controls.popovers.popover;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMPopoverControl : DUIMControl {
   mixin(ControlThis!("UIMPopoverControl"));

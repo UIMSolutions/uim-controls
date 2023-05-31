@@ -1,7 +1,7 @@
-module uim.controls.pictures.picture;
+module web.controls.pictures.picture;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMPictureControl : DUIMLayoutControl {
   mixin(ControlThis!("UIMPictureControl"));

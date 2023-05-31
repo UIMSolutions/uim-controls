@@ -1,7 +1,7 @@
-module uim.controls.progresses.progress;
+module web.controls.progresses.progress;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMProgressControl : DUIMControl {
   mixin(ControlThis!("UIMProgress"));

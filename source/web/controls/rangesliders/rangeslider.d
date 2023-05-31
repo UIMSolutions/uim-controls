@@ -1,7 +1,7 @@
-module uim.controls.rangesliders.rangeslider;
+module web.controls.rangesliders.rangeslider;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMRangeSliderControl : DUIMControl {
   mixin(ControlThis!("UIMRangeSlider"));

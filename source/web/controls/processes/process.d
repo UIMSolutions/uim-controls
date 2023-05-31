@@ -1,7 +1,7 @@
-module uim.controls.processes.process;
+module web.controls.processes.process;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMProcessControl : DUIMControl {
   mixin(ControlThis!("UIMProcessControl"));

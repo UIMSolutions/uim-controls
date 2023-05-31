@@ -1,3 +1,3 @@
-module uim.controls.popovers;
+module web.controls.popovers;
 
-public import uim.controls.popovers.popover;
+public import web.controls.popovers.popover;

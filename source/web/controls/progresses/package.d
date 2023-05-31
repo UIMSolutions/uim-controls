@@ -1,7 +1,7 @@
-module uim.controls.progresses;
+module web.controls.progresses;
 
 // Main
-public import uim.controls.progresses.progress;
+public import web.controls.progresses.progress;
 
 // Additional
-public import uim.controls.progresses.bar;
+public import web.controls.progresses.bar;

@@ -1,7 +1,7 @@
-module uim.controls.placeholders.image;
+module web.controls.placeholders.image;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMPlaceHolderImageControl : DUIMControl {
   mixin(ControlThis!("UIMPlaceHolderImageControl"));

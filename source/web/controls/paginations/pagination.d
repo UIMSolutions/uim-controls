@@ -1,7 +1,7 @@
-module uim.controls.paginations.pagination;
+module web.controls.paginations.pagination;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMPaginationControl : DUIMControl {
   mixin(ControlThis!("UIMPaginationControl"));

@@ -1,4 +1,4 @@
-module uim.controls.panels;
+module web.controls.panels;
 
 // Main
-public import uim.controls.panels.panel;
+public import web.controls.panels.panel;

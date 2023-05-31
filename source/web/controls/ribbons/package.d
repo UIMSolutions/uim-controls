@@ -1,4 +1,4 @@
-module uim.controls.ribbons;
+module web.controls.ribbons;
 
 // Main
-public import uim.controls.ribbons.ribbon;
+public import web.controls.ribbons.ribbon;

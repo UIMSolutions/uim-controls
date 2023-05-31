@@ -1,6 +1,6 @@
-module uim.controls.paginations;
+module web.controls.paginations;
 
-public import uim.controls.paginations.pagination;
+public import web.controls.paginations.pagination;
 
-public import uim.controls.paginations.item;
-public import uim.controls.paginations.link;
+public import web.controls.paginations.item;
+public import web.controls.paginations.link;

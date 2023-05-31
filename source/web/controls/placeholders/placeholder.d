@@ -1,7 +1,7 @@
-module uim.controls.placeholders.placeholder;
+module web.controls.placeholders.placeholder;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMPlaceHolderControl : DUIMControl {
   mixin(ControlThis!("UIMPlaceHolderControl"));
