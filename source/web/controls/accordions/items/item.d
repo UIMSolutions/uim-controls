@@ -1,7 +1,7 @@
-module uim.controls.accordions.items.item;
+module web.controls.accordions.items.item;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 interface IAccordionItem {
 }

@@ -1,7 +1,7 @@
-module uim.controls.control;
+module web.controls.control;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 // Base contol interface 
 interface IControl {

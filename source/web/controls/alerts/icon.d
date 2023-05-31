@@ -1,7 +1,7 @@
-module uim.controls.alerts.icon;
+module web.controls.alerts.icon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMAlertIconControl : DUIMDivControl {
   mixin(ControlThis!("UIMAlertIconControl"));

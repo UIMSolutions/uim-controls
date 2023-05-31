@@ -1,7 +1,7 @@
-module uim.controls.div;
+module web.controls.div;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDivControl : DUIMControl {
   mixin(ControlThis!("UIMDivControl"));

@@ -1,1 +1,1 @@
-module uim.controls.animations.animation;
+module web.controls.animations.animation;

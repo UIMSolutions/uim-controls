@@ -1,1 +1,1 @@
-module uim.controls.accordions.components.header;
+module web.controls.accordions.components.header;

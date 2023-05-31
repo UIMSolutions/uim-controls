@@ -1,7 +1,7 @@
-module uim.controls.accordions.accordion;
+module web.controls.accordions.accordion;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMAccordionControl : DUIMControl {
   mixin(ControlThis!("UIMAccordionControl"));

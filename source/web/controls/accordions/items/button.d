@@ -1,7 +1,7 @@
-module uim.controls.accordions.items.button;
+module web.controls.accordions.items.button;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMAccordionButtonControl : DUIMControl, IAccordionItem {
   mixin(ControlThis!("UIMAccordionButtonControl"));

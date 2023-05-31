@@ -1,5 +1,5 @@
-module uim.controls.accordions.items;
+module web.controls.accordions.items;
 
 // Main control
-public import uim.controls.accordions.items.button;
-public import uim.controls.accordions.items.item;
+public import web.controls.accordions.items.button;
+public import web.controls.accordions.items.item;

@@ -1,4 +1,4 @@
-module uim.controls.accordions.components;
+module web.controls.accordions.components;
 
 // Main control
-public import uim.controls.accordions.components.header;
+public import web.controls.accordions.components.header;

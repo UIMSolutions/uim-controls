@@ -1,1 +1,1 @@
-# Package 📦 uim.controls.accordions
+# Package 📦 web.controls.accordions

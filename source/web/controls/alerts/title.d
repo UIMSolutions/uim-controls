@@ -1,7 +1,7 @@
-module uim.controls.alerts.title;
+module web.controls.alerts.title;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMAlertTitleControl : DUIMControl {
   mixin(ControlThis!("UIMAlertTitleControl"));

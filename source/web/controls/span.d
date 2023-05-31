@@ -1,7 +1,7 @@
-module uim.controls.span;
+module web.controls.span;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSpanControl : DUIMControl {
   mixin(ControlThis!("UIMSpanControl"));

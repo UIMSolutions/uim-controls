@@ -1,9 +1,9 @@
-module uim.controls.alerts;
+module web.controls.alerts;
 
 // Main
-public import uim.controls.alerts.alert;
+public import web.controls.alerts.alert;
 
 // Additional
-public import uim.controls.alerts.icon;
-public import uim.controls.alerts.link;
-public import uim.controls.alerts.title;
+public import web.controls.alerts.icon;
+public import web.controls.alerts.link;
+public import web.controls.alerts.title;
