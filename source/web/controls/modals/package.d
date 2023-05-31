@@ -1,13 +1,13 @@
-module uim.controls.modals;
+module web.controls.modals;
 
 // Maincontrol
-public import uim.controls.modals.modal;
+public import web.controls.modals.modal;
 
 // Subcontrols
-public import uim.controls.modals.body_;
-public import uim.controls.modals.button;
-public import uim.controls.modals.content;
-public import uim.controls.modals.dialog;
-public import uim.controls.modals.footer;
-public import uim.controls.modals.header;
-public import uim.controls.modals.title;
+public import web.controls.modals.body_;
+public import web.controls.modals.button;
+public import web.controls.modals.content;
+public import web.controls.modals.dialog;
+public import web.controls.modals.footer;
+public import web.controls.modals.header;
+public import web.controls.modals.title;

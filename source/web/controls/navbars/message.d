@@ -1,7 +1,7 @@
-module uim.controls.navbars.messages;
+module web.controls.navbars.messages;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMMessagesControl : DUIMControl {
   mixin(ControlThis!("UIMMessagesControl"));

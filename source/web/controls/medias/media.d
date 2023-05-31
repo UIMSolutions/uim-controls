@@ -1,7 +1,7 @@
-module uim.controls.medias.media;
+module web.controls.medias.media;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMMediaControl : DUIMControl {
   mixin(ControlThis!("UIMMediaControl")); 

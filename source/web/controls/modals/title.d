@@ -1,7 +1,7 @@
-module uim.controls.modals.title;
+module web.controls.modals.title;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMModalTitleControl : DUIMControl {
   mixin(ControlThis!("UIMModalTitleControl"));

@@ -1,7 +1,7 @@
-module uim.controls.navbars.image;
+module web.controls.navbars.image;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMNavbarBrandImageControl : DUIMDivControl {
   mixin(ControlThis!("UIMNavbarBrandImageControl"));

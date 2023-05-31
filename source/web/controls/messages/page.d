@@ -1,1 +1,1 @@
-module uim.controls.messages.page;
+module web.controls.messages.page;

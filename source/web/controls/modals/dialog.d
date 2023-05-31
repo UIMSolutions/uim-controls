@@ -1,7 +1,7 @@
-module uim.controls.modals.dialog;
+module web.controls.modals.dialog;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMModalDialogControl : DUIMControl {
   mixin(ControlThis!("UIMModalDialogControl"));

@@ -1,7 +1,7 @@
-module uim.controls.modals.content;
+module web.controls.modals.content;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMModalContentControl : DUIMControl {
   mixin(ControlThis!("UIMModalContentControl"));

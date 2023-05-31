@@ -1,7 +1,7 @@
-module uim.controls.modals.header;
+module web.controls.modals.header;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMModalHeaderControl : DUIMControl {
   mixin(ControlThis!("UIMModalHeaderControl"));

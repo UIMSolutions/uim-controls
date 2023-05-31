@@ -1,13 +1,13 @@
-module uim.controls.navbars;
+module web.controls.navbars;
 
 // Main
-public import uim.controls.navbars.navbar;
+public import web.controls.navbars.navbar;
 
 // Additional
-public import uim.controls.navbars.brand;
-public import uim.controls.navbars.collapse;
-public import uim.controls.navbars.image;
-public import uim.controls.navbars.messages;
-public import uim.controls.navbars.nav;
-public import uim.controls.navbars.toggler;
-public import uim.controls.navbars.usermenu;
+public import web.controls.navbars.brand;
+public import web.controls.navbars.collapse;
+public import web.controls.navbars.image;
+public import web.controls.navbars.messages;
+public import web.controls.navbars.nav;
+public import web.controls.navbars.toggler;
+public import web.controls.navbars.usermenu;

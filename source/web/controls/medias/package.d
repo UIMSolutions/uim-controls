@@ -1,3 +1,3 @@
-module uim.controls.medias;
+module web.controls.medias;
 
-public import uim.controls.medias.media;
+public import web.controls.medias.media;

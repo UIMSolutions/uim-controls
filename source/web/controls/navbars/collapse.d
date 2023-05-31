@@ -1,7 +1,7 @@
-module uim.controls.navbars.collapse;
+module web.controls.navbars.collapse;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMNavbarCollapseControl : DUIMCollapseControl {
   mixin(ControlThis!("UIMNavbarCollapseControl"));

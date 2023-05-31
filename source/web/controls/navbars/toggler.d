@@ -1,4 +1,4 @@
-module uim.controls.navbars.toggler;
+module web.controls.navbars.toggler;
 
 @safe: 
-import uim.controls;
+import web.controls;

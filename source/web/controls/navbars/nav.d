@@ -1,7 +1,7 @@
-module uim.controls.navbars.nav;
+module web.controls.navbars.nav;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMNavbarNavControl : DUIMControl {
   mixin(ControlThis!("UIMNavbarNavControl"));
