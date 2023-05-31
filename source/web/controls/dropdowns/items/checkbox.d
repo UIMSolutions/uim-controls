@@ -1,7 +1,7 @@
-module uim.controls.dropdowns.items.checkbox;
+module web.controls.dropdowns.items.checkbox;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropdownCheckboxControl : DUIMDropdownItemControl {
   mixin(ControlThis!("UIMDropdownCheckboxControl"));

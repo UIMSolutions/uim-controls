@@ -1,3 +1,3 @@
-module uim.controls.dropzones;
+module web.controls.dropzones;
 
-public import uim.controls.dropzones.dropzone;
+public import web.controls.dropzones.dropzone;

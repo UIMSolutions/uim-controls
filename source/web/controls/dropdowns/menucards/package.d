@@ -1,1 +1,1 @@
-module uim.controls.dropdowns.menucards;
+module web.controls.dropdowns.menucards;

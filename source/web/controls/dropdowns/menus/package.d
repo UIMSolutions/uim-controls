@@ -1,3 +1,3 @@
-module uim.controls.dropdowns.menus;
+module web.controls.dropdowns.menus;
 
-public import uim.controls.dropdowns.menus.menu;
+public import web.controls.dropdowns.menus.menu;

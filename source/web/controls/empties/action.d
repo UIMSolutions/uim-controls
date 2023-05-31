@@ -1,7 +1,7 @@
-module uim.controls.empties.action;
+module web.controls.empties.action;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMEmptyActionControl : DUIMEmptyItemControl {
   mixin(ControlThis!("UIMEmptyActionControl"));

@@ -1,7 +1,7 @@
-module uim.controls.dropdowns.toggle;
+module web.controls.dropdowns.toggle;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropdownToggleControl : DUIMControl {
   mixin(ControlThis!("UIMDropdownToggleControl"));

@@ -1,7 +1,7 @@
-module uim.controls.dropdowns.columns;
+module web.controls.dropdowns.columns;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropdownMenuColumnsControl : DUIMDivControl {
   mixin(ControlThis!("UIMDropdownMenuColumnsControl"));

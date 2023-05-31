@@ -1,7 +1,7 @@
-module uim.controls.dropdowns.items.card;
+module web.controls.dropdowns.items.card;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropdownCardControl : DUIMDropdownItemControl {
   mixin(ControlThis!("UIMDropdownCardControl"));

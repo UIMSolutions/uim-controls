@@ -1,7 +1,7 @@
-module uim.controls.dropdowns.items.item;
+module web.controls.dropdowns.items.item;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropdownItemControl : DUIMControl {
   mixin(ControlThis!("UIMDropdownItemControl"));

@@ -1,7 +1,7 @@
-module uim.controls.dropdowns.items.divider;
+module web.controls.dropdowns.items.divider;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropdownDividerControl : DUIMDropdownItemControl {
   mixin(ControlThis!("UIMDropdownDividerControl"));

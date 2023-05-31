@@ -1,7 +1,7 @@
-module uim.controls.dropzones.message;
+module web.controls.dropzones.message;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropzoneMessageControl : DUIMDivControl {
   mixin(ControlThis!("UIMDropzoneMessageControl"));

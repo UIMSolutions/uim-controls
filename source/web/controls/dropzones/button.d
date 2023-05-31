@@ -1,7 +1,7 @@
-module uim.controls.dropzones.button;
+module web.controls.dropzones.button;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropzoneButtonControl : DUIMButtonControl {
   mixin(ControlThis!("UIMDropzoneButtonControl"));

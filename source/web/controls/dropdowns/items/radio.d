@@ -1,7 +1,7 @@
-module uim.controls.dropdowns.items.radio;
+module web.controls.dropdowns.items.radio;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDropdownRadioControl : DUIMDropdownItemControl {
   mixin(ControlThis!("UIMDropdownRadioControl"));

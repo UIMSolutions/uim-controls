@@ -1,13 +1,13 @@
-module uim.controls.dropdowns.items;
+module web.controls.dropdowns.items;
 
 // Base
-public import uim.controls.dropdowns.items.item;
+public import web.controls.dropdowns.items.item;
 
 // Variations
-public import uim.controls.dropdowns.items.card;
-public import uim.controls.dropdowns.items.checkbox;
-public import uim.controls.dropdowns.items.divider;
-public import uim.controls.dropdowns.items.form;
-public import uim.controls.dropdowns.items.header;
-public import uim.controls.dropdowns.items.radio;
-public import uim.controls.dropdowns.items.text;
+public import web.controls.dropdowns.items.card;
+public import web.controls.dropdowns.items.checkbox;
+public import web.controls.dropdowns.items.divider;
+public import web.controls.dropdowns.items.form;
+public import web.controls.dropdowns.items.header;
+public import web.controls.dropdowns.items.radio;
+public import web.controls.dropdowns.items.text;
