@@ -1,7 +1,7 @@
-module uim.controls.carousels.dashboard;
+module web.controls.carousels.dashboard;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDashboardControl : DUIMControl {
   mixin(ControlThis!("UIMDashboard"));

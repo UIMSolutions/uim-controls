@@ -1,4 +1,4 @@
-module uim.controls.columns;
+module web.controls.columns;
 
 // Main
-public import uim.controls.columns.column;
+public import web.controls.columns.column;

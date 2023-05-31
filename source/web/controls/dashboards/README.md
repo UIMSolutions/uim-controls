@@ -1,1 +1,1 @@
-# Package 📦 uim.controls.dashboards
+# Package 📦 web.controls.dashboards

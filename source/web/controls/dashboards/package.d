@@ -1,3 +1,3 @@
-module uim.controls.dashboards;
+module web.controls.dashboards;
 
-public import uim.controls.carousels.dashboard;
+public import web.controls.carousels.dashboard;

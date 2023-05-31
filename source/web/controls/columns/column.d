@@ -1,7 +1,7 @@
-module uim.controls.columns.column;
+module web.controls.columns.column;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMColumnControl : DUIMControl {
   mixin(ControlThis!("UIMColumnControl"));

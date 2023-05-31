@@ -1,1 +1,1 @@
-module uim.controls.colorpalettes;
+module web.controls.colorpalettes;

@@ -1,9 +1,9 @@
-module uim.controls.datagrids;
+module web.controls.datagrids;
 
 // Main
-public import uim.controls.datagrids.datagrid;
+public import web.controls.datagrids.datagrid;
 
 // Additional
-public import uim.controls.datagrids.content;
-public import uim.controls.datagrids.item;
-public import uim.controls.datagrids.title;
+public import web.controls.datagrids.content;
+public import web.controls.datagrids.item;
+public import web.controls.datagrids.title;

@@ -1,7 +1,7 @@
-module uim.controls.datagrids.item;
+module web.controls.datagrids.item;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDatagridItemControl : DUIMDivControl {
   mixin(ControlThis!("UIMDatagridItem"));

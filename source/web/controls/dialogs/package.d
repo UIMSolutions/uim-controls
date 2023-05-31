@@ -1,3 +1,3 @@
-module uim.controls.dialogs;
+module web.controls.dialogs;
 
-public import uim.controls.dialogs.dialog;
+public import web.controls.dialogs.dialog;

@@ -1,5 +1,5 @@
-module uim.controls.datas;
+module web.controls.datas;
 
-public import uim.controls.datas.data;
-public import uim.controls.datas.list;
-public import uim.controls.datas.table;
+public import web.controls.datas.data;
+public import web.controls.datas.list;
+public import web.controls.datas.table;

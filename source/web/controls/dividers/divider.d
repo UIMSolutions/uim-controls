@@ -1,7 +1,7 @@
-module uim.controls.dividers.divider;
+module web.controls.dividers.divider;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDividerControl : DUIMDivControl {
   mixin(ControlThis!("UIMDividerControl"));

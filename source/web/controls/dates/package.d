@@ -1,3 +1,3 @@
-module uim.controls.dates;
+module web.controls.dates;
 
-public import uim.controls.dates.date;
+public import web.controls.dates.date;

@@ -1,4 +1,4 @@
-module uim.controls.dividers;
+module web.controls.dividers;
 
 // Main
-public import uim.controls.dividers.divider;
+public import web.controls.dividers.divider;

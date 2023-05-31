@@ -1,7 +1,7 @@
-module uim.controls.colorpalettes.colorpalette;
+module web.controls.colorpalettes.colorpalette;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMColorPaletteControl : DUIMControl {
   mixin(ControlThis!("UIMColorPaletteControl"));

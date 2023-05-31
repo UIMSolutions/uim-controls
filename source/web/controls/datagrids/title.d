@@ -1,7 +1,7 @@
-module uim.controls.datagrids.title;
+module web.controls.datagrids.title;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDatagridTitleControl : DUIMControl {
   mixin(ControlThis!("UIMDatagridTitleControl"));
