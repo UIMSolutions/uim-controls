@@ -1,3 +1,3 @@
-module uim.controls.calendars;
+module web.controls.calendars;
 
-public import uim.controls.calendars.calendar;
+public import web.controls.calendars.calendar;

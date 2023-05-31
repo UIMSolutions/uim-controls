@@ -1,7 +1,7 @@
-module uim.controls.buttons.radio;
+module web.controls.buttons.radio;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMRadioButtonControl : DUIMControl {
   mixin(ControlThis!("UIMRadioButtonControl"));

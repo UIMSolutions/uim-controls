@@ -1,7 +1,7 @@
-module uim.controls.cards.imagetop;
+module web.controls.cards.imagetop;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCardImagetopControl : DUIMDivControl {
   mixin(ControlThis!("UIMCardImagetopControl"));

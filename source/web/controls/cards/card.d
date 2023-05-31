@@ -1,4 +1,4 @@
-module uim.controls.cards.card;
+module web.controls.cards.card;
 
 /*
 Cards provide a flexible and extensible 
@@ -6,7 +6,7 @@ content container with multiple variants and
 options.
 */
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCardControl : DUIMControl {
   mixin(ControlThis!("UIMCard"));

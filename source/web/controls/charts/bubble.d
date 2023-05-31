@@ -1,7 +1,7 @@
-module uim.controls.charts.bubble;
+module web.controls.charts.bubble;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMBubbleChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMBubbleChartControl"));

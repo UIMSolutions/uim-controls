@@ -1,3 +1,3 @@
-module uim.controls.canvases;
+module web.controls.canvases;
 
-public import uim.controls.canvases.canvas;
+public import web.controls.canvases.canvas;

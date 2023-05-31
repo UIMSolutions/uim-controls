@@ -1,7 +1,7 @@
-module uim.controls.canvases.canvas;
+module web.controls.canvases.canvas;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCanvasControl : DUIMControl {
   mixin(ControlThis!("UIMCanvasControl"));

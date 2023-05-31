@@ -1,7 +1,7 @@
-module uim.controls.charts.area;
+module web.controls.charts.area;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMAreaChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMAreaChartControl"));

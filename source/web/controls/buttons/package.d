@@ -1,10 +1,10 @@
-module uim.controls.buttons;
+module web.controls.buttons;
 
 // Main
-public import uim.controls.buttons.interface_;
-public import uim.controls.buttons.button;
-public import uim.controls.buttons.checkbox;
-public import uim.controls.buttons.radio;
+public import web.controls.buttons.interface_;
+public import web.controls.buttons.button;
+public import web.controls.buttons.checkbox;
+public import web.controls.buttons.radio;
 
 // Container
-public import uim.controls.buttons.list;
+public import web.controls.buttons.list;

@@ -1,7 +1,7 @@
-module uim.controls.cards.footer;
+module web.controls.cards.footer;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCardFooterControl : DUIMControl {
   mixin(ControlThis!("UIMCardFooterControl"));

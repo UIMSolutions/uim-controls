@@ -1,7 +1,7 @@
-module uim.controls.cards.stampicon;
+module web.controls.cards.stampicon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCardStampIconControl : DUIMDivControl {
   mixin(ControlThis!("UIMCardStampIconControl"));

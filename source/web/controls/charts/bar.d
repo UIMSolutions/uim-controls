@@ -1,7 +1,7 @@
-module uim.controls.charts.bar;
+module web.controls.charts.bar;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMBarChartControl : DUIMChartControl {
   mixin(ControlThis!("UIMBarChartControl"));

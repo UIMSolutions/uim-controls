@@ -1,7 +1,7 @@
-module uim.controls.calendars.calendar;
+module web.controls.calendars.calendar;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCalendarControl : DUIMControl {
   mixin(ControlThis!("UIMCalendarControl"));

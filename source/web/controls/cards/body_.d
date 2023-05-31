@@ -1,7 +1,7 @@
-module uim.controls.cards.body_;
+module web.controls.cards.body_;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCardBodyControl : DUIMControl {
   mixin(ControlThis!("UIMCardBodyControl"));

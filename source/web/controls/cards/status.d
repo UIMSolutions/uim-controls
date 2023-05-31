@@ -1,7 +1,7 @@
-module uim.controls.cards.status;
+module web.controls.cards.status;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCardStatusControl : DUIMDivControl {
   mixin(ControlThis!("UIMCardStatusControl"));

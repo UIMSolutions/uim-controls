@@ -1,7 +1,7 @@
-module uim.controls.cards.description;
+module web.controls.cards.description;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCardDescriptionControl : DUIMControl {
   mixin(ControlThis!("UIMCardDescriptionControl"));

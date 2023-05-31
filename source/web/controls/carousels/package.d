@@ -1,6 +1,6 @@
-module uim.controls.carousels;
+module web.controls.carousels;
 
 public {
-import uim.controls.carousels.carousel;
- import uim.controls.carousels.item;
+import web.controls.carousels.carousel;
+ import web.controls.carousels.item;
 }

@@ -1,7 +1,7 @@
-module uim.controls.cards.subtitle;
+module web.controls.cards.subtitle;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMCardSubtitleControl : DUIMSpanControl {
   mixin(ControlThis!("UIMCardSubtitleControl"));

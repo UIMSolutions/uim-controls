@@ -1,1 +1,1 @@
-# Package 📦 uim.controls.carousels
+# Package 📦 web.controls.carousels
