@@ -1,7 +1,7 @@
-module uim.controls.toasts.toast;
+module web.controls.toasts.toast;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMToastControl : DUIMControl {
   mixin(ControlThis!("UIMToast"));

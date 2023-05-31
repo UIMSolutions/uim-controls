@@ -1,8 +1,8 @@
 
-module uim.controls.toolbars.spacer;
+module web.controls.toolbars.spacer;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMToolbarSpacerControl : DUIMControl {
   mixin(ControlThis!("UIMToolbarSpacer"));

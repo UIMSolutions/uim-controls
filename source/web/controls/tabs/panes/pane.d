@@ -1,7 +1,7 @@
-module uim.controls.tabs.panes.pane;
+module web.controls.tabs.panes.pane;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMTabPaneControl : DUIMControl {
   mixin(ControlThis!("UIMTabPane"));

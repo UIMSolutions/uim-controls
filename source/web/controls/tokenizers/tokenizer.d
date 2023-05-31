@@ -1,7 +1,7 @@
-module uim.controls.tokenizers.tokenizer;
+module web.controls.tokenizers.tokenizer;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTokenizerControl : DUIMControl {
   mixin(ControlThis!("UIMTokenizerControl"));

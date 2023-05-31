@@ -1,8 +1,8 @@
-module uim.controls.timelines;
+module web.controls.timelines;
 
-public import uim.controls.timelines.timeline;
-public import uim.controls.timelines.content;
-public import uim.controls.timelines.icon;
-public import uim.controls.timelines.time;
-public import uim.controls.timelines.title;
+public import web.controls.timelines.timeline;
+public import web.controls.timelines.content;
+public import web.controls.timelines.icon;
+public import web.controls.timelines.time;
+public import web.controls.timelines.title;
 

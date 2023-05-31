@@ -1,7 +1,7 @@
-module uim.controls.tabs.tab;
+module web.controls.tabs.tab;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTabControl : DUIMControl {
   mixin(ControlThis!("UIMTab"));

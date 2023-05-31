@@ -1,6 +1,6 @@
-module uim.controls.tiles;
+module web.controls.tiles;
 
-public import uim.controls.tiles.tile;
-public import uim.controls.tiles.content;
-public import uim.controls.tiles.slide;
-public import uim.controls.tiles.container;
+public import web.controls.tiles.tile;
+public import web.controls.tiles.content;
+public import web.controls.tiles.slide;
+public import web.controls.tiles.container;

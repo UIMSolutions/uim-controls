@@ -1,9 +1,9 @@
-module uim.controls.toolbars;
+module web.controls.toolbars;
 
 
 
 // Main (container) control
-public import uim.controls.toolbars.toolbar;
+public import web.controls.toolbars.toolbar;
 
 // Item controls
-public import uim.controls.toolbars.groups;
+public import web.controls.toolbars.groups;

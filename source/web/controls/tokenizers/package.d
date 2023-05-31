@@ -1,3 +1,3 @@
-module uim.controls.tokenizers;
+module web.controls.tokenizers;
 
-public import uim.controls.tokenizers.tokenizer;
+public import web.controls.tokenizers.tokenizer;

@@ -1,7 +1,7 @@
-module uim.controls.tiles.tile;
+module web.controls.tiles.tile;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTileControl : DUIMControl {
   mixin(ControlThis!("UIMTile"));

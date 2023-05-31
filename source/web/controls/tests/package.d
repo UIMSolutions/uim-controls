@@ -1,6 +1,6 @@
-module uim.controls.tests;
+module web.controls.tests;
 
-import uim.controls;
+import web.controls;
 
 template TestControlBooleanAttributes(string objName, string[] attributeNames) {
   const char[] TestControlBooleanAttributes = 

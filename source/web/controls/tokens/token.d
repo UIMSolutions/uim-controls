@@ -1,7 +1,7 @@
-module uim.controls.tokens.token;
+module web.controls.tokens.token;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTokenControl : DUIMControl {
   mixin(ControlThis!("UIMTokenControl"));

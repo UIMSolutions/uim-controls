@@ -1,8 +1,8 @@
-module uim.controls.tabs;
+module web.controls.tabs;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
-public import uim.controls.tabs.panes;
-public import uim.controls.tabs.tab;
-public import uim.controls.tabs.dropdown;
+public import web.controls.tabs.panes;
+public import web.controls.tabs.tab;
+public import web.controls.tabs.dropdown;

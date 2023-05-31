@@ -1,5 +1,5 @@
-module uim.controls.tabs.panes;
+module web.controls.tabs.panes;
 
 // Main
-public import uim.controls.tabs.panes.pane;
+public import web.controls.tabs.panes.pane;
 

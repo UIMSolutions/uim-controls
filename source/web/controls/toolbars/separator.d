@@ -1,7 +1,7 @@
-module uim.controls.toolbars.separator;
+module web.controls.toolbars.separator;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMToolbarSeparatorControl : DUIMControl {
   mixin(ControlThis!("UIMToolbarSeparator"));

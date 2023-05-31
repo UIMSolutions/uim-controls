@@ -1,7 +1,7 @@
-module uim.controls.timelines.title;
+module web.controls.timelines.title;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTimelineTitleControl : DUIMControl {
   mixin(ControlThis!("UIMTimelineTitleControl"));

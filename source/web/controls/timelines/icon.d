@@ -1,7 +1,7 @@
-module uim.controls.timelines.icon;
+module web.controls.timelines.icon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTimelineIconControl : DUIMControl {
   mixin(ControlThis!("UIMTimelineIconControl"));

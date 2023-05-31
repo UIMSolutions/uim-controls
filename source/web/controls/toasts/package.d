@@ -1,3 +1,3 @@
-module uim.controls.toasts;
+module web.controls.toasts;
 
-public import uim.controls.toasts.toast;
+public import web.controls.toasts.toast;

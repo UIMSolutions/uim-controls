@@ -1,3 +1,3 @@
-module uim.controls.tokens;
+module web.controls.tokens;
 
-public import uim.controls.tokens.token;
+public import web.controls.tokens.token;
