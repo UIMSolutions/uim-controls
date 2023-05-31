@@ -1,7 +1,7 @@
-module uim.controls.forms.selectgroups.radio;
+module web.controls.forms.selectgroups.radio;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSelectGroupRadioControl : DUIMControl {
   mixin(ControlThis!("UIMSelectGroupRadioControl"));

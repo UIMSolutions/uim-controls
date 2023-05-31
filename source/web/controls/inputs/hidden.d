@@ -1,7 +1,7 @@
-module uim.controls.inputs.hidden;
+module web.controls.inputs.hidden;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMHiddenInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMHiddenInputControl"));

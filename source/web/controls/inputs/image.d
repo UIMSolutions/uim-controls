@@ -1,7 +1,7 @@
-module uim.controls.inputs.image;
+module web.controls.inputs.image;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMImageInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMImageInputControl"));

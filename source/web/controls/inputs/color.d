@@ -1,7 +1,7 @@
-module uim.controls.inputs.color;
+module web.controls.inputs.color;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMColorInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMColorInputControl"));

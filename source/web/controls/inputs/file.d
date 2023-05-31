@@ -1,7 +1,7 @@
-module uim.controls.inputs.file;
+module web.controls.inputs.file;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFileInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMFileInputControl"));

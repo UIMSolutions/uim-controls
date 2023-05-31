@@ -1,7 +1,7 @@
-module uim.controls.inputs.email;
+module web.controls.inputs.email;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMEmailInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMEmailInputControl"));

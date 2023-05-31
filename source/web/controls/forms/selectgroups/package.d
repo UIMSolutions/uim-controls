@@ -1,8 +1,8 @@
-module uim.controls.forms.selectgroups;
+module web.controls.forms.selectgroups;
 
-public import uim.controls.forms.selectgroups.selectgroup;
+public import web.controls.forms.selectgroups.selectgroup;
 
-public import uim.controls.forms.selectgroups.checkbox;
-public import uim.controls.forms.selectgroups.item;
-public import uim.controls.forms.selectgroups.label;
-public import uim.controls.forms.selectgroups.radio;
+public import web.controls.forms.selectgroups.checkbox;
+public import web.controls.forms.selectgroups.item;
+public import web.controls.forms.selectgroups.label;
+public import web.controls.forms.selectgroups.radio;

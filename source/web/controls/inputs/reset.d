@@ -1,7 +1,7 @@
-module uim.controls.inputs.reset;
+module web.controls.inputs.reset;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMResetInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMResetInputControl"));

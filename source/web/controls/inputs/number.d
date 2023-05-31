@@ -1,7 +1,7 @@
-module uim.controls.inputs.number;
+module web.controls.inputs.number;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMNumberInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMNumberInputControl"));

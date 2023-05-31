@@ -1,7 +1,7 @@
-module uim.controls.inputs.password;
+module web.controls.inputs.password;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMPasswordInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMPasswordInputControl"));

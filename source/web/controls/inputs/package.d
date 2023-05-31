@@ -1,35 +1,35 @@
-module uim.controls.inputs;
+module web.controls.inputs;
 
 // Package
-public import uim.controls.inputs.groups;
-public import uim.controls.inputs.icons;
+public import web.controls.inputs.groups;
+public import web.controls.inputs.icons;
 
 // Main
-public import uim.controls.inputs.input;
+public import web.controls.inputs.input;
 
 // Additional (based on type)
-public import uim.controls.inputs.button;
-public import uim.controls.inputs.checkbox;
-public import uim.controls.inputs.color;
-public import uim.controls.inputs.date;
-public import uim.controls.inputs.datetime;
-public import uim.controls.inputs.email;
-public import uim.controls.inputs.file;
-public import uim.controls.inputs.hidden;
-public import uim.controls.inputs.image;
-public import uim.controls.inputs.month;
-public import uim.controls.inputs.number;
-public import uim.controls.inputs.password;
-public import uim.controls.inputs.radio;
-public import uim.controls.inputs.range;
-public import uim.controls.inputs.reset;
-public import uim.controls.inputs.search;
-public import uim.controls.inputs.submit;
-public import uim.controls.inputs.switch_;
-public import uim.controls.inputs.telephone;
-public import uim.controls.inputs.text;
-public import uim.controls.inputs.time;
-public import uim.controls.inputs.url;
-public import uim.controls.inputs.week;
+public import web.controls.inputs.button;
+public import web.controls.inputs.checkbox;
+public import web.controls.inputs.color;
+public import web.controls.inputs.date;
+public import web.controls.inputs.datetime;
+public import web.controls.inputs.email;
+public import web.controls.inputs.file;
+public import web.controls.inputs.hidden;
+public import web.controls.inputs.image;
+public import web.controls.inputs.month;
+public import web.controls.inputs.number;
+public import web.controls.inputs.password;
+public import web.controls.inputs.radio;
+public import web.controls.inputs.range;
+public import web.controls.inputs.reset;
+public import web.controls.inputs.search;
+public import web.controls.inputs.submit;
+public import web.controls.inputs.switch_;
+public import web.controls.inputs.telephone;
+public import web.controls.inputs.text;
+public import web.controls.inputs.time;
+public import web.controls.inputs.url;
+public import web.controls.inputs.week;
 
-public import uim.controls.inputs.textarea;
+public import web.controls.inputs.textarea;

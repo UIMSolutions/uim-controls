@@ -1,7 +1,7 @@
-module uim.controls.inputs.range;
+module web.controls.inputs.range;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMRangeInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMRangeInputControl"));

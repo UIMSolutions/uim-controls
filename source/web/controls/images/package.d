@@ -1,3 +1,3 @@
-module uim.controls.images;
+module web.controls.images;
 
-public import uim.controls.images.image;
+public import web.controls.images.image;

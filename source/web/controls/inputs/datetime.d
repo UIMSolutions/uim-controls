@@ -1,7 +1,7 @@
-module uim.controls.inputs.datetime;
+module web.controls.inputs.datetime;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMDatetimeInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMDatetimeInputControl"));

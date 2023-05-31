@@ -1,7 +1,7 @@
-module uim.controls.inputs.radio;
+module web.controls.inputs.radio;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMRadioControl : DUIMInputControl {
   mixin(ControlThis!("UIMRadioControl"));

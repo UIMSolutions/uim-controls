@@ -1,7 +1,7 @@
-module uim.controls.inputs.month;
+module web.controls.inputs.month;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMMonthInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMMonthInputControl"));

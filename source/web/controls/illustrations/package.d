@@ -1,3 +1,3 @@
-module uim.controls.illustrations;
+module web.controls.illustrations;
 
-public import uim.controls.illustrations.illustration;
+public import web.controls.illustrations.illustration;

@@ -1,7 +1,7 @@
-module uim.controls.inputs.input;
+module web.controls.inputs.input;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
   
 class DUIMInputControl : DUIMControl {

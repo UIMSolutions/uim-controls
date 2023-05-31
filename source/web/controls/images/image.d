@@ -1,7 +1,7 @@
-module uim.controls.images.image;
+module web.controls.images.image;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 // ImageControl is like a wrapper around the <img> tag and more ;-) Every image can be loaded from a remote or local server. 
 class DUIMImageControl : DUIMControl {
