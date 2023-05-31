@@ -1,1 +1,1 @@
-module uim.controls.wizards.step;
+module web.controls.wizards.step;

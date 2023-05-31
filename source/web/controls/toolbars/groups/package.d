@@ -1,4 +1,4 @@
-module uim.controls.toolbars.groups;
+module web.controls.toolbars.groups;
 
-public import uim.controls.toolbars.groups.button;
+public import web.controls.toolbars.groups.button;
 

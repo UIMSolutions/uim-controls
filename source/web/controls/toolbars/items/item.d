@@ -1,4 +1,4 @@
-module uim.controls.toolbars.items.item;
+module web.controls.toolbars.items.item;
 
 interface IToolbarItem {
 }

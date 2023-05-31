@@ -1,3 +1,3 @@
-module uim.controls.videos;
+module web.controls.videos;
 
-public import uim.controls.videos.video;
+public import web.controls.videos.video;

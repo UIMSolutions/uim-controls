@@ -1,7 +1,7 @@
-module uim.controls.toolbars.groups.button;
+module web.controls.toolbars.groups.button;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMButtonGroupControl : DUIMDivControl {
   mixin(ControlThis!("UIMButtonGroup"));

@@ -1,4 +1,4 @@
-module uim.controls.tooltips;
+module web.controls.tooltips;
 
 // Main
-public import uim.controls.tooltips.tooltip;
+public import web.controls.tooltips.tooltip;

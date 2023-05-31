@@ -1,7 +1,7 @@
-module uim.controls.toolbars.toolbar;
+module web.controls.toolbars.toolbar;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMToolbarControl : DUIMDivControl {
   mixin(ControlThis!("UIMToolbar"));

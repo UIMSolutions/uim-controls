@@ -1,7 +1,7 @@
-module uim.controls.tooltips.tooltip;
+module web.controls.tooltips.tooltip;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTooltipControl : DUIMControl {
   mixin(ControlThis!("UIMTooltip"));

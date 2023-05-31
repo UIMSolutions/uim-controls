@@ -1,1 +1,1 @@
-module uim.controls.wizards.wizard;
+module web.controls.wizards.wizard;

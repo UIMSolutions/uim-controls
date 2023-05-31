@@ -1,1 +1,1 @@
-module uim.controls.toolbars.items;
+module web.controls.toolbars.items;

@@ -1,3 +1,3 @@
-module uim.controls.wizards;
+module web.controls.wizards;
 
-public import uim.controls.wizards.wizard;
+public import web.controls.wizards.wizard;

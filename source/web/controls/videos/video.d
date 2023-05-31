@@ -1,7 +1,7 @@
-module uim.controls.videos.video;
+module web.controls.videos.video;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMVideoControl : DUIMControl {
   mixin(ControlThis!("UIMVideoControl"));

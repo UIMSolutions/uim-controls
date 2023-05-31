@@ -1,7 +1,7 @@
-module uim.controls.trees.tree;
+module web.controls.trees.tree;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTreeControl : DUIMDivControl {
   mixin(ControlThis!("UIMTreeControl"));

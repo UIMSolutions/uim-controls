@@ -1,4 +1,4 @@
-module uim.controls.trees;
+module web.controls.trees;
 
 // Main
-public import uim.controls.trees.tree;
+public import web.controls.trees.tree;
