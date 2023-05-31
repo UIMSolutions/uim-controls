@@ -1,3 +1,3 @@
-module uim.controls.sheets;
+module web.controls.sheets;
 
-public import uim.controls.sheets.sheet;
+public import web.controls.sheets.sheet;

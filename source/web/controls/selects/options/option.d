@@ -1,7 +1,7 @@
-module uim.controls.selects.options.option;
+module web.controls.selects.options.option;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMOptionControl : DUIMControl {
   mixin(ControlThis!("UIMOptionControl"));

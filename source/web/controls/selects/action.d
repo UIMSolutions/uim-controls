@@ -1,7 +1,7 @@
-module uim.controls.selects.action;
+module web.controls.selects.action;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMActionSelectControl : DUIMSelectControl {
   mixin(ControlThis!("UIMActionSelectControl"));

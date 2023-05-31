@@ -1,7 +1,7 @@
-module uim.controls.shells.shell;
+module web.controls.shells.shell;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMShellControl : DUIMDivControl {
   mixin(ControlThis!("UIMShellControl"));

@@ -1,10 +1,10 @@
-module uim.controls.tables;
+module web.controls.tables;
 
 //Main
-public import uim.controls.tables.table;
+public import web.controls.tables.table;
 
 // Additional
-public import uim.controls.tables.body_;
-public import uim.controls.tables.footer;
-public import uim.controls.tables.header;
-public import uim.controls.tables.row;
+public import web.controls.tables.body_;
+public import web.controls.tables.footer;
+public import web.controls.tables.header;
+public import web.controls.tables.row;

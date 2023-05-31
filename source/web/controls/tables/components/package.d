@@ -1,1 +1,1 @@
-module uim.controls.tables.components;
+module web.controls.tables.components;

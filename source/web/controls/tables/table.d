@@ -1,7 +1,7 @@
-module uim.controls.tables.table;
+module web.controls.tables.table;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTableControl : DUIMControl {
   mixin(ControlThis!("UIMTable"));

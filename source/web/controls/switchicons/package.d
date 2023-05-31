@@ -1,5 +1,5 @@
-module uim.controls.switchicons;
+module web.controls.switchicons;
 
 public { // Main
-  import uim.controls.switchicons.switchicon;
+  import web.controls.switchicons.switchicon;
 }

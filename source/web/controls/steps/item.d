@@ -1,7 +1,7 @@
-module uim.controls.steps.item;
+module web.controls.steps.item;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMStepControl : DUIMControl {
   mixin(ControlThis!("UIMStep"));

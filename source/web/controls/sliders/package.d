@@ -1,1 +1,1 @@
-module uim.controls.sliders;
+module web.controls.sliders;

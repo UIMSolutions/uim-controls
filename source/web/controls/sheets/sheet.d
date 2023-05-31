@@ -1,8 +1,8 @@
-module uim.controls.sheets.sheet;
+module web.controls.sheets.sheet;
 
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSheetControl : DUIMControl {
   mixin(ControlThis!("UIMSheetControl"));

@@ -1,7 +1,7 @@
-module uim.controls.selects;
+module web.controls.selects;
 
 // Main control
-public import uim.controls.selects.select;
+public import web.controls.selects.select;
 
-public import uim.controls.selects.action;
-public import uim.controls.selects.options;
+public import web.controls.selects.action;
+public import web.controls.selects.options;

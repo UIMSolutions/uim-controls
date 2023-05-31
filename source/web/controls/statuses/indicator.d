@@ -1,7 +1,7 @@
-module uim.controls.statuses.indicator;
+module web.controls.statuses.indicator;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMStatusIndicatorControl : DUIMControl {
   mixin(ControlThis!("UIMStatusIndicator"));

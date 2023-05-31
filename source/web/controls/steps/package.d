@@ -1,9 +1,9 @@
-module uim.controls.steps;
+module web.controls.steps;
 
 // Maincontrol
 public {
-  import uim.controls.steps.container;
+  import web.controls.steps.container;
 }
 
 // Control
-public import uim.controls.steps.item;
+public import web.controls.steps.item;

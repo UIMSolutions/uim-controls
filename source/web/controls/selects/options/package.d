@@ -1,3 +1,3 @@
-module uim.controls.selects.options;
+module web.controls.selects.options;
 
-public import uim.controls.selects.options.option;
+public import web.controls.selects.options.option;

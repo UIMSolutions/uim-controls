@@ -1,8 +1,8 @@
-module uim.controls.statuses;
+module web.controls.statuses;
 
 // Main
-public import uim.controls.statuses.status;
+public import web.controls.statuses.status;
 
 // Additional
-public import uim.controls.statuses.dot;
-public import uim.controls.statuses.indicator;
+public import web.controls.statuses.dot;
+public import web.controls.statuses.indicator;

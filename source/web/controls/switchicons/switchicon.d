@@ -1,7 +1,7 @@
-module uim.controls.switchicons.switchicon;
+module web.controls.switchicons.switchicon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSwitchIconControl : DUIMControl {
   mixin(ControlThis!("UIMSwitchIconControl"));
