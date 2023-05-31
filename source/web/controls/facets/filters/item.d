@@ -1,7 +1,7 @@
-module uim.controls.factes.filters.item;
+module web.controls.factes.filters.item;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFacetFilterItemControl : DUIMControl {
   mixin(ControlThis!("UIMFacetFilterItemControl"));

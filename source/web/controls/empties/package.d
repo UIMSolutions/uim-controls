@@ -1,13 +1,13 @@
-module uim.controls.empties;
+module web.controls.empties;
 
 // Main
-public import uim.controls.empties.empty;
+public import web.controls.empties.empty;
 
 // Additional
-public import uim.controls.empties.action;
-public import uim.controls.empties.header;
-public import uim.controls.empties.icon;
-public import uim.controls.empties.image;
-public import uim.controls.empties.item;
-public import uim.controls.empties.subtitle;
-public import uim.controls.empties.title;
+public import web.controls.empties.action;
+public import web.controls.empties.header;
+public import web.controls.empties.icon;
+public import web.controls.empties.image;
+public import web.controls.empties.item;
+public import web.controls.empties.subtitle;
+public import web.controls.empties.title;

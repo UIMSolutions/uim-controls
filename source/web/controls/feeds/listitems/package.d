@@ -1,7 +1,7 @@
-module uim.controls.feeds.listitems;
+module web.controls.feeds.listitems;
 
 // main
-public import uim.controls.feeds.listitems.listitem;
+public import web.controls.feeds.listitems.listitem;
 
 // Additional
-public import uim.controls.feeds.listitems.action;
+public import web.controls.feeds.listitems.action;

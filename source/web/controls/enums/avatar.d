@@ -1,4 +1,4 @@
-module uim.controls.enums.avatar;
+module web.controls.enums.avatar;
 
 // Possible background color options for the UIMAvatarControl.
 enum UIMAvatarColors : string {

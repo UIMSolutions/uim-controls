@@ -1,7 +1,7 @@
-module uim.controls.figures.caption;
+module web.controls.figures.caption;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFigureCaptionControl : DUIMControl {
   mixin(ControlThis!("UIMFigureCaptionControl"));

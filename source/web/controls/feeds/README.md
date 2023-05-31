@@ -1,1 +1,1 @@
-# Package 📦 uim.controls.feed
+# Package 📦 web.controls.feed

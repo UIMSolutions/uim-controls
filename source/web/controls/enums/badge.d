@@ -1,4 +1,4 @@
-module uim.controls.enums.badge;
+module web.controls.enums.badge;
 
 // Types of animation performed by sap.m.BadgeEnabler.
 enum UIMBadgeAnimationType : string {

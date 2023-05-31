@@ -1,3 +1,3 @@
-module uim.controls.facets;
+module web.controls.facets;
 
-public import uim.controls.facets.facet;
+public import web.controls.facets.facet;

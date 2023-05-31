@@ -1,7 +1,7 @@
-module uim.controls.empties.image;
+module web.controls.empties.image;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMEmptyImageControl : DUIMEmptyItemControl {
   mixin(ControlThis!("UIMEmptyImageControl"));

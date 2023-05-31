@@ -1,7 +1,7 @@
-module uim.controls.feeds.input;
+module web.controls.feeds.input;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMFeedInputControl : DUIMControl {
   mixin(ControlThis!("UIMFeedInputControl"));

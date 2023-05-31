@@ -1,8 +1,8 @@
-module uim.controls.enums;
+module web.controls.enums;
 
-public import uim.controls.enums.avatar;
-public import uim.controls.enums.badge;
-public import uim.controls.enums.dialog;
+public import web.controls.enums.avatar;
+public import web.controls.enums.badge;
+public import web.controls.enums.dialog;
 
 // Available Background Design.
 enum UIMBackgroundDesigns : string {

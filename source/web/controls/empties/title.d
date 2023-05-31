@@ -1,7 +1,7 @@
-module uim.controls.empties.title;
+module web.controls.empties.title;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMEmptyTitleControl : DUIMEmptyItemControl {
   mixin(ControlThis!("UIMEmptyTitleControl"));

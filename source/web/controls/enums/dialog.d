@@ -1,4 +1,4 @@
-module uim.controls.enums.dialog;
+module web.controls.enums.dialog;
 
 // Enum for the ARIA role of UIMDialog control.
 enum UIMDialogRoleType : string {

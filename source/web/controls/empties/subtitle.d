@@ -1,7 +1,7 @@
-module uim.controls.empties.subtitle;
+module web.controls.empties.subtitle;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMEmptySubtitleControl : DUIMEmptyItemControl {
   mixin(ControlThis!("UIMEmptySubtitleControl"));

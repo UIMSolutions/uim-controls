@@ -1,6 +1,6 @@
-module uim.controls.feeds.listitems.listitem;
+module web.controls.feeds.listitems.listitem;
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMFeedListItemControl : DUIMControl {
   mixin(ControlThis!("UIMFeedListItemControl"));
