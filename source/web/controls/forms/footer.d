@@ -1,7 +1,7 @@
-module uim.controls.forms.footer;
+module web.controls.forms.footer;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFormFooterControl : DUIMControl {
   mixin(ControlThis!("UIMFormFooterControl"));

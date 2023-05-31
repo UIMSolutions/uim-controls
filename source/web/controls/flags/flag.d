@@ -1,7 +1,7 @@
-module uim.controls.flags.flag;
+module web.controls.flags.flag;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFlagControl : DUIMDivControl {
   mixin(ControlThis!("uIMFlagControl"));

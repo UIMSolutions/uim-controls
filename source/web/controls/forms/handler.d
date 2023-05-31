@@ -1,7 +1,7 @@
-module uim.controls.forms.handler;
+module web.controls.forms.handler;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFormHandlerControl : DUIMControl {
   mixin(ControlThis!("UIMFormHandlerControl"));

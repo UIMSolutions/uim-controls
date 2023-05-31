@@ -1,4 +1,4 @@
-module uim.controls.footers;
+module web.controls.footers;
 
 // Main
-public import uim.controls.footers.footer;
+public import web.controls.footers.footer;

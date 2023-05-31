@@ -1,3 +1,3 @@
-module uim.controls.forms.elements;
+module web.controls.forms.elements;
 
-public import uim.controls.forms.elements.element;
+public import web.controls.forms.elements.element;

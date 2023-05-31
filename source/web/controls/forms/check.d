@@ -1,7 +1,7 @@
-module uim.controls.forms.check;
+module web.controls.forms.check;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFormCheckControl : DUIMDivControl {
   mixin(ControlThis!("UIMFormCheckControl"));

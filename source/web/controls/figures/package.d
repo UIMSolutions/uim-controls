@@ -1,7 +1,7 @@
-module uim.controls.figures;
+module web.controls.figures;
 
 // Main control
-public import uim.controls.figures.figure;
+public import web.controls.figures.figure;
 
 // Additional control
-public import uim.controls.figures.caption;
+public import web.controls.figures.caption;

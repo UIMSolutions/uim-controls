@@ -1,3 +1,3 @@
-module uim.controls.flags;
+module web.controls.flags;
 
-public import uim.controls.flags.flag;
+public import web.controls.flags.flag;

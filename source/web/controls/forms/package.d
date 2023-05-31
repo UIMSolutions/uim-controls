@@ -1,19 +1,19 @@
-module uim.controls.forms;
+module web.controls.forms;
 
 // package
-public import uim.controls.forms.selectgroups;
+public import web.controls.forms.selectgroups;
 
 // Main 
-public import uim.controls.forms.form;
-public import uim.controls.forms.card;
+public import web.controls.forms.form;
+public import web.controls.forms.card;
 
 // Components 
-public import uim.controls.forms.elements;
-public import uim.controls.forms.check;
-public import uim.controls.forms.description;
-public import uim.controls.forms.floating;
-public import uim.controls.forms.handler;
-public import uim.controls.forms.group;
-public import uim.controls.forms.label;
-public import uim.controls.forms.header;
-public import uim.controls.forms.footer;
+public import web.controls.forms.elements;
+public import web.controls.forms.check;
+public import web.controls.forms.description;
+public import web.controls.forms.floating;
+public import web.controls.forms.handler;
+public import web.controls.forms.group;
+public import web.controls.forms.label;
+public import web.controls.forms.header;
+public import web.controls.forms.footer;

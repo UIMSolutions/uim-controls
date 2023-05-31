@@ -1,7 +1,7 @@
-module uim.controls.forms.label;
+module web.controls.forms.label;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFormLabelControl : DUIMControl {
   mixin(ControlThis!("UIMFormLabelControl"));

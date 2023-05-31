@@ -1,7 +1,7 @@
-module uim.controls.forms.floating;
+module web.controls.forms.floating;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFormFloatingControl : DUIMFormControl {
   mixin(ControlThis!("UIMFormFloatingControl"));

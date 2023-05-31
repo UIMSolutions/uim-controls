@@ -1,7 +1,7 @@
-module uim.controls.forms.header;
+module web.controls.forms.header;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFormHeaderControl : DUIMCardHeaderControl {
   mixin(ControlThis!("UIMFormHeaderControl"));

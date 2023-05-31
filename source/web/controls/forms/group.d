@@ -1,7 +1,7 @@
-module uim.controls.forms.group;
+module web.controls.forms.group;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFormGroupControl : DUIMControl {
   mixin(ControlThis!("UIMFormGroupControl"));

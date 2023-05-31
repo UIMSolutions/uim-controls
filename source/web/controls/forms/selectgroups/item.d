@@ -1,7 +1,7 @@
-module uim.controls.forms.selectgroups.item;
+module web.controls.forms.selectgroups.item;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSelectGroupItemControl : DUIMControl {
   mixin(ControlThis!("UIMSelectGroupItemControl"));

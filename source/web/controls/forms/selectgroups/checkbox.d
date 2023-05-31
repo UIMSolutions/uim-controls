@@ -1,7 +1,7 @@
-module uim.controls.forms.selectgroups.checkbox;
+module web.controls.forms.selectgroups.checkbox;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSelectGroupCheckboxControl : DUIMControl {
   mixin(ControlThis!("UIMSelectGroupCheckboxControl"));

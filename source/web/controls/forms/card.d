@@ -1,7 +1,7 @@
-module uim.controls.forms.card;
+module web.controls.forms.card;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMFormCardControl : DUIMFormControl {
   mixin(ControlThis!("UIMFormCardControl"));

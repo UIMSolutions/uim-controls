@@ -1,7 +1,7 @@
-module uim.controls.forms.selectgroups.label;
+module web.controls.forms.selectgroups.label;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSelectGroupLabelControl : DUIMControl {
   mixin(ControlThis!("UIMSelectGroupLabelControl"));
