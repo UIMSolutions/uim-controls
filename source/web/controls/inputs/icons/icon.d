@@ -1,7 +1,7 @@
-module uim.controls.inputs.icons.icon;
+module web.controls.inputs.icons.icon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMInputIconControl : DUIMDivControl {
   mixin(ControlThis!("UIMInputIconControl"));

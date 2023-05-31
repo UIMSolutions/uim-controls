@@ -1,7 +1,7 @@
-module uim.controls.inputs.search;
+module web.controls.inputs.search;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSearchInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMSearchInputControl"));

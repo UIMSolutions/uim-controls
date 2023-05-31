@@ -1,4 +1,4 @@
-module uim.controls.invoices;
+module web.controls.invoices;
 
 // Main
-public import uim.controls.invoices.invoice;
+public import web.controls.invoices.invoice;

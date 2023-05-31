@@ -1,7 +1,7 @@
-module uim.controls.inputs.textarea;
+module web.controls.inputs.textarea;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTextareaControl : DUIMInputControl {
   mixin(ControlThis!("UIMTextareaControl"));

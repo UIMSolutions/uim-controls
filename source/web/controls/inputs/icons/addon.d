@@ -1,7 +1,7 @@
-module uim.controls.inputs.icons.addon;
+module web.controls.inputs.icons.addon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMInputAddonControl : DUIMSpanControl {
   mixin(ControlThis!("UIMInputAddonControl"));

@@ -1,7 +1,7 @@
-module uim.controls.inputs.week;
+module web.controls.inputs.week;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMWeekInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMWeekInputControl"));

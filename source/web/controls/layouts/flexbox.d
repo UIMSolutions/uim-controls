@@ -1,2 +1,2 @@
 
-module uim.controls.layouts.flexbox;
+module web.controls.layouts.flexbox;

@@ -1,7 +1,7 @@
-module uim.controls.inputs.submit;
+module web.controls.inputs.submit;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSubmitInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMSubmitInputControl"));

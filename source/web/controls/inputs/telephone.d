@@ -1,7 +1,7 @@
-module uim.controls.inputs.telephone;
+module web.controls.inputs.telephone;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTelephoneInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMTelephoneInputControl"));

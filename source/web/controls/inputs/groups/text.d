@@ -1,7 +1,7 @@
-module uim.controls.inputs.groups.text;
+module web.controls.inputs.groups.text;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMTextAddonControl : DUIMControl {
   mixin(ControlThis!("UIMTextAddonControl"));

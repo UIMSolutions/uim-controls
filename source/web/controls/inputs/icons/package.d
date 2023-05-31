@@ -1,4 +1,4 @@
-module uim.controls.inputs.icons;
+module web.controls.inputs.icons;
 
-public import uim.controls.inputs.icons.icon;
-public import uim.controls.inputs.icons.addon;
+public import web.controls.inputs.icons.icon;
+public import web.controls.inputs.icons.addon;

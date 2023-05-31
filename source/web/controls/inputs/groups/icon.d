@@ -1,7 +1,7 @@
-module uim.controls.inputs.groups.icon;
+module web.controls.inputs.groups.icon;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMIconAddonControl : DUIMControl {
   mixin(ControlThis!("UIMIconAddonControl"));

@@ -1,3 +1,3 @@
-module uim.controls.labels;
+module web.controls.labels;
 
-public import uim.controls.labels.label;
+public import web.controls.labels.label;

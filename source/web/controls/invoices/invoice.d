@@ -1,7 +1,7 @@
-module uim.controls.invoices.invoice;
+module web.controls.invoices.invoice;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMInvoiceControl : DUIMControl {
   mixin(ControlThis!("UIMInvoiceControl"));

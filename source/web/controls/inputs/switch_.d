@@ -1,7 +1,7 @@
-module uim.controls.inputs.switch_;
+module web.controls.inputs.switch_;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMSwitchControl : DUIMInputControl {
   mixin(ControlThis!("UIMSwitchControl"));

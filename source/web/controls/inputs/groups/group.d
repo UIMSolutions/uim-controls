@@ -1,7 +1,7 @@
-module uim.controls.inputs.groups.group;
+module web.controls.inputs.groups.group;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMInputGroupControl : DUIMControl {
   mixin(ControlThis!("UIMInputGroupControl"));

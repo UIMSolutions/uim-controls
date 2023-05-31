@@ -1,7 +1,7 @@
-module uim.controls.layouts.container;
+module web.controls.layouts.container;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMContainerControl : DUIMLayoutControl {
   mixin(ControlThis!("UIMContainerControl"));

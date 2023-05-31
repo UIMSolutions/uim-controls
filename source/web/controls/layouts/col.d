@@ -1,7 +1,7 @@
-module uim.controls.layouts.col;
+module web.controls.layouts.col;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMColControl : DUIMDivControl {
   mixin(ControlThis!("UIMColControl"));

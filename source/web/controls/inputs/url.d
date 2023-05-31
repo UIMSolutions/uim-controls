@@ -1,7 +1,7 @@
-module uim.controls.inputs.url;
+module web.controls.inputs.url;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMUrlInputControl : DUIMInputControl {
   mixin(ControlThis!("UIMUrlInputControl"));
