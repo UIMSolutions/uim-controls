@@ -1,5 +1,5 @@
-module uim.controls.navs.items;
+module web.controls.navs.items;
 
-public import uim.controls.navs.items.item;
+public import web.controls.navs.items.item;
 
-public import uim.controls.navs.items.dropdown;
+public import web.controls.navs.items.dropdown;

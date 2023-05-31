@@ -1,1 +1,1 @@
-module uim.controls.navbars.components;
+module web.controls.navbars.components;

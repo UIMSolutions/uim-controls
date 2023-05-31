@@ -1,6 +1,6 @@
-module uim.controls.navs.links;
+module web.controls.navs.links;
 
-public import uim.controls.navs.links.icon;
-public import uim.controls.navs.links.link;
-public import uim.controls.navs.links.title;
-public import uim.controls.navs.links.toggle;
+public import web.controls.navs.links.icon;
+public import web.controls.navs.links.link;
+public import web.controls.navs.links.title;
+public import web.controls.navs.links.toggle;

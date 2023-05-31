@@ -1,9 +1,9 @@
-module uim.controls.pages;
+module web.controls.pages;
 
-public import uim.controls.pages.page;
+public import web.controls.pages.page;
 
-public import uim.controls.pages.body_;
-public import uim.controls.pages.header;
-public import uim.controls.pages.pretitle;
-public import uim.controls.pages.title;
-public import uim.controls.pages.wrapper;
+public import web.controls.pages.body_;
+public import web.controls.pages.header;
+public import web.controls.pages.pretitle;
+public import web.controls.pages.title;
+public import web.controls.pages.wrapper;

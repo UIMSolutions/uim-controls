@@ -1,7 +1,7 @@
-module uim.controls.navs.links.title;
+module web.controls.navs.links.title;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMNavLinkTitleControl : DUIMControl {
   mixin(ControlThis!("UIMNavLinkTitleControl"));

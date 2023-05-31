@@ -1,7 +1,7 @@
-module uim.controls.pages.wrapper;
+module web.controls.pages.wrapper;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMPageWrapperControl : DUIMDivControl {
   mixin(ControlThis!("UIMPageWrapperControl"));

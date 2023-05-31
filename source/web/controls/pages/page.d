@@ -1,7 +1,7 @@
-module uim.controls.pages.page;
+module web.controls.pages.page;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 /*
 

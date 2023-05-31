@@ -1,1 +1,1 @@
-module uim.controls.pages.components;
+module web.controls.pages.components;

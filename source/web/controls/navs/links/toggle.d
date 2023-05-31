@@ -1,7 +1,7 @@
-module uim.controls.navs.links.toggle;
+module web.controls.navs.links.toggle;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMNavLinkToggleControl : DUIMControl {
   mixin(ControlThis!("UIMNavLinkToggleControl"));

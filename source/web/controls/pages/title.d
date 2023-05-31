@@ -1,7 +1,7 @@
-module uim.controls.pages.title;
+module web.controls.pages.title;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMPageTitleControl : DUIMDivControl {
   mixin(ControlThis!("UIMPageTitleControl"));

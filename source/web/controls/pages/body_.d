@@ -1,7 +1,7 @@
-module uim.controls.pages.body_;
+module web.controls.pages.body_;
 
 @safe:
-import uim.controls;
+import web.controls;
 
 class DUIMPageBodyControl : DUIMDivControl {
   mixin(ControlThis!("UIMPageBodyControl"));

@@ -1,1 +1,1 @@
-module uim.controls.offcanvases.title;
+module web.controls.offcanvases.title;

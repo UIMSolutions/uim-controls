@@ -1,7 +1,7 @@
-module uim.controls.navs.links.link;
+module web.controls.navs.links.link;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMNavLinkControl : DUIMLinkControl {
   mixin(ControlThis!("UIMNavLinkControl"));

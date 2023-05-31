@@ -1,5 +1,5 @@
-module uim.controls.offcanvases;
+module web.controls.offcanvases;
 
-public import uim.controls.offcanvases.offcanvas;
+public import web.controls.offcanvases.offcanvas;
 
-public import uim.controls.offcanvases.body_;
+public import web.controls.offcanvases.body_;

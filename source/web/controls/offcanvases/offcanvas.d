@@ -1,1 +1,1 @@
-module uim.controls.offcanvases.offcanvas;
+module web.controls.offcanvases.offcanvas;

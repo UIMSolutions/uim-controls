@@ -1,7 +1,7 @@
-module uim.controls.pages.pretitle;
+module web.controls.pages.pretitle;
 
 @safe: 
-import uim.controls;
+import web.controls;
 
 class DUIMPagePretitleControl : DUIMControl {
   mixin(ControlThis!("UIMPagePretitleControl"));
