@@ -27,11 +27,15 @@ class DUIMAlertControl : DUIMControl {
   override DH5Obj[] toH5(STRINGAA options = null) {
     super.toH5(options);
 
-    if (type || "alertType" in options) { myClasses ~= "alert-"~options.get("alertType", this.type); }
+    if (type || "alertType" in options) { 
+      myClasses ~= "alert-"~options.get("alertType", this.type); 
+    }
+
     if (dismissible) { 
       myClasses ~= "alert-dismissible"; 
       myContent ~= H5A(["btn-close"], ["data-bs-dismiss":"alert", "aria-label":"close"]); 
     }
+
     if (important) { myClasses ~= "alert-important"; }
 
     return [
